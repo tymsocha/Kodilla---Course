@@ -1,0 +1,31 @@
+App.Views.DeleteAccount = Backbone.View.extend({
+    events: {
+        'click #acc-del-btn' : 'checkAccountDeleteCalculation'
+    },
+    initialize: function(options) {
+        this.$deleteModal = this.$el;
+        this.$deleteModalCalculationText = this.$deleteModal.find('#calculation-text+p > span');
+        this.$deleteModalCalculationResult = this.$deleteModal.find('#calculation-result');
+        this.$calculationResult = 0;
+
+        var x = Math.round(Math.random() * 5) + 1;
+        var y = Math.round(Math.random() * 3) + 1;
+        var calculationText = x + ' x ' + y + ' =';
+
+        this.$expectedCalculationResult = x * y;
+        this.$deleteModalCalculationText.html(calculationText);
+    },
+    checkAccountDeleteCalculation: function () {
+        if (this.$expectedCalculationResult == this.$deleteModalCalculationResult.val()) {
+            this.accountDelete();
+        } else {
+            alert(App.Translations('checkAccountDeleteCalculationMessage'));
+        }
+    },
+    accountDelete: function () {
+        $.ajax({
+            type: 'POST',
+            url: '/' + App.getLang() + '/account/delete'
+        });
+    }
+});

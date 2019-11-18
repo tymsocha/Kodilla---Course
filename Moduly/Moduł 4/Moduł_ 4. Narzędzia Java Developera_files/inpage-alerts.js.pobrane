@@ -1,0 +1,1 @@
+App.Views.InpageAlertManager=Backbone.View.extend({events:{"click [data-alert-type][data-alert-text]":"showAlert"},showAlert:function(a){var b=$(a.currentTarget);App.alertsView["show"+b.data("alertType")]([App.Translations(b.data("alertText"))])}});

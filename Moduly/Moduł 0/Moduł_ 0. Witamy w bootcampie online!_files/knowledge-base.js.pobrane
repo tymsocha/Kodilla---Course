@@ -1,0 +1,131 @@
+App.Models.KnowledgeBase = Backbone.Model.extend({
+    $view: function() {
+        return this.get('$view');
+    },
+    hide: function() {
+        this.$view().hide();
+    },
+    show: function() {
+        this.$view().show();
+    }
+});
+
+App.Collections.KnowledgeBase = Backbone.Collection.extend({
+    url: '/' + App.getLang() + '/knowledge-base-all',
+    model: App.Models.KnowledgeBase
+});
+
+App.Views.KnowledgeBaseTable = Backbone.View.extend({
+    events: {
+        'change .sort-by-technology' : 'sortKnowledgeElementByTechnology',
+        'change .filter' : 'filterKnowledgeElements',
+        'keyup .search' : 'searchKnowledgeElements'
+    },
+    initialize: function(options) {
+        this.filters = {};
+        this.searchText = '';
+        this.collection = new App.Collections.KnowledgeBase();
+        this.collection.fetch().done($.proxy(this.render, this));
+    },
+    render: function() {
+        var self = this;
+        this.$el.find('tbody').append(
+            this.collection.map(function(model) {
+                var view = new App.Views.KnowledgeBaseRow({
+                    model: model
+                });
+                model.set('$view', view.$el);
+                return view.$el;
+            })
+        );
+        this.setStartingSortKnowledgeElementByTechnology();
+    },
+    setStartingSortKnowledgeElementByTechnology: function() {
+        var technology = Cookies.get('kb_technology');
+        if (typeof technology === 'undefined') {
+            technology = this.$el.find('.sort-by-technology').val();
+        } else {
+            this.$el.find('.sort-by-technology').val(technology);
+        }
+
+        this.filters.technology = technology;
+        this.clearCheckedSelectOptions();
+        this.filter();
+        this.setSelectOptionsByTechnology();
+        Cookies.set('kb_technology', technology, { expires: 1000 });
+    },
+    sortKnowledgeElementByTechnology: function(e) {
+        var technology = $(e.currentTarget).val();
+        this.filters.technology = technology;
+        this.clearCheckedSelectOptions();
+        this.filter();
+        this.setSelectOptionsByTechnology();
+        Cookies.set('kb_technology', technology, { expires: 1000 });
+    },
+    clearCheckedSelectOptions: function() {
+        delete this.filters.type;
+        delete this.filters.category;
+        this.$el.find('.select-by-tech').val('');
+    },
+    setSelectOptionsByTechnology: function() {
+        this.$el.find('.select-by-tech>option').hide();
+        this.$el.find('.select-by-tech>option[value=""]').show();
+        this.$el.find('.select-by-tech>option[value^="'+this.filters.technology.toLowerCase()+'_"]').show();
+    },
+    filterKnowledgeElements: function(e) {
+        var filter = $(e.currentTarget);
+        if (filter.val() === '') {
+            delete this.filters[filter.attr('name')];
+        } else {
+            this.filters[filter.attr('name')] = filter.val();
+        }
+        this.filter();
+    },
+    filter: function() {
+        var self = this;
+        this.collection.invoke('hide');
+        var matched = this.collection.where(this.filters);
+        if (this.searchText.length >= 3) {
+            matched = matched.filter(function(model) {
+                if (model.get('name').toLowerCase().indexOf(self.searchText) >= 0 || model.get('description').toLowerCase().indexOf(self.searchText) >= 0) {
+                    return model;
+                }
+            });
+        }
+        matched = new Backbone.Collection(matched);
+        matched.invoke('show');
+        this.$el.removeClass('tech-html tech-css');
+        this.$el.addClass('tech-'+this.filters.technology.toLowerCase());
+        this.$el.find('table td, table th').show();
+        this.$el.find('table .hide-for-'+this.filters.technology.toLowerCase()).hide();
+    },
+    searchKnowledgeElements: function(e) {
+        var self = this;
+        this.searchText = $(e.currentTarget).val().toLowerCase();
+        clearTimeout(this.searchKnowledgeElementsTimeout);
+        if (this.searchText.length >= 3) {
+            this.searchKnowledgeElementsTimeout = setTimeout(function() {
+                self.filter();
+            }, 500);
+        } else {
+            this.searchKnowledgeElementsTimeout = setTimeout(function() {
+                self.searchText = '';
+                self.filter();
+            }, 500);
+        }
+    }
+});
+
+App.Views.KnowledgeBaseRow = Backbone.View.extend({
+    tagName: 'tr',
+    hide: function() {
+        this.$el.hide();
+    },
+    initialize: function(options) {
+        this.model = options.model;
+        this.render();
+    },
+    render: function() {
+        this.$el.html(App.Templates('knowledgeBaseRow')(this.model.toJSON()));
+    }
+});

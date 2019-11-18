@@ -1,0 +1,17 @@
+select i.summary, i.description, p.name
+
+from issues i 
+
+join issueslist p on p.id = i.issueslist_id;
+
+select i.summary, i.description, u.firstname, u.lastname
+
+from issues i
+
+join users u on u.id = i.USER_ID_ASSIGNED_TO;
+
+SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) ISSUES_NUMBER
+
+from users u join issues i on u.id = i.USER_ID_ASSIGNED_TO
+
+group by i.USER_ID_ASSIGNED_TO;

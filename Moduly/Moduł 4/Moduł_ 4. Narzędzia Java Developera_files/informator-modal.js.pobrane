@@ -1,0 +1,1 @@
+!function(){function a(){$("#informator").modal("show")}$(document).ready(function(){"#informator-modal"===window.location.hash&&a()}),$('[data-action="show-modal"]').click(function(){a()})}();

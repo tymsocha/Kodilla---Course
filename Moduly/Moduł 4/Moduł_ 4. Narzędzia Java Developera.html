@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://kodilla.com/pl/bootcamp-module/146/132/3774 -->
+<html lang="pl" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="csrf-token" content="BrRKCYdhNsaFXDnyEPi2dCQevELCrN2yNb1Rprgo">
+
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="https://kodilla.com/static/img/icons/apple-touch-icon-60x60.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://kodilla.com/static/img/icons/apple-touch-icon-76x76.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://kodilla.com/static/img/icons/apple-touch-icon-120x120.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://kodilla.com/static/img/icons/apple-touch-icon-152x152.png?00000">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://kodilla.com/static/img/icons/favicon-32x32.png?92a76">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://kodilla.com/static/img/icons/favicon-96x96.png?49799">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://kodilla.com/static/img/icons/favicon-16x16.png?4d37e">
+
+        
+        <link rel="canonical" href="https://kodilla.com/pl/bootcamp-module/146/132/3774">
+        <title>    Moduł: 4. Narzędzia Java Developera
+</title>
+                        <meta name="robots" content="noindex, follow">
+        
+        <link href="./Moduł_ 4. Narzędzia Java Developera_files/bootstrap.min.css" rel="stylesheet">
+        <link href="./Moduł_ 4. Narzędzia Java Developera_files/font-awesome.min.css" rel="stylesheet">
+        <link href="./Moduł_ 4. Narzędzia Java Developera_files/main.css" rel="stylesheet" type="text/css">
+
+                
+    <link href="./Moduł_ 4. Narzędzia Java Developera_files/prism.min.css" rel="stylesheet">
+
+    <link href="./Moduł_ 4. Narzędzia Java Developera_files/bootcamp.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Moduł_ 4. Narzędzia Java Developera_files/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./Moduł_ 4. Narzędzia Java Developera_files/jquery.fancybox.min.css" type="text/css" media="screen">
+        <script type="text/javascript" async="" src="./Moduł_ 4. Narzędzia Java Developera_files/js"></script><script type="text/javascript" async="" src="./Moduł_ 4. Narzędzia Java Developera_files/analytics.js.pobrane"></script><script type="text/javascript" async="" src="./Moduł_ 4. Narzędzia Java Developera_files/analytics.js.pobrane"></script><script id="facebook-jssdk" src="./Moduł_ 4. Narzędzia Java Developera_files/sdk.js.pobrane"></script><script async="" src="./Moduł_ 4. Narzędzia Java Developera_files/gtm.js.pobrane"></script><script async="" src="./Moduł_ 4. Narzędzia Java Developera_files/fbevents.js.pobrane"></script><script>
+            window.environment = 'production';
+            window.loggedIn = true;
+            window.domain = 'https://kodilla.com';
+                        window.fbAppId = 1449248938627896;
+            window.locale = 'pl';
+            window.lang = 'pl';
+
+            window.serverUTC       = 1542371583000;
+            window.serverOffset    = 60;
+            window.userDate        = new Date();
+            window.userUTC         = userDate.getTime();
+            window.userOffset      = userDate.getTimezoneOffset() * (-1);
+            window.userClockDiff   = userUTC - serverUTC;
+            window.diffRounded     = Math.round( userClockDiff / ( 1000 * 60 * 15 ) );
+            window.isDifferentZone = ( userOffset - serverOffset !== 0 ) ? 1 : 0;
+            window.hasWrongTime    = ( diffRounded !== 0 ) ? 1 : 0;
+            window.dateTooltipText = 'Data i godzina są podane dla Twojej strefy czasowej GMT. <br>W razie wątpliwości napisz: <u>support@kodilla.com</u>.';
+            window.wrongHourNotice = 'Godzina na Twoim urządzeniu r&oacute;żni się od godziny obowiązującej w strefie czasowej wybranej w ustawieniach Twojego urządzenia.';
+
+            var moment = undefined,
+            momentReady = function( method, method2, count ){
+                var c = ( count ) ? count : 0;
+
+                if      ( isDifferentZone && moment !== undefined ){
+                    if      ( method ) { method(); }
+                    else    { return false; }
+                }
+                else if ( isDifferentZone && moment === undefined ) {
+                    if ( c < 20 ) {
+                        c++;
+                        setTimeout( function() { momentReady( method, method2, c ); }
+                            , 300 );
+                    } else {
+                        if      ( method2 === true && method )  { method(); }
+                        else if ( method2 !== true && method2 ) { method2(); }
+                    }
+                }
+                else {
+                    if      ( method2 === true && method )  { method(); }
+                    else if ( method2 !== true && method2 ) { method2(); }
+                    else    { return false; }
+                }
+            };
+
+            if ( window.isDifferentZone && moment === undefined ) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = '/static/js/libs/moment.timezone.locales.min.js?v=2.22.2';
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }
+        </script>
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '389137334769464');
+            fbq('track', 'PageView');
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KN2WWBH');</script>
+        <!-- End Google Tag Manager -->
+<script async="" type="text/javascript" src="./Moduł_ 4. Narzędzia Java Developera_files/visit"></script><link href="./Moduł_ 4. Narzędzia Java Developera_files/widget.css" rel="stylesheet"><style type="text/css">.fancybox-margin{margin-right:15px;}</style></head>
+<body class="wrong-hour freshchat-enabled">
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>
+    document.getElementsByTagName('body')[0].classList.remove('no-js');
+    if ( window.isDifferentZone ) {
+        document.querySelector('body').classList.add('time-conversion-applied');
+    }
+    if ( window.hasWrongTime ) {
+        document.querySelector('body').classList.add('wrong-hour');
+    }
+</script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: window.fbAppId,
+        xfbml: true,
+        version: 'v2.10'
+    });
+};
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+    <nav class="navbar-main hidden-sm-down dark navbar">
+    <div class="nav-container">
+        <div class="navbar-header clearfix">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbarUpper"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="collapse navbar-toggleable-sm container" id="collapsingNavbarUpper">
+            <ul class="nav navbar-nav navbar-nav-left">
+                                    <li class="nav-item nav-contact">
+    <span>Skontaktuj się z nami:</span>
+    <a href="mailto:support@kodilla.com">
+        <i class="fa fa-envelope-o"></i>
+        support@kodilla.com
+    </a>
+    <span>lub</span>
+    <a href="javascript:fcWidget.open();">
+        <i class="fa fa-comments"></i>
+        porozmawiaj na czacie
+    </a>
+</li>
+                                </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+    <a class="nav-link dropdown-toggle" href="https://kodilla.com/pl/bootcamp-module/146/132/3774#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+        <img class="img-no-border ico-current-lang" src="./Moduł_ 4. Narzędzia Java Developera_files/ico.globe.svg">Polska (Polski)
+    </a>
+    <div class="dropdown-menu-css">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://kodilla.com/pl"><img src="./Moduł_ 4. Narzędzia Java Developera_files/125px-Flag_of_Poland.svg.png">Polska (Polski)</a>
+                            <a class="dropdown-item" href="https://kodilla.com/uk"><img src="./Moduł_ 4. Narzędzia Java Developera_files/125px-Flag_of_the_United_Kingdom.svg.png">United Kingdom (English)</a>
+                            <a class="dropdown-item" href="https://kodilla.com/no"><img src="./Moduł_ 4. Narzędzia Java Developera_files/125px-Flag_of_Norway.svg.png">Norge (English)</a>
+                            <a class="dropdown-item" href="https://kodilla.com/en"><img src="./Moduł_ 4. Narzędzia Java Developera_files/global.svg">Global (English)</a>
+                    </div>
+    </div>
+</li>
+                                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+                </li>
+                <li class="nav-item hidden-sm-down">
+    <a href="https://kodilla.com/pl/account" class="nav-link">Konto</a>
+</li>
+        <li class="nav-item">
+    <a class="analytics-track nav-link nav-link-accent" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-main light navbar">
+    <div class="container clearfix">
+        <a class="navbar-brand" href="https://kodilla.com/pl">
+            <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168px" height="30px">
+                <defs>
+                    <style>
+                        .navbar-logo-fill {
+                            fill: #0dac4b;
+                        }
+                    </style>
+                </defs>
+                <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                    <path id="KODILLA_copy_5_1_" class="navbar-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                    <ellipse id="eye_copy_4_1_" class="navbar-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                </g>
+                <path id="Path_1" data-name="Path 1" class="navbar-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                <path id="Path_2" data-name="Path 2" class="navbar-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                <path id="Path_3" data-name="Path 3" class="navbar-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                <path id="Path_4" data-name="Path 4" class="navbar-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                <path id="Path_5" data-name="Path 5" class="navbar-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                <path id="Path_6" data-name="Path 6" class="navbar-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+            </svg>
+        </a>
+        <button class="navbar-toggler pull-right collapsed" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars navbar-ico-open"></i>
+            <i class="fa fa-times navbar-ico-close"></i>
+        </button>
+        <ul id="navbar-main" class="nav navbar-nav pull-right collapse">
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Szkolenia Bootcamp
+    </a>
+    <ul class="bootcamp-list">
+        <li class="list-sub">
+            <svg class="menu-svg" width="32px" height="32px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>menu_java_logo</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu_java_logo">
+                        <g id="svg_1" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042" id="path156_2_" fill="#02AC46"></path>
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042 Z" id="path158_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004" id="path160_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004 Z" id="path162_2_" fill="#02AC46"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311" id="path164_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311 Z" id="path166_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757" id="path168_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757 Z" id="path170_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853" id="path172_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853 Z" id="path174_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992" id="path176_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992 Z" id="path178_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38" id="path180_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38 Z" id="path182_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058" id="path184_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058 Z" id="path186_2_" fill="#E0E0E0"></path>
+                        </g>
+                        <path class="stroke-grey" d="M25.725,21.8309333 L25.725,4.16906671 C25.725,2.01884874 23.9812191,0.275 21.8310955,0.275 L4.16890446,0.275 C2.01878088,0.275 0.275,2.01884874 0.275,4.16906671 L0.275,21.8309333 C0.275,23.9818034 2.01842105,25.725 4.16890446,25.725 L21.8310955,25.725 C23.9815789,25.725 25.725,23.9818034 25.725,21.8309333 Z" id="svg_2" stroke="#E0E0E0" stroke-width="0.55"></path>
+                    </g>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/java?type=jdp">
+                <h4 class="bootcamp-name">Java Developer</h4>
+                <p>Poznaj najpopularniejszy na&nbsp;świecie język programowania od&nbsp;zera</p>
+            </a>
+        </li>
+        <li class="list-sub">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.61 27.4"><defs><style>.stroke-grey,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75px;}.stroke-grey{stroke:#e0e0e0;}.cls-2{stroke:#02ac46;}</style></defs><title>Front i Web Developer</title><line class="stroke-grey" x1="22.2" y1="3.46" x2="24.01" y2="5.31"></line><line class="stroke-grey" x1="22.2" y1="5.31" x2="24.01" y2="3.46"></line><polyline class="stroke-grey" points="0.96 26.61 0.96 0.79 26.72 0.79 26.72 26.61 0.96 26.61"></polyline><line class="stroke-grey" x1="1.22" y1="7.98" x2="26.72" y2="7.98"></line><rect class="stroke-grey" x="17.72" y="3.49" width="1.8" height="1.8"></rect><line class="stroke-grey" x1="15.03" y1="5.28" x2="13.24" y2="5.28"></line><polyline class="cls-2" points="16.86 20.13 19.8 16.75 16.86 13.37"></polyline><polyline class="cls-2" points="10.51 20.13 7.57 16.75 10.51 13.37"></polyline><line class="cls-2" x1="15.78" y1="10.43" x2="11.67" y2="22.81"></line></svg>
+            <a href="https://kodilla.com/pl/bootcamp/webdeveloper?type=wdp">
+                <h4 class="bootcamp-name">Web Developer</h4>
+                <p>Naucz&nbsp;się tworzyć aplikacje internetowe od&nbsp;podstaw</p>
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Strefa kursanta
+    </a>
+    <ul>
+                    <li><a href="https://kodilla.com/pl/bootcamp-dashboard/146" class="nav-link">Bootcamp Java Plus 2018-10</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a></li>
+                    <li><a class="nav-link" href="https://chat.kodilla.com/home" target="_blank">Komunikator</a></li>
+            <li><a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a></li>
+            </ul>
+</li>
+                            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        O nas
+    </a>
+    <ul class="about-us">
+        <li><a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a></li>
+        <li><a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a></li>
+        <li><a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a></li>
+    </ul>
+</li>
+                                        <li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Szkolenia Bootcamp</span>
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/webdeveloper">Bootcamp Web Developer
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://kodilla.com/pl/bootcamp/java">Bootcamp Java</a>
+        </li>
+    </ul>
+</li>
+
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">Strefa kursanta</span>
+            <ul>
+                <li class="nav-item ">
+                                            <a class="nav-link" href="https://kodilla.com/pl/bootcamp-dashboard/146">
+                            Bootcamp   Java Plus 2018-10
+                        </a>
+                                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a>
+                </li>
+                                    <li class="nav-item ">
+                        <a class="nav-link" href="https://chat.kodilla.com/home" target="_blank">Komunikator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a>
+                    </li>
+                            </ul>
+        </li>
+    
+        
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">O nas</span>
+            <ul>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a>
+                </li>
+            </ul>
+        </li>
+    
+<li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Pozostałe</span>
+    <ul>
+                                        
+        <li class="nav-item">
+            <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+        </li>
+    </ul>
+
+</li>
+
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl/account">Konto</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link analytics-track" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+    </li>
+
+        
+    <li class="nav-item hidden-md-up nav-group">
+        <span class="mobile-menu-separator">Skontaktuj się z nami</span>
+        <ul>
+            <li class="nav-item">
+                <a href="mailto:support@kodilla.com" class="nav-link">
+                    <i class="fa fa-envelope-o"></i>
+                    support@kodilla.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:fcWidget.open();" class="nav-link">
+                    <i class="fa fa-comments"></i>
+                    <span>Porozmawiaj na czacie</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+<li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl"><img src="./Moduł_ 4. Narzędzia Java Developera_files/125px-Flag_of_Poland.svg.png">Polska (Polski)</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/uk"><img src="./Moduł_ 4. Narzędzia Java Developera_files/125px-Flag_of_the_United_Kingdom.svg.png">United Kingdom (English)</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/no"><img src="./Moduł_ 4. Narzędzia Java Developera_files/125px-Flag_of_Norway.svg.png">Norge (English)</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/en"><img src="./Moduł_ 4. Narzędzia Java Developera_files/global.svg">Global (English)</a>
+    </li>
+
+        </ul>
+    </div>
+</nav>
+<main class="bootcamp module page-height-fix" id="bootcamp-module">
+    <div class="table-of-contents aside-sticky">
+        <section class="container">
+            <div class="row">
+                <aside class="module-nav col-md-4 col-md-offset-8">
+                    <section class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Spis treści modułu</h4>
+                        </div>
+                        <ul class="list-group list-group-flush ps-container ps-theme-default ps-active-y" data-ps-id="039e054a-5dab-dcaf-660a-c6b28bf424e2">
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-492" class="clearfix">
+                                    <p>4.1. Środowisko programistyczne (IDE)</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#41-srodowisko-programistyczne-ide-czym-jest-srodowisko-programistyczne" class="clearfix">Czym jest środowisko programistyczne?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#41-srodowisko-programistyczne-ide-intellij-idea" class="clearfix">IntelliJ IDEA</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#41-srodowisko-programistyczne-ide-eclipse" class="clearfix">Eclipse</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#41-srodowisko-programistyczne-ide-netbeans" class="clearfix">NetBeans</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#41-srodowisko-programistyczne-ide-zadanie-powtorzenie-kolekcji" class="clearfix">Zadanie: Powtórzenie kolekcji</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-493" class="clearfix">
+                                    <p>4.2.  Instalacja Javy 8 i IntelliJ IDEA</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#42-instalacja-javy-8-i-intellij-idea-pobranie-javy" class="clearfix">Pobranie Javy</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#42-instalacja-javy-8-i-intellij-idea-uzyskanie-licencji-i-pobranie-intellij-idea" class="clearfix">Uzyskanie licencji i pobranie IntelliJ IDEA</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#42-instalacja-javy-8-i-intellij-idea-instalacja-intellij" class="clearfix">Instalacja IntelliJ</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#42-instalacja-javy-8-i-intellij-idea-zadanie-zduplikowane-zamowienia" class="clearfix">Zadanie: Zduplikowane zamówienia</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-494" class="clearfix">
+                                    <p>4.3. Wiersz poleceń / Terminal</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#43-wiersz-polecen-terminal-wprowadzenie" class="clearfix">Wprowadzenie</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#43-wiersz-polecen-terminal-uruchomienie" class="clearfix">Uruchomienie</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#43-wiersz-polecen-terminal-struktura-komendy" class="clearfix">Struktura komendy</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#43-wiersz-polecen-terminal-wykonanie-podstawowych-komend" class="clearfix">Wykonanie podstawowych komend</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#43-wiersz-polecen-terminal-zadanie-hashmap" class="clearfix">Zadanie: HashMap</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-495" class="clearfix">
+                                    <p>4.4. Repozytorium i narzędzia kontroli wersji</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-co-to-jest-repozytorium" class="clearfix">Co to jest repozytorium?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-do-czego-sluzy-repozytorium" class="clearfix">Do czego służy repozytorium?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-jakie-znaczenie-ma-repozytorium-dla-projektu-kilkuosobowego" class="clearfix">Jakie znaczenie ma repozytorium dla projektu kilkuosobowego?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-czym-jest-system-kontroli-wersji" class="clearfix">Czym jest system kontroli wersji?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-git" class="clearfix">Git</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-svn" class="clearfix">SVN</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-sourcetree" class="clearfix">SourceTree</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#44-repozytorium-i-narzedzia-kontroli-wersji-zadanie-kolekcja-armat" class="clearfix">Zadanie: Kolekcja armat</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-496" class="clearfix">
+                                    <p>4.5. Instalacja Gita </p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#45-instalacja-gita-pobranie" class="clearfix">Pobranie</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#45-instalacja-gita-zadanie-kolekcja-zegarow" class="clearfix">Zadanie: Kolekcja zegarów</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-497" class="clearfix">
+                                    <p>4.6. Stworzenie repozytorium GitHub i wysłanie pierwszego kodu</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-przedstawienie-repozytorium-github" class="clearfix">Przedstawienie repozytorium GitHub</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-tworzenie-repozytorium" class="clearfix">Tworzenie repozytorium</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-utworzenie-projektu-w-intellij-idea" class="clearfix">Utworzenie projektu w Intellij IDEA</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-inicjalizacja-lokalnego-repozytorium-i-powiazanie-go-ze-zdalnym" class="clearfix">Inicjalizacja lokalnego repozytorium i powiązanie go ze zdalnym</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-zadanie-wyslanie-kodu-do-repozytorium" class="clearfix">Zadanie: Wysłanie kodu do repozytorium</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#submodule-498" class="clearfix">
+                                    <p>4.7. Wyzwanie - Algorytm Euklidesa</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#47-wyzwanie-algorytm-euklidesa-zadanie-implementacja-algorytmu-euklidesa" class="clearfix">Zadanie: Implementacja algorytmu Euklidesa</a></li>
+                                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 327px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 56px;"></div></div></ul>
+                        <div class="card-block text-center">
+                                                                                                <a href="https://kodilla.com/pl/bootcamp-dashboard/146">Powrót do dashboardu</a>
+                                                                                    </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </div>
+    <section class="container module-content">
+        <div class="row">
+            <main class="col-md-8">
+                <section class="card">
+                    <div class="card-block module-header clearfix  completed ">
+                        <h1 class="card-title">4. Narzędzia Java Developera</h1>
+                                                <i class="fa fa-bookmark fa-3x" aria-hidden="true"></i>
+                    </div>
+                                        <div class="card-block challenge">
+                        <h3>Wyzwania:</h3>
+                        <ul>
+    <li>Poznanie podstaw wiersza poleceń/terminala</li>
+    <li>Poznanie 3 programów do pisania kodu</li>
+    <li>Poznanie narzędzi kontroli wersji (Git i SVN)</li>
+    <li>Wykorzystanie kontroli wersji w pracy programisty</li>
+    <li>Konfiguracja środowiska programistycznego</li>
+    <li>Konfiguracja repozytorium i wykorzystanie Gita</li>
+</ul>
+
+<h3>Ocena kursu do 4. modułu</h3>
+
+<p>Masz już za sobą 3 moduły. Gratulacje!</p>
+<p>Stale podnosimy jakość naszych szkoleń. W związku z tym bylibyśmy wdzięczni za wypełnienie <a href="https://goo.gl/forms/UJuDkAB2mIBuQGnH2" target="_blank">krótkiej ankiety</a>. Zajmie Ci ona dosłownie chwilę. Z góry dziękujemy!</p>
+
+<h3>Wprowadzenie</h3>
+
+<p>W tym module zajmiemy się skonfigurowaniem prawdziwego środowiska programistycznego, które posłuży nam do tworzenia bardziej zaawansowanych projektów. Porzucamy w niepamięć edytor, którego używaliśmy do tej pory, i rozpoczynamy bardziej zaawansowaną przygodę z programowaniem w Javie.</p>
+<p>Poznasz trzy programy, które służą do tworzenia oprogramowania i wspierają codzienną pracę programisty. Dodatkowo dowiesz się, czym jest repozytorium i jakie narzędzia służą do jego obsługi. Będzie to Twoją codziennością w pracy jako developer Javy, dlatego też pamiętaj o pełnej koncentracji w trakcie każdego submodułu, ponieważ wyposażymy Cię w narzędzia, których będziesz używał na każdym kroku.</p>
+<p>Jednocześnie utrwalimy sobie poznane do tej pory zagadnienia serią zadań powtórkowych.</p>
+
+                    </div>
+                                    </section>
+                                    
+                <section id="submodule-492" class="card submodule completed" data-bootcamp-user-submodule-id="243727">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.1. <span>Środowisko programistyczne (IDE)</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <style>
+.bootcamp.module .module-content .card-block .nav-tabs {margin: 1.5em 0; padding-left: 0; font-weight: bold;}
+.bootcamp.module .module-content .card-block .nav-tabs > li {margin-bottom: -1px;}
+.bootcamp.module .module-content .card-block .tab-content.padded {border: 1px solid #ddd; border-top: none;}
+.bootcamp.module .module-content .card-block .tab-content > .tab-pane > .card-block {padding: 1.5em 0 0;}
+.bootcamp.module .module-content .card-block .tab-content > .tab-pane.padded > .card-block {padding: 40px;}
+.bootcamp.module .module-content .card-block .tab-content > .tab-pane {display: none; margin-bottom: 0;}
+.bootcamp.module .module-content .card-block .tab-content > .tab-pane.active {display: block;}
+.bootcamp.module .module-content .card-block .tab-content > .tab-pane.show {opacity: 1;}
+.bootcamp.module .module-content .card-block .collapse-toggles [data-toggle="collapse"]:last-of-type.collapsed {display: none;}
+.bootcamp.module .module-content .card-block .collapse-toggles [data-toggle="collapse"]:first-of-type:not(.collapsed) {display: none;}
+.bootcamp.module .module-content .card-block .collapse-toggles:hover [data-toggle="collapse"].btn-primary {color: #02ac46; background-color: #fff;}
+</style>
+
+<h3 id="41-srodowisko-programistyczne-ide-czym-jest-srodowisko-programistyczne">Czym jest środowisko programistyczne?</h3>
+<p>IDE, czyli <strong>Integrated Development Environment</strong>, jest niczym innym, jak zaawansowanym notatnikiem wyposażonym w cały szereg niesamowitych możliwości wspierających pracę z kodem, takich jak:</p>
+<ol>
+    <li>Nadawanie specyficznych kolorów dla zmiennych, nazw metod czy modyfikatorów dostępu — sprzyja to znacznie czytelności kodu (tak zwane "kolorowanie składni").</li>
+    <li>Wyświetlanie metod dostępnych wewnątrz bibliotek Javy, co znacznie ułatwia korzystanie z nich — kto by je wszystkie pamiętał!</li>
+    <li>Formatowanie kodu — dzięki temu nie musimy się już martwić o odpowiednie zamykanie nawiasów lub wcięcia. IDE nam o tym przypomni!</li>
+</ol>
+<p>
+    Oczywiście to tylko ułamek możliwości IDE — funkcjonalności jest bardzo dużo i nie sposób ich wszystkich tutaj wypisać. Większość developerów zna te najbardziej przydatne im w pracy, a każdy projekt wymaga innego użycia ich możliwości. Wkrótce będziesz w stanie samodzielnie zainstalować i sprawdzić sobie środowisko programistyczne, ale nim to nastąpi, opowiemy Ci o kilku najbardziej popularnych!</p>
+<h3 id="41-srodowisko-programistyczne-ide-intellij-idea">IntelliJ IDEA</h3>
+<p>Jest to pierwsze na liście i bardzo mocno rekomendowane przez nas środowisko do pisania programów w Javie. Wynika to z tego, że jest ono świetnie przystosowane do współczesnych standardów i świetnie sprawuje się na każdym komputerze. Wszystkie przykłady, jakie będziemy później prezentować w Javie, będą właśnie stworzone z wykorzystaniem tego środowiska. Od pozostałych różni się tym, że korzystanie z niego jest płatne, ale nasi kursanci mają 100% zniżki na czas trwania kursu :)</p>
+<p>Aby mniej więcej zwizualizować sobie, jak wygląda IDE, o którym mówimy, poniżej zostało umieszczone kilka zrzutów ekranu prezentujących to narzędzie.</p>
+
+<p><strong>Ogólny widok skonfigurowanego IDE</strong></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1a.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1a.jpg" alt="your alt text" style="width: 100%;"></a>
+<p><strong>Panel konfiguracyjny</strong></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_01.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_01.png" alt="your alt text" style="width: 100%;"></a>
+<p>Mamy pełną świadomość, że na ten moment niewiele mówi Ci wszystko to, co znajduję się na obrazkach, jednakże jest to Twój pierwszy pogląd na środowisko programistyczne.</p>
+<h3 id="41-srodowisko-programistyczne-ide-eclipse">Eclipse</h3>
+<p>Jest to bardzo popularne i znane środowisko programistyczne — do tej pory część firm korzysta z tego IDE. Jest to oprogramowanie typu open source.</p>
+
+<div class="bc-note alert-success">
+	<h4 class="alert-heading text-center">Przypomnienie — czym jest open source?</h4>
+    <p>Open source to oprogramowanie, które powstaje w formie "<i>wolontariatu dla społeczności programistów</i>". Oznacza to, że każdy może bez opłat używać tego oprogramowania i je modyfikować.</p>
+</div>
+
+<p>Eclipse to bardzo dobra alternatywa dla osób, które nie chcą płacić za oprogramowanie, a chcą tworzyć swoje projekty programistyczne w Javie.</p>
+<p>Oto kilka przykładowych zrzutów ekranu z tego środowiska</p>
+<p><strong>Ogólny widok skonfigurowanego IDE</strong></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1b.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1b.png" alt="your alt text" style="width: 100%;"></a>
+<p><strong>Panel konfiguracyjny</strong></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_02.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_02.png" style="width: 100%;"></a>
+<p>Jeżeli Twoją uwagę zwrócił zupełnie inny kolor środowiska programistycznego, nie musisz się martwić — każde ze środowisk dysponuje różnego rodzaju motywami do wybrania przez użytkowników. Część programistów woli pisać na czarnym tle, z kolei inni wolą używać białego tła. Większość środowisk udostępnia jeszcze bardziej zwariowane kolory, jak zielony, niebieski... wszystkie kolory tęczy :)</p>
+<p>Jeżeli chcesz poznać więcej produktów społeczności Eclipse, możesz odwiedzić tę stronę: <u>https://eclipse.org</u> </p>
+<h3 id="41-srodowisko-programistyczne-ide-netbeans">NetBeans</h3>
+<p>Jest to platforma typu open source udostępniona przez Oracle, czyli jak już wiesz, firmy odpowiadającej za utrzymanie i rozwijanie języka Java. Jest to proste, ale również bardzo przyjemne narzędzie do pisania kodu. Nie jest ono popularne w wykorzystaniu komercyjnym, jednakże bardzo często można je spotkać na studiach związanych z pisaniem oprogramowania. </p>
+<p>NetBeans jest darmowym i lekkim narzędziem, idealnym do tworzenia projektów po pracy na własny użytek. Oto kilka zdjęć obrazujących wygląd tego narzędzia:
+</p>
+<p><strong>Ogólny widok skonfigurowanego IDE</strong></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1c.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1c.png" alt="your alt text" style="width: 100%;"></a>
+<p><strong>Panel konfiguracyjny</strong></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_03.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_03.png" style="width: 100%;"></a>
+<p>Więcej na temat tego narzędzia znajdziesz tutaj: <a href="https://netbeans.org/">https://netbeans.org/</a></p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="41-srodowisko-programistyczne-ide-zadanie-powtorzenie-kolekcji">Zadanie: <span class="task-title">Powtórzenie kolekcji</span></h3>
+                        <div class="task-content">
+                            <p>Jak wspomnieliśmy we wprowadzeniu, rozpoczynamy serię zadań powtórkowych, które pozwolą na utrwalenie wiedzy zdobytej do tej pory.</p>
+
+<p>Wykorzystaj poniższą listę do iteracji w pętli <code class=" language-java"><span class="token keyword keyword-for">for</span></code>:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java">List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> companies <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+companies<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"DELL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+companies<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"APPLE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+companies<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"SAMSUNG"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+companies<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"SONY"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+companies<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"ALCATEL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+<p>Używając konkatenacji zapisz wszystkie nazwy po przecinku tak aby otrzymać wynik:</p>
+
+<p><code class=" language-java">DELL<span class="token punctuation">,</span> APPLE<span class="token punctuation">,</span> SAMSUNG<span class="token punctuation">,</span> SONY<span class="token punctuation">,</span> ALCATEL</code></p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243727" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <a href="https://kodilla.com/pl/project-java/111439" target="_blank" class="btn  btn-primary ">Przejdź do projektu <i class="fa fa-check"></i></a>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-493" class="card submodule completed" data-bootcamp-user-submodule-id="243728">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.2. <span> Instalacja Javy 8 i IntelliJ IDEA</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Rozpoczynamy instalację Javy na naszych komputerach! To wielki moment — zdobyliśmy już wystarczającą wiedzę, aby napisać proste programy w ideone.com, jednakże chcemy więcej i więcej kodu. Chcemy, aby kod był na naszych komputerach i mógł być na nich kompilowany — do tego potrzebujemy mieć Javę "lokalnie", czyli właśnie zainstalowaną na swoim komputerze.</p>
+<h3 id="42-instalacja-javy-8-i-intellij-idea-pobranie-javy">Pobranie Javy</h3>
+<p>Naszym pierwszym krokiem będzie odwiedzenie strony Oracle, dokładnie pod tym adresem: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK</a>. Naszym oczom powinien ukazać się taki widok:</p>
+<p>W tym momencie pobierzemy pełny zestaw narzędzi niezbędnych do tworzenia naszych przyszłych aplikacji:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1d.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1d.png" style="width: 100%;"></a>
+<p>Następnie wybieramy paczkę odpowiadającą naszemu systemowi operacyjnemu:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_04.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_04.jpg" style="width: 100%;"></a>
+<p>Instalacja na systemach macOS i Windows wygląda nieco inaczej — wybierz swój system operacyjny poniżej, aby uzyskać szczegółowe instrukcje.</p>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#install-java-macos" class="nav-link active show" data-toggle="tab">macOS</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#install-java-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="install-java-macos">
+		<div class="card-block">
+			<h4>macOS</h4>
+        <p>Po pobraniu aplikacji należy przejść przez proces instalacyjny, który prezentuje się następująco:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_05.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_05.jpg" style="width: 100%;"></a>
+        <p>Oczywiście w tym wypadku wybieramy przycisk "Continue"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_06.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_06.png" style="width: 100%;"></a>
+        <p>Wybieramy przycisk "Install", a następnie zostaniemy poproszeni o podanie hasła administratora.</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_07.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_07.png" style="width: 100%;"></a>
+        <p>W tym momencie trwa krótki proces instalacyjny. W tym czasie możesz szybko napić się dobrej kawki :)</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_08.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_08.png" style="width: 100%;"></a>
+        <p>Po udanej instalacji JDK, wybieramy przycisk "Close"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_09.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_09.png" style="width: 100%;"></a>
+		</div>
+	</div>
+	<div class="tab-pane card fade" id="install-java-windows">
+		<div class="card-block">
+			<h4>Windows</h4>
+        <p>Po wybraniu właściwej wersji uruchamiamy program:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_12.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_12.png" style="width: 100%;"></a>
+        <p>Po pobraniu aplikacji należy przejść przez proces instalacyjny, który prezentuje się następująco:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_13.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_13.png" style="width: 100%;"></a>
+        <p>Wybieramy przycisk "Next"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_14.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_14.png" style="width: 100%;"></a>
+        <p>Po chwili przygotowań, musimy wybrać lokalizację naszego folderu instalacyjnego — polecamy zostawić domyślną ścieżkę i wybrać przycisk "Next"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_15.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_15.png" style="width: 100%;"></a>
+        <p><strong>Zapamiętaj katalog, w którym instalujesz Javę!</strong> Najlepiej zapisz sobie jego nazwę — będzie Ci ona później potrzebna.</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_16.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_16.png" style="width: 100%;"></a>
+        <p>Jeżeli udało nam się zainstalować JDK na naszym komputerze, wybieramy przycisk "Close".</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_17.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_17.png" style="width: 100%;"></a>
+        <h4>Zmienne środowiskowe dla systemów Windows</h4>
+        <p>Po udanej instalacji JDK musimy ustawić:</p>
+        <ul>
+            <li>zmienną środowiskową <strong>JAVA_HOME</strong>, aby wskazywała na katalog, w którym zainstalowane jest <strong>JDK</strong></li>
+            <li>zmienną środowiskową <strong>PATH</strong>, tak aby widoczny w niej był podkatalog <strong>\bin</strong> naszego pakietu <strong>JDK</strong>, który zawiera programy wykonywalne Javy — m.in. java.exe (program do uruchamiania programów w Javie) oraz javac.exe (kompilator)</li>
+        </ul>
+        <div class="bc-note alert-info">
+            <h4 class="alert-heading text-info">Warto wiedzieć</h4>
+            <p>Zmienna środowiskowa PATH to informacja dla systemu, pod jaką ścieżką znajdują się katalogi niezbędne do uruchomienia programu.</p>
+        </div>
+        <p>W tym celu zlokalizuj na swoim komputerze <strong>eksplorator Windows</strong>, który pozwoli Ci dostać się do systemu plików:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_18.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_18.png"></a>
+        <p>Następnie kliknij prawym przyciskiem myszy na ikonę "Ten komputer" i wybierz z listy polecenie o nazwie "Właściwości"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_19.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_19.png"></a>
+        <p>W nowo otwartym oknie znajdź przycisk o nazwie "Zmień ustawienia", pokazany na poniższym zdjęciu:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_20.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_20.png" style="width: 100%;"></a>
+        <p>Następnie wejdź w zakładkę "Zaawansowane", gdzie znajdziesz przycisk "Zmienne środowiskowe"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_21.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_21.png"></a>
+        <p>Najpierw musisz dodać zmienną użytkownika o nazwie <strong>JAVA_HOME</strong> — powinna ona wskazywać katalog wybrany podczas instalacji kilka kroków wcześniej (ten, którego nazwę radziliśmy zapisać).</p>
+        <p>Naszym następnym krokiem będzie ustawienie zmiennej <strong>PATH</strong> tak, aby wskazywała miejsce, w którym zapisaliśmy nasze JDK — domyślnie jest to dysk c:\Program Files\Java\...\bin. Jest to ten sam katalog, co w akapicie powyżej, tym razem ze wskazanym podkatalogiem "\bin".</p>
+        <p>W liście "Zmienne użytkownika" dodaj nową zmienną <strong>JAVA_HOME</strong>. Następnie, w liście o nazwie "Zmienne systemowe" znajdź zmienną o nazwie Path i kliknij przycisk "Edytuj"</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_22.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_22.png"></a>
+        <p>Dodaj do zmiennej <strong>PATH</strong> podkatalog <strong>\bin</strong> Twojego pakietu <strong>JDK</strong> i przesuń go na samą górę (to ważne, gdyż możesz mieć na komputerze jakąś starszą wersję Javy. Ścieżki w ramach zmiennej <strong>PATH</strong> sprawdzane są w kolejności ich występowania na liście widocznej na poniższym zdjęciu, więc ta wersja Javy, którą teraz zainstalowaliśmy, zostanie znaleziona jako pierwsza).</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_23.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_23.png"></a>
+        <p>Zapisz wszystko, a następnie uruchom wiersz poleceń. Aby go znaleźć, wpisz jego nazwę w menu Start (czyli naciśnij Ctrl+Esc, a następnie wpisz <strong>cmd</strong> w Menu Start swojego komputera) i uruchom program o nazwie "Wiersz polecenia": </p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_24.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_24.png"></a>
+        <p>Jako pierwsze sprawdzimy, czy ustawiliśmy poprawnie naszą zmienną <strong>JAVA_HOME</strong>. W wierszu poleceń wpisz komendę <strong>set</strong><i>. </i>Twoim oczom powinna ukazać się lista zmiennych środowiskowych. Czy widzisz zmienną <strong>JAVA_HOME</strong>? Jeżeli nie, to spróbuj prześledzić krok po kroku wcześniejsze etapy i upewnić się, że żaden nie został pominięty.</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_25.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_25.png" style="width: 100%;"></a>
+        <p>Jeżeli Twoja zmienna środowiskowa jest widoczna, to spróbujemy teraz sprawdzić czy jesteś w stanie uruchomić program <strong>java.exe.</strong> Sprawdzimy też wersję zainstalowanej Javy. </p>
+        <p>W tym celu, w wierszu poleceń wywołajmy komendę <strong>java </strong><i><strong>-</strong></i><strong>version</strong>.<strong> </strong>Wynikiem wywołania tej komendy powinna być informacja jak na poniższym zdjęciu:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_26.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_26.png" style="width: 100%;"></a>
+        <p>Jeżeli zobaczyłeś taki ekran, oznacza to, że Twój system wie, gdzie szukać Javy — znalazł właśnie program <strong>java.exe</strong> i go uruchomił (z parametrem <strong>-version</strong>). Przy pomocy polecenia <strong>java -version,</strong> w każdej chwili możesz sprawdzić, którą wersję Javy masz zainstalowaną.</p>
+		</div>
+	</div>
+</div>
+
+<h3 id="42-instalacja-javy-8-i-intellij-idea-uzyskanie-licencji-i-pobranie-intellij-idea">Uzyskanie licencji i pobranie IntelliJ IDEA</h3>
+<p>Mamy Javę oraz znamy już 3 najbardziej popularne środowiska programistyczne służące do tworzenia programów w Javie! To naprawdę dużo, ale my chcemy jeszcze więcej, dlatego teraz zajmiemy się pobraniem IntelliJ IDEA na nasze komputery, żeby już wkrótce tworzyć programy w sposób profesjonalny. </p>
+<p><strong>W ramach kursu otrzymujesz od nas 100% zniżkę na zakup InteliJ w postaci kodu rabatowego.</strong> Jeżeli nie masz swojego kuponu rabatowego, skontaktuj się z Koordynatorem kursu.</p>
+<p>Zakup licencji:</p>
+<ol>
+    <li>Wejdź na stronę <a href="https://www.jetbrains.com/store/redeem/">https://www.jetbrains.com/store/redeem/</a> i wypełnij znajdujący się tam formularz. Wklej tam również otrzymany kupon rabatowy.</li>
+    <li>Po wysłaniu formularza otrzymasz maila z dokumentem PDF, w którym znajdziesz link do aktywacji licencji (<a href="https://scr.hu/25Rm4l">https://scr.hu/25Rm4l</a>).</li>
+    <li>Pobierz IntelliJ (jeżeli jeszcze go nie masz) oraz klucz do aktywacji offline (<a href="https://scr.hu/L91ajo">https://scr.hu/L91ajo</a>)</li>
+    <li>Po zainstalowaniu i uruchomieniu IntelliJ wybierz aktywację za pomocą kodu aktywacyjnego (<a href="https://scr.hu/awe7jl">https://scr.hu/awe7jl</a>), który pobraliśmy wcześniej na nasz komputer. </li>
+</ol>
+
+<div class="bc-note alert-danger">
+    <h4 class="alert-heading text-info">Ważne!</h4>
+      <ul>
+          <li>Polecamy zachować plik z kluczem aktywacyjnym w bezpiecznym miejscu, tak na wszelki wypadek.</li>
+          <li>Po kliknięciu w link aktywujący licencję, warto założyć sobie w tamtym widoku konto na JetBrains.</li>
+          <li>Jeżeli nie masz kodu zniżkowego na licencję, skontaktuj się z Koordynatorem kursu.</li>
+      </ul>
+</div>
+
+<p>Zanim zaczniemy tworzyć projekty we własnym środowisku, czeka nas jeszcze kilka spraw do załatwienia, więc przyda się jeszcze odrobina cierpliwości :)</p>
+
+<h3 id="42-instalacja-javy-8-i-intellij-idea-instalacja-intellij">Instalacja IntelliJ</h3>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#install-intellij-macos" class="nav-link active show" data-toggle="tab">macOS</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#install-intellij-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="install-intellij-macos">
+		<div class="card-block">
+			<h4>macOS</h4>
+        <p>Jeżeli nasz plik instalacyjny pobrał się, klikamy w niego i przerzucamy ikonę IntelliJ IDEA do folderu Applications, jak na poniższym zdjęciu:</p>
+
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/kodilla-global-25-07-2017-1500988485-8664.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/kodilla-global-25-07-2017-1500988485-8664.png" style="width: 100%;"></a>
+        <p>Komputer poprosi nas o potwierdzenie uruchomienia nowo pobranego pliku, w tym wypadku wybieramy przycisk "Open" i wprowadzamy hasło administratora, jeżeli jest to wymagane. </p>
+		</div>
+	</div>
+	<div class="tab-pane card fade" id="install-intellij-windows">
+		<div class="card-block">
+			<h4>Windows</h4>
+        <p>Uruchamiamy pobraną aplikację jak na załączonym poniżej zdjęciu:</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_27.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_27.png" style="width: 100%;"></a>
+        <p>Naszym oczom powinno ukazać się okno instalacji środowiska IntelliJ IDE — wybieramy tu przycisk "Next"</p>
+        <p>W tym miejscu podejmujemy decyzję o wyborze ścieżki instalacji. My rekomendujemy zachować domyślną ścieżkę.</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_28.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_28.png"></a>
+        <p>W opcjach instalacji mamy do wyboru kilka ustawień: skrót na pulpicie oraz rozszerzenia plików, które chcemy powiązać z IntelliJ IDEA.
+        </p>
+        <h4>Konfiguracja instalacji w IntelliJ</h4>
+        <p>
+            Co do skrótu, to jeżeli twój komputer posiada 64-bitowy system Windows, wybierz "64-bit launcher" — jeśli nie masz pewności, zapytaj mentora o pomoc. W sekcji "Create Associations" wybierz samą Javę i kliknij "Next".</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_29.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_29.png"></a>
+        <p>W kolejnym kroku zachowujemy domyślne ustawienia i wybieramy przycisk "Install".</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_30.png">
+            </a><a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_30.png"></a>
+        <p>To czas dla Ciebie i Twojej kawy :)
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_31.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_30.png"></a>
+        </p><p>To czas dla Ciebie i Twojej kawy :)
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_31.png" alt=""></a><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_31.png">
+        </p><p>Po udanej instalacji uruchamiamy naszego IntelliJ IDEA!</p>
+		</div>
+	</div>
+</div>
+<br>
+<p>Masz już IntelliJ na swoim komputerze, ale wstrzymaj się jeszcze z tworzeniem nowego projektu. Już wkrótce oprowadzimy Cię dokładnie po procesie jego tworzenia, ale zanim rozpoczniemy naszą przygodę, musimy zaopatrzyć się w kilka niezbędnych narzędzi.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="42-instalacja-javy-8-i-intellij-idea-zadanie-zduplikowane-zamowienia">Zadanie: <span class="task-title">Zduplikowane zamówienia</span></h3>
+                        <div class="task-content">
+                            <p>Tym razem, w ramach zadania utrwalającego wiedzę, zajmiemy się rozwiązaniem istotnego problemu. </p>
+
+<p>Wyobraź sobie sytuację, w której okazuje się, że kod napisany przez dewelopera z innej firmy przechowuje zduplikowane wartości dotyczące zamówień w sklepie internetowym. Przez to wysyłane są czasem 2 produkty zamiast 1.</p>
+
+<p>Z tego co wiadomo developer użył <code class=" language-java">ArrayList</code> do przechowywania numerów zamówienia, czy jest to dobry pomysł?</p>
+
+<p>Twoim zadaniem jest wykonanie własnej implementacji przechowywania numerów zamówień. Pamiętaj, aby sprawdzić, czy Twoje rozwiązanie pozwala na przechowywanie zduplikowanych wartości!</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243728" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <a href="https://kodilla.com/pl/project-java/111440" target="_blank" class="btn  btn-primary ">Przejdź do projektu <i class="fa fa-check"></i></a>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-494" class="card submodule completed" data-bootcamp-user-submodule-id="243729">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.3. <span>Wiersz poleceń / Terminal</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <h3 id="43-wiersz-polecen-terminal-wprowadzenie">Wprowadzenie</h3>
+<p><strong>Wiersz poleceń</strong> (na systemach Windows) i <strong>terminal</strong> (na systemach Linux i MacOS) to narzędzia do obsługi naszego komputera za pomocą specjalnych komend — są też często nazywane po prostu "terminalem" lub "konsolą". W wierszu poleceń możesz zrobić wszystko to, co robisz na swoim komputerze. Przykładowo, zaledwie kilka komend może spowodować utworzenie nowych ścieżek w Twoim systemie plików. </p>
+<p>Początkowo może nie wyglądać to na najwygodniejsze rozwiązanie na świecie, ale uwierz, że wraz ze swoim rozwojem jako programista będziesz coraz bardziej oswajać się z terminalem i z czasem stanie się on dla Ciebie niezastąpiony.</p>
+<p>Wiersz poleceń przyda nam się do wielu czynności związanych z codzienną pracą programisty Javy: sprawdzania wersji oprogramowania developerskiego, korzystania z narzędzi kontroli wersji (omówimy je sobie nieco później), itp. Jest to jedno z niezbędnych narzędzi każdego dobrego programisty!</p>
+<p>W tym submodule poznasz jedynie podstawowe komendy, żeby oswoić się z terminalem i nauczyć się poruszać między katalogami. Na chwilę obecną tyle wystarczy. Dociekliwi na końcu submodułu znajdą linki do dodatkowych komend :)</p>
+<h3 id="43-wiersz-polecen-terminal-uruchomienie">Uruchomienie</h3>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-macos" class="nav-link active show" data-toggle="tab">macOS</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="terminal-macos">
+		<div class="card-block">
+			<h4>macOS</h4>
+        <p>Aby włączyć terminal na swoim komputerze, użyj skrótu klawiszowego cmd + spacja, a następnie wpisz "terminal":</p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_33.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_33.png"></a>
+        <p>Przed Tobą powinna pojawić się konsola podobna do poniższej:
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_34.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_34.jpg" style="width: 100%;"></a>
+		</p></div>
+	</div>
+	<div class="tab-pane card fade" id="terminal-windows">
+		<div class="card-block">
+			<h4>Windows</h4>
+        <p>Aby uruchomić wiersz poleceń wpisz jego nazwę w menu Start (czyli naciśnij Ctrl+Esc, a następnie wpisz <strong>cmd</strong> w Menu Start swojego komputera) i uruchom program o nazwie "Wiersz polecenia": </p>
+        <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_32.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_32.png"></a>
+		</div>
+	</div>
+</div>
+
+<h3 id="43-wiersz-polecen-terminal-struktura-komendy">Struktura komendy</h3>
+<p>Przed rozpoczęciem korzystania z wiersza poleceń omówimy strukturę komend, które będziemy stosować w obrębie całego kursu:</p>
+<p>command -[option] [arguments] — w wersji dla Linux/macOS</p>
+<p>lub</p>
+<p>command /[option] lub -[option] [arguments] — w wersji dla Windows</p>
+<p>Powyższy przykład pokazuje możliwości, jakie daje nam komenda — omówmy je po kolei:</p>
+<ul>
+    <li><strong>command</strong> — komenda, która wywołuje konkretne zadanie. Wcześniej korzystaliśmy z komendy <strong>java</strong>, aby sprawdzić zainstalowaną wersję Javy — innymi słowy, odnosiliśmy się w systemie dokładnie do zainstalowanego programu Java.</li>
+    <li><strong>-[option] lub /[option]</strong> jest niczym innym, niż opcją dla komendy, która specyfikuje jej zachowanie. Przypomnij sobie wykorzystanie komendy <strong>java -version</strong> — nakazaliśmy wtedy Javie wyświetlić jej wersję.</li>
+    <li><strong>[arguments] -</strong> to argumenty dla polecenia. Na przykład komenda <strong>java</strong> udostępnia opcję <strong>-D</strong>, która pozwala ustawić właściwość systemową (pewnego rodzaju zmienną). Opcja <strong>-D</strong> przyjmuje argumenty w postaci klucz-wartość. Na przykład może ona wyglądać tak: <strong>java -D name=John</strong>. W tym przypadku, argumentem jest ciąg 'name=John'.</li>
+</ul>
+<p>Poznaliśmy już budowę komend, najwyższa pora rozpocząć wykorzystanie ich w wierszu poleceń!</p>
+<h3 id="43-wiersz-polecen-terminal-wykonanie-podstawowych-komend">Wykonanie podstawowych komend</h3>
+<h4>Komenda: cd</h4>
+<p>Komenda <strong>cd</strong> służy do poruszania się po katalogach i działa tak samo na obu systemach operacyjnych. Załóżmy, że posiadamy katalog na pulpicie naszego komputera o nazwie kodilla-course:</p>
+<p>Po wpisaniu komendy <strong>cd <nazwa_ścieżki></nazwa_ścieżki></strong>(oczywiście bez ostrych nawiasów) następuje przeniesienie do wyznaczonego folderu:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_35.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_35.jpg" style="width: 100%;"></a>
+<p>Po lewej stronie naszego terminala/wiersza poleceń powinna pojawić się informacja o aktualnej ścieżce:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_36.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_36.jpg" style="width: 100%;"></a>
+<p>Aby opuścić katalog, w którym się znajdujemy, i cofnąć się do Pulpitu (bądź katalogu wyżej), wykorzystujemy komendę <strong>cd ..  </strong>gdzie 2 kropki oznaczają powrót do katalogu-rodzica.</p>
+<p>Po lewej stronie Twojego terminala/wiersza poleceń powinna pojawić się informacja o cofnięciu się do poprzedniego katalogu. W naszym przypadku jest to <i>Desktop:</i></p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_37.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_37.jpg" style="width: 100%;"></a>
+<h4>Komenda: ls / dir</h4>
+<p>Komenda <strong>ls</strong> (na Windowsie <strong>dir</strong>) służy do wyświetlenia dostępnych plików znajdujących się w bieżącym folderze wewnątrz naszego wiersza poleceń.</p>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-ls-macos" class="nav-link active show" data-toggle="tab">macOS/Linux</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-ls-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="terminal-ls-macos">
+		<div class="card-block">
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_38.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_38.jpg" style="width: 100%;"></a>
+		</div>
+	</div>
+	<div class="tab-pane card fade" id="terminal-ls-windows">
+		<div class="card-block">
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_39.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_39.png" style="width: 100%;"></a>
+		</div>
+	</div>
+</div>
+
+<br>
+<h4>Komenda: pwd / cd</h4>
+<p>Komenda <strong>pwd</strong>, a na Windowsie <strong>cd</strong> (bez żadnego parametru) służy do wyświetlania bieżącej ścieżki w naszym wierszu poleceń</p>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-pwd-macos" class="nav-link active show" data-toggle="tab">macOS/Linux</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-pwd-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="terminal-pwd-macos">
+		<div class="card-block">
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_40.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_40.jpg" style="width: 100%;"></a>
+		</div>
+	</div>
+	<div class="tab-pane card fade" id="terminal-pwd-windows">
+		<div class="card-block">
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_41.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_41.png" style="width: 100%;"></a>
+		</div>
+	</div>
+</div>
+<br>
+
+<h4>Pozostałe komendy</h4>
+<p>Wiedzę na temat pozostałych komend dostępnych w terminalu, bądź wierszu poleceń możesz zdobyć z poniższych źródeł:</p>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-commands-macos" class="nav-link active show" data-toggle="tab">macOS/Linux</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#terminal-commands-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="terminal-commands-macos">
+		<div class="card-block">
+      <a href="http://www.computerworld.com/article/2598082/linux/linux-linux-command-line-cheat-sheet.html">http://www.computerworld.com/article/2598082/linux/linux-linux-command-line-cheat-sheet.html</a>
+		</div>
+	</div>
+	<div class="tab-pane card fade" id="terminal-commands-windows">
+		<div class="card-block">
+      <a href="http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt/">http://simplyadvanced.net/blog/cheat-sheet-for-windows-command-prompt/</a>
+		</div>
+	</div>
+</div>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="43-wiersz-polecen-terminal-zadanie-hashmap">Zadanie: <span class="task-title">HashMap</span></h3>
+                        <div class="task-content">
+                            <p>W tym zadaniu przypomnimy sobie HashMapy.</p>
+
+<p>Napisz program, który przekopiuje wszystkie wartości z HashMapy <code class=" language-java">myFavoriteColors</code> i <code class=" language-java">myFriendsFavoriteColors</code> do HashMapy <code class=" language-java">ourFavoriteColors</code>:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java">Map <span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">&gt;</span> myFavoriteColors <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">HashMap</span> <span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Map <span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">&gt;</span> myFriendsFavoriteColors <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">HashMap</span> <span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myFavoriteColors<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myFavoriteColors<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Green"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myFavoriteColors<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"Black"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Values in first map: "</span> <span class="token operator">+</span> myFavoriteColors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+myFriendsFavoriteColors<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"White"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myFriendsFavoriteColors<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"Blue"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myFriendsFavoriteColors<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">"Orange"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Values in second map: "</span> <span class="token operator">+</span> myFriendsFavoriteColors<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Map <span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">&gt;</span> ourFavoriteColors <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">HashMap</span> <span class="token operator">&lt;</span>Integer<span class="token punctuation">,</span>String<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243729" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <a href="https://kodilla.com/pl/project-java/111441" target="_blank" class="btn  btn-primary ">Przejdź do projektu <i class="fa fa-check"></i></a>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-495" class="card submodule completed" data-bootcamp-user-submodule-id="243730">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.4. <span>Repozytorium i narzędzia kontroli wersji</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-co-to-jest-repozytorium">Co to jest repozytorium?</h3>
+<p>Nadszedł czas na poznanie repozytoriów, czyli miejsc, w którym przechowujemy nasz utworzony kod/program. Nasz komputer jest tak zwanym lokalnym repozytorium, ale również istnieją repozytoria zdalne, które są utrzymywane na zdalnych serwerach np. BitBucket czy GitHub, lub na serwerach wewnątrz konkretnej firmy.</p>
+<h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-do-czego-sluzy-repozytorium">Do czego służy repozytorium?</h3>
+<p>Repozytorium służy do wielu rzeczy, które przydają się każdego dnia w pracy programisty. Pierwszym i najważniejszym zadaniem repozytorium jest przechowywanie kodu poza naszym komputerem. Jest to istotne chociażby z powodu bezpieczeństwa — przechowywanie kodu "na zewnątrz" pozwoli nam zabezpieczyć się przed jego utratą w przypadku np. awarii naszego komputera.</p>
+<p>Repozytorium wspiera także pracę wielu programistów nad jednym projektem. Zamiast wysyłać sobie co chwilę kod mailem po wprowadzanych zmianach, wystarczy udostępnić go na repozytorium, by każdy członek zespołu miał dostęp do najbardziej aktualnej wersji programu. Redukuje to powstawanie znanego i lubianego problemu "u mnie działa" :)</p>
+<p>W repozytorium można również tworzyć gałęzie (<i>ang. branch</i>) od głównego projektu (<i>ang. master</i>), czyli takie "kopie robocze" służące do tego, aby nie modyfikować głównej struktury aplikacji od razu, tylko przygotować konkretną zmianę tak dobrze, jak to tylko możliwe, a następnie połączyć ją z aktualną i działającą wersją oprogramowania.</p>
+<h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-jakie-znaczenie-ma-repozytorium-dla-projektu-kilkuosobowego">Jakie znaczenie ma repozytorium dla projektu kilkuosobowego?</h3>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_42.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_42.png"></a>
+<p>Dzięki repozytorium, jak już wcześniej wspominaliśmy, kod jest zawsze aktualny i każdy z członków naszego zespołu ma do niego dostęp. Każdy członek zespołu może również tworzyć gałęzie (<i>ang. branch</i>) projektu, dzięki czemu pisząc nową funkcjonalność swojego systemu nie musi martwić się, że naruszy to działanie wcześniej działającej aplikacji.</p>
+<p>To jedne z naprawdę wielu ogromnych zalet repozytoriów, ponieważ tworzą one tak zwany dobry <strong>workflow</strong> (w luźnym tłumaczeniu: proces pracy) powodując, że rozwijanie większych aplikacji odbywa się bezpiecznie i przepływ nowych funkcji systemu między każdym z programistów jest na tyle dobry, aby rozwijać kilka funkcjonalności w jednym czasie.</p>
+<p>Programiści w pracy z repozytorium tworząc gałęzie, wysyłając kod do repozytorium, pobierając go czy nawet dowiązując inne gałęzie do swoich gałęzi (tak, da się tak!) korzystają z narzędzi przeznaczonych do tego typu operacji. Takie narzędzia nazywają się <strong>systemami kontroli wersji</strong> (ang. <strong>Version Control System</strong> — w skrócie <strong>VCS</strong>).</p>
+<h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-czym-jest-system-kontroli-wersji">Czym jest system kontroli wersji?</h3>
+<p>System kontroli wersji to nic innego, jak zestaw narzędzi do obsługi repozytoriów. Zakres jego funkcjonalności to m.in.:</p>
+<ul>
+    <li>wysyłanie naszego kodu do zdalnego repozytorium,</li>
+    <li>pobieranie kodu z dowolnego miejsca na świecie (o ile mamy dostęp do zdalnego repozytorium :)),</li>
+    <li>tworzenie nowych gałęzi,</li>
+    <li>dowiązywanie gałęzi do głównego projektu, bądź dowiązywanie gałęzi naszego kolegi do swojej gałęzi, aby połączyć wytworzone przez nas funkcje.</li>
+</ul>
+<p>System kontroli wersji potrafi oczywiście znacznie więcej! W trakcie kursu, wykonując zadania i przesyłając je do mentora, będziesz korzystać z repozytorium, co będzie świetnym ćwiczeniem na przyszłość.</p>
+<p>Przejdźmy teraz do opisania dwóch najpopularniejszych narzędzi do kontroli wersji.</p>
+<h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-git">Git</h3>
+<p>Jest jednym z najbardziej popularnych narzędzi kontroli wersji, które można spotkać w niemal w każdej firmie. Jest to narzędzie naprawdę proste w obsłudze — tak naprawdę za pomocą kilku komend jesteśmy w stanie wysłać nasz kod do repozytorium. W tym module będziemy się zajmować Gitem dość dokładnie, ale jeśli chcesz poczytać o nim nieco więcej, zajrzyj <a href="https://git-scm.com/book/pl/v1/Pierwsze-kroki-Wprowadzenie-do-kontroli-wersji">tutaj</a>.</p>
+<h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-svn">SVN</h3>
+<p>Jest to kolejne równie popularne narzędzie do kontroli wersji, którym można zarządzać całym repozytorium. Pozwala na dodawanie, usuwanie oraz wiązanie kodu. Nasz kurs nie będzie obejmował korzystania z tego narzędzia, ponieważ w dzisiejszym świecie jednak przewagę zdobył Git, ale zachęcamy do zerknięcia na stronę główną SVN: <a href="https://subversion.apache.org/">https://subversion.apache.org/</a></p>
+<h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-sourcetree">SourceTree</h3>
+<p>Jest to narzędzie, które obudowuje komendy Gita w bardzo ładny interfejs użytkownika. Jest to po prostu program, który instalujemy na komputerze i możemy za pomocą różnych kolorowych przycisków wysłać nasz kod na repozytorium. Oto kilka zdjęć z wnętrza aplikacji:
+</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_43.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_43.png" style="width: 100%;"></a>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_44.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_44.png" style="width: 100%;"></a>
+<p>Jak widzisz, istnieje sporo narzędzi do kontroli wersji, jednakże rekomendowanym przez nas narzędziem będzie po prostu <strong>Git</strong>, z którego będziemy korzystać bezpośrednio z wiersza poleceń. Dlaczego? Dlatego, że jeżeli zrozumiemy jak Git działa w wierszu poleceń, to wtedy będziemy doskonale rozumieć takie narzędzia jak SourceTree. Zapnij pasy — wkrótce wspólnie zainstalujemy <strong>Gita</strong> na Twoim komputerze!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="44-repozytorium-i-narzedzia-kontroli-wersji-zadanie-kolekcja-armat">Zadanie: <span class="task-title">Kolekcja armat</span></h3>
+                        <div class="task-content">
+                            <p>Czas na powtórkę z tworzenia klasy. Zadanie będzie lekko abstrakcyjne, żeby ciekawiej się je rozwiązywało. ;)</p>
+
+<h4>Część 1</h4>
+
+<p>Napisz klasę <code class=" language-java">Cannon</code> (z ang. <em>armata</em>) z publicznym polem <code class=" language-java">loaded</code> (z ang. <em>załadowana</em>) typu <code class=" language-java"><span class="token keyword keyword-boolean">boolean</span></code>, oraz metodą <code class=" language-java"><span class="token function">fire</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> (z ang. <em>wystrzel</em>), która sprawdza przed wystrzeleniem czy kula znajduje się w armacie. </p>
+
+<p>Jeśli armata nie jest załadowana, zostanie wyświetlona informacja (<code class=" language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span>println</code>) o braku kuli w armacie, a następnie kula zostanie załadowana do tej armaty.</p>
+
+<h4>Część 2</h4>
+
+<p>W metodzie <code class=" language-java">main</code> klasy <code class=" language-java">Program</code> utwórz kolekcję typu <code class=" language-java">LinkedList</code> do przechowywania armat.</p>
+
+<p>Dodaj kilka obiektów klasy <code class=" language-java">Cannon</code> do kolekcji, a następnie - używając pętli <code class=" language-java"><span class="token keyword keyword-for">for</span></code> - załaduj wszystkie armaty.</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243730" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <a href="https://kodilla.com/pl/project-java/111442" target="_blank" class="btn  btn-primary ">Przejdź do projektu <i class="fa fa-check"></i></a>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-496" class="card submodule completed" data-bootcamp-user-submodule-id="243731">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.5. <span>Instalacja Gita </span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Po zapoznaniu się z narzędziami do kontroli wersji, nadszedł czas na zainstalowanie <strong>Gita</strong> w naszej przestrzeni roboczej, czyli na komputerze!</p>
+<p>Posiadanie tego narzędzia na komputerze pozwoli na wysłanie naszego napisanego kodu do zdalnych repozytoriów.</p>
+<p>W trakcie kursu pomoże to w Twojej komunikacji z mentorem, natomiast w pracy <strong>Git</strong> będzie nieodłączną częścią pracy w zespole, która da Twoim współpracownikom dostęp do najświeższego kodu, który został napisany i pozwoli Ci w wygodny sposób współdziałać z innymi programistami. </p>
+<h3 id="45-instalacja-gita-pobranie">Pobranie</h3>
+<p>Aby pobrać <strong>Gita</strong>, należy odwiedzić stronę <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>. Zobaczysz widok podobny do tego:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_45.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_45.jpg" style="width: 100%;"></a>
+<p>W sekcji "Downloads" wybierz swój system operacyjny, aby rozpocząć pobieranie:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_46.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_46.jpg" style="width: 100%;"></a>
+
+Poniżej znadziesz dokładne procedury instalacji i konfiguracji dla macOS i Windows — przeczytaj je uważnie!
+
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#install-git-macos" class="nav-link active show" data-toggle="tab">macOS</a></li>
+	<li class="nav-item"><a href="https://kodilla.com/pl/bootcamp-module/146/132/3774#install-git-windows" class="nav-link" data-toggle="tab">Windows</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane card fade active show" id="install-git-macos">
+		<div class="card-block">
+      <p>Po udanym pobraniu instalatora <strong>Gita</strong> należy uruchomić program. Na naszym pulpicie powinien pokazać się taki instalator, w którym klikamy "Continue": </p>
+      <p>Wybieramy domyślne miejsce zainstalowania <strong>Gita</strong> i klikamy "Install"</p>
+      <p>Instalator poprosi nas o podanie hasła administratora do zainstalowania nowego oprogramowania:</p>
+      <p>Po udanej instalacji (bardzo krótkiej) powinno ukazać się nam takie okno. Gratulacje, masz już <strong>Gita</strong> na swoim komputerze! :)</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_47.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_47.png" style="width: 100%;"></a>
+      <h4>Podstawowa konfiguracja</h4>
+      <p>Po udanej instalacji <strong>Gita</strong> sprawdźmy, czy wszystko działa jak należy. Naszym pierwszym krokiem będzie znalezienie aplikacji Terminal w naszym systemie plików — aby go znaleźć, kliknij w ikonę Findera:
+      </p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_48.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_48.png" style="width: 100%;"></a>
+      <p>Wejdź w folder "Applications", a następnie "Utilities":</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_49.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_49.png" style="width: 100%;"></a>
+      <p>Wewnątrz folderu "Utilities" znajdź aplikację o nazwie "Terminal":</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_50.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_50.jpg" style="width: 100%;"></a>
+      <p>Następnie wewnątrz Terminala wpisz komendę <strong>git --version</strong>. Wynikiem powinna być informacja podobna do poniższej:</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_51.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_51.jpg" style="width: 100%;"></a>
+      <p>W razie problemów z instalacją pamiętaj, aby dać znać mentorowi!</p>
+		</div>
+	</div>
+	<div class="tab-pane card fade" id="install-git-windows">
+		<div class="card-block">
+      <p>Uruchom pobrany plik zgodnie ze zdjęciem poniżej:</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_52.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_52.png" style="width: 100%;"></a>
+      <p>Na tym etapie wybieramy przycisk "Next":</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_53.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_53.png" style="width: 100%;"></a>
+      <h4>Deklaracja kluczowych komponentów Gita</h4>
+      <p>Czas na wybór interesujących nas komponentów do zainstalowania na naszym komputerze. Rekomendowana przez nas konfiguracja znajduje się poniżej (jest to domyślna konfiguracja instalatora):</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_54.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_54.png" style="width: 100%;"></a>
+      <p>W następnym kroku wybieramy 3. opcję (co również domyślnie podpowiada instalator). Wynika to z faktu, że chcemy mieć dostęp do <strong>Gita</strong> (oraz do niektórych dodatkowych poleceń znanych z systemów Unix/Linux) bezpośrednio z wiersza poleceń komputera:</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_55.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_55.png" style="width: 100%;"></a>
+      <h4>Weryfikacja poprawności certyfikatu SSL</h4>
+      <p>W kolejnym kroku musimy wskazać, w jaki sposób ma być weryfikowana poprawność certyfikatu SSL serwera zawierającego repozytorium. Proponujemy pozostawić zaznaczoną domyślną opcję, jak na zdjęciu poniżej.</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_56.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_56.png" style="width: 100%;"></a>
+      <h4>Wybór znaków końca linii</h4>
+      <p>W kolejnym kroku musimy wskazać, czy znaki końca linii w naszych plikach z kodem źródłowym mają być tłumaczone "w locie" ze standardu Windows na Linux i odwrotnie (w systemach Windows koniec linii w pliku tekstowym oznaczany jest parą znaków CR+LF — <i>ang. carriage return</i> + <i>line feed</i>, natomiast w systemach z rodziny Linux koniec linii oznaczany jest pojedynczym znakiem LF). Repozytoria najczęściej znajdują się na serwerach Linuxowych (również tam znajdują się tak zwane serwery buildów, które odpowiadają za kompilację oprogramowania w rozproszonym środowisku developerskim), dlatego też rekomendujemy pozostawienie zaznaczenie domyślnej opcji, jak na zdjęciu poniżej. Jeśli nie znasz pojęć CR czy LF — nie przejmuj się, nie jest nam to potrzebne :)</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_57.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_57.png" style="width: 100%;"></a>
+      <h4>Terminal dla Gita</h4>
+      <p>Spora część konfiguracji instalacji <strong>Gita</strong> już za nami — zbliżamy się powoli do końca. W kolejnym kroku musimy wskazać, jakiego okna terminala ma używać <strong>Git</strong>. Proponujemy pozostawienie zaznaczonej domyślnej opcji — terminal <strong>MinTTY</strong>, ponieważ posiada on większą funkcjonalność od Windowsowego okna <strong>cmd</strong> (czyli wiersza poleceń). Pozwala on na przykład dalej wstecz przewijać wyświetlany tekst i po prostu jest nieco wygodniejszy w użyciu:</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_58.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_58.png" style="width: 100%;"></a>
+      <h4>Dodatkowe opcje</h4>
+      <p>W ostatnim kroku konfiguracji również proponujemy pozostawienie domyślnych opcji, zaznaczonych przez instalator. Odpowiadają one za włączenie pamięci podręcznej typu <strong>cache</strong> w systemie plików (dzięki czemu <strong>Git</strong> szybciej działa). Druga z opcji ma zastosowanie jedynie w środowisku .NET, więc nie dotyczy Javy i nie ma znaczenia, jak będzie ustawiona. Z trzeciej opcji również nie będziemy korzystali w środowisku Windows, gdyż dotyczy ona systemów z rodziny Linux.</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_59.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_59.png" style="width: 100%;"></a>
+      <p>Okej, za nami już szereg wyborów i decyzji, teraz czas napić się kawy i ruszamy dalej!</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_60.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_60.png" style="width: 100%;"></a>
+      <p>Po ukończonej instalacji klikamy przycisk "Finish"</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_61.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_61.png" style="width: 100%;"></a>
+      <h4>Podstawowa konfiguracja</h4>
+      <p>Aby rozpocząć sprawdzanie, czy nasz <strong>Git</strong> został skutecznie zainstalowany, uruchomimy wiersz poleceń. Aby go znaleźć, wpisz jego nazwę w menu Start (czyli naciśnij Ctrl+Esc, a następnie wpisz <strong>cmd</strong> w Menu Start swojego komputera) i uruchom program o nazwie "Wiersz polecenia" (przy okazji — to, co widzisz na zdjęciu poniżej pod nazwą "Git CMD" to właśnie terminal <strong>MinTTY</strong>, który wybraliśmy wcześniej podczas instalacji. Możesz go użyć zamiast standardowego <strong>cmd</strong> z Windows): </p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_62.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_62.png"></a>
+      <p>Następnie wewnątrz wiersza poleceń wpisz: <strong>git --version</strong>.</p>
+      <p>Jeżeli wszystko przebiegło pomyślnie, zauważysz informację o wersji zainstalowanego <strong>Gita</strong>, zgodnie z poniższym przykładem:</p>
+      <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_63.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_63.png" style="width: 100%;"></a>
+      <p>W razie problemów z zainstalowaniem <strong>Gita</strong> pamiętaj o tym, że mentor jest do Twojej dyspozycji :)</p>
+		</div>
+	</div>
+</div>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="45-instalacja-gita-zadanie-kolekcja-zegarow">Zadanie: <span class="task-title">Kolekcja zegarów</span></h3>
+                        <div class="task-content">
+                            <p>Powtórzmy jeszcze raz tworzenie klasy i kolekcji. Zadanie jest podobne do poprzedniego, ale warto te zagadnienia solidnie przećwiczyć.</p>
+
+<p>W metodzie <code class=" language-java">main</code> klasy <code class=" language-java">Program</code> utwórz klasę <code class=" language-java">Clock</code> (z ang. <em>zegar</em>) i kilka obiektów tej klasy.</p>
+
+<p>Utwórz również kolekcję typu <code class=" language-java">LinkedList</code> do przechowywania zegarów i dodaj do tej kolekcji kilka utworzonych obiektów klasy <code class=" language-java">Clock</code></p>
+
+<p>Następnie - używając pętli <code class=" language-java"><span class="token keyword keyword-for">for</span></code> – przesuń w każdym zegarze godzinę o jedną minutę do przodu.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243731" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <a href="https://kodilla.com/pl/project-java/111443" target="_blank" class="btn  btn-primary ">Przejdź do projektu <i class="fa fa-check"></i></a>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-497" class="card submodule completed" data-bootcamp-user-submodule-id="243732">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.6. <span>Stworzenie repozytorium GitHub i wysłanie pierwszego kodu</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <h3 id="46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-przedstawienie-repozytorium-github">Przedstawienie repozytorium GitHub</h3>
+<p>W naszym kursie będziemy tworzyć repozytorium z wykorzystaniem bardzo popularnego systemu GitHub, który pozwala na tworzenie publicznych (czyli takich dostępnych dla każdego) repozytoriów trzymających nasz kod. Pozwoli to zarówno na sprawną współpracę z mentorami, jak i przyda się w przyszłości jako zbiór napisanego w trakcie kursu kodu.</p>
+<p>Zacznijmy więc od odwiedzania strony GitHub, w celu założenia swojego własnego konta <a href="https://github.com/">https://github.com/</a> :</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_64.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_64.jpg" style="width: 100%;"></a>
+<p>Na stronie startowej zauważysz biały formularz służący do rejestracji. Wypełnij go, a następnie kliknij przycisk "Sign up for GitHub"</p>
+<h4>Wybór planu</h4>
+<p>Wybierz darmowy plan i kliknij przycisk "Continue"</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_65.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_65.jpg" style="width: 100%;"></a>
+<p>Możesz pomóc GitHubowi i wypełnić prostą ankietę, lub wybrać przycisk "Skip this step":</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_66.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_66.jpg" style="width: 100%;"></a>
+<p>Następnie GitHub przekieruje Cię do strony, która da Ci dwie możliwości: przeczytanie instrukcji korzystania (co polecamy ciekawskim) oraz stworzenie nowego repozytorium (poprzez kliknięcie "Start a project").</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_67.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_67.jpg" style="width: 100%;"></a>
+<h3 id="46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-tworzenie-repozytorium">Tworzenie repozytorium</h3>
+<p>Po wybraniu przycisku "Start a project", system poprosi Cię o weryfikację adresu mailowego podanego w trakcie rejestracji:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_68.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_68.jpg" style="width: 100%;"></a>
+<p>Odszukaj tego maila i kliknij znajdujący się w nim link. Przekieruje Cię on w to miejsce:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_69.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_69.jpg" style="width: 100%;"></a>
+<p>Rozpoczynamy tworzenie repozytorium! Wypełnij formularz w sposób podobny do tego poniżej i wybierz przycisk "Create repository":</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_70.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_70.jpg" style="width: 100%;"></a>
+<p>W następnym kroku zobaczysz okno z instrukcjami tworzenia i wysłania pierwszego kodu do repozytorium. Instrukcje, które nas interesują, zostały oznaczone ramką:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_71.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_71.jpg" style="width: 100%;"></a>
+<p>Nim wykonasz te komendy, musisz utworzyć pierwszą klasę w środowisku programistycznym IntelliJ IDEA :)</p>
+<h3 id="46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-utworzenie-projektu-w-intellij-idea">Utworzenie projektu w Intellij IDEA</h3>
+<p>Uruchom zainstalowanego wcześniej IntelliJ IDEA na swoim komputerze i wybierz przycisk "Create New Project": <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_72.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_72.jpg" style="width: 100%;"></a>
+</p><p>Przejdziemy teraz przez proces tworzenia projektu. Wszystkie rzeczy, których aktualnie nie rozumiesz, będą rozwijane w module 9 i 10, na ten moment poprowadzimy Cię ze wszystkim "za rękę". :)</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_73.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_73.png" style="width: 100%;"></a>
+<h4>Wstępna konfiguracja projektu</h4>
+<p>Wszystkie dane w formularzu powinny zostać wypełnione zgodnie z poniższym zdjęciem — w razie jakichkolwiek problemów, skontaktuj się ze swoim mentorem!</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_74.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_74.png" style="width: 100%;"></a>
+<p>Po uzupełnieniu formularza szukamy modułu nazwanego "Web". Na razie nie musisz o nim nic wiedzieć — niedługo nadejdzie czas na jego głębokie poznanie :)</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_75.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_75.png" style="width: 100%;"></a>
+<p>Po zatwierdzeniu wybranego modułu, pozostaje nam tylko nazwanie projektu i wybranie jego lokalizacji zapisu. Polecamy stworzyć sobie ścieżkę podobną do tej na zdjęciu, aby mieć na komputerze swój kącik developera :)</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_76.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_76.png" style="width: 100%;"></a>
+<p>Jeżeli po kliknięciu w Finish (Windows) pojawiły się komunikaty dotyczące zapory systemowej, to należy zatwierdzić pozwolenia.</p>
+<h4>Struktura projektu w IntelliJ</h4>
+<p>Przed nami powinien załadować się ekran prezentujący poniższą strukturę projektu:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_77.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_77.jpg" style="width: 100%;"></a>
+<p>Zerknijmy, gdzie w naszym projekcie znajduje się metoda <strong>main</strong> — wejdź do katalogu <i>src/main/java/com/kodilla/</i>, gdzie powinna znajdować się klasa <strong>KodillaCourseApplication</strong>. Na ten moment nie przejmuj się jeszcze nieznaną Ci adnotacją <strong>@SpringBootApplication</strong>, jest ona dla nas na ten moment ułatwiającym życie napisem, jednakże w module 9 nabierze ogromnej wartości! Póki co, po prostu przyjmij, że jest w tym miejscu i będzie wyjaśniona później.</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_78.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_78.jpg" style="width: 100%;"></a>
+<h4>Stworzenie nowej klasy</h4>
+<p>Stwórzmy teraz naszą pierwszą klasę, którą będziemy mogli wysłać do repozytorium. W tym celu prawym przyciskiem myszy kliknij na folder zawierający klasę <strong>KodillaCourseApplication</strong>, a następnie wybierz polecenie "<i>New</i>" -&gt; "<i>Java Class</i>":</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_79.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_79.png" style="width: 100%;"></a>
+<p>Zobaczysz okno takie, jak na ilustracji poniżej. Nazwij pierwszą klasę po prostu <strong>FirstClass</strong> i kliknij "OK"</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_80.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_80.png" style="width: 100%;"></a>
+<p>I oto przed nami powstała pierwsza klasa, stworzona w pełni z wykorzystaniem profesjonalnego środowiska programistycznego!</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_81.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_81.jpg" style="width: 100%;"></a>
+<p>Naszym kolejnym krokiem będzie zainicjalizowanie repozytorium w naszym nowo stworzonym projekcie. Do dzieła!</p>
+<h3 id="46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-inicjalizacja-lokalnego-repozytorium-i-powiazanie-go-ze-zdalnym">Inicjalizacja lokalnego repozytorium i powiązanie go ze zdalnym</h3>
+<p>Uruchom terminal/wiersz poleceń, wybierając zakładkę "<i>View</i>", a następnie wybierz polecenie "<i>Tool Windows</i>" -&gt; "<i>Terminal</i>", zgodnie z poniższym zdjęciem:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_82.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_82.png" style="width: 100%;"></a>
+<p>W dolnej części naszego IDE powinno ukazać się okno wiersza poleceń, w którym będziemy wpisywać komendy <strong>Gita</strong> (jeśli korzystasz z systemu Windows, zauważ, że jest to terminal <strong>MinTTY</strong>, a nie standardowe okno wiersza poleceń <strong>cmd</strong> systemu Windows).</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_83.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_83.jpg" style="width: 100%;"></a>
+<h4>Komenda: git init</h4>
+<p>Pierwszym krokiem będzie inicjalizacja repozytorium. Wewnątrz wiersza poleceń wpisz komendę <strong>git init</strong>. Wynikiem powinna być informacja o udanej inicjalizacji (równocześnie na Twoim dysku utworzony został podkatalog o nazwie <i>.git</i> wraz z podkatalogami odpowiedzialnymi za organizację repozytorium, w ścieżce widocznej na poniższym zdjęciu).</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_84.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_84.jpg" style="width: 100%;"></a>
+
+<div class="bc-note alert-success">
+    <h4 class="alert-heading text-center">Dla dociekliwych</h4>
+    <p>Jeśli sprawdzisz, czy faktycznie w katalogu Twojego projektu utworzył się folder <strong>.git</strong>, możesz trafić na małą niespodziankę — ten folder niekoniecznie musi być widoczny! Dlaczego? Otóż tradycyjnie, katalogi, których nazwa zaczyna się od kropki, są ukryte i nie są pokazywane w Eksploratorze/Finderze (w systemie Windows nie ma to znaczenia — wszystkie pliki są widoczne. Widocznością plików steruje się przy pomocy dodatkowego atrybutu pliku, a nazwa nie ma znaczenia). Jeśli należysz do bardziej dociekliwych osób, możesz sprawdzić, czy katalog faktycznie się utworzył wykonując w terminalu polecenie <strong>ls -a</strong>, czyli polecenia <strong>ls </strong>z flagą <strong>-a</strong>, która służy do pokazywania również ukrytych folderów (dla systemu Windows będzie to polecenie <strong>dir</strong>, możesz też sprawdzić to po prostu w Eksploratorze Windows).</p>
+</div>
+
+<h4>Komenda: git remote add origin</h4>
+<p>Przed wysłaniem kodu do repozytorium musimy powiązać nasze zewnętrzne repozytorium (na GitHubie) z lokalnym (znajdującym się na naszym dysku).</p>
+<p>Można to porównać do podawania adresu listonoszowi do wysyłania listów — <strong>Git</strong> (listonosz) wyciąga dane z lokalnego repozytorium (skrzynka pocztowa) i przekazuje je pod ustalony adres (repozytorium zdalne na Githubie).</p>
+<p>W tym celu wykonamy następującą komendę: <strong>git remote add origin adres_repozytorium_zdalnego</strong>, oczywiście zastępując <strong>adres_repozytorium_zdalnego</strong> adresem swojego repozytorium na GitHubie, które otrzymaliśmy po założeniu repozytorium. Pamiętasz tę ramkę pełną nieznanych Ci jeszcze wtedy komend?</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_85.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_85.jpg" style="width: 100%;"></a>
+<p>Twój adres powinien wyglądać następująco:</p>
+<p><i><u>https://github.com/NazwaUżytkownika/imie-nazwisko-kodilla-java.git</u></i></p>
+
+<p>Rozbijmy tę komendę na części pierwsze, aby łatwiej ją było zrozumieć:</p>
+
+<ol>
+  <li><strong>git — </strong>wywołanie narzędzia Git z wiersza poleceń,</li>
+  <li><strong>remote — </strong>komenda ta informuje <strong>Gita</strong> o tym, że kolejne polecenia będą związane ze zdalnym repozytorium,</li>
+  <li><strong>add — </strong>komenda informuje <strong>Gita</strong>, aby zarejestrował zdalne repozytorium,</li>
+  <li><strong>origin <tutaj_adres_url_naszego_repozytorium> — </tutaj_adres_url_naszego_repozytorium></strong>jest nazwą, pod którą "dowiązane" jest zdalne repozytorium o podanym przez nas adresie URL:
+
+  <a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_86.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_86.jpg" style="width: 100%;"></a>
+
+  </li>
+</ol>
+
+<h4>Komenda: git status</h4>
+<p>Przed wysłaniem kodu do repozytorium sprawdzimy status naszego projektu za pomocą komendy <strong>git status</strong> — pozwala ona nam na poznanie aktualnego stanu naszych plików. Jak to rozumieć? Otóż wysyłać do repozytorium możemy konkretne wybrane przez nas pliki, bądź wszystkie pliki z naszego projektu.</p>
+<p>Poniżej możesz zauważyć czerwoną listę plików — mówi ona o tym, że w naszym repozytorium znajdują się jakieś pliki, lecz nie są one śledzone przez <strong>Gita</strong>. Oznacza to, że te konkretne pliki nie są oznaczone jako pliki do wysłania do repozytorium. Znajdują się w katalogu repozytorium niejako "przypadkiem" i <strong>Git</strong> nie wie co z nimi zrobić, w związku z czym nie wykona żadnej akcji (pliki mają status "untracked").</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_87.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_87.jpg" style="width: 100%;"></a>
+<p>Po udanym sprawdzeniu statusu naszego projektu pora na pierwsze wysłanie naszego kodu do repozytorium zdalnego. Opiszemy to w trzech prostych krokach:</p>
+<h4>Komenda: git add *</h4>
+<p>Komenda <strong>git add</strong> dodaje nasz kod do lokalnego repozytorium, czyli przygotowuje kod do wysłania do repozytorium zdalnego. Przeanalizujmy poszczególne części tej komendy:</p>
+
+<ol>
+  <li><strong>git</strong> — wywołanie narzędzia Git z wiersza poleceń,</li>
+  <li><strong>add</strong> — wywołanie funkcji <strong>Gita</strong> służącej do dodania plików do zbioru plików śledzonych, celem wysłania ich do repozytorium zdalnego,</li>
+  <li><strong>*</strong> — gwiazdka oznacza wszystko (ang. <i>all</i>) i służy do dodania wszystkich plików w obrębie zainicjalizowanego projektu do lokalnego repozytorium <strong>Git</strong>.</li>
+</ol>
+
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_88.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_88.jpg" style="width: 100%;"></a>
+<p>W kolejnym kroku sprawdźmy, czy nasza komenda faktycznie działa jak należy. W tym celu po komendzie <strong>git add</strong> użyjemy ponownie komendy <strong>git status</strong>, którą już wcześniej poznaliśmy:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_89.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_89.jpg" style="width: 100%;"></a>
+<p>Jak pewnie widzisz, w odpowiedzi na komendę <strong>git status</strong> otrzymaliśmy nową i wcześniej nieznaną żółtą linię z informacją o pojawieniu się nowego pliku do wysłania do repozytorium zdalnego.
+</p>
+
+<!--<div class="bc-note alert-success">-->
+<!--    <h4 class="alert-heading text-center">Dla dociekliwych</h4>-->
+<!--    <p>Pewnie zastanawiasz się dlaczego plik .gitignore dalej nie jest dodany, mimo wykonania polecenia dodania każdego pliku. Otóż plik ten został ustawiony tymczasowo jako wykluczony do wysyłania na repozytorium, ponieważ nie powinien być archiwizowany w systemie kontroli wersji. Opowiemy Ci o nim więcej wkrótce.</p>-->
+<!--</div>-->
+
+<h4>Komenda: git commit -m "First Commit"</h4>
+<p>Komenda ta powoduje wysłanie dodanego kodu do lokalnego repozytorium w Twoim komputerze, co stanowi przygotowanie do wysłania kodu do zdalnego repozytorium.</p>
+
+<p>Omówmy całość znaczenia tej komendy:</p>
+
+<ol>
+  <li><strong>git</strong> — wywołanie narzędzia <strong>git</strong> z wiersza poleceń,</li>
+  <li><strong>commit</strong> — wywołanie komendy służącej do wysłania kodu (zatwierdzenia ostatniej jego wersji po zmianach) do lokalnego repozytorium,</li>
+  <li><strong>-m “Text"</strong> — nadanie nazwy (właściwie: komentarza o treści "Text") dla naszej paczki zmian, w kodzie wysyłanym do lokalnego repozytorium.</li>
+</ol>
+
+<p>Wywołanie komendy prezentujemy poniżej:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_90.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_90.jpg" style="width: 100%;"></a>
+<h4>Git config</h4>
+<p>Po wywołaniu komendy <strong>git commit -m "First Commit"</strong>, naszym oczom może ukazać się tego typu informacja:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_91.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_91.jpg" style="width: 100%;"></a>
+<p>Oznacza to, że nie jesteśmy jeszcze zdefiniowani jako użytkownicy naszego zdalnego repozytorium. Aby zażegnać ten problem, należy wywołać komendy z powyższego obrazka pojedynczo:</p>
+<ol>
+    <li><strong>git config --global user.email "nasz_email_do_github"</strong></li>
+    <li><strong>git config --global user.name "nasz_login_do_github"</strong></li>
+</ol>
+<p>Po ustawieniu danych do logowania w GitHubie w naszym <strong>Gicie</strong> należy ponowić operację <strong>git commit -m "First Commit"</strong>. Jeżeli wszystko przebiegło pomyślnie, przejdź dalej. Jażeli Twój commit zostanie odrzucony, sprawdź, czy na pewno zostały podane odpowiednie dane do logowania. Jeżeli nie, możesz je poprawić korzystając z tych samych komend, które poznaliśmy przed chwilą.</p>
+<p>W kolejnym etapie sprawdźmy, jak wygląda aktualnie status wysyłanego kodu za pomocą komendy <strong>git status</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_92.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_92.jpg" style="width: 100%;"></a>
+<p>Jak możesz zauważyć, klasa <strong>FirstClass</strong> nie znajduje się już w grupie plików do wysłania (zatwierdzenia zmian). Dzięki temu wiemy już teraz, że nasz kod został skutecznie wysłany do lokalnego repozytorium na naszym komputerze.</p>
+<h4>Komenda: git push origin master</h4>
+<p>Ostatnia i bardzo ważna komenda, która odpowiedzialna jest za wysyłanie kodu z lokalnego repozytorium bezpośrednio do zdalnego repozytorium, to <strong>git push origin master</strong>. Tak jak wcześniej, omówimy krok po kroku jej konstrukcję:</p>
+
+<ol>
+  <li><strong>git</strong> — wywołanie narzędzia Git z wiersza poleceń,</li>
+  <li><strong>push</strong> — wysłanie kod do zdalnego repozytorium,</li>
+  <li><strong>origin</strong> — nazwa, pod którą "dowiązane" jest zdalne repozytorium,</li>
+  <li><strong>master</strong> — nazwa gałęzi naszego repozytorium. O gałęziach będziemy mówić w dalszych częściach tego kursu, jednakże jak już wcześniej wspominaliśmy, repozytorium może posiadać ich wiele — właśnie dlatego, wysyłając kod na zdalne repozytorium, musimy określić, na którą gałąź wysyłamy swój kod. Domyślną i pierwotną (główną) gałęzią jest gałąź o nazwie <strong>master</strong>.</li>
+</ol>
+
+<p>Wywołanie komendy:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_93.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_93.jpg" style="width: 100%;"></a>
+<p>W efekcie nasz kod powinien trafić bezpośrednio do naszego niedawno stworzonego repozytorium. W celu sprawdzenia działania tego procesu odwiedzimy stronę <a href="https://github.com/">https://github.com/</a> — strzałka wskazuje na miejsce, w którym powinno być stworzone nasze repozytorium. Kliknij w jego nazwę:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_94.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_94.jpg" style="width: 100%;"></a>
+<p>Następnie powinno Ci się ukazać Twoje własne zdalne repozytorium, bardzo podobne do tego:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_95.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_95.jpg" style="width: 100%;"></a>
+<p>Wejdź do katalogu <i>src/main/java/com/kodilla</i> — powinna znajdować się tam klasa, którą przed chwilą stworzyliśmy: klasa <strong>FirstClass</strong>, zapisana w pliku FirstClass.java</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_96.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_96.jpg" style="width: 100%;"></a>
+<p>Gratulacje! Za Tobą pierwsze wysłanie kodu do repozytorium. To duży krok w Twojej karierze programistycznej. Aby utrwalić ten proces w Twojej głowie, poniżej mamy dla Ciebie małe zadanie :)</p>
+<p>Do tej pory poznaliśmy tylko podstawowe komendy Gita. W czasie całego kursu poznasz ich o wiele więcej i o wiele lepiej poznasz sposób funkcjonowania tego niezastąpionego narzędzia :) Dla osób, które już teraz chcą dowiedzieć się nieco więcej, mamy poniższy link:</p>
+<p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="46-stworzenie-repozytorium-github-i-wyslanie-pierwszego-kodu-zadanie-wyslanie-kodu-do-repozytorium">Zadanie: <span class="task-title">Wysłanie kodu do repozytorium</span></h3>
+                        <div class="task-content">
+                            <p>Wiesz już jak:</p>
+<ul>
+    <li>Stworzyć projekt w InteliiJ.</li>
+    <li>Stworzyć zdalne repozytorium na Githubie.</li>
+    <li>Utworzyć lokalne repozytorium i podpiąć je do zdalnego.</li>
+</ul>
+
+<p>Teraz Twoim zadaniem będzie stworzenie osobnego projektu o nazwie Kalkulator.</p>
+ 
+<p>W tym celu:</p>
+<ol>
+    <li>Stwórz na Githubie nowe repozytorium pod ten projekt.</li>
+    <li>Stwórz lokalnie nowy projekt Kalkulator.</li>
+    <li>Stwórz lokalne repozytorium w ramach tego projektu i podepnij je pod repozytorium na Githubie.</li>
+    <li>W projekcie kalkulator stwórz klasę klasę Calculator z dwiema metodami, które będą zawierały w sobie funkcjonalność dodawania i odejmowania.</li>
+    <li>Następnie, za pomocą Gita wyślij kod do zdalnego repozytorium i wyślij link do niego swojemu mentorowi. Powodzenia!</li>
+</ol>
+<p>Jeżeli chcesz uruchomić swój program i tym samym sprawdzić jego działanie, podejmij poniższe kroki:</p>
+<p><b>Krok 1</b></p>
+<p>Stwórz wewnątrz klasy Calculator metodę main, a następnie znajdź zieloną strzałkę wskazaną na rysunku:</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1e.jpg"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1e.jpg" alt=""></a>
+<p><b>Krok 2</b></p>
+<p>Po kliknięciu wybierz Run 'Calculator.main()'</p>
+<a class="img-modal-group" href="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1f.png"><img src="./Moduł_ 4. Narzędzia Java Developera_files/java-4_1f.png" alt=""></a>
+<p>Jeżeli wewnątrz metody someMethod() dodasz przykładowo System.out.println("It works!"); to wynik naturalnie pojawi się w konsoli :)</p>
+ 
+<p>Powodzenia!</p>
+
+<h4>Dla ambitnych!</h4>
+<p>Zbierz swoje projekty które uważasz za warte zachowania i przerzuć je na Githuba za pośrednictwem InteliiJ :)</p>
+ 
+<p>Dodatkowe projekty nie podlegają sprawdzeniu przez Mentora! Przerzucasz je dla siebie i dla nabrania wprawy!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243732" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/Calculator">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyslij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-498" class="card submodule completed" data-bootcamp-user-submodule-id="243733">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">4.7. <span>Wyzwanie - Algorytm Euklidesa</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Ten krótki submoduł poświęcimy wyzwaniu, które zawiera w sobie elementy poznane od modułu 0 do teraz. Nie jest to zwykłe zadanie, ponieważ jest złożone z kilku etapów. To wyzwanie skupi się na utworzenie implementacji algorytmu Euklidesa.</p>
+
+<p>Pewnie już część z was poznała ten algorytm, jeżeli nie koniecznie zapoznaj się z  jego opisem:</p>
+
+
+
+<h4>Definicja algorytmu Euklidesa</h4>
+
+<p>Algorytm Euklidesa jest szybkim sposobem obliczania największego wspólnego dzielnika (NWD) dwóch, zwłaszcza dużych liczb całkowitych.</p>
+
+<p>Aby obliczyć <code class=" language-java"><span class="token function">NWD</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span></code>, wykonujemy kolejno następujące kroki: </p>
+<ol>
+	<li>Dzielimy z resztą liczbę <code class=" language-java">a</code> przez liczbę <code class=" language-java">b</code>.</li>
+	<li>Jeżeli <code class=" language-java">reszta <span class="token operator">=</span> <span class="token number">0</span></code>, to <code class=" language-java"><span class="token function">NWD</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">=</span>b</code>.</li>
+	<li>Jeżeli <code class=" language-java">reszta <span class="token operator">!=</span><span class="token number">0</span></code>, to przypisujemy liczbie <code class=" language-java">a</code> wartość liczby <code class=" language-java">b</code>, a liczbie <code class=" language-java">b</code> wartość otrzymanej reszty. Następnie wykonujemy ponownie punkt 1.</li>
+</ol>
+
+
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="47-wyzwanie-algorytm-euklidesa-zadanie-implementacja-algorytmu-euklidesa">Zadanie: <span class="task-title">Implementacja algorytmu Euklidesa</span></h3>
+                        <div class="task-content">
+                            <p>Wyzwanie może wydawać się trudne na samym początku, ale jest to naprawdę prosty program. Podzielimy implementację tego programu na konkretne etapy, co pozwoli nam na spojrzenie na nie w prosty i przyjazny sposób.</p>
+
+<p>Aby wykonać poprawnie to zadanie potrzebne będzie wykorzystanie poniższych funkcji języka Java:</p>
+
+<ul>
+	<li><code class=" language-java"><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>,</li>
+	<li><code class=" language-java"><span class="token keyword keyword-if">if</span></code> i <code class=" language-java"><span class="token keyword keyword-else">else</span></code>,</li>
+	<li><code class=" language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</li>
+</ul>
+
+<p>Rozpocznij swój program w edytorze udostępnionym przez Kodillę, aby mieć wszystko gotowe przed implementacją.</p>
+
+<ol>
+	<li>Pierwszym krokiem w celu utworzenia programu powinna być deklaracja zmiennych. Wiemy, że algorytm operuje na 2 zmiennych dla których szuka dzielnika, wiemy też, że liczby są liczbami całkowitymi. Stwórz i przypisz im domyślne wartości.</li>
+	<li>
+		Kolejnym krokiem jest utworzenie pętli <code class=" language-java"><span class="token keyword keyword-while">while</span></code>, która będzie trwać do końca znalezienia wspólnego dzielnika 2 zmiennych.
+	</li>
+	<li>
+		Wewnątrz pętli <code class=" language-java"><span class="token keyword keyword-while">while</span></code> należy skorzystać z warunku <code class=" language-java"><span class="token keyword keyword-if">if</span></code> i <code class=" language-java"><span class="token keyword keyword-else">else</span></code> oraz operatora <code class=" language-java"><span class="token operator">-=</span></code>, dzięki któremu wykonuje takie działanie <code class=" language-java">a <span class="token operator">=</span> a <span class="token operator">-</span> b</code>, czyli pomniejsza wartość <code class=" language-java">a</code> o wartość <code class=" language-java">b</code> i przypisuje ją do zmiennej <code class=" language-java">a</code>:
+		<pre class="line-numbers language-java code-toolbar"><code class=" language-java">a <span class="token operator">-=</span> b<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code><div class="toolbar"></div></pre>
+	</li>
+</ol>
+
+<p>Wykonując te trzy kroki i implementując odpowiednio logikę, jesteś w stanie zaimplementować algorytm Euklidesa. Swój kod skompiluj i prześlij do mentora. Powodzenia!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/243733" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <a href="https://kodilla.com/pl/project-java/111444" target="_blank" class="btn  btn-primary ">Przejdź do projektu <i class="fa fa-check"></i></a>
+                                                                                                    </div>
+                    </div>
+                </section>
+                            </main>
+        </div>
+    </section>
+</main>
+
+<script type="text/x-translation" data-translation-name="SentBootcampLinkReviewFormMessage">Wysłano link do zatwierdzenia</script>
+    <div id="alerts">
+    <div class="alert alert-danger" role="alert" style="display: none;">
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-success" role="alert" style="display: none;">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-warning" role="alert" style="display: none;">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-info" role="alert" style="display: none;">
+        <i class="fa fa-info" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                        </ul>
+    </div>
+</div>    <div class="modal fade informator-modal" id="informator" tabindex="-1" role="dialog" aria-labelledby="informatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="./Moduł_ 4. Narzędzia Java Developera_files/logo-menu.png" alt="Logo Kodilla" class="brand-logo">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body content-container">
+                <h3>Zamów szczegółowy informator</h3>
+                <h3 data-role="modal-informator-message" class="display-none">Informator został wysłany na podany adres email.</h3>
+                <h4>Zostaw email i wyślemy Ci go</h4>
+                <form class="row js-ajax-form" data-view-class="InformatorForm" action="https://kodilla.com/pl/download-guide" method="post">
+                    <input type="hidden" name="ga-pobieranie-informatora-z-modala" value="wypelnienie">
+                    <input type="hidden" name="tags[0]" value="informator">
+                                        <div class="user-data-container">
+                        <input type="text" class="form-control" name="firstname" placeholder="Imię">
+                        <input type="text" class="form-control" name="surname" placeholder="Nazwisko">
+                    </div>
+                    <div class="user-data-container">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                        <input type="text" class="form-control" name="phone" placeholder="Numer telefonu">
+                    </div>
+                    <div class="terms-box">
+                        <label>
+                            <input data-custom-message="Prosimy o zaakceptowanie regulaminu" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Akceptuję <a target="_blank" href="https://kodilla.com/pl/terms">regulamin</a>  i nie wnoszę zastrzeżeń</span>
+                        </label>
+                    </div>
+                    <div class="personal-terms-box">
+                        <label>
+                            <input data-custom-message="Jeśli chcesz otrzymać dostęp do materiałów, konieczna jest akceptacja obydwu zgód" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Chcę otrzymywać newsletter, informacje o promocjach i produktach dostępnych w Kodilla.
+                                <span class="details-button" data-action="show-details" data-identifier="personal-terms-details-informator">Czytaj więcej</span>
+                                <span class="display-none" data-identifier="personal-terms-details-informator">Wyrażam zgodę na otrzymywanie informacji handlowych od Kodilla na podany przeze mnie adres e-mail. Zgoda jest dobrowolna, jednakże niezbędna do otrzymywania informacji o produktach, promocjach i o tym, co u nas słychać. Administratorem danych jest Codemy S.A. z siedzibą we Wrocławiu, ul. Racławicka 13. Mam prawo cofnąć zgodę w każdym czasie, jednak wtedy nie będę otrzymywać informacji. Dane mogą być przetwarzane pomimo cofnięcia zgody wyłącznie w takim zakresie i celu, w jakim ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z udzieloną zgodą. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie kodilla.com, zakładka "Polityka Prywatności".</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">
+                            Pobierz Informator
+                            <i data-role="loading-icon" class="fa fa-spinner fa-spin fa-1x fa-fw display-none"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Pobranie informatora do niczego nie zobowiązuje</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+                <section class="footer-lower">
+            <nav class="container">
+                <a class="navbar-img" href="https://kodilla.com/pl">
+                    <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168" height="30">
+                        <defs>
+                            <style>
+                                .footer-logo-fill {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                            <path id="KODILLA_copy_5_1_" class="footer-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                            <ellipse id="eye_copy_4_1_" class="footer-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" class="footer-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                        <path id="Path_2" data-name="Path 2" class="footer-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                        <path id="Path_3" data-name="Path 3" class="footer-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                        <path id="Path_4" data-name="Path 4" class="footer-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                        <path id="Path_5" data-name="Path 5" class="footer-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                        <path id="Path_6" data-name="Path 6" class="footer-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+                    </svg>
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="https://kodilla.com/pl/terms">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="https://kodilla.com/pl/privacy-policy">Polityka prywatności</a>
+                    </li>
+                    <li class="nav-item nav-item-last">© 2018 Kodilla</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2WWBH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/jquery-2.1.4.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/js.cookie-2.1.0.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/jquery-dateFormat.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/bootstrap.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/informator-modal.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/fb.js.pobrane"></script>
+<script>
+    if (document.querySelector('main.editor')) {
+        document.querySelector('body').classList.add('editor');
+    }
+</script>
+
+<!-- ActiveCampaign -->
+<script type="text/javascript">
+    // Set to false if opt-in required
+    var trackByDefault = true;
+
+    function acEnableTracking() {
+        var expiration = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30);
+        document.cookie = "ac_enable_tracking=1; expires= " + expiration + "; path=/";
+        acTrackVisit();
+    }
+
+    function acTrackVisit() {
+        var trackcmp_email = 't_socha@wp.pl';
+        var trackcmp = document.createElement("script");
+        trackcmp.async = true;
+        trackcmp.type = 'text/javascript';
+        trackcmp.src = '//trackcmp.net/visit?actid=649095895&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+        var trackcmp_s = document.getElementsByTagName("script");
+        if (trackcmp_s.length) {
+            trackcmp_s[0].parentNode.appendChild(trackcmp);
+        } else {
+            var trackcmp_h = document.getElementsByTagName("head");
+            trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+        }
+    }
+
+    if (trackByDefault || /(^|; )ac_enable_tracking=([^;]+)/.test(document.cookie)) {
+        acEnableTracking();
+    }
+</script>
+
+        <script src="./Moduł_ 4. Narzędzia Java Developera_files/underscore-min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/backbone-min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/backbone-relational.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/backbone-super.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/handlebars-v4.0.5.min.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/handlebars-ifCond.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/application.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/main.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/tracking-activities.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/notifications.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/settings.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/delete-account.js.pobrane"></script>
+<script type="text/x-translation" data-translation-name="checkAccountDeleteCalculationMessage">Wynik jest nieprawidłowy</script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/forms.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/alerts.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/inpage-alerts.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/collections.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/models.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/knowledge-base.js.pobrane"></script>
+<script src="./Moduł_ 4. Narzędzia Java Developera_files/learning-program.js.pobrane"></script>
+
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/tether.min.js.pobrane"></script>
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/prism.min.js.pobrane"></script>
+
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/bootcamp.js.pobrane"></script>
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/jquery.seourl.min.js.pobrane"></script>
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/perfect-scrollbar.jquery.min.js.pobrane"></script>
+    <script src="./Moduł_ 4. Narzędzia Java Developera_files/jquery.fancybox.min.js.pobrane"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.img-modal-group").fancybox();
+        });
+    </script>
+
+                    <div class="modal fade" tabindex="-1" role="dialog" id="call-us-modal">
+    <div class="modal-dialog modal-dialog-callus" role="document">
+        <div class="modal-content call-modal">
+            <div id="call-us-step1">
+                <h2>Umów się na rozmowę z doradcą Kodilli</h2>
+                <p>Krok <span>1/2:</span> Podaj numer telefonu</p>
+                <form action="https://kodilla.com/pl/call-us/step1" method="post" id="call-us-form1">
+                    <input type="tel" name="phone" id="call-us-input-phone" placeholder="737690577">
+                    <button class="btn btn-success" id="call-us-submit-phone">Zarezerwuj rozmowę</button>
+                </form>
+                <p id="call-us-counter-holder" style="display: none;">Dzisiaj już  <span id="call-counter" data-url="https://kodilla.com/pl/call-us/counter">-</span> <span id="call-us-counter-text" data-one=" osoba zamówiła rozmowę z nami." data-few=" osoby zamówiły rozmowę z nami." data-more=" osób zamówiło rozmowę z nami."></span></p>
+                <div class="data-protection">
+                    <p>Twój numer telefonu nie będzie wykorzystywany w celach marketingowych ani przekazany dalej. Tylko oddzwonimy. Dane są przetwarzane zgodnie z <a href="https://kodilla.com/pl/polityka-prywatnosci">Polityką Prywatności</a>.</p>
+                </div>
+            </div>
+
+            <div id="call-us-step2" style="display: none;">
+                <h2>Wybierz dogodny termin i godzinę na rozmowę z doradcą</h2>
+                <p>Krok <span>2/2:</span>
+                </p><form action="https://kodilla.com/pl/call-us/step2" method="post" id="call-us-form2">
+                    <div class="select-date">
+                        <select name="date" id="call-us-input-date">
+                        </select>
+                        <select name="time" id="call-us-input-time">
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="call-us-submit-call">Oddzwońcie do mnie!</button>
+                </form>
+            </div>
+
+            <div id="call-us-step3" style="display: none;">
+                <div class="thanks">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>Dziękujemy za zamowienie rozmowy! Do usłyszenia w wybranym terminie!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <script src="./Moduł_ 4. Narzędzia Java Developera_files/widget.js.pobrane"></script>
+    <script type="text/javascript">
+        window.fcSettings = {
+            token: '99d7ec3c-0f50-4c9a-9f5e-b741bd6a1aa7',
+            host: 'https://wchat.freshchat.com',
+            locale: 'pl',
+            tags: ["logged_in","bc_user","status_aktywny","jdp","jdp_2018-10","ppp","jdp_2018-10_aktywny_ppp"],
+            faqTags: {
+                tags: ["support"],
+                filterType: 'category'
+            },
+            config: {
+                content: {"placeholders":{"search_field":"Przeszukaj FAQ","reply_field":"Odpowiedz","csat_reply":"Wpisz swoj\u0105 odpowied\u017a"},"actions":{"csat_yes":"Tak","csat_no":"Nie","push_notify_yes":"Tak","push_notify_no":"Nie","tab_faq":"FAQ","tab_chat":"CHAT","csat_submit":"Wy\u015blij"},"headers":{"chat":"Napisz do nas","chat_help":"Witaj! W czy mo\u017cemy Ci pom\u00f3c?!","faq":"Baza wiedzy","faq_help":"Przegl\u0105daj FAQ","faq_not_available":"Brak artyku\u0142\u00f3w","faq_search_not_available":"Brak artyku\u0142\u00f3w dla frazy {{query}}","faq_useful":"Jak oceniasz przydatno\u015b\u0107?","faq_thankyou":"Dzi\u0119kujemy za Twoj\u0105 opini\u0119!","faq_message_us":"Napisz do nas!","push_notification":"Nie przegap \u017cadnej odpowiedzi! Zezwalasz na powiadomienia?","csat_question":"Czy uzyska\u0142e\u015b potrzebn\u0105 pomoc?","csat_yes_question":"Jak oceniasz nasze wsparcie?","csat_no_question":"Co mogliby\u015bmy ulepszy\u0107?","csat_thankyou":"Dzi\u0119kujemy Ci za informacje!","csat_rate_here":"Oce\u0144","channel_response":{"offline":"Aktualnie jeste\u015bmy nieobecni","online":{"minutes":{"one":"Odpowiadamy w mniej ni\u017c minut\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} minut(y)"},"hours":{"one":"Odpowiadamy w mniej ni\u017c godzin\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} godzin(y)"}}}}}
+            }
+        };
+                    window.fcSettings.lastName = 'Socha';
+            window.fcSettings.firstName = 'Tymoteusz';
+            window.fcSettings.email = 't_socha@wp.pl';
+            window.fcSettings.externalId = 't_socha@wp.pl';
+                document.getElementsByTagName('body')[0].classList.add('freshchat-enabled');
+        window.fcWidget.init( window.fcSettings );
+        window.fcWidget.on('widget:closed', function (){
+            $('body').addClass('notification-content--visible');
+        });
+    </script><div id="fc_frame" class="fc-widget-normal"><iframe id="fc_widget" name="fc_widget" title="Chat" frameborder="0" src="./Moduł_ 4. Narzędzia Java Developera_files/saved_resource.html"></iframe></div>
+    <div data-role="notifications-wrapper" class="notifications-wrapper"></div>
+
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","389137334769464");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Moduł_ 4. Narzędzia Java Developera_files/afATJJjxKE6.html" style="border: none;"></iframe></div></div></div><div id="fc_push_frame"><iframe id="fc_push" src="./Moduł_ 4. Narzędzia Java Developera_files/index.html" frameborder="0"></iframe></div></body></html>

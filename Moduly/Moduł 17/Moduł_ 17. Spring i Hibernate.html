@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://kodilla.com/pl/bootcamp-module/146/88/3774 -->
+<html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="csrf-token" content="M0sQld5c537zrF0RflAzRGLMn13qr7lUhyqLgg3k">
+
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="https://kodilla.com/static/img/icons/apple-touch-icon-60x60.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://kodilla.com/static/img/icons/apple-touch-icon-76x76.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://kodilla.com/static/img/icons/apple-touch-icon-120x120.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://kodilla.com/static/img/icons/apple-touch-icon-152x152.png?00000">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://kodilla.com/static/img/icons/favicon-32x32.png?00000">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://kodilla.com/static/img/icons/favicon-96x96.png?00000">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://kodilla.com/static/img/icons/favicon-16x16.png?00000">
+
+        
+        <link rel="canonical" href="https://kodilla.com/pl/bootcamp-module/146/88/3774">
+        <title>    Moduł: 17. Spring i Hibernate
+</title>
+                        <meta name="robots" content="noindex, follow">
+        
+        <link href="./Moduł_ 17. Spring i Hibernate_files/bootstrap.min.css" rel="stylesheet">
+        <link href="./Moduł_ 17. Spring i Hibernate_files/font-awesome.min.css" rel="stylesheet">
+        <link href="./Moduł_ 17. Spring i Hibernate_files/main-3ee90aa85c.css" rel="stylesheet" type="text/css">
+
+                
+    <link href="./Moduł_ 17. Spring i Hibernate_files/prism.min.css" rel="stylesheet">
+
+    <link href="./Moduł_ 17. Spring i Hibernate_files/bootcamp-ffa4181f24.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Moduł_ 17. Spring i Hibernate_files/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./Moduł_ 17. Spring i Hibernate_files/jquery.fancybox.min.css" type="text/css" media="screen">
+        <script id="facebook-jssdk" src="./Moduł_ 17. Spring i Hibernate_files/sdk.js.pobrane"></script><script async="" src="./Moduł_ 17. Spring i Hibernate_files/gtm.js.pobrane"></script><script async="" src="./Moduł_ 17. Spring i Hibernate_files/fbevents.js.pobrane"></script><script>
+            window.environment = 'production';
+            window.loggedIn = true;
+            window.domain = 'https://kodilla.com';
+                        window.fbAppId = 1449248938627896;
+            window.chatService = 'FreshChat';
+            window.useMessenger = window.chatService === 'Messenger';
+            window.locale = 'pl';
+            window.lang = 'pl';
+
+            window.serverUTC       = 1548785067000;
+            window.serverOffset    = 60;
+            window.userDate        = new Date();
+            window.userUTC         = userDate.getTime();
+            window.userOffset      = userDate.getTimezoneOffset() * (-1);
+            window.userClockDiff   = userUTC - serverUTC;
+            window.diffRounded     = Math.round( userClockDiff / ( 1000 * 60 * 15 ) );
+            window.isDifferentZone = ( userOffset - serverOffset !== 0 ) ? 1 : 0;
+            window.hasWrongTime    = ( diffRounded !== 0 ) ? 1 : 0;
+            window.dateTooltipText = 'Data i godzina są podane dla Twojej strefy czasowej GMT. <br>W razie wątpliwości napisz: <u>support@kodilla.com</u>.';
+            window.wrongHourNotice = 'Godzina na Twoim urządzeniu r&oacute;żni się od godziny obowiązującej w strefie czasowej wybranej w ustawieniach Twojego urządzenia.';
+
+            var moment = undefined,
+            momentReady = function( method, method2, count ){
+                var c = ( count ) ? count : 0;
+
+                if      ( isDifferentZone && moment !== undefined ){
+                    if      ( method ) { method(); }
+                    else    { return false; }
+                }
+                else if ( isDifferentZone && moment === undefined ) {
+                    if ( c < 20 ) {
+                        c++;
+                        setTimeout( function() { momentReady( method, method2, c ); }
+                            , 300 );
+                    } else {
+                        if      ( method2 === true && method )  { method(); }
+                        else if ( method2 !== true && method2 ) { method2(); }
+                    }
+                }
+                else {
+                    if      ( method2 === true && method )  { method(); }
+                    else if ( method2 !== true && method2 ) { method2(); }
+                    else    { return false; }
+                }
+            };
+
+            if ( window.isDifferentZone && moment === undefined ) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = '/static/js/libs/moment.timezone.locales.min.js?v=2.22.2';
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }
+        </script>
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', 389137334769464 );
+            fbq('track', 'PageView');
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KN2WWBH');</script>
+        <!-- End Google Tag Manager -->
+<script async="" type="text/javascript" src="./Moduł_ 17. Spring i Hibernate_files/visit"></script></head>
+<body class="wrong-hour">
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>
+    document.getElementsByTagName('body')[0].classList.remove('no-js');
+    if ( window.isDifferentZone ) {
+        document.querySelector('body').classList.add('time-conversion-applied');
+    }
+    if ( window.hasWrongTime ) {
+        document.querySelector('body').classList.add('wrong-hour');
+    }
+</script>
+
+    <nav class="navbar-main hidden-sm-down dark navbar">
+    <div class="nav-container">
+        <div class="navbar-header clearfix">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbarUpper"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="collapse navbar-toggleable-sm container" id="collapsingNavbarUpper">
+            <ul class="nav navbar-nav navbar-nav-left">
+                                    <li class="nav-item nav-contact">
+    <span>Skontaktuj się z nami:</span>
+    <a href="mailto:support@kodilla.com">
+        <i class="fa fa-envelope-o"></i>
+        support@kodilla.com
+    </a>
+    <span>lub</span>
+    <a href="javascript:fcWidget.open();">
+        <i class="fa fa-comments"></i>
+        porozmawiaj na czacie
+    </a>
+</li>
+                                </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+    <a class="nav-link dropdown-toggle" href="https://kodilla.com/pl/bootcamp-module/146/88/3774#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+        <img class="img-no-border ico-current-lang" src="./Moduł_ 17. Spring i Hibernate_files/ico.globe.svg">Polski
+    </a>
+    <div class="dropdown-menu-css">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://kodilla.com/pl"><img src="./Moduł_ 17. Spring i Hibernate_files/pl.svg">Polski</a>
+                            <a class="dropdown-item" href="https://kodilla.com/en"><img src="./Moduł_ 17. Spring i Hibernate_files/en.svg">English</a>
+                    </div>
+    </div>
+</li>
+                                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+                </li>
+                <li class="nav-item hidden-sm-down">
+    <a href="https://kodilla.com/pl/account" class="nav-link">Konto</a>
+</li>
+        <li class="nav-item">
+    <a class="analytics-track nav-link nav-link-accent" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-main light navbar">
+    <div class="container clearfix">
+        <a class="navbar-brand" href="https://kodilla.com/pl">
+            <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168px" height="30px">
+                <defs>
+                    <style>
+                        .navbar-logo-fill {
+                            fill: #0dac4b;
+                        }
+                    </style>
+                </defs>
+                <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                    <path id="KODILLA_copy_5_1_" class="navbar-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                    <ellipse id="eye_copy_4_1_" class="navbar-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                </g>
+                <path id="Path_1" data-name="Path 1" class="navbar-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                <path id="Path_2" data-name="Path 2" class="navbar-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                <path id="Path_3" data-name="Path 3" class="navbar-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                <path id="Path_4" data-name="Path 4" class="navbar-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                <path id="Path_5" data-name="Path 5" class="navbar-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                <path id="Path_6" data-name="Path 6" class="navbar-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+            </svg>
+        </a>
+        <button class="navbar-toggler pull-right collapsed" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars navbar-ico-open"></i>
+            <i class="fa fa-times navbar-ico-close"></i>
+        </button>
+        <ul id="navbar-main" class="nav navbar-nav pull-right collapse">
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Szkolenia Bootcamp
+    </a>
+    <ul class="bootcamp-list">
+                    <li class="list-sub list-sub-fe">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32">
+                <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width=".75">
+                    <polyline stroke="#02AC46" points="3.382 24.574 3.382 30.736 33.743 30.736 33.743 .375 3.382 .375 3.382 18.562"></polyline>
+                    <path stroke="#02AC46" d="M25.611 15.95L24.921 15.655C23.688 15.113 23.098 14.817 23.098 13.88 23.098 13.191 23.639 12.648 24.527 12.648 25.365 12.648 25.858 12.993 26.399 13.88L28.668 12.401C27.73 10.726 26.399 10.085 24.576 10.085 21.964 10.085 20.288 11.76 20.288 13.879 20.288 16.245 21.718 17.379 23.788 18.315L24.477 18.611C25.759 19.153 26.597 19.548 26.597 20.583 26.597 21.421 25.858 22.062 24.625 22.062 23.146 22.062 22.357 21.322 21.767 20.238L19.4 21.569C20.238 23.244 22.012 24.526 24.723 24.526 27.483 24.526 29.552 23.047 29.552 20.484 29.504 18.119 28.124 17.034 25.611 15.95zM17.823 20.238L17.823 10.282 14.866 10.282 14.866 20.189C14.866 21.668 14.274 22.012 13.289 22.012 12.303 22.012 11.859 21.322 11.416 20.533L9.001 22.012C9.691 23.491 11.07 24.674 13.388 24.674 16 24.575 17.823 23.244 17.823 20.238z"></path>
+                    <circle cx="3.382" cy="21.568" r="3.006" stroke="#02AC46"></circle>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/front-end">
+                <h4 class="bootcamp-name">Front-end: React</h4>
+                <p>Naucz się tworzyć front-end aplikacji w 4 miesiące</p>
+                <span class="bootcamp-label">nowość</span>
+            </a>
+        </li>
+                <li class="list-sub">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.61 27.4"><defs><style>.stroke-grey,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75px;}.stroke-grey{stroke:#e0e0e0;}.cls-2{stroke:#02ac46;}</style></defs><title>Front i Web Developer</title><line class="stroke-grey" x1="22.2" y1="3.46" x2="24.01" y2="5.31"></line><line class="stroke-grey" x1="22.2" y1="5.31" x2="24.01" y2="3.46"></line><polyline class="stroke-grey" points="0.96 26.61 0.96 0.79 26.72 0.79 26.72 26.61 0.96 26.61"></polyline><line class="stroke-grey" x1="1.22" y1="7.98" x2="26.72" y2="7.98"></line><rect class="stroke-grey" x="17.72" y="3.49" width="1.8" height="1.8"></rect><line class="stroke-grey" x1="15.03" y1="5.28" x2="13.24" y2="5.28"></line><polyline class="cls-2" points="16.86 20.13 19.8 16.75 16.86 13.37"></polyline><polyline class="cls-2" points="10.51 20.13 7.57 16.75 10.51 13.37"></polyline><line class="cls-2" x1="15.78" y1="10.43" x2="11.67" y2="22.81"></line></svg>
+            <a href="https://kodilla.com/pl/bootcamp/webdeveloper?type=wdp">
+                <h4 class="bootcamp-name">Web Developer</h4>
+                <p>Naucz&nbsp;się tworzyć aplikacje internetowe od&nbsp;podstaw</p>
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="list-sub">
+            <svg class="menu-svg" width="32px" height="32px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>menu_java_logo</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu_java_logo">
+                        <g id="svg_1" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042" id="path156_2_" fill="#02AC46"></path>
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042 Z" id="path158_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004" id="path160_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004 Z" id="path162_2_" fill="#02AC46"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311" id="path164_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311 Z" id="path166_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757" id="path168_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757 Z" id="path170_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853" id="path172_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853 Z" id="path174_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992" id="path176_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992 Z" id="path178_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38" id="path180_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38 Z" id="path182_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058" id="path184_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058 Z" id="path186_2_" fill="#E0E0E0"></path>
+                        </g>
+                        <path class="stroke-grey" d="M25.725,21.8309333 L25.725,4.16906671 C25.725,2.01884874 23.9812191,0.275 21.8310955,0.275 L4.16890446,0.275 C2.01878088,0.275 0.275,2.01884874 0.275,4.16906671 L0.275,21.8309333 C0.275,23.9818034 2.01842105,25.725 4.16890446,25.725 L21.8310955,25.725 C23.9815789,25.725 25.725,23.9818034 25.725,21.8309333 Z" id="svg_2" stroke="#E0E0E0" stroke-width="0.55"></path>
+                    </g>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/java?type=jdp">
+                <h4 class="bootcamp-name">Java Developer</h4>
+                <p>Poznaj najpopularniejszy na&nbsp;świecie język programowania od&nbsp;zera</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+                        <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Strefa kursanta
+    </a>
+    <ul>
+                    <li><a href="https://kodilla.com/pl/bootcamp-dashboard/146" class="nav-link">Bootcamp Java Plus 2018-10</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a></li>
+                    <li><a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a></li>
+    </ul>
+</li>
+                            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        O nas
+    </a>
+    <ul class="about-us">
+        <li><a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a></li>
+        <li><a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a></li>
+        <li><a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a></li>
+    </ul>
+</li>
+                                        <li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Szkolenia Bootcamp</span>
+    <ul>
+                    <li class="nav-item list-sub-fe">
+                <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/front-end">Bootcamp Front-end: React
+                    <span class="bootcamp-label">nowość</span>
+                </a>
+            </li>
+                <li class="nav-item">
+            <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/webdeveloper">Bootcamp Web Developer
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://kodilla.com/pl/bootcamp/java">Bootcamp Java</a>
+        </li>
+    </ul>
+</li>
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">Strefa kursanta</span>
+            <ul>
+                <li class="nav-item ">
+                                            <a class="nav-link" href="https://kodilla.com/pl/bootcamp-dashboard/146">
+                            Bootcamp   Java Plus 2018-10
+                        </a>
+                                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a>
+                </li>
+                                    <li class="nav-item ">
+                        <a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a>
+                    </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a>
+                </li>
+            </ul>
+        </li>
+    
+        
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">O nas</span>
+            <ul>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a>
+                </li>
+            </ul>
+        </li>
+    
+<li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Pozostałe</span>
+    <ul>
+                                        
+        <li class="nav-item">
+            <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+        </li>
+    </ul>
+
+</li>
+
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl/account">Konto</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link analytics-track" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+    </li>
+
+        
+    <li class="nav-item hidden-md-up nav-group">
+        <span class="mobile-menu-separator">Skontaktuj się z nami</span>
+        <ul>
+            <li class="nav-item">
+                <a href="mailto:support@kodilla.com" class="nav-link">
+                    <i class="fa fa-envelope-o"></i>
+                    support@kodilla.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:fcWidget.open();" class="nav-link">
+                    <i class="fa fa-comments"></i>
+                    <span>Porozmawiaj na czacie</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+<li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl"><img src="./Moduł_ 17. Spring i Hibernate_files/pl.svg">Polski</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/en"><img src="./Moduł_ 17. Spring i Hibernate_files/en.svg">English</a>
+    </li>
+
+        </ul>
+    </div>
+</nav>
+<main class="bootcamp module page-height-fix" id="bootcamp-module">
+    <div class="table-of-contents aside-sticky">
+        <section class="container">
+            <div class="row">
+                <aside class="module-nav col-md-4 col-md-offset-8">
+                    <section class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Spis treści modułu</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item current">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/88/3774#submodule-390" class="clearfix">
+                                    <p>17.1. Mapowanie obiektowo-relacyjne (ORM)</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li>
+                                                        <li class="list-group-item ">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/88/3774#submodule-391" class="clearfix">
+                                    <p>17.2. Tworzymy encje</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li>
+                                                        <li class="list-group-item ">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/88/3774#submodule-392" class="clearfix">
+                                    <p>17.3. Tworzymy relacje pomiędzy encjami</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li>
+                                                        <li class="list-group-item ">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/88/3774#submodule-393" class="clearfix">
+                                    <p>17.4. Język HQL i Named Queries</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li>
+                                                    </ul>
+                        <div class="card-block text-center">
+                                                                                                <a href="https://kodilla.com/pl/bootcamp-dashboard/146">Powrót do dashboardu</a>
+                                                                                    </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </div>
+    <section class="container module-content">
+        <div class="row">
+            <main class="col-md-8">
+                <section class="card">
+                    <div class="card-block module-header clearfix ">
+                        <h1 class="card-title">17. Spring i Hibernate</h1>
+                                                <i class="fa fa-bookmark fa-3x" aria-hidden="true"></i>
+                    </div>
+                                        <div class="card-block challenge">
+                        <h3>Wyzwania:</h3>
+                        <ul>
+	<li>Zrozumienie mapowania obiektowo-relacyjnego</li>
+	<li>Poznanie Hibernate oraz encji</li>
+	<li>Poznanie języka HQL i jego zastosowanie w aplikacjach opartych o Spring</li>
+</ul>
+
+<p>W ramach niniejszego modułu zajmiemy się zagadnieniami utrwalania (<i>ang. persisting</i>) obiektów z naszej aplikacji napisanej w Javie w bazie danych. W poprzednim module poznaliśmy podejście, które było stosowane dawniej, czyli wykorzystanie <b>JDBC</b>. Teraz pokażemy Ci nowocześniejsze podejście - z użyciem narzędzi mapowania obiektowo-relacyjnego <b>ORM</b> (<i>ang. Object-Relational Mapping</i>).</p>
+                    </div>
+                                    </section>
+                                    
+                <section id="submodule-390" class="card submodule current" data-bootcamp-user-submodule-id="273093">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">17.1. <span>Mapowanie obiektowo-relacyjne (ORM)</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            
+<p>Na przestrzeni lat powstało wiele narzędzi typu <b>ORM</b>. W efekcie tych prac wyewoluował zunifikowany standard o nazwie <b>JPA</b> (<i>ang. Java Persistence API</i>), który jest wspólnym interfejsem dla narzędzi <b>ORM</b>. Jednym z najpopularniejszych narzędzi <b>ORM</b> w Javie jest framework Hibernate implementujący standard <b>JPA</b>. W tym module skupimy się właśnie na frameworku <b>Hibernate</b>. Wpierw jednak zastanowimy się na czym w ogóle polega problem <b>ORM</b>.</p>
+<h3>Przedstawienie problemu</h3>
+<p>Podczas "normalnej" pracy z programem w Javie pracujemy na obiektach. Weźmy - dla przykładu - klasę <code class="language-java">Task</code>, która reprezentuje zadanie z listy zadań:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_79.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_79.png" style="width: 100%;"></a>
+<p>Pod klasą przedstawione są okręgi symbolizujące obiekty utworzone na podstawie definicji klasy <code class="language-java">Task</code>. Typowym zadaniem podczas programowania jest zapamiętanie tych obiektów w bazie danych - tu w tabeli <b>TASKS</b> po prawej stronie rysunku. Każdy z obiektów będzie zapisany jako kolejny rekord w tabeli <b>TASKS</b>.</p>
+<p>Zadaniem odwrotnym - ale równie często wykonywanym - jest odczytanie odpowiednich rekordów z bazy danych i utworzenie na ich podstawie obiektów w pamięci komputera.</p>
+
+<p>Możemy do tego celu zastosować poznane w poprzednim module <b>JDBC</b>, a następnie przy pomocy zapytań zapisać nasze obiekty w bazie danych lub je z bazy danych odczytać. Jest to jednak bardzo pracochłonne - musielibyśmy po drodze rozwiązać szereg problemów, które pokrótce opiszemy poniżej.</p>
+
+<h3>Różnice w typach danych i mapowanie pól</h3>
+<p>Różne bazy danych oferują różne typy danych dla kolumn. Typy z Javy często nie dadzą się wprost odwzorować na typy bazy danych. Na przykład typ <b>boolean</b> nie występuje na wielu silnikach baz danych (akurat dla bazy <b>MySQL</b> jest on zaimplementowany, ale już na przykład dla bazy <b>ORACLE</b> nie). Poza tym, nawet jeżeli baza danych dysponuje typami danych podobnymi do naszych typów z Javy, to często nie są one dokładnie takie same i występują różnice, np. związane z możliwym zakresem przechowywanych liczb lub ich precyzją.</p>
+
+<p>Każde z pól klasy trzeba poza tym w sposób "ręczny" przypisywać do odpowiedniego miejsca w zapytaniu <b>SQL</b>. Jeżeli zapytań jest dużo - to każdą zmianę definicji naszej klasy, musimy później uwzględnić w tych wszystkich zapytaniach. Jest to po prostu dużo pracy i łatwo o pomyłki.</p>
+
+<h3>Odwzorowanie relacji</h3>
+<p>Osobną kategorią problemów jest odwzorowanie relacji. Jeżeli nasza klasa posiada jakąś listę lub tablicę innych obiektów - to w bazie danych muszą być one zapisane w osobnych tabelach i połączone pomiędzy sobą za pomocą <b>constraintów</b> - <b>kluczy głównych</b> oraz <b>kluczy obcych</b>. W Javie relacje zamodelowane są zupełnie inaczej - albo przez referencje albo poprzez agregację (czyli np. klasa zawiera pole typu <b>List</b> lub tablicę z kolekcją obiektów składowych). Poniżej przykład jak mogłoby to wyglądać, gdybyśmy do klasy <code class="language-java">Task</code> z poprzedniego rysunku dodali pole <code class="language-java">List&lt;TaskPhase&gt; phases</code> - zawierające listę faz zadania:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_01.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_01.png" style="width: 100%;"></a>
+
+<p>Zapisywanie takich obiektów w bazie danych, oraz ich odczytywanie z bazy danych i zmiana z powrotem w obiekty, jest bardzo pracochłonne (i błędogenne - łatwo o pomyłki przy tak dużych operacjach - niektóre obiekty w rzeczywistych programach potrafią być naprawdę bardzo złożone).</p>
+
+<h3>Aktualizowanie stanu obiektów</h3>
+<p>Jeszcze innym problemem, z którym spotkamy się podczas "zwykłej" pracy z <b>JDBC</b> jest aktualizowanie obiektów. W sytuacji, gdy obiekty w pamięci komputera są zmieniane (np. zmieniają się ich właściwości wskutek wywołania jakiejś metody obiektu), to istnieje potrzeba zapamiętywania tych zmian w bazie danych.</p>
+
+<p>Tu często pojawia się problem - czy wybierać zapytania aktualizujące (czyli <b>UPDATE</b> z języka <b>SQL</b>) czy też wstawiające nowe obiekty (czyli <b>INSERT</b> z języka <b>SQL</b>) - aby to rozstrzygnąć musimy gdzieś pamiętać czy dany obiekt już w bazie danych się znajduje czy też jeszcze nie.</p>
+
+<p>Jak widać - podejście obiektowe, z którym mamy do czynienia w Javie, oraz płaskie podejście relacyjne, z którym mamy do czynienia w bazie danych, są zupełnie różne.</p>
+
+<p>Na szczęście, na przestrzeni lat powstało sporo narzędzi ułatwiających wykonywanie tych zadań - ogólnie nazywamy je narzędziami do mapowania obiektowo-relacyjnego, czyli <b>ORM</b> (<i>ang. object-relational mapping</i>).</p>
+
+<h3>Interfejs JPA</h3>
+<p>Sposób korzystania z różnych narzędzi <b>ORM</b> z czasem coraz bardziej się ujednolicał. Powstał zestaw adnotacji i interfejsów, które są uważane za powszechny standard. Ten standard nazywamy <b>JPA</b> (<i>ang. Java persistence API</i>). Dzięki takiemu ustandaryzowaniu, możemy w taki sam sposób korzystać z różnych narzędzi <b><b>ORM</b></b>.</p>
+<p>Komunikacja z bazą danych przy pomocy <b>JPA</b> i <b>ORM</b> pokazana została na poniższym rysunku:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_02.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_02.png" style="width: 100%;"></a>
+<p>W tym modelu, aplikacja nie komunikuje się samodzielnie z bazą danych (a właściwie przy użyciu <b>JDBC</b>). Aplikacja wykorzystuje za to usługi udostępniane przez narzędzie <b>ORM</b>. Usługi te udostępniane są w powszechnie stosowanym standardzie <b>JPA</b>. Samo narzędzie <b>ORM</b> komunikuje się z bazą danych tak samo jak poprzednio nasza aplikacja - czyli przez <b>JDBC</b>.</p>
+<p>Możemy więc powiedzieć, że narzędzie <b>ORM</b> "wpina się" pomiędzy naszą aplikację, a interfejs JDBC. Po co? Po to, aby zaoszczędzić nam pracy w pisaniu mapowań z obiektów na tabele oraz z tabel na obiekty :)</p>
+<h3>Hibernate jako implementacja standardu JPA</h3>
+<p>Jedną z popularniejszych implementacji standardu <b>JPA</b> jest narzędzie <b>ORM</b> o nazwie <b>Hibernate</b>. Aktualnie jest to bardzo rozbudowany framework posiadający wiele modułów - pierwotnym jego przeznaczeniem było jednak realizowanie zadań <b>ORM</b>. Do dzisiaj - pomimo znacznej rozbudowy - głównym polem jego wykorzystania jest ciągle mapowanie <b>ORM</b>.</p>
+
+<p>Ilekroć jednak podczas pisania programów dołączasz wymagane importy, staraj się - mając wybór - dołączać importy z pakietów <b>javax.persistence</b> zamiast z pakietów <b>Hibernate</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_03.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_03.png" style="width: 100%;"></a>
+<p>Adnotacje i interfejsy zdefiniowane w <b>javax.persistence</b> są bardziej ogólne (są to w zasadzie interfejsy standardu <b>JPA</b>). <b>Hibernate</b> wprowadziło z czasem szereg własnych definicji tych interfejsów i adnotacji, jednak dopóki nie musimy korzystać z rzeczy dedykowanych dla <b>Hibernate</b> (i ograniczamy się do ogólnego interfejsu <b>JPA</b>), korzystajmy z importów z klas ogólnych.</p>
+
+<p>Dzięki temu w łatwy sposób masz możliwość zmiany <b>Hibernate</b> na inne narzędzie <b>ORM</b>, jeżeli później dojdziesz do wniosku, że chcesz jednak skorzystać z innego.</p>
+
+
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3>Zadanie: <span class="task-title">Dołączamy framework Hibernate</span></h3>
+                        <div class="task-content">
+                            <p>Stworzymy teraz nowy moduł i wstępnie go skonfigurujemy. Jako zadanie podsumowujące submoduł - trzeba będzie ten kod wgrać do repozytorium Github i wysłać do mentora. Do dzieła!</p>
+
+<p>Zacznijmy od utworzenia nowego modułu - w tym celu ustaw się na projekcie <b>kodilla-course</b> i przy pomocy prawego przycisku myszy, wybierz <i>New-&gt;Module</i>. Wybierz <b>Spring Initializr</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_04.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_04.png" style="width: 100%;"></a>
+<p>Po kliknięciu <i>Next,</i> wypełnij formularz jak pokazano poniżej. Pamiętaj, aby wybrać <i>Gradle Project</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_05.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_05.png" style="width: 100%;"></a>
+
+<p>Po kliknięciu <i>Next</i>, musimy wskazać wersję <b>SpringBoota</b> (<u><b>WAŻNE</b></u> - wybierz wersję <b>1.5.10</b>), a także wybrać z jakich modułów <b>SpringBoot</b> będziemy korzystali. Najpierw, w grupie <b>Core</b>, zaznacz moduł Validation:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-19-03-2018-1521448150-7967.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-19-03-2018-1521448150-7967.png" style="width: 100%;"></a>
+<p>A następnie w grupie <b>SQL</b> zaznacz trzy moduły: <b>JPA</b>, <b>JDBC</b> oraz <b>MySQL</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-19-03-2018-1521448207-4668.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-19-03-2018-1521448207-4668.png" style="width: 100%;"></a>
+<p>Przeznaczenie poszczególnych modułów jest następujące:</p>
+<ul>
+    <li><b>Validation</b> - pozwala między innymi na wykorzystanie adnotacji niedopuszczających do tego, aby pola klas zawierały puste wartości (null).</li>
+    <li><b>JPA</b> - zawiera biblioteki potrzebne do obsługi standardu <b>JPA</b>, w tym framework <b>Hibernate</b>.</li>
+    <li><b>JDBC</b> - zawiera JDBC, z którego korzysta <b>Hibernate</b>.</li>
+    <li><b>MySQL</b> - zawiera sterownik JDBC dla bazy MySQL.</li>
+</ul>
+
+<p>Po kliknięciu <i>Next.</i> wypełnij ustawienia końcowe (ścieżki oczywiście mogą być u Ciebie inne):</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_08.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_08.png" style="width: 100%;"></a>
+<p>Po kliknięciu <i>Finish</i> nastąpi jeszcze przejście do ustawień Gradle:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_09.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_09.png" style="width: 100%;"></a>
+<p>Zaznacz checkbox przy opcji "<i>Create directories for empty content roots automatically</i>", który domyślnie nie jest zaznaczony. Spowoduje to automatyczne utworzenie struktury katalogów w module dla Ciebie.</p>
+
+<p>Po kliknięciu <i>OK,</i> struktura modułu zostanie wygenerowana. Uruchom okno terminala i zbuduj projekt przy pomocy polecenia <b>gradlew build</b> (dla macOS będzie to polecenie ./gradlew build).</p>
+
+<p>Następnie otwórz plik <i>kodilla-hibernate/src/main/resources/application.properties</i> - powinien być pusty:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_10.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_10.png" style="width: 100%;"></a>
+
+<p>Następnie wpisz jego zawartość:</p>
+
+
+<pre class="line-numbers"><code class="language-java">
+spring.datasource.url=jdbc:mysql://localhost:3306/kodilla_course?serverTimezone=Europe/Warsaw&amp;useSSL=False
+spring.datasource.username=kodilla_user
+spring.datasource.password=kodilla_password
+
+spring.jpa.database=mysql
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.naming.strategy=org.hibernate.cfg.ImprovedNamingStrategy
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+</code></pre>
+
+
+<p>To są inicjalne ustawienia dla <b>Hibernate</b>. Poniżej kilka słów o każdym z nich:</p>
+
+<ul>
+    <li>Pierwsze trzy właściwości - są to znane już Tobie z poprzedniego modułu: <i>connection string</i> oraz <i>nazwa i hasło użytkownika do bazy danych</i>. Teraz zostały jedynie przypisane do odpowiednich właściwości frameworka Spring.</li>
+    <li><b>spring.jpa.database</b> - właściwość, przy pomocy której informujemy Springa z jakiego rodzaju bazy danych będziemy korzystali</li>
+    <li><b>spring.jpa.show-sql</b> - właściwość, która mówi <b>JPA</b> czy ma w logach (u nas - w oknie konsoli) umieszczać informację o tym jakie wykonuje polecenia SQL w celu realizacji zadań <b>ORM</b>. Jest to przydatna funkcja diagnostyczna, która pozwala "podglądać" <b>Hibernate</b>.</li>
+    <li><b>spring.jpa.hibernate.ddl-auto</b> - ważne ustawienie, które pozwala frameworkowi <b>Hibernate</b> na samodzielne tworzenie struktury tabel w bazie danych. Ustawienie update powoduje, że tabele są tworzone lub modyfikowane wówczas, gdy nastąpią jakieś zmiany w kodzie (np. dojdzie nowe pole do klasy - wówczas w tabeli zostanie dodana nowa kolumna).</li>
+    <li><b>spring.jpa.hibernate.naming.strategy</b> - wskazuje klasę zajmującą się nadawaniem nazw obiektom bazodanowym (tabelom, kolumnom itd). Dla nas to ustawienie nie będzie zbyt istotne, ponieważ będziemy samodzielnie wskazywali <b>Hibernate</b> jak ma nazywać tabele i kolumny.</li>
+    <li><b>spring.jpa.properties.hibernate.dialect</b> - przy pomocy tego ustawienia informujemy <b>Hibernate</b> jakiego dialektu języka SQL ma używać - w naszym przypadku będzie to wersja składni zapytań właściwa dla bazy MySQL w wersji 5.</li>
+</ul>
+
+<p>Zauważ, że również w pliku application.properties możesz korzystać z podpowiadania <b>IntelliJ</b> - na przykład poniżej pokazano jak <b>IntelliJ</b> wspiera wybór możliwych wartości dla właściwości <b>spring.jpa.database</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_11.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_11.png" style="width: 100%;"></a>
+
+<p>Nasz moduł jest skonfigurowany i gotowy do rozpoczęcia pisania aplikacji. Wyślij teraz kod do repozytorium, a link do niego prześlij do mentora.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/273093" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="">
+                                </div>
+                                <button type="submit" class="btn  btn-success-outline ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-391" class="card submodule " data-bootcamp-user-submodule-id="273094">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">17.2. <span>Tworzymy encje</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Aby <b>Hibernate</b> zajął się mapowaniem <b>ORM</b>, musimy stworzyć dwie rzeczy:</p>
+<ul>
+    <li>Zdefiniować <b>encje</b> (tabele), czyli określić przy pomocy adnotacji <b>@Entity</b>, które klasy (a w zasadzie obiekty utworzone na ich podstawie) mają podlegać persystencji, czyli utrwalaniu (zapisywaniu) w bazie danych</li>
+    <li>Stworzyć interfejs udostępniający metody do zapisu i odczytu encji z bazy danych - są to <b>Springowe</b> kontrolery repozytorium oznaczone adnotacjami <b>@Repository</b></li>
+</ul>
+
+<h3>Encje</h3>
+
+<p>Przygodę z <b>Hibernate</b> rozpoczniemy od napisania zwykłej klasy - stwórzmy więc <b>POJO</b> reprezentujące zadanie do wykonania. W tym celu utwórz w katalogu <i>src/main/java</i> pakiet <b>com.kodilla.hibernate.task</b>, a w nim klasę <code class="language-java">Task</code>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.task;
+
+import java.util.Date;
+
+public class Task {
+    private int id;
+    private String description;
+    private Date created;
+    private int duration;
+
+    public Task(String description, int duration) {
+            this.description = description;
+            this.created = new Date();
+            this.duration = duration;
+    }
+
+    public int getId() {
+            return id;
+    }
+
+    public String getDescription() {
+            return description;
+    }
+
+    public Date getCreated() {
+            return created;
+    }
+
+    public int getDuration() {
+            return duration;
+    }
+}
+</code></pre>
+
+<p>Jest to zwykła klasa, z czterema polami: <b>id</b>, <b>description</b>, <b>created</b> oraz <b>duration</b>. Klasa posiada również konstruktor inicjujący trzy spośród czterech pól - opis zadania (<b>description</b>), czas jego trwania (<b>duration</b>) oraz datę utworzenia (<b>created</b>). Data utworzenia zadania jest typu <b>Date</b> - to nieco inny, niż dotychczas stosowany typ <b>LocalDate</b>, również przeznaczony do przechowywania dat. Utworzenie nowego obiektu klasy <b>Date</b> automatycznie inicjuje go na bieżącą datę.</p>
+<p>Klasa <code class="language-java">Task</code> posiada również zestaw getterów.</p>
+
+<p>Aby poinformować <b>Hibernate</b>, że obiekty tej klasy mają podlegać persystencji (utrwalaniu) w bazie danych, należy skorzystać z adnotacji <b>@Entity</b> umieszczonej nad klasą. Oprócz niej dodamy również adnotację <b>@Table</b>, która posiada argument name, służącą do wskazania w jakiej tabeli bazy danych mają być przechowywane obiekty</p>
+
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Wyjaśnienie - adnotacje @Entity oraz @Table</h4>
+    
+    <p>Aby powiedzieć <b>Hibernate</b>, że obiekty danej klasy mają być przechowywane w bazie danych wystarczy opatrzyć tę klasę adnotacją <b>@Entity</b> (<b>encja</b> to inaczej <b>tabela</b>).</p>
+    
+    <p>W tej sytuacji <b>Hibernate</b> utworzy w bazie danych tabelę, w której będzie przechowywał dla nas obiekty wskazanej klasy. Nazwę tabeli ustali sam <b>Hibernate</b> na podstawie przyjętej strategii nadawania nazw. Najczęściej nazwa tabeli będzie tożsama po prostu z nazwą klasy.</p>
+    
+    <p>Jeżeli chcemy jednak narzucić <b>Hibernate</b>, w jaki sposób ma nazwać tabelę przechowującą nasze obiekty, wówczas możemy skorzystać z opcjonalnej adnotacji <b>@Table(name="...")</b> i poprzez argument <b>name</b> podać nazwę, która ma być użyta jako nazwa tabeli.</p>
+
+</div>
+
+<p>Spójrz na zmodyfikowany kod poniżej:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_12.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_12.png" style="width: 100%;"></a>
+
+<p><b>Hibernate</b> zapisze w bazie danych wszystkie pola naszej klasy.</p>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Ważne</h4>
+    <p><b>Hibernate</b> domyślnie zapisuje wszystkie pola klasy w bazie danych. Jeżeli nie chcesz, aby jakieś pole było zapisywane w bazie danych, powinieneś je oznaczyć adnotacją <b>@Transient</b>. Przykład zastosowania - właściwości wyliczane na podstawie innych właściwości klasy.</p>
+</div>
+
+<p>Nazwy pól będą nadane przez <b>Hibernate</b> według jego strategii. Jeżeli chcemy jednak wymusić sposób, w jaki mają być one nazwane, możemy skorzystać z opcjonalnej adnotacji <b>@Column(name="...")</b>, gdzie do atrybutu name przypisujemy nazwę, która ma być użyta przez <b>Hibernate</b> do nazwania kolumny. Adnotację <b>@Column</b> możemy umieścić:</p>
+<ul>
+    <li>bezpośrednio przy deklaracji pola klasy (nad deklaracją)</li>
+    <li>przy metodzie gettera odczytującego dane z pola (nad getterem)</li>
+</ul>
+
+<p>W naszych przykładach będziemy stosowali drugie rozwiązanie - przy getterach.</p>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Adnotacje przy polach vs adnotacje przy getterach</h4>
+    <p>Od dłuższego czasu toczy się dyskusja pomiędzy programistami-zwolennikami ustawiania adnotacji <b>@Column</b> bezpośrednio przy polach, a programistami-zwolennikami ustawiania adnotacji <b>@Column</b> przy akcesorach (getterach i setterach).</p>
+    <p>Dyskusja ta nie posiada jednoznacznego rozstrzygnięcia - istnieją w końcu powody, dla których <b>Hibernate</b> dopuszcza zarówno jedno jak i drugie rozwiązanie.</p><p>Niektórzy mówią o enkapsulacji danych, inni o użyciu mechanizmów refleksji (nie omawianych w bootcampie), jeszcze inni o wydajności rozwiązania. Niektóre z tych dyskusji możesz prześledzić <a href="http://chstath.blogspot.com/2007/05/field-access-vs-property-access-in-jpa.html">tutaj</a> lub <a href="https://stackoverflow.com/questions/594597/hibernate-annotations-which-is-better-field-or-property-access">tutaj</a>, aby zapoznać się z argumentami obu stron.</p>
+    <p>Nie przesądzając o wyższości jednych nad drugimi - wybieramy w bootcampie opcję numer dwa - stosujemy adnotacje przy akcesorach (getterach).</p>
+    <p>Możliwe jest oznaczenie klasy dodatkową adnotacją <b>@Access</b>, która informuje <b>Hibernate</b> o tym, czy do zapisu i odczytu danych ma używać bezpośrednio pól klasy, czy też akcesorów (getterów i setterów):</p>
+    <ul>
+        <li><b>@Access(AccessType.FIELD)</b> - dla dostępu przez pola klasy</li>
+        <li><b>@Access(AccessType.PROPERTY)</b> - dla dostępu przy pomocy akcesorów (gettery i settery)</li>
+    </ul>
+    <p>Adnotacja ta jest opcjonalna, w pewnych sytuacjach jednak może mieć zastosowanie - np. gdy w środku w klasie nie stosujesz żadnych adnotacji i pozostawiasz ustawienia <b>Hibernate</b> domyślne (np. nazwy) - wówczas możesz przy pomocy tej adnotacji wskazać <b>Hibernate</b> w jaki sposób ma uzyskiwać dostęp do pól klasy.</p>
+    <p>W ramach jednej klasy nie można mieszać adnotacji przy polach z adnotacjami przy akcesorach.</p>
+</div>
+
+
+
+<p>Dodajmy więc adnotację przy getterze <code class="language-java">getDescription()</code>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_13.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_13.png" style="width: 100%;"></a>
+
+<p>Wartością atrybutu name jest nazwa kolumny, jaką w tabeli <b>TASKS</b> ma utworzyć <b>Hibernate</b> do przechowywania pola description.</p>
+
+<p>Analogiczną adnotację umieścimy przy getterze <code class="language-java">getDuration()</code>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_14.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_14.png" style="width: 100%;"></a>
+
+<p>Teraz pora na pole <b>created</b>. Pole to nie może być puste - chcemy więc, aby w bazie danych pojawiło się ograniczenie <b>NOT NULL</b> na tym polu. Możemy to uzyskać na dwa sposoby:</p>
+<ul>
+    <li>Sposób pierwszy - do adnotacji <b>@Column(name="CREATED")</b> dodajemy drugi argument o nazwie nullable i ustawiamy go na wartość false - np. <b>@Column(name="CREATED", nullable = false)</b></li>
+    <li>Sposób drugi - dodajemy oprócz adnotacji <b>@Column(name="CREATED")</b> dodatkową adnotację <b>@NotNull</b> - ten sposób, oprócz dodania ograniczenia <b>NOT NULL</b> przy kolumnie na bazie danych spowoduje również, że sam <b>Spring</b> w warstwie Javy również nie pozwoli aby to pole było puste (zanim trafi do bazy danych)</li>
+</ul>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Wyjaśnienie</h4>
+    <p>Adnotacja <b>@NotNull</b> nie jest częścią frameworka <b>Hibernate</b>. Tak naprawdę nie ma ona nic wspólnego z bazami danych. Pochodzi z biblioteki javax.validation.constraints i służy do oznaczania pól klas jako pól, których wartość nie może być pusta (<b>null</b>).</p><p>Argument <b>nullable</b> adnotacji <b>@Column</b> jest z kolei wspierany przez <b>Hibernate</b> i dotyczy warstwy bazy danych.</p><p>Framework <b>Hibernate</b> jest jednak "sprytny" i gdy zauważy adnotację <b>@NotNull</b> przy polu klasy, to sam ustawia sobie <b>nullable=false</b>. A dodatkowo Java pilnuje aby do tego pola w klasie nie można było przypisać <b>null</b> jeszcze zanim trafi ono do bazy danych. Dzięki tej adnotacji pieczemy więc dwie pieczenie na jednym rożnie :)</p>
+</div>
+
+
+<p>Wybieramy drugie z zaproponowanych rozwiązań:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_15.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_15.png" style="width: 100%;"></a>
+
+<p>Pozostało jeszcze najbardziej "skomplikowane" pole - pole o nazwie id. Chcemy, aby było ono <b>kluczem głównym</b> tabeli <b>TASKS</b>. Uzyskujemy to poprzez oznaczenie tego pola adnotacją <b>@Id</b>.</p>
+
+<p>Chcemy również, aby wyznaczaniem wartości tego pola dla kolejnych obiektów zajął się sam Hibernate - w tym celu wyposażymy je w dodatkową adnotację <b>@GeneratedValue</b>.</p>
+
+<p>Ponadto, zależy nam także na tym, aby wartości w tym polu były unikalne, dlatego też adnotację <b>@Column</b> rozbudujemy o dodatkowy atrybut <b>unique=true</b>. Getter <code class="language-java">getId()</code> będzie więc wyglądał następująco:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_16.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_16.png" style="width: 100%;"></a>
+
+<p>Aby nasza klasa mogła być używana przez Hibernate, musimy ją wyposażyć jeszcze w dwa następujące elementy:</p>
+<ul>
+    <li>bezparametrowy konstruktor</li>
+    <li>zestaw setterów do wszystkich pól</li>
+</ul>
+
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Wyjaśnienie</h4>
+    <p><b>Hibernate</b> podczas odtwarzania stanu obiektów (czyli odczytywania ich z bazy danych) używa bezparametrowego konstruktora - dlatego jest on potrzebny w klasie.</p><p>Jeżeli zdecydowaliśmy się na oznaczanie adnotacjami akcesorów (czyli getterów) zamiast pól, to konieczne jest również utworzenie zestawu setterów - <b>Hibernate</b> w tej sytuacji "jest konsekwentny" - jeżeli odczytuje wartości pól przy pomocy getterów, to zapisywać je chce analogicznie - przy pomocy setterów. Gdyby adnotacjami oznaczone były pola, a nie gettery, to tworzenie setterów nie byłoby potrzebne.</p><p>Utworzone settery mogą mieć modyfikator dostępu ustawiony na <b>private</b>, wówczas nikt nie będzie ich mógł wywołać spoza klasy, jeżeli sobie tego nie życzysz. Dla Hibernate będą jednak w zupełności wystarczające.</p>
+</div>
+
+
+<p>Powyższe elementy możesz wygenerować przy pomocy <b>IntelliJ</b> (zmień tylko specyfikatory dostępu setterów na <b>private</b>). Ostateczna postać klasy <code class="language-java">Task</code> jest następująca:</p>
+
+<pre class="line-numbers"><code class="language-java">
+
+package com.kodilla.hibernate.task;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
+
+@Entity
+@Table(name = "TASKS")
+public final class Task {
+    private int id;
+    private String description;
+    private Date created;
+    private int duration;
+
+    public Task() {
+    }
+
+    public Task(String description, int duration) {
+            this.description = description;
+            this.created = new Date();
+            this.duration = duration;
+    }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
+        public int getId() {
+            return id;
+    }
+
+    @Column(name = "DESCRIPTION")
+    public String getDescription() {
+            return description;
+    }
+
+    @NotNull
+    @Column(name="CREATED")
+    public Date getCreated() {
+            return created;
+    }
+
+    @Column(name="DURATION")
+    public int getDuration() {
+            return duration;
+    }
+
+    private void setId(int id) {
+            this.id = id;
+    }
+
+    private void setDescription(String description) {
+            this.description = description;
+    }
+
+    private void setCreated(Date created) {
+            this.created = created;
+    }
+
+    private void setDuration(int duration) {
+            this.duration = duration;
+    }
+}
+</code></pre>
+
+<h3>Kontroler repozytorium</h3>
+<p>Drugim wymaganiem do działania ORM <b>Hibernate</b> jest stworzenie kontrolerów repozytorium. Są to interfejsy, które powinny rozszerzać (za pomocą <b>extends</b>) dostarczany przez <b>SpringBoot</b> interfejs <b>CrudRepository</b>. Poniżej omówimy sobie czym jest kontroler, repozytorium oraz jak spełnić to wymaganie.</p>
+
+
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Wyjaśnienie - CRUD</h4>
+    <p>Skrót <b>CRUD</b> jest często stosowany podczas pracy z bazami danych. Oznacza on zestaw podstawowych i elementarnych operacji możliwych do wykonania na bazie danych:</p>
+    <ul>
+        <li><b>C - create</b>, tworzenie rekordów</li>
+        <li><b>R - read</b>, odczyt rekordów</li>
+        <li><b>U - update</b>, aktualizacja rekordów</li>
+        <li><b>D - delete</b>, usuwanie rekordów</li>
+    </ul>
+</div>
+
+
+
+<p>Kontrolery poznaliśmy już w trakcie modułu 10. Jak zapewne pamiętasz, są to klasy bądź interfejsy, które posiadają określone metody służące do oddelegowania różnych działań do właściwych miejsc w aplikacji - przykładowo, kiedy chcemy wykonać metodę dodawania w kalkulatorze, możemy użyć kontrolera do działań matematycznych, który wywoła metodę <code class="language-java">add()</code>.</p>
+
+<p>Repozytorium to nic innego jak rodzaj kontrolera, który służy do delegowania akcji na bazie danych, takich jak odczytywanie i zapisywanie danych - możesz skojarzyć to sobie z nieco bardziej rozbudowanymi "getterami i setterami" służącymi do wykonywania operacji na bazie danych. Pamiętaj, że nie jest to takie samo repozytorium jak to w przypadku Gita - są to dwa oddzielne pojęcia występujące pod taką samą nazwą. Tu przez repozytorium rozumiemy nasz "magazyn danych", czyli po prostu bazę danych.</p>
+
+<p>Kontrolery repozytoriów są częścią tak zwanej warstwy <code class="language-java">DAO</code> (<i>ang. Data Access Objects</i>) - utwórz więc w katalogu <i>src/main/java</i> pakiet <b>com.kodilla.hibernate.task.dao</b>, a w nim interfejs o nazwie <code class="language-java">TaskDao</code>:</p>
+
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.task.dao;
+
+import com.kodilla.hibernate.task.Task;
+import org.springframework.data.repository.CrudRepository;
+
+public interface TaskDao extends CrudRepository&lt;Task, Integer&gt; {
+    
+}
+</code></pre>
+
+<p>W nawiasach ostrokątnych po nazwie interfejsu <code class="language-java">CrudRepository</code> podajemy dwie wartości: typ danych, którego dotyczy kontroler repozytorium (tu: operujemy na encjach typu <b>Task</b>), oraz typ danych używanych jako identyfikator (klucz główny) obiektu encji (musi to być obiekt, więc mimo iż identyfikatorem klasy <b>Task</b> jest typ <b>int</b>, to stosujemy jego <b>wrapper</b> czyli typ <b>Integer</b>).</p>
+
+<p>Podsumowując - wskazujemy klasę do utrwalania (czyli klasę, której obiekty będziemy zapisywać w bazie danych) oraz typ danych użyty dla klucza głównego.</p>
+
+<p>Najważniejsze metody dostarczane przez interfejs <b>CrudRepository</b>, to:</p>
+
+<ul>
+    <li><code class="language-java">save(S entity)</code> - zapisuje obiekt <b>entity</b> do bazy danych</li>
+    <li><code class="language-java">findOne(ID id)</code> - odczytuje jeden obiekt z bazy danych na podstawie identyfikatora <b>id (klucz główny)</b></li>
+    <li><code class="language-java">exists(ID id)</code> - sprawdza czy obiekt o danym identyfikatorze <b>id</b> istnieje w bazie danych</li>
+    <li><code class="language-java">findAll()</code> - zwraca listę wszystkich obiektów zapisanych w tabeli</li>
+    <li><code class="language-java">count()</code> - zwraca informację o liczbie rekordów w tabeli</li>
+    <li><code class="language-java">delete(ID id)</code> - usuwa z bazy danych obiekt o identyfikatorze id</li>
+    <li><code class="language-java">delete(T entity)</code> - usuwa z bazy danych obiekt równy obiektowi <b>entity</b> (porównanie następuje przy pomocy metody <code class="language-java">equals(Object o)</code> obiektów)</li>
+    <li><code class="language-java">deleteAll()</code> - usuwa wszystkie rekordy z tabeli</li>
+</ul>
+
+<p>Powyższy zestaw możemy rozszerzać o własne metody, a najlepsze w tym wszystkim jest to, <b>że nie musimy pisać ich ciała</b> - jeżeli skonstruujemy ich nazwy zgodnie z oczekiwaniami frameworka <b>Hibernate</b>, to <b>SpringBoot</b> sam zajmie się ich utworzeniem - musimy jedynie wyspecyfikować ich nazwy w interfejsie.</p>
+
+<p><b>METODY TE MUSZĄ MIEĆ NAZWY ODPOWIADAJĄCE OCZEKIWANIOM HIBERNATE.</b></p>
+
+<p><b>Hibernate</b> oczekuje, że kontroler repozytorium, dostarczy metod o nazwach:</p>
+<ul>
+    <li>do wyszukiwania danych - metod o nazwach rozpoczynających się od <code class="language-java">findBy…</code> gdzie w miejscu kropek wstawiamy nazwę pola encji - metody te służą do wyszukiwania rekordów w bazie danych na podstawie wartości wskazanego pola klasy (na przykład: <code class="language-java">findById(Integer id)</code>). Ważne jest to, że nie możemy użyć tu dowolnej nazwy - musi to być nazwa <code class="language-java">findBy</code> a za nią dokładna nazwa pola w notacji <b>camelCase</b> (ale już z dużej litery bo następuje po początkowym "findBy").</li>
+    <li>do zliczania danych - metod o nazwach rozpoczynających się od <code class="language-java">count…</code></li>
+    <li>do usuwania danych - metod o nazwach rozpoczynających się od <code class="language-java">removeBy…</code></li>
+</ul>
+
+<p>Na szczęście IntelliJ ułatwia nam sprawę, ponieważ podpowiada co możemy wstawić jako nazwę metody:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_17.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_17.png" style="width: 100%;"></a>
+
+<p>Jeżeli chcemy wyszukiwać dane po kilku polach - również tu <b>IntelliJ</b> przychodzi nam z pomocą podczas konstruowania nazwy metody:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_18.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_18.png" style="width: 100%;"></a>
+<p>Istotny jest również zadeklarowany przez nas typ zwracanej przez metodę wartości - jeżeli zadeklarujemy <code class="language-java">List&lt;Task&gt;</code> przed metodą, to zwróci ona wszystkie obiekty spełniające kryteria wyszukiwania w postaci listy.</p>
+
+<p>Jeżeli natomiast jako zwracany typ zadeklarujemy typ <b>Task</b>, wówczas metoda zwróci nam dokładnie jeden obiekt znaleziony przy pomocy kryteriów wyszukiwania.</p>
+
+<p>Dopisz teraz do interfejsu metodę <code class="language-java">findByDuration()</code> zwracającą wszystkie rekordy z tabeli <b>TASKS</b>, których pole duration równe jest określonej (podanej jako parametr) wartości:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_19.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_19.png" style="width: 100%;"></a>
+
+<p>Nasz interfejs oznaczyliśmy dwoma dodatkowymi adnotacjami:</p>
+<ul>
+    <li><b>@Repository</b> - jest to <b>Springowa</b> adnotacja mówiąca o tym, że nasz interfejs powinien być użyty do utworzenia <b>Beana</b> (dla przypomnienia <b>Bean</b> to obiekt, który został utworzony przez <b>Springa</b> i umieszczony w <b>kontenerze Inversion of Control</b> - w razie wątpliwości wróć na chwilę do modułu 10 opisującego <b>Springa</b>), który będzie kontrolerem repozytorium</li>
+    <li><b>@Transactional</b> - adnotacja mówiąca o tym, że wywołanie danej metody powinno być zrealizowane w ramach jednej transakcji. Tak naprawdę nie chodzi tutaj tylko o transakcję w rozumieniu bazodanowym, ale w znaczeniu szerszym - o transakcję Springa. Jednym z jej elementów jednak jest transakcja bazodanowa, więc na razie nie musimy się zagłębiać bardziej w szczegóły. Adnotacja @Transactional może być użyta przy konkretnej metodzie lub przy klasie (albo interfejsie) - wówczas oznacza to, że dotyczy ona wszystkich metod udostępnianych przez klasę (lub interfejs). Dzięki tej adnotacji nie musisz samodzielnie dbać o zatwierdzanie i wycofywanie transakcji bazodanowych (<b>COMMIT</b> oraz <b>ROLLBACK</b> wykonywane są przez <b>Springa</b>).</li>
+</ul>
+
+
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Przypomnienie - rodzaje komponentów Springa</h4>
+    <p>W jednym z poprzednich modułów mówiliśmy o tym, że podstawowa adnotacja <b>Springa</b>, czyli adnotacja @Component używana do oznaczania klas, na podstawie których Spring może tworzyć Beany, posiada swoje trzy bardziej specjalizowane wersje:</p>
+    <a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_20.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_20.png" style="width: 100%;"></a>
+    <ul>
+        <li><b>@Component</b> - podstawowa adnotacja oznaczająca klasę, której obiekt ma się stać Beanem - używana najczęściej do prostych klas, które nie posiadają zależności do innych klas</li>
+        <li><b>@Service</b> - adnotacja o działaniu takim samym jak @Component, stosujemy ją jednak do Beanów, które udostępniają jakieś bardziej złożone usługi</li>
+        <li><b>@Controller</b> - adnotacja używana najczęściej podczas pisania tzw. kontrolerów dla aplikacji WWW. Praktycznie tożsama z adnotacją @Component, jednak warto ją stosować przy kontrolerach usług WWW, o których dowiemy się niebawem.</li>
+        <li><b>@Repository</b> - adnotacja używana do oznaczania Beanów odpowiedzialnych za przechowywanie danych w trwałych zbiorach danych (np. w bazie danych).</li>
+    </ul>
+</div>
+
+
+
+
+
+<h3>Sprawdzenie - testy kontrolera repozytorium</h3>
+<p>Uruchom teraz <b>MySQL Workbench</b> i podłącz się do bazy danych jako użytkownik <b>kodilla_user</b>. Sprawdź jakie tabele zawiera nasza baza danych:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_21.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_21.png" style="width: 100%;"></a>
+<p>Widzimy tu dwie tabele: <b>USERS</b> oraz <b>POSTS</b>, które utworzyliśmy w poprzednim module dotyczącym <b>JDBC</b>. Widzimy, że tabeli <b>TASKS</b> tutaj nie ma.</p>
+
+<p>Napiszemy teraz dwa testy naszego kontrolera repozytorium. W katalogu <i>src/test/java</i> utwórz pakiet <b>com.kodilla.hibernate.task.dao</b>, a w nim pusty zestaw testów <b>TaskDaoTestSuite</b>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.task.dao;
+
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class TaskDaoTestSuite {
+    private TaskDao taskDao;
+}
+</code></pre>
+
+<p>Nasz zestaw testów musi być opatrzony adnotacjami <b>@RunWith</b> oraz <b>@SpringBootTest</b>, ponieważ przed uruchomieniem testów musi zostać zainicjowany kontener <b>Springa</b>.</p>
+
+<p>Naszą klasę z zestawem testów wyposażyliśmy w pole <b>TaskDao taskDao</b>, które będzie przechowywało referencję do kontrolera repozytorium.</p>
+
+<p>Napiszmy więc pierwszy test:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.task.dao;
+
+import com.kodilla.hibernate.task.Task;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class TaskDaoTestSuite {
+    private TaskDao taskDao;
+    private static final String DESCRIPTION = "Test: Learn Hibernate";
+
+    @Test
+    public void testTaskDaoSave() {
+            //Given
+            Task task = new Task(DESCRIPTION, 7);
+
+            //When
+            taskDao.save(task);
+    
+        //Then
+            int id = task.getId();
+            Task readTask = taskDao.findOne(id);
+            Assert.assertEquals(id, readTask.getId());
+    
+        //CleanUp
+            taskDao.delete(id);
+    }
+}
+</code></pre>
+
+<p>W klasie testowej dodaliśmy stałą o nazwie <b>DESCRIPTION</b>. Sam test <code class="language-java">testTaskDaoSave()</code> wykonuje po kolei:</p>
+<ul>
+    <li>w sekcji <b>//Given</b> - tworzony jest obiekt klasy <b>Task</b>, który jako description ma ustawioną wartość określoną przez stałą <b>DESCRIPTION</b>, a czas trwania ustawiony jest na 7 dni.</li>
+    <li>w sekcji <b>//When</b> - odbywa się właściwy test, czyli wywołanie metody <code class="language-java">save(T entity)</code> interfejsu kontrolera repozytorium. Oczekujemy, że po wykonaniu tej operacji w bazie danych zostanie zapisany obiekt <b>task</b></li>
+    <li>Sekcja <b>//Then</b> dokonuje sprawdzenia, czy operacja się powiodła - sprawdzamy jaki identyfikator został nadany obiektowi task poprzez wywołanie gettera <code class="language-java">getId()</code>. Następnie przy pomocy kontrolera repozytorium odczytujemy z bazy danych obiekt o podanym <b>id</b> i porównujemy jego <b>klucz główny</b> z zapamiętaną wartością <b>id</b></li>
+    <li>Sekcja <b>//CleanUp</b> służy do "posprzątania" po testach. Jeżeli wszystko jest ok - sprzątamy po teście (testy muszą być idempotentne - czyli stan systemu po wykonaniu testu musi być taki sam jak przed wykonaniem testu) - czyli usuwamy z bazy danych dodany przed chwilą rekord.</li>
+</ul>
+
+<p>Gdy spróbujemy uruchomić nasz test - IntelliJ zgłosi błąd:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_22.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_22.png" style="width: 100%;"></a>
+<p>Widzimy, że zgłoszony został <b>NullPointerException</b> w linii <b>22</b> naszego testu. Czyli w miejscu, w którym wywołujemy metodę kontrolera repozytorium. Dlaczego? Ponieważ kontroler repozytorium jest zadeklarowany, ale nigdzie nie tworzymy jego obiektu.</p>
+
+<p>Ale od czego jest <b>Spring</b>? :) Dodajmy po prostu adnotację <b>@Autowired</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_23.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_23.png" style="width: 100%;"></a>
+<p>Dodanie tej adnotacji spowodowało, że przy polu <b>taskDao</b> pojawiła się ikona (pokazana strzałką) mówiąca o tym, że <b>Springowi</b> udało się znaleźć dopasowanego <b>Beana</b>, który zostanie tu wstrzyknięty.</p>
+
+<p>Uruchom jeszcze raz test:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_24.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_24.png" style="width: 100%;"></a>
+<p>Test wykonał się poprawnie! Mówi o tym komunikat wskazany strzałką.</p>
+
+<p>Zwróć uwagę na obszar zaznaczony czerwoną ramką - widać tam w logach polecenia <b>SQL</b>, które <b>Hibernate</b> wykonał, aby zrealizować żądania kierowane do kontrolera repozytorium.</p>
+
+<p>Spójrzmy teraz na bazę danych w <b>MySQL Workbenchu</b> (musisz odświeżyć listę tabel, a następnie kliknąć w ikonę przy tabeli <b>TASKS</b>, która pokazuje zawartość tabeli):</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_25.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_25.png" style="width: 100%;"></a>
+
+<p>W naszej bazie danych pojawiła się tabela <b>TASKS</b>, mimo że jej wcale nie tworzyliśmy! Odpowiedzialne za to jest ustawienie <b>Hibernate</b>, które zapisaliśmy w pliku <b>application.properties</b>:</p>
+
+<p><b>spring.jpa.hibernate.ddl-auto=update</b></p>
+
+<p>Mówi ono o tym, że operacje <b>DDL</b> (<i>ang. Data Definition Language</i>), czyli modyfikujące strukturę bazy danych mają być wykonywane przez <b>Hibernate</b> wówczas, gdy jest potrzeba aktualizacji schematu bazy danych. Tutaj potrzeba taka nastąpiła, ponieważ stworzyliśmy nową <b>encję</b>.</p>
+
+<p>Zwróć również uwagę na to, że tabela <b>TASKS</b> jest pusta. Jest tak dlatego, ponieważ na koniec testu (sekcja <b>//CleanUp</b>) usunęliśmy utworzony w trakcie testu rekord.</p>
+
+<p>Napiszemy teraz drugi test - sprawdzający czy metoda kontrolera repozytorium, którą zadeklarowaliśmy - metoda <code class="language-java">findByDuration(int duration)</code> również działa (mimo, iż jej nie implementowalismy!)</p>
+
+<p>Utwórzmy drugi test:</p>
+
+
+<pre class="line-numbers"><code class="language-java">
+@Test
+public void testTaskDaoFindByDuration() {
+        //Given
+        Task task = new Task(DESCRIPTION, 7);
+        taskDao.save(task);
+        int duration = task.getDuration();
+
+        //When
+        List&lt;Task&gt; readTasks = taskDao.findByDuration(duration);
+    
+    //Then
+        Assert.assertEquals(1, readTasks.size());
+    
+    //CleanUp
+        //int id = readTasks.get(0).getId();
+        //taskDao.delete(id);
+}
+</code></pre>
+
+
+
+
+<p>Tymczasowo w sekcji <b>//CleanUp</b> zakomentowaliśmy polecenia usuwające dane z bazy - aby można było je w niej zobaczyć z poziomu <b>MySQL Workbencha</b> :)</p>
+
+<p>Co robi nasz test:</p>
+<ul>
+    <li>W sekcji <b>//Given</b> tworzymy obiekt <code class="language-java">task</code>, którego wartość pola <code class="language-java">duration</code> wynosi 7. Zapisujemy go w bazie danych i zapamiętujemy ile wynosi duration.</li>
+    <li>W sekcji <b>//When</b> wywołujemy testowaną metodę - czyli metodę <code class="language-java">findByDuration(int duration)</code></li>
+    <li>Następnie w sekcji <b>//Then</b> sprawdzamy czy zwrócony został dokładnie jeden rekord</li>
+    <li>No i ostatecznie - w sekcji <b>//CleanUp</b> sprzątamy po testach, czyli usuwamy dodany rekord (tymczasowo zakomentowane)</li>
+</ul>
+
+<p>Efekt wykonania testu pokazano poniżej:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_26.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_26.png" style="width: 100%;"></a>
+<p>Jak widać, test wykonał się poprawnie. I to pomimo, że:</p>
+<ul>
+    <li>Nie napisaliśmy metody findByDuration(int duration)</li>
+    <li>Nie powołaliśmy do życia obiektu implementującego interfejs TaskDao</li>
+</ul>
+
+<p>Wszystkim tym zajęły się: <b>Hibernate</b> oraz <b>SpringBoot</b>. Czy nie jest to całkiem niezła oszczędność czasu podczas pisania kodu? :)</p>
+
+<p>Sprawdźmy jeszcze co słychać w naszej bazie danych - w tym celu, w <b>MySQL Workbenchu</b> odśwież widok zawartości tabeli <b>TASKS</b> (przy pomocy przycisku wskazanego strzałką):</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_27.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_27.png" style="width: 100%;"></a>
+
+<p>W obszarze zaznaczonym czerwonym prostokątem widzimy rekord, który został utworzony przez nasz test. A więc wszystko naprawdę działa :)</p>
+
+<p>Teraz odkomentuj polecenie usuwające dane testowe z sekcji <b>//CleanUp</b>, a w tabeli <b>TASKS</b> posprzątaj przy pomocy <b>MySQL Workbencha</b>, poprzez wpisanie polecenia:</p>
+
+<p><b>DELETE FROM TASKS;</b></p>
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3>Zadanie: <span class="task-title">Tworzymy encję list zadań</span></h3>
+                        <div class="task-content">
+                            <p>Celem zadania jest utworzenie list zadań, do których w przyszłości przypiszemy nasze zadania typu Task. Aby zrealizować zadanie:</p>
+<ol>
+    <li>W katalogu <i>src/main/java</i> utwórz pakiet <b>com.kodilla.hibernate.tasklist</b></li>
+    <li>W pakiecie utwórz klasę TaskList, która będzie zawierała pola:
+        <ol style="margin: 0;">
+            <li>id</li>
+            <li>listName</li>
+            <li>description</li>
+        </ol>
+    </li>
+    <li>Z utworzonej klasy zrób encję (tabela powinna się nazywać <b>TASKLISTS</b>, kolumny: <b>ID</b>, <b>LISTNAME</b>, <b>DESCRIPTION</b>)</li>
+    <li>Stwórz pakiet <b>com.kodilla.hibernate.tasklist.dao</b></li>
+    <li>W tym pakiecie utwórz kontroler repozytorium <b>TaskListDao</b> z metodą <code class="language-java">List&lt;TaskList&gt; findByListName(String listName)</code></li>
+    <li>W katalogu <i>src/test/java</i> utwórz pakiet <b>com.kodilla.hibernate.tasklist.dao</b>, a w nim zestaw testów <b>TaskListDaoTestSuite</b></li>
+    <li>W tym pakiecie utwórz test <code class="language-java">testFindByListName()</code> sprawdzający czy metoda <code class="language-java">findByListName(String listName)</code> działa poprawnie</li>
+    <li>Pamiętaj, że test powinien być idempotentny, czyli powinien po sobie "posprzątać" w bazie danych</li>
+    <li>Utworzony kod prześlij do repozytorium Github</li>
+</ol>
+<p>Link do repozytorium wklej poniżej i wyślij do mentora.</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/273094" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="">
+                                </div>
+                                <button type="submit" class="btn  btn-success-outline ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-392" class="card submodule " data-bootcamp-user-submodule-id="273095">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">17.3. <span>Tworzymy relacje pomiędzy encjami</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Nasze <b>encje</b>, które do tej pory utworzyliśmy (<b>encja Task</b> oraz <b>encja TaskList</b>) były "płaskie". To znaczy, że nie były ze sobą w żaden sposób powiązane - były niezależnymi bytami, przechowywanymi w tabelach <b>TASKS</b> oraz <b>TASKLISTS</b>, które nie miały żadnych kluczy obcych. W tym submodule zajmiemy się definiowaniem zależności pomiędzy encjami.</p>
+
+<h3>Relacja jeden do jednego (1:1)</h3>
+
+<p>Z relacją 1:1 mamy do czynienia w sytuacji, gdy każdemu rekordowi z jednej tabeli odpowiada dokładnie jeden rekord z drugiej tabeli. Aby zobrazować tę sytuację, rozszerzymy nasz zbiór <b>encji</b> o nową encję <b>TaskFinancialDetails</b>. Klasa ta będzie przechowywała informacje finansowe o zadaniach - uzgodnioną cenę oraz informację o tym, czy płatność została dokonana:</p>
+
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_28.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_28.png" style="width: 100%;"></a>
+
+<p>Stwórzmy więc na początek klasę <code class="language-java">TaskFinancialDetails</code> bez żadnych zależności do klasy <code class="language-java">Task</code>. Utwórz tę klasę w katalogu <i>src/main/java</i> w pakiecie <b>com.kodilla.hibernate.task</b>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+
+package com.kodilla.hibernate.task;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "TASKS_FINANCIALS")
+public class TaskFinancialDetails {
+    private int id;
+    private BigDecimal price;
+    private boolean paid;
+
+    public TaskFinancialDetails() {
+    }
+
+    public TaskFinancialDetails(BigDecimal price, boolean paid) {
+            this.price = price;
+            this.paid = paid;
+    }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
+    public int getId() {
+            return id;
+    }
+
+    @Column(name = "PRICE")
+    public BigDecimal getPrice() {
+            return price;
+    }
+
+    @Column(name = "PAID")
+    public boolean isPaid() {
+            return paid;
+    }
+
+    private void setId(int id) {
+            this.id = id;
+    }
+
+    private void setPrice(BigDecimal price) {
+            this.price = price;
+    }
+
+    private void setPaid(boolean paid) {
+            this.paid = paid;
+    }
+}
+</code></pre>
+
+<p>Utworzyliśmy definicję klasy <code class="language-java">TaskFinancialDetails</code> i zrobiliśmy z niej encję. Wskazaliśmy nazwę <b>tabeli</b>, w której obiekty tej klasy mają być przechowywane, wskazaliśmy nazwy poszczególnych kolumn. Zdefiniowaliśmy również klucz główny na polu <b>id</b>.</p>
+
+<p>Dopiszemy teraz kontroler repozytorium dla naszej klasy - w katalogu <i>src/main/java</i> w pakiecie <b>com.kodilla.hibernate.task.dao</b> stwórz interfejs o nazwie <code class="language-java">TaskFinancialDetailsDao</code>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.task.dao;
+
+import com.kodilla.hibernate.task.TaskFinancialDetails;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Transactional
+@Repository
+public interface TaskFinancialDetailsDao extends CrudRepository&lt;TaskFinancialDetails, Integer&gt; {
+    List&lt;TaskFinancialDetails&gt; findByPaid(boolean paid);
+}
+</code></pre>
+
+<p>Nasz interfejs udostępnia wszystkie metody z interfejsu <code class="language-java">CrudRepository</code> oraz dodatkowo metodę <code class="language-java">findByPaid(boolean paid)</code>, która zwraca listę obiektów <code class="language-java">TaskFinancialDetails</code>, dla których pole paid ustawione jest na wartość określoną parametrem metody <code class="language-java">paid</code>.</p>
+
+<p>Na zakończenie utwórzmy jeszcze test sprawdzający czy kontroler repozytorium działa poprawnie. W katalogu <i>src/test/java</i> w pakiecie <b>com.kodilla.hibernate.task.dao</b> stwórz zestaw testów <b>TaskFinancialDetailsDaoTestSuite</b> i zdefiniuj w nim jeden test o nazwie <code class="language-java">testFindByPaid()</code>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+
+package com.kodilla.hibernate.task.dao;
+
+import com.kodilla.hibernate.task.TaskFinancialDetails;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import java.math.BigDecimal;
+import java.util.List;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class TaskFinancialDetailsDaoTestSuite {
+    @Autowired
+    TaskFinancialDetailsDao taskFinancialDetailsDao;
+
+    @Test
+    public void testFindByPaid() {
+            //Given
+            TaskFinancialDetails taskFinancialDetails =
+                            new TaskFinancialDetails(new BigDecimal(115), false);
+            taskFinancialDetailsDao.save(taskFinancialDetails);
+            int id = taskFinancialDetails.getId();
+
+            //When
+            List&lt;TaskFinancialDetails&gt; resultList = taskFinancialDetailsDao.findByPaid(false);
+
+            //Then
+            Assert.assertEquals(1, resultList.size());
+
+            //CleanUp
+            taskFinancialDetailsDao.delete(id);
+    }
+}
+</code></pre>
+
+<p>Uruchom test:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_29.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_29.png" style="width: 100%;"></a>
+<p>Widzimy, że kontroler działa prawidłowo. Upewnijmy się jeszcze czy w <b>MySQL Workbenchu</b> widać nową tabelę (pamiętaj aby odświeżyć listę tabel):</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_30.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_30.png" style="width: 100%;"></a>
+<p>Dowiemy się teraz w jaki sposób stworzyć relację pomiędzy encjami <b>Task</b> oraz <b>TaskFinancialDetails</b>. Zaczniemy od dodania w klasie <b>Task</b> pola przechowującego referencję do obiektu typu <code class="language-java">TaskFinancialDetails</code>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_31.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_31.png" style="width: 100%;"></a>
+<p>Wygeneruj również <b>getter</b> i <b>setter</b> (musi być publiczny tym razem, ponieważ będziemy go później wywoływali w testach) dla tego pola:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-6683.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-6683.png" style="width: 100%;"></a>
+<p>I teraz najważniejsza część - opatrzymy getter adnotacją <b>@OneToOne</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_33.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_33.png" style="width: 100%;"></a>
+<p>Adnotacja ta może posiadać kilka parametrów. My użyliśmy dwóch:</p>
+
+<ul>
+    <li><b>cascade</b> - określa co ma się dziać z rekordami w tabeli zależnej (czyli <b>TASKS_FINANCIALS</b>) w momencie, gdy usuwamy lub zapisujemy rekord w tabeli <b>TASKS</b>. Możliwe wartości dla tego pola to:
+        <a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-7458.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-7458.png" style="width: 100%;"></a>
+        Wartość <b>CascadeType.REMOVE</b> oznacza, że gdy usuwamy rekord z tabeli <b>TASKS</b>, to automatycznie (kaskadowo) usunięty zostanie odpowiadający mu rekord z tabeli <b>TASKS_FINANCIALS</b>.<br>
+        Wartość <b>CascadeType.PERSIST</b> oznacza, że gdy zapisujemy rekord w tabeli <b>TASKS</b>, to automatycznie (kaskadowo) ma zostać równocześnie z nim zapisany rekord w tabeli <b>TASKS_FINANCIALS</b>.<br>
+        Kolejne stałe oznaczają analogiczne zachowanie dla operacji aktualizowania oraz odświeżania zawartości encji.
+        Wartość <b>CascadeType.ALL</b>, które użyliśmy oznacza użycie wszystkich powyższych opcji na raz. Na tym etapie kursu jest to wartość zalecana.</li>
+
+    <li><b>fetch</b> - określa czy podczas wczytywania encji <b>Task</b> z bazy danych mają być automatycznie odczytywane ("dociągane") wszystkie zależne rekordy z tabeli <b>TASK_FINANCIALS</b>. Możliwe wartości to:
+        <a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-7250.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-7250.png" style="width: 100%;"></a>
+        Gdzie wartość <b>FetchType.EAGER</b> oznacza, że rekordy z tabel zależnych mają być ładowane razem z załadowaniem encji <b>Task</b>, natomiast wartość <b>FetchType.LAZY</b> oznacza, że będą one ładowane później. W relacjach 1:1 opcja <b>FetchType.EAGER</b> ma sens ponieważ dociągany jest jeden rekord, natomiast w relacjach 1:N trzeba się każdorazowo zastanowić, ponieważ ilość rekordów w powiązanej tabeli może być bardzo duża.</li>
+</ul>
+
+<p>Na koniec poinstruujemy jeszcze <b>Hibernate</b> jak ma nazwać kolumnę z kluczem obcym do tabeli <b>TASKS_FINANCIALS</b>. Użyjemy do tego adnotacji <b>@JoinColumn</b> w encji <b>Task</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_36.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_36.png" style="width: 100%;"></a>
+<p>Dopiszemy teraz test, który sprawdzi czy nasze zmiany są poprawne. W katalogu <i>src/test/java</i> w pakiecie <b>com.kodilla.hibernate.task.dao</b> w zestawie testów <b>TaskDaoTestSuite</b> dopisz nowy test o nazwie <code class="language-java">testTaskDaoSaveWithFinancialDetails()</code>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+@Test
+public void testTaskDaoSaveWithFinancialDetails() {
+        //Given
+        Task task = new Task(DESCRIPTION, 30);
+        task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
+
+        //When
+        taskDao.save(task);
+        int id = task.getId();
+
+        //Then
+        Assert.assertNotEquals(0, id);
+
+        //CleanUp
+        //taskDao.delete(id);
+}
+
+</code></pre>
+
+
+<p>Co robi nasz nowy test:</p>
+<ul>
+    <li>W sekcji <b>//Given</b> tworzony jest nowy obiekt klasy <b>Task</b>, a następnie przypisywany jest do jego właściwości <b>taskFinancialDetails</b> nowy obiekt klasy <b>TaskFinancialDetails</b></li>
+    <li>W sekcji <b>//When</b> wywołujemy metodę <code class="language-java">save(Task task)</code> kontrolera repozytorium oraz zapamiętujemy identyfikator, który został nadany obiektowi klasy <b>Task</b> przez <b>Hibernate</b></li>
+    <li>W sekcji <b>//Then</b> sprawdzamy czy identyfikator został nadany</li>
+    <li>W sekcji <b>//CleanUp</b> usuwamy z bazy danych rekordy utworzone podczas testu - tymczasowo zakomentowaliśmy tę instrukcję po to, abyśmy mogli się przyjrzeć zawartości tabel w bazie danych</li>
+</ul>
+
+<p>Uruchom test - powinien wykonać się poprawnie:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_37.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_37.png" style="width: 100%;"></a>
+<p>W logu widzimy zapisy poleceń <b>SQL</b>, które były wykonywane - można tam zauważyć polecenie <b>INSERT</b> do tabeli <b>TASKS_FINANCIALS</b>, co sugerowałoby, że wszystko wykonało się poprawnie :)</p>
+
+<p>Aby się upewnić, zajrzyjmy do tabeli <b>TASKS</b> przy pomocy narzędzia <b>MySQL Workbench</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_38.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_38.png" style="width: 100%;"></a>
+<p>Widzimy, że w tabli <b>TASKS</b> pojawiła się nowa kolumna o nazwie <b>TASKS_FINANCIALS_ID</b>. Wartość 1 w tym polu oznacza, że w rekordzie o <b>ID=1</b> tabeli <b>TASKS_FINANCIALS</b> powinniśmy znaleźć wprowadzone podczas wykonywania testu dane. Zweryfikujmy to i zajrzyjmy do tabeli <b>TASKS_FINANCIALS</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_39.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_39.png" style="width: 100%;"></a>
+<p>Na powyższym zdjęciu widać, że do tabeli <b>TASKS_FINANCIALS</b> został dodany rekord, pomimo że metodę <code class="language-java">save(Task task)</code> wywołaliśmy na kontrolerze repozytorium encji <b>Task</b>. Jak więc widzisz, <b>Hibernate</b> zrobił całkiem sporo rzeczy "za nas" :)</p>
+
+<h3>Relacja jeden do wielu (1:N)</h3>
+
+<p>Kolejnym rodzajem relacji, którym się zajmiemy jest relacja 1 : N (jeden do wielu). Relację tę możemy również nazwać relacją wiele do jednego (czyli "od drugiej strony"). Przeanalizujmy to na przykładzie encji <b>Task</b> oraz <b>TaskList</b> (tę <b>encję</b> robiliśmy jako zadanie w poprzednim submodule):</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_40.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_40.png" style="width: 100%;"></a>
+<p>Aby zrealizować taką relację, wpierw w klasie <b>Task</b> dodamy pole <b>taskList</b>, które będzie zawierało informację o tym, do której listy należy zadanie:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_41.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_41.png" style="width: 100%;"></a>
+<p>Dodajmy również <b>getter</b> i <b>setter</b> (tym razem publiczny ze względu na późniejsze użycie w testach) dla tego pola:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-8366.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/kodilla-bootcamp-26-02-2018-1519652611-8366.png" style="width: 100%;"></a>
+<p>Dodajmy teraz do klasy <b>TaskList</b> pole zawierające listę zadań należących do listy:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_43.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_43.png" style="width: 100%;"></a>
+<p>Dodajmy również <b>getter</b> i <b>setter</b> dla tego pola:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_44.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_44.png" style="width: 100%;"></a>
+<p>Przystąpimy teraz do najważniejszej części - musimy poinformować <b>Hibernate</b>, że pomiędzy naszymi encjami ma zachodzić relacja jeden do wielu. Zrobimy to przy pomocy adnotacji <b>@OneToMany</b> umieszczonej przy getterze <code class="language-java">getTasks()</code> klasy <b>TasksList</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_45.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_45.png" style="width: 100%;"></a>
+<p>Adnotacja <b>@OneToMany</b> posiada kilka argumentów. Znaczenie poszczególnych argumentów jest następujące:</p>
+<ul>
+    <li><b>targetEntity</b> - wskazuje na <b>encję</b>, która jest prawą stroną relacji 1:N. Wartością tego argumentu powinien być deskryptor klasy <b>encji</b>.</li>
+    <li><b>mappedBy</b> - określa pole <b>encji</b> z prawej strony relacji 1:N, które przechowuje referencję do obiektu <b>encji</b> znajdującej się po lewej stronie relacji 1:N</li>
+    <li><b>cascade</b> oraz <b>fetch</b> - mają dokładnie takie samo znaczenie, jak przy relacji 1:1.</li>
+</ul>
+
+<p>Musimy jeszcze wprowadzić zmiany w klasie <b>Task</b>. Z "drugiej strony" relacja "jeden do wielu" jest relacją "wiele do jednego". Skorzystamy więc z tego i użyjemy adnotacji <b>@ManyToOne</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_46.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_46.png" style="width: 100%;"></a>
+<p>Nasza aplikacja została przygotowana. Teraz nadeszła pora, aby ją przetestować.</p>
+
+<p>Stwórz nowy test o nazwie <code class="language-java">testTaskListDaoSaveWithTasks()</code> w zestawie testów <b>TaskListDaoTestSuite</b> w pakiecie <b>com.kodilla.hibernate.tasklist.dao</b> w katalogu <i>src/test/java</i>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+@Test
+public void testTaskListDaoSaveWithTasks() {
+        //Given
+        Task task = new Task("Test: Learn Hibernate", 14);
+        Task task2 = new Task("Test: Write some entities", 3);
+        TaskFinancialDetails tfd = new TaskFinancialDetails(new BigDecimal(20), false);
+        TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10), false);
+        task.setTaskFinancialDetails(tfd);
+        task2.setTaskFinancialDetails(tfd2);
+        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
+        taskList.getTasks().add(task);
+        taskList.getTasks().add(task2);
+        task.setTaskList(taskList);
+        task2.setTaskList(taskList);
+
+        //When
+        taskListDao.save(taskList);
+        int id = taskList.getId();
+
+        //Then
+        Assert.assertNotEquals(0, id);
+
+        //CleanUp
+        //taskListDao.delete(id);
+}
+</code></pre>
+
+<p>W ramach powyższego testu realizujemy następujące czynności:</p>
+<ul>
+    <li>W sekcji <b>//Given</b> przygotowujemy dane testowe. Są to dwa obiekty typu <b>Task</b> (<b>task</b> oraz <b>task2</b>), dla których utworzone są korespondujące z nimi obiekty typu <b>TaskFinancialDetails</b> (<b>tfd</b> oraz <b>tfd2</b>). Oba obiekty Task dodawane są następnie do listy zadań w ramach encji <b>TaskList</b> o nazwie <b>taskList</b>. Ustawiane jest również pole <b>taskList</b> w obiektach <b>task</b> oraz <b>task2</b>.</li>
+    <li>W sekcji <b>//When</b> wykonujemy właściwy test, czyli zapisujemy do bazy danych encję <b>taskList</b> przy pomocy kontrolera repozytorium. Zapamiętujemy <b>id</b> jakie zostało mu nadane przez <b>Hibernate</b></li>
+    <li>W sekcji <b>//Then</b> sprawdzamy czy id zostało nadane.</li>
+    <li>Na zakończenie w sekcji <b>//CleanUp</b> usuwamy wcześniej stworzone dane z bazy danych (czyli sprzątamy po teście). Tymczasowo instrukcję "sprzątającą" zakomentowaliśmy, aby sprawdzić jak dane wyglądają w bazie danych po wykonaniu testu.</li>
+</ul>
+
+<p>Uruchom test:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_47.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_47.png" style="width: 100%;"></a>
+<p>Test wykonał się poprawnie. Sprawdźmy więc co znajduje się w bazie danych. Zacznijmy od tabeli <b>TASKS_FINANCIALS</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_48.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_48.png" style="width: 100%;"></a>
+<p>Widzimy w niej dwa rekordy - odpowiadające utworzonym podczas testu encjom o nazwach <b>tfd</b> oraz <b>tfd2</b>. Spójrzmy teraz na tabelę <b>TASKS</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_49.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_49.png" style="width: 100%;"></a>
+<p>Widzimy, że utworzone zostały dwa zadania (odpowiadające obiektom <b>task</b> oraz <b>task2</b> stworzonym podczas testu). Widzimy, że klucze obce w kolumnie <b>TASKS_FINANCIALS_ID</b> są ustawione odpowiednio na rekordy odpowiadające obiektom <b>tfd</b> oraz <b>tfd2</b>, które przed chwilą oglądaliśmy w tabeli <b>TASKS_FINANCIALS</b>. Widzimy również, że klucz obcy w kolumnie <b>TASKLIST_ID</b> ma wartość <b>1</b>, czyli możemy spodziewać się, że nasza lista zadań z takim właśnie identyfikatorem zapisała się w bazie danych. Sprawdźmy więc zawartość tabeli <b>TASKLISTS</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_50.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_50.png" style="width: 100%;"></a>
+<p>I rzeczywiście - zgadza się. Utworzona przez nas podczas testu lista zadań została zapisana w tabeli <b>TASKS</b> z identyfikatorem <b>ID=1</b>.</p>
+<p>Nie zapomnij na zakończenie odkomentować polecenia w sekcji <b>//CleanUp</b> naszego testu. Należy również przy pomocy polecenia <b>DELETE</b> języka <b>SQL</b> (przy pomocy <b>MySQL Workbench</b>) usunąć utworzone dane testowe.</p>
+
+<h3>Relacja wiele do wielu (M:N)</h3>
+
+<p>Ostatnim z omawianych typów relacji jest relacja "wiele do wielu". W celu prezentacji tego zagadnienia, stworzymy dwie zupełnie nowe encje: <b>Employee</b> reprezentującą pracownika oraz <b>Company</b> reprezentującą firmę.</p>
+
+<p>Każdy pracownik może równocześnie pracować w wielu firmach. Każda z firm może zatrudniać wielu pracowników. W bazie danych tego typu relację możemy zamodelować za pomocą dodatkowej tabeli łączącej, tak jak pokazano na rysunku poniżej:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_51.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_51.png" style="width: 100%;"></a>
+<p>Tabela <b>JOIN_EMPLOYEES_COMPANIES</b> zawiera pary identyfikatorów pokazujące, który pracownik jest zatrudniony w której firmie. Dla przykładu: pracownik z identyfikatorem <b>1</b> jest zatrudniony w firmach o identyfikatorach <b>1</b> oraz <b>3</b>, z kolei firma z identyfikatorem <b>2</b> zatrudnia pracowników o identyfikatorach <b>2</b> i <b>3</b>.</p>
+
+<p>Spróbujmy to zaprogramować. W katalogu <i>src/main/java</i> utwórz pakiet <b>com.kodilla.hibernate.manytomany</b>, a w nim utwórz klasę <b>Employee</b> i zrób z niej <b>encję</b>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.manytomany;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "EMPLOYEES")
+public class Employee {
+    private int id;
+    private String firstname;
+    private String lastname;
+
+    public Employee() {
+    }
+
+    public Employee(String firstname, String lastname) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+    }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "EMPLOYEE_ID", unique = true)
+    public int getId() {
+            return id;
+    }
+
+    @NotNull
+    @Column(name = "FIRSTNAME")
+    public String getFirstname() {
+            return firstname;
+    }
+
+    @NotNull
+    @Column(name = "LASTNAME")
+    public String getLastname() {
+            return lastname;
+    }
+
+    private void setId(int id) {
+            this.id = id;
+    }
+
+    private void setFirstname(String firstname) {
+            this.firstname = firstname;
+    }
+
+    private void setLastname(String lastname) {
+            this.lastname = lastname;
+    }
+}
+
+</code></pre>
+
+<p>W tym samym pakiecie utworzymy również klasę Company i zrobimy z niej encję:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.manytomany;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+@Entity
+@Table(name = "COMPANIES")
+public class Company {
+    private int id;
+    private String name;
+
+    public Company() {
+    }
+
+    public Company(String name) {
+            this.name = name;
+    }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "COMPANY_ID", unique = true)
+    public int getId() {
+            return id;
+    }
+
+    @NotNull
+    @Column(name = "COMPANY_NAME")
+    public String getName() {
+            return name;
+    }
+
+    private void setId(int id) {
+            this.id = id;
+    }
+
+    private void setName(String name) {
+            this.name = name;
+    }
+}
+</code></pre>
+
+<p>Następnie zdefiniujemy kontroler repozytorium dla encji <b>Company</b>. W katalogu <i>src/main/java</i> utwórz pakiet <b>com.kodilla.hibernate.manytomany.dao</b>, a w nim interfejs <b>CompanyDao</b> rozszerzający interfejs <b>CrudRepository</b>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+package com.kodilla.hibernate.manytomany.dao;
+
+import com.kodilla.hibernate.manytomany.Company;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import javax.transaction.Transactional;
+
+@Transactional
+@Repository
+public interface CompanyDao extends CrudRepository&lt;Company, Integer&gt; {
+
+}
+</code></pre>
+
+
+
+<p>Nasz interfejs nie wprowadza żadnych własnych metod. Udostępnia jedynie te, które są standardowo dostępne w interfejsie <b>CrudRepository</b>.</p>
+
+<p>Przystąpmy teraz do rozwiązania sedna problemu - czyli do zdefiniowania relacji M:N. Na początku, dodaj w klasie <b>Employee</b> pole zawierające listę firm, w której pracownik jest zatrudniony:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_52.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_52.png" style="width: 100%;"></a>
+<p>a także dodajemy getter i setter:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_53.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_53.png" style="width: 100%;"></a>
+<p>Przystępujemy do zrealizowania relacji. Wpierw opatrz getter <code class="language-java">getCompanies()</code> adnotacją <b>@ManyToMany</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_54.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_54.png" style="width: 100%;"></a>
+<p>W ten sposób informujemy <b>Hibernate</b>, że w tym miejscu będziemy mieli do czynienia z relacją M:N. Aby wskazać w jaki sposób <b>Hibernate</b> ma ją zrealizować, czyli jakiej tabeli użyć do połączenia, należy skorzystać z adnotacji <b>@JoinTable</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_55.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_55.png" style="width: 100%;"></a>
+<p>Adnotacja ta posiada argumenty:</p>
+
+<ul>
+    <li><b>name</b> - wskazuje jaką nazwę będzie miała tabela przechowująca połączenia</li>
+    <li><b>joinColumns</b> - specyfikuje listę kolumn (z <b>encji Employee</b>), które będą użyte do zrealizowania złączenia. Jeżeli jest to jedna kolumna, wówczas używamy po prostu adnotacji <b>@JoinColumn</b>, a jako jej argumenty podajemy nazwę kolumny w tabeli łączącej oraz odpowiadającą jej nazwę kolumny w tabeli <b>EMPLOYEES</b>. Jeżeli kolumn łączących jest więcej, możemy podać tablicę kolumn przy pomocy nawiasów klamrowych <b>{}</b>, poszczególne kolumny oddzielając przecinkami</li>
+    <li><b>inverseJoinColumns</b> - specyfikuję listę kolumn dla złączenia z <b>encji</b> po drugiej stronie relacji M:N (tu: z <b>encji Company</b>). Sposób określenia listy kolumn jest taki sam jak dla argumentu <b>joinColumns</b>.</li>
+</ul>
+
+<p>Podobne zmiany musimy wprowadzić w klasie <b>Company</b>. Wpierw dodaj pole zawierające listę zatrudnionych pracowników:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_56.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_56.png" style="width: 100%;"></a>
+<p>Dodaj również getter i setter dla tego pola:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_57.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_57.png" style="width: 100%;"></a>
+<p>W kolejnym kroku musimy getter oznaczyć adnotacją <b>@ManyToMany</b> - wygląda ona jednak nieco inaczej niż w klasie <b>Employee</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_58.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_58.png" style="width: 100%;"></a>
+<p>Pojawił się tu argument <b>mappedBy</b>, który oznacza, że to mapowanie zostało już zdefiniowane przy właściwości companies encji Employee. Gdybyśmy tego zapisu tutaj nie umieścili i ponownie wyspecyfikowali połączenie wraz z podaniem <b>@JoiningTable</b> - wówczas wpisy w tabeli łączącej byłyby podwójne, ponieważ zarówno encja <b>Employee</b>, jak i encja <b>Company</b> by je wpisywała do tej tabeli.</p>
+
+<p>Należy o tym zawsze pamiętać przy relacjach dwukierunkowych (<i>ang. bidirectional</i>), czyli takich, w których obiekt A przechowuje referencję do obiektu B, natomiast obiekt B również przechowuje referencję do obiektu A. Przy jednej z adnotacji <b>@ManyToOne</b> lub <b>@ManyToMany</b> należy użyć argumentu <b>mappedBy</b>, po to aby <b>Hibernate</b> "wiedział", że jest to ta sama relacja, tylko "opisana z drugiej strony".</p>
+
+<p>Przetestujemy teraz czy nasze rozwiązanie działa. W katalogu <i>src/test/java</i> utwórz pakiet <b>com.kodilla.hibernate.manytomany.dao</b>, a w nim zestaw testów <b>CompanyDaoTestSuite</b>, w którym zdefiniujemy jeden test o nazwie <code class="language-java">testSaveManyToMany()</code>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+
+package com.kodilla.hibernate.manytomany.dao;
+
+import com.kodilla.hibernate.manytomany.Company;
+import com.kodilla.hibernate.manytomany.Employee;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class CompanyDaoTestSuite {
+    @Autowired
+    CompanyDao companyDao;
+
+    @Test
+    public void testSaveManyToMany(){
+            //Given
+            Employee johnSmith = new Employee("John", "Smith");
+            Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+            Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+            Company softwareMachine = new Company("Software Machine");
+            Company dataMaesters = new Company("Data Maesters");
+            Company greyMatter = new Company("Grey Matter");
+
+        softwareMachine.getEmployees().add(johnSmith);
+            dataMaesters.getEmployees().add(stephanieClarckson);
+            dataMaesters.getEmployees().add(lindaKovalsky);
+            greyMatter.getEmployees().add(johnSmith);
+            greyMatter.getEmployees().add(lindaKovalsky);
+
+            johnSmith.getCompanies().add(softwareMachine);
+            johnSmith.getCompanies().add(greyMatter);
+            stephanieClarckson.getCompanies().add(dataMaesters);
+            lindaKovalsky.getCompanies().add(dataMaesters);
+            lindaKovalsky.getCompanies().add(greyMatter);
+
+            //When
+            companyDao.save(softwareMachine);
+            int softwareMachineId = softwareMachine.getId();
+            companyDao.save(dataMaesters);
+            int dataMaestersId = dataMaesters.getId();
+            companyDao.save(greyMatter);
+            int greyMatterId = greyMatter.getId();
+
+            //Then
+            Assert.assertNotEquals(0, softwareMachineId);
+            Assert.assertNotEquals(0, dataMaestersId);
+            Assert.assertNotEquals(0, greyMatterId);
+
+            //CleanUp
+            //try {
+            //    companyDao.delete(softwareMachineId);
+            //    companyDao.delete(dataMaestersId);
+            //    companyDao.delete(greyMatterId);
+            //} catch (Exception e) {
+            //    //do nothing
+            //}
+    }
+}
+</code></pre>
+
+<p>Jak działa powyższy test:</p>
+<ul>
+    <li>W sekcji <b>//Given</b> tworzymy trzech pracowników oraz trzy firmy. Następnie każdej firmie przyporządkowujemy pracowników, którzy w niej pracują. Następnie każdemu pracownikowi przyporządkowujemy firmy, w których jest zatrudniony.</li>
+    <li>W sekcji <b>//When</b> zapisujemy trzy obiekty firm przy pomocy kontrolera repozytorium. Po zapisaniu każdego obiektu klasy <b>Company</b> zapamiętujemy w zmiennej wartość <b>id</b>, która została mu nadana przez <b>Hibernate</b></li>
+    <li>Sekcja <b>//Then</b> zawiera zestaw asercji, sprawdzających czy dane zostały zapisane w bazie danych (sprawdzenie polega na weryfikacji czy danemu obiektowi nadano wartość id).</li>
+    <li>Sekcja <b>//CleanUp</b> zawiera instrukcje służące do "posprzątania" w bazie danych po danych testowych. Tymczasowo zakomentowaliśmy je, aby sprawdzić jak dane wygenerowane przez test wyglądają w bazie danych. Zauważ, że otoczyliśmy usuwanie danych frazą <b>try..catch</b>. Zrobiliśmy to na wypadek, gdyby test nie wykonał się poprawnie i w bazie danych pozostałyby fragmentaryczne dane więc program mógłby napotkać na błąd przy próbie usuwania nieistniejących danych.</li>
+</ul>
+
+<p>Uruchom test:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_59.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_59.png" style="width: 100%;"></a>
+
+<p>Nadeszła pora by sprawdzić jak wyglądają dane w bazie danych. Odśwież w <b>MySQL Workbenchu</b> listę tabel:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_60.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_60.png" style="width: 100%;"></a>
+<p>Na liście tabel pojawiły się trzy nowe tabele: <b>COMPANIES</b>, <b>EMPLOYEES</b> oraz <b>JOIN_COMPANY_EMPLOYEE</b>. Sprawdź zawartość tabeli <b>EMPLOYEES</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_61.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_61.png" style="width: 100%;"></a>
+<p>Widzimy, że w tabeli pojawiły się osoby trzech pracowników. Kolejną tabelą do sprawdzenia jest tabela <b>COMPANIES</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_62.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_62.png" style="width: 100%;"></a>
+<p>Pojawiły się również trzy firmy. No i nadszedł teraz czas na najważniejszą z tabel - tabelę przechowującą połączenia relacji M:N - o nazwie <b>JOIN_COMPANY_EMPLOYEE</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_63.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_63.png" style="width: 100%;"></a>
+
+<p>Jak widzisz, wszystko zadziałało zgodnie z oczekiwaniami.</p>
+<p>Poznałeś sposoby tworzenia relacji pomiędzy encjami. Miałeś okazję przeanalizować w jaki sposób <b>Hibernate</b> realizuje te relacje. Czas teraz na własne ćwiczenie :)</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3>Zadanie: <span class="task-title">Nagłówki faktur oraz ich pozycje</span></h3>
+                        <div class="task-content">
+                            <p>Celem zadania jest stworzenie <b>encji</b> reprezentującej nagłówki faktur, a także pozycje faktury. Pozycje będą posiadały również relację do listy towarów. Aby zrealizować zadanie:</p>
+<ol>
+    <li>W katalogu <i>src/main/java</i> utwórz pakiet <b>com.kodilla.hibernate.invoice</b></li>
+    <li>W utworzonym pakiecie stwórz klasę reprezentującą pozycję asortymentu sklepu o nazwie <code class="language-java">Product</code> (powinna zawierać pola: <code class="language-java">int id</code>, <code class="language-java">String name</code>), a następnie zrób z niej encję i dopisz kontroler repozytorium (w podpakiecie dao)</li>
+    <li>W utworzonym pakiecie stwórz klasę reprezentującą pozycję faktury o nazwie Item (powinna zawierać pola: <code class="language-java">int id</code>, <code class="language-java">Product product</code>, <code class="language-java">BigDecimal price</code>, <code class="language-java">int quantity</code>, <code class="language-java">BigDecimal value</code>). Zrób z niej <b>encję</b> (zauważ, że występuje tu relacja N:1 z <b>encją Product</b>). Napisz kontroler repozytorium (w podpakiecie dao)</li>
+    <li>W utworzonym pakiecie stwórz klasę reprezentującą nagłówek faktury o nazwie <code class="language-java">Invoice</code> (powinna zawierać pola: <code class="language-java">int id</code>, <code class="language-java">String number</code>, <code class="language-java">List&lt;Item&gt; items</code>). Utwórz z niej encję - zauważ, że występuje tu relacja 1:N z encją <b>Item</b>. Napisz kontroler repozytorium (w podpakiecie dao)</li>
+    <li>W katalogu <i>src/test/java</i> utwórz pakiet <b>com.kodilla.hibernate.invoice.dao</b></li>
+    <li>W utworzonym pakiecie stwórz zestaw testów <b>InvoiceDaoTestSuite</b></li>
+    <li>Napisz test o nazwie <code class="language-java">testInvoiceDaoSave()</code>, który sprawdza czy faktura z kilkoma pozycjami zapisuje się poprawnie w bazie danych</li>
+    <li>Pamiętaj, że test musi być idempotentny (musi zostawiać bazę danych w stanie takim, w jakim ją zastał - bez nowych wpisów)</li>
+    <li>Utworzony kod prześlij do repozytorium Github</li>
+</ol>
+
+<p>Link do repozytorium wklej poniżej i wyślij do mentora</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/273095" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="">
+                                </div>
+                                <button type="submit" class="btn  btn-success-outline ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-393" class="card submodule " data-bootcamp-user-submodule-id="273096">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">17.4. <span>Język HQL i Named Queries</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Podczas korzystania ze <b>SpringBoot</b> oraz <b>Hibernate</b> nie musisz ograniczać się do metod pobierających i modyfikujących dane, które są "narzucone" przez kontroler repozytorium. Możesz definiować własne zapytania w języku <b>HQL</b> (jest to odmiana <b>SQL</b> pracująca na encjach, zamiast na tabelach), a nawet w czystym (natywnym dla danej bazy danych) języku SQL. Poniżej pokażemy Ci jak to zrobić:</p>
+<h3>Definiowanie NamedQuery</h3>
+<p>Przypomnij sobie klasę Task, realizowaną w poprzednich submodułach - jej początek wyglądał tak:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_64.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_64.png" style="width: 100%;"></a>
+<p>Zastanówmy się przez chwilę, jak mogłoby wyglądać zapytanie w języku <b>SQL</b> pobierające z bazy danych wszystkie zadania, których czas trwania jest większy niż 10 dni. Byłoby to coś mniej więcej takiego:</p>
+
+<pre class="line-numbers"><code class="language-java">
+SELECT * FROM TASKS WHERE DURATION &gt; 10;
+</code></pre>
+
+<p>Spróbujmy teraz przerobić to zapytanie tak, aby operowało na encjach oraz ich polach, zamiast na tabelach i kolumnach. Po przeróbce otrzymamy coś takiego:</p>
+
+<pre class="line-numbers"><code class="language-java">
+SELECT * FROM Task WHERE duration &gt; 10
+</code></pre>
+
+<p>Po usunięciu z powyższego zapytania frazy <b>SELECT *</b> otrzymamy zapytanie w języku <b>HQL</b>:</p>
+
+<pre class="line-numbers"><code class="language-java">
+FROM Task WHERE duration &gt; 10
+</code></pre>
+
+<p>Z tak utworzonego zapytania możemy stworzyć tak zwane zapytanie nazwane, czyli <b>Named Query</b>. Robimy to przy pomocy adnotacji <b>@NamedQuery</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_65.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_65.png" style="width: 100%;"></a>
+<p>Adnotacja <b>@NamedQuery</b> posiada dwa argumenty:</p>
+<ul>
+    <li><p><b>name</b> - przy pomocy którego określamy nazwę zapytania; zwróć uwagę na specjalny sposób skonstruowania nazwy zapytania:</p>
+			<p><b>NazwaEncji.nazwaZapytania</b></p>
+        <p>Jako nazwę <b>encji</b> używamy nazwy klasy, na podstawie której tworzona jest <b>encja</b>, natomiast <b>nazwaZapytania</b> to unikalna nazwa przypominająca nazwę metody (zbudowana według tych samych zasad co nazwy metod) - należy trzymać się tej konwencji, aby <b>SpringBoot</b> mógł wprowadzić trochę swojej "magii", którą ujrzysz za chwilę w kontrolerze repozytorium :)</p></li>
+    <li><b>query</b> - treść zapytania zapisana w języku <b>HQL</b></li>
+</ul>
+
+<p>Jeżeli chcesz dla jednej <b>encji</b> zdefiniować więcej niż jedno zapytanie nazwane, wówczas musisz skorzystać z adnotacji <b>@NamedQueries</b>, które jako argument przyjmuje tablicę adnotacji <b>@NamedQuery</b> (otoczoną nawiasami klamrowymi <b>{}</b> oraz oddzielonych przecinkami). Na przykład:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_66.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_66.png" style="width: 100%;"></a>
+<p>Tak przygotowane zapytania za chwilę zostaną użyte w kontrolerze repozytorium.</p>
+<h3>Definiowanie NamedNativeQuery</h3>
+<p>Poza zapytaniami nazwanymi w języku <b>HQL</b> możliwe jest również tworzenie zapytań nazwanych w "czystym" (natywnym dla danej bazy danych) języku <b>SQL</b>. Używamy do tego celu adnotacji <b>@NamedNativeQuery</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_67.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_67.png" style="width: 100%;"></a>
+<p>Adnotacja <b>@NamedNativeQuery</b> posiada trzy atrybuty:</p>
+
+<ul>
+    <li><b>name</b> - nazwa zapytania - tutaj stosujemy dokładnie takie same reguły jak przy adnotacji <b>@NamedQuery</b></li></ul>
+    <li><b>query</b> - zapytanie w czystym języku <b>SQL</b> (nie pomijamy tu frazy <b>SELECT *</b>, oraz używamy nazw tabel i kolumn) - możemy używać funkcji charakterystycznych dla języka <b>SQL</b> dla danej bazy danych (tutaj skorzystaliśmy z funkcji <b>DATEDIFF</b>, <b>DATE_ADD</b> oraz <b>NOW</b> języka <b>SQL</b> natywnego dla bazy <b>MySQL</b>) - przykładowe zapytanie zwraca z tabeli <b>TASKS</b> te rekordy, dla których suma daty utworzenia rekordu oraz czasu trwania zadania jest większa o co najmniej 5 dni od daty bieżącej - czyli jest wystarczający zapas czasu aby zrealizować zadanie w terminie.</li>
+    <li><b>resultClass</b> - deskryptor klasy, której obiekty będą zwracane przez zapytanie - <b>Hibernate</b> nie jest w stanie "samodzielnie się domyślić", co będzie zwracane przez zapytanie natywne, dlatego też musimy jawnie wskazać jakiej klasy obiekty będą zwracane przez zapytanie</li>
+
+    
+    
+    
+    
+<p>Jeżeli mamy potrzebę przygotowania więcej niż jednego nazwanego zapytania natywnego, wówczas należy zastosować adnotację <b>@NamedNativeQueries</b> i podać jako jej argument tablicę adnotacji <b>@NamedNativeQuery</b> w nawiasach klamrowych <b>{}</b>, oddzielonych przecinkami.</p>
+
+<h3>Rozszerzenie kontrolera repozytorium o zdefiniowane zapytania</h3>
+<p>Przejdziemy teraz do najciekawszej części - do modyfikacji kontrolera repozytorium. Przypomnijmy sobie jak on wygląda obecnie:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_68.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_68.png" style="width: 100%;"></a>
+<p>A oto, jak należy dodać do niego nową metodę, korzystającą z nazwanego zapytania:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_69.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_69.png" style="width: 100%;"></a>
+<p>Wystarczy zdefiniować metodę o nazwie odpowiadającej nazwie zapytania nazwanego oraz opatrzyć tę metodę adnotacją <b>@Query</b>.</p>
+<p>I już! :)</p>
+
+<p>Nie trzeba implementować tego interfejsu - znowu zajmie się tym sam <b>SpringBoot</b> wraz z <b>Hibernate</b>!</p>
+
+<p>Przypomnij sobie pełną nazwę naszego zapytania nazwanego, było to:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_70.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_70.png" style="width: 100%;"></a>
+<p>Skąd <b>SpringBoot</b> wie, że właśnie to zapytanie pasuje do stworzenia dla nas odpowiedniej metody? Ano właśnie z zestawienia dwóch części tej nazwy - z nazwy encji oraz nazwy zapytania:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_71.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_71.png" style="width: 100%;"></a>
+<p>Dodajmy teraz pozostałe zapytania do kontrolera repozytorium:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_72.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_72.png" style="width: 100%;"></a>
+<p>W przypadku ostatniego zapytania, które jest zapytaniem natywnym (napisanym w "czystym" <b>SQL</b>) do adnotacji <b>@Query</b> dodaliśmy dodatkowo argument <b>nativeQuery=true</b>.</p>
+
+<p>Czas wykorzystać przygotowane metody. W zestawie testów <b>TaskListDaoTestSuite</b> dopisz kolejny test o nazwie <code class="language-java">testNamedQueries()</code>:</p>
+
+
+<pre class="line-numbers"><code class="language-java">
+
+@Test
+public void testNamedQueries() {
+        //Given
+        Task task1 = new Task("Test: Study Hibernate", 3);
+        Task task2 = new Task("Test: Practice Named Queries", 6);
+        Task task3 = new Task("Test: Study native queries", 7);
+        Task task4 = new Task("Test: Makse some tests", 13);
+
+        TaskFinancialDetails tfd1 = new TaskFinancialDetails(new BigDecimal(5), false);
+        TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10), false);
+        TaskFinancialDetails tfd3 = new TaskFinancialDetails(new BigDecimal(20), false);
+        TaskFinancialDetails tfd4 = new TaskFinancialDetails(new BigDecimal(15), false);
+    
+    task1.setTaskFinancialDetails(tfd1);
+        task2.setTaskFinancialDetails(tfd2);
+        task3.setTaskFinancialDetails(tfd3);
+        task4.setTaskFinancialDetails(tfd4);
+    
+    TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
+        taskList.getTasks().add(task1);
+        taskList.getTasks().add(task2);
+        taskList.getTasks().add(task3);
+        taskList.getTasks().add(task4);
+    
+    task1.setTaskList(taskList);
+        task2.setTaskList(taskList);
+        task3.setTaskList(taskList);
+        task4.setTaskList(taskList);
+    
+    taskListDao.save(taskList);
+        int id = taskList.getId();
+    
+    //When
+        List&lt;Task&gt; longTasks = taskDao.retrieveLongTasks();
+        List&lt;Task&gt; shortTasks = taskDao.retrieveShortTasks();
+        List&lt;Task&gt; enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
+    
+    //Then
+        try {
+                Assert.assertEquals(1, longTasks.size());
+                Assert.assertEquals(3, shortTasks.size());
+                Assert.assertEquals(3, enoughTimeTasks.size());
+        } finally {
+                //CleanUp
+                taskListDao.delete(id);
+        }
+}
+</code></pre>
+
+
+
+
+<p>Aby ten test zadziałał musimy dodać na początku zestawu testów dodatkowego <b>beana - taskDao</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_73.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_73.png" style="width: 100%;"></a>
+<p>Co robi nasz test:</p>
+
+<ul>
+    <li>W sekcji <b>//Given</b> tworzone są cztery zadania oraz związane z nimi klasy <code class="language-java">TaskFinancialDetails</code>. Tworzona jest też lista zadań, a następnie zadania są przypisywane do tej listy, i w końcu do poszczególnych zadań przypisywana jest lista zadań, do której te zadania należą. Lista zadań (wraz z rekordami zależnymi) zapisywana jest w bazie danych, a identyfikator listy jest zapamiętywany.</li>
+    <li>W sekcji <b>//When</b> wywoływane są trzy metody <b>beana</b> <code class="language-java">taskDao</code> (który jest kontrolerem repozytorium), używające nazwanych zapytań. Ich wyniki przypisywane są do zmiennych.</li>
+    <li>W sekcji <b>//Then</b> sprawdzamy czy poszczególne wyniki zwrócone przez kolejne named query zgadzają się z wartościami oczekiwanymi</li>
+    <li>W sekcji <b>//CleanUp</b> usuwamy utworzone w bazie danych dane testowe</li>
+</ul>
+
+
+
+<p>Uruchom test:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_74.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_74.png" style="width: 100%;"></a>
+<h3>Definiowanie <b>NamedQuery</b> z parametrami</h3>
+<p>Dodajmy jeszcze jedno nazwane zapytanie do <b>encji</b> <code class="language-java">Task</code>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_75.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_75.png" style="width: 100%;"></a>
+<p>W sekcji <b>WHERE</b> pojawił się zapis: <code class="language-java">duration &gt; :DURATION</code> - co on oznacza? Element po prawej stronie znaku <b>&gt;</b> to parametr. Można to rozpoznać po dwukropku (:) stojącym przed nazwą parametru.</p>
+
+<p>Parametr oznacza, że jego wartość zostanie podana w momencie wywołania zapytania.</p>
+
+<p>Dodajmy tę metodę do kontrolera repozytorium:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_76.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_76.png" style="width: 100%;"></a>
+<p>Po nazwie metody pojawił się parametr <code class="language-java">int duration</code>, opatrzony <b>adnotacją </b><code class="language-java">@Param</code>, która posiada wewnątrz wyspecyfikowaną nazwę parametru z zapytania. Taki zapis dokona mapowania - argument <code class="language-java">duration</code> metody zostanie wstawiony jako parametr <code class="language-java">:DURATION</code> nazwanego zapytania.</p>
+
+<p>Dodajmy do testu <b>wywołanie tej metody</b> oraz <b>dodatkową asercję</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_77.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_77.png" style="width: 100%;"></a>
+<p>I oczywiście uruchom test:</p>
+<a class="img-modal-group" href="./Moduł_ 17. Spring i Hibernate_files/java-13_78.png" style="width: 100%"><img src="./Moduł_ 17. Spring i Hibernate_files/java-13_78.png" style="width: 100%;"></a>
+<p>W pokazany powyżej sposób, możemy nasze zapytania (zarówno w <b>HQL</b> jak i natywne w <b>SQL</b> wyposażyć w parametry).</p>
+
+
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3>Zadanie: <span class="task-title">Wyszukujemy pracowników o podanych nazwiskach oraz firmy o nazwach zaczynających się na…</span></h3>
+                        <div class="task-content">
+                            <p>Celem zadania jest przećwiczenie named queries na przykładzie zbudowanej wcześniej encji <b>Employee</b>. Aby zrealizować zadanie:</p>
+<ol>
+    <li>Do encji <b>Employee</b> dodaj nazwane zapytanie wyszukujące pracowników o podanym nazwisku (użyj parametru)</li>
+    <li>Do encji Company dodaj nazwane natywne zapytanie, wyszukujące firmy, których pierwsze trzy znaki nazwy są równe podanemu parametrowi - poszukaj w dokumentacji <b>MySQL</b> jaka funkcja zwraca fragment ciągu znaków z kolumny tekstowej :)</li>
+    <li>Zmodyfikuj kontrolery repozytorium encji <b>Employee</b> oraz <b>Company</b> tak, aby udostępniały metody zwracające dane wyszukiwane przy pomocy <b>named queries</b></li>
+    <li>Dopisz nowe testy w zestawie testów <b>CompanyDaoTestSuite</b>, które sprawdzają działanie metod używających nazwanych zapytań.</li>
+    <li>Kod prześlij do repozytorium Github</li>
+</ol>
+
+<p>Link do repozytorium wklej poniżej i wyślij do mentora.</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/273096" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="">
+                                </div>
+                                <button type="submit" class="btn  btn-success-outline ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                            </main>
+        </div>
+    </section>
+</main>
+
+<script type="text/x-translation" data-translation-name="SentBootcampLinkReviewFormMessage">Wysłano link do zatwierdzenia</script>
+    <div id="alerts">
+    <div class="alert alert-danger" role="alert">
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                        </ul>
+    </div>
+    <div class="alert alert-success" role="alert">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-warning" role="alert">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-info" role="alert">
+        <i class="fa fa-info" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                    </ul>
+    </div>
+    <div class="container">
+        <div class="alert alert-notify" role="alert">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Zamknij</span>
+            </button>
+            <ul>
+                            </ul>
+        </div>
+    </div>
+</div>
+    <div class="modal fade informator-modal" id="informator" tabindex="-1" role="dialog" aria-labelledby="informatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="./Moduł_ 17. Spring i Hibernate_files/logo-menu.png" alt="Logo Kodilla" class="brand-logo">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body content-container">
+                <h3>Zamów szczegółowy informator</h3>
+                <h3 data-role="modal-informator-message" class="display-none">Informator został wysłany na podany adres email.</h3>
+                <h4>Zostaw email i wyślemy Ci go</h4>
+                <form class="row js-ajax-form" data-view-class="InformatorForm" action="https://kodilla.com/pl/download-guide" method="post">
+                    <input type="hidden" name="ga-pobieranie-informatora-z-modala" value="wypelnienie">
+                    <input type="hidden" name="tags[0]" value="informator">
+                                        <div class="user-data-container">
+                        <input type="text" class="form-control" name="firstname" placeholder="Imię">
+                        <input type="text" class="form-control" name="surname" placeholder="Nazwisko">
+                    </div>
+                    <div class="user-data-container">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                        <input type="text" class="form-control" name="phone" placeholder="Numer telefonu">
+                    </div>
+                    <div class="terms-box">
+                        <label>
+                            <input data-custom-message="Prosimy o zaakceptowanie regulaminu" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Akceptuję <a target="_blank" href="https://kodilla.com/pl/terms">regulamin</a>  i nie wnoszę zastrzeżeń</span>
+                        </label>
+                    </div>
+                    <div class="personal-terms-box">
+                        <label>
+                            <input data-custom-message="Jeśli chcesz otrzymać dostęp do materiałów, konieczna jest akceptacja obydwu zgód" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Chcę otrzymywać newsletter, informacje o promocjach i produktach dostępnych w Kodilla.
+                                <span class="details-button" data-action="show-details" data-identifier="personal-terms-details-informator">Czytaj więcej</span>
+                                <span class="display-none" data-identifier="personal-terms-details-informator">Wyrażam zgodę na otrzymywanie informacji handlowych od Kodilla na podany przeze mnie adres e-mail. Zgoda jest dobrowolna, jednakże niezbędna do otrzymywania informacji o produktach, promocjach i o tym, co u nas słychać. Administratorem danych jest Codemy S.A. z siedzibą we Wrocławiu, ul. Racławicka 13. Mam prawo cofnąć zgodę w każdym czasie, jednak wtedy nie będę otrzymywać informacji. Dane mogą być przetwarzane pomimo cofnięcia zgody wyłącznie w takim zakresie i celu, w jakim ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z udzieloną zgodą. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie kodilla.com, zakładka "Polityka Prywatności".</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="display-none">
+                        <input type="text" name="myName" value="">
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">
+                            Pobierz Informator
+                            <i data-role="loading-icon" class="fa fa-spinner fa-spin fa-1x fa-fw display-none"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Pobranie informatora do niczego nie zobowiązuje</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+                <section class="footer-lower">
+            <nav class="container">
+                <a class="navbar-img" href="https://kodilla.com/pl">
+                    <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168" height="30">
+                        <defs>
+                            <style>
+                                .footer-logo-fill {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                            <path id="KODILLA_copy_5_1_" class="footer-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                            <ellipse id="eye_copy_4_1_" class="footer-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" class="footer-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                        <path id="Path_2" data-name="Path 2" class="footer-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                        <path id="Path_3" data-name="Path 3" class="footer-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                        <path id="Path_4" data-name="Path 4" class="footer-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                        <path id="Path_5" data-name="Path 5" class="footer-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                        <path id="Path_6" data-name="Path 6" class="footer-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+                    </svg>
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="https://kodilla.com/pl/terms">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="https://kodilla.com/pl/privacy-policy">Polityka prywatności</a>
+                    </li>
+                    <li class="nav-item">© 2019 Kodilla</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2WWBH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="./Moduł_ 17. Spring i Hibernate_files/jquery-2-8d5dbd436e.1.4.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/js-e653e6aa59.cookie-2.1.0.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/jquery-dateFormat-c03d15d7fb.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/bootstrap-5b56605a6a.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/informator-modal-66dc1c2e7e.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/fb-ab3c6c714a.js.pobrane"></script>
+<script>
+    if (document.querySelector('main.editor')) {
+        document.querySelector('body').classList.add('editor');
+    }
+</script>
+
+<!-- ActiveCampaign -->
+<script type="text/javascript">
+    // Set to false if opt-in required
+    var trackByDefault = true;
+
+    function acEnableTracking() {
+        var expiration = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30);
+        document.cookie = "ac_enable_tracking=1; expires= " + expiration + "; path=/";
+        acTrackVisit();
+    }
+
+    function acTrackVisit() {
+        var trackcmp_email = 't_socha@wp.pl';
+        var trackcmp = document.createElement("script");
+        trackcmp.async = true;
+        trackcmp.type = 'text/javascript';
+        trackcmp.src = '//trackcmp.net/visit?actid=649095895&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+        var trackcmp_s = document.getElementsByTagName("script");
+        if (trackcmp_s.length) {
+            trackcmp_s[0].parentNode.appendChild(trackcmp);
+        } else {
+            var trackcmp_h = document.getElementsByTagName("head");
+            trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+        }
+    }
+
+    if (trackByDefault || /(^|; )ac_enable_tracking=([^;]+)/.test(document.cookie)) {
+        acEnableTracking();
+    }
+</script>
+
+        <script src="./Moduł_ 17. Spring i Hibernate_files/underscore-min-2f43a3f5e1.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/backbone-min-c896af5171.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/backbone-relational-e201c53dfd.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/backbone-super-2df5edc1f1.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/handlebars-v4-a5bc49041d.0.5.min.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/handlebars-ifCond-4e97d51c76.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/application-b70821e685.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/main-2c312ef796.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/tracking-activities-6271dcc7fd.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/notifications-e7d515165e.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/settings-2fedaf9385.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/delete-account-da2b3de486.js.pobrane"></script>
+<script type="text/x-translation" data-translation-name="checkAccountDeleteCalculationMessage">Wynik jest nieprawidłowy</script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/forms-c89aaf7055.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/alerts-15632e9137.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/inpage-alerts-efb6525235.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/collections-1703f0dc2b.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/models-bc38b7a45b.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/knowledge-base-bf25c808b5.js.pobrane"></script>
+<script src="./Moduł_ 17. Spring i Hibernate_files/learning-program-a2610fc10e.js.pobrane"></script>
+
+    <script src="./Moduł_ 17. Spring i Hibernate_files/tether-c2fa918d0f.min.js.pobrane"></script>
+    <script src="./Moduł_ 17. Spring i Hibernate_files/prism-9800db9c67.min.js.pobrane"></script>
+
+    <script src="./Moduł_ 17. Spring i Hibernate_files/bootcamp-0671f4eb7d.js.pobrane"></script></body></html>

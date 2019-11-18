@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://kodilla.com/pl/bootcamp-module/146/127/3774 -->
+<html lang="pl" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="csrf-token" content="iDjTRCQp1y2ds6c8kg20Msh9Sj24UN4QZNeTHFJ5">
+
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="https://kodilla.com/static/img/icons/apple-touch-icon-60x60.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://kodilla.com/static/img/icons/apple-touch-icon-76x76.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://kodilla.com/static/img/icons/apple-touch-icon-120x120.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://kodilla.com/static/img/icons/apple-touch-icon-152x152.png?00000">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://kodilla.com/static/img/icons/favicon-32x32.png?00000">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://kodilla.com/static/img/icons/favicon-96x96.png?00000">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://kodilla.com/static/img/icons/favicon-16x16.png?00000">
+
+        
+        <link rel="canonical" href="https://kodilla.com/pl/bootcamp-module/146/127/3774">
+        <title>    Moduł: 8. Obsługa błędów w Javie
+</title>
+                        <meta name="robots" content="noindex, follow">
+        
+        <link href="./Moduł_ 8. Obsługa błędów w Javie_files/bootstrap.min.css" rel="stylesheet">
+        <link href="./Moduł_ 8. Obsługa błędów w Javie_files/font-awesome.min.css" rel="stylesheet">
+        <link href="./Moduł_ 8. Obsługa błędów w Javie_files/main-f08a1c3596.css" rel="stylesheet" type="text/css">
+
+                
+    <link href="./Moduł_ 8. Obsługa błędów w Javie_files/prism.min.css" rel="stylesheet">
+
+    <link href="./Moduł_ 8. Obsługa błędów w Javie_files/bootcamp-ffa4181f24.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Moduł_ 8. Obsługa błędów w Javie_files/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./Moduł_ 8. Obsługa błędów w Javie_files/jquery.fancybox.min.css" type="text/css" media="screen">
+        <script type="text/javascript" async="" src="./Moduł_ 8. Obsługa błędów w Javie_files/js"></script><script type="text/javascript" async="" src="./Moduł_ 8. Obsługa błędów w Javie_files/analytics.js.pobrane"></script><script type="text/javascript" async="" src="./Moduł_ 8. Obsługa błędów w Javie_files/analytics.js.pobrane"></script><script id="facebook-jssdk" src="./Moduł_ 8. Obsługa błędów w Javie_files/sdk.js.pobrane"></script><script async="" src="./Moduł_ 8. Obsługa błędów w Javie_files/gtm.js.pobrane"></script><script async="" src="./Moduł_ 8. Obsługa błędów w Javie_files/fbevents.js.pobrane"></script><script>
+            window.environment = 'production';
+            window.loggedIn = true;
+            window.domain = 'https://kodilla.com';
+                        window.fbAppId = 1449248938627896;
+            window.locale = 'pl';
+            window.lang = 'pl';
+
+            window.serverUTC       = 1544983322000;
+            window.serverOffset    = 60;
+            window.userDate        = new Date();
+            window.userUTC         = userDate.getTime();
+            window.userOffset      = userDate.getTimezoneOffset() * (-1);
+            window.userClockDiff   = userUTC - serverUTC;
+            window.diffRounded     = Math.round( userClockDiff / ( 1000 * 60 * 15 ) );
+            window.isDifferentZone = ( userOffset - serverOffset !== 0 ) ? 1 : 0;
+            window.hasWrongTime    = ( diffRounded !== 0 ) ? 1 : 0;
+            window.dateTooltipText = 'Data i godzina są podane dla Twojej strefy czasowej GMT. <br>W razie wątpliwości napisz: <u>support@kodilla.com</u>.';
+            window.wrongHourNotice = 'Godzina na Twoim urządzeniu r&oacute;żni się od godziny obowiązującej w strefie czasowej wybranej w ustawieniach Twojego urządzenia.';
+
+            var moment = undefined,
+            momentReady = function( method, method2, count ){
+                var c = ( count ) ? count : 0;
+
+                if      ( isDifferentZone && moment !== undefined ){
+                    if      ( method ) { method(); }
+                    else    { return false; }
+                }
+                else if ( isDifferentZone && moment === undefined ) {
+                    if ( c < 20 ) {
+                        c++;
+                        setTimeout( function() { momentReady( method, method2, c ); }
+                            , 300 );
+                    } else {
+                        if      ( method2 === true && method )  { method(); }
+                        else if ( method2 !== true && method2 ) { method2(); }
+                    }
+                }
+                else {
+                    if      ( method2 === true && method )  { method(); }
+                    else if ( method2 !== true && method2 ) { method2(); }
+                    else    { return false; }
+                }
+            };
+
+            if ( window.isDifferentZone && moment === undefined ) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = '/static/js/libs/moment.timezone.locales.min.js?v=2.22.2';
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }
+        </script>
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '389137334769464');
+            fbq('track', 'PageView');
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KN2WWBH');</script>
+        <!-- End Google Tag Manager -->
+<script async="" type="text/javascript" src="./Moduł_ 8. Obsługa błędów w Javie_files/visit"></script><link href="./Moduł_ 8. Obsługa błędów w Javie_files/widget.css" rel="stylesheet"><style type="text/css">.fancybox-margin{margin-right:15px;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head>
+<body class="wrong-hour freshchat-enabled">
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>
+    document.getElementsByTagName('body')[0].classList.remove('no-js');
+    if ( window.isDifferentZone ) {
+        document.querySelector('body').classList.add('time-conversion-applied');
+    }
+    if ( window.hasWrongTime ) {
+        document.querySelector('body').classList.add('wrong-hour');
+    }
+</script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: window.fbAppId,
+        xfbml: true,
+        version: 'v2.10'
+    });
+};
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+    <nav class="navbar-main hidden-sm-down dark navbar">
+    <div class="nav-container">
+        <div class="navbar-header clearfix">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbarUpper"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="collapse navbar-toggleable-sm container" id="collapsingNavbarUpper">
+            <ul class="nav navbar-nav navbar-nav-left">
+                                    <li class="nav-item nav-contact">
+    <span>Skontaktuj się z nami:</span>
+    <a href="mailto:support@kodilla.com">
+        <i class="fa fa-envelope-o"></i>
+        support@kodilla.com
+    </a>
+    <span>lub</span>
+    <a href="javascript:fcWidget.open();">
+        <i class="fa fa-comments"></i>
+        porozmawiaj na czacie
+    </a>
+</li>
+                                </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+    <a class="nav-link dropdown-toggle" href="https://kodilla.com/pl/bootcamp-module/146/127/3774#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+        <img class="img-no-border ico-current-lang" src="./Moduł_ 8. Obsługa błędów w Javie_files/ico.globe.svg">Polski
+    </a>
+    <div class="dropdown-menu-css">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://kodilla.com/pl"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/pl.svg">Polski</a>
+                            <a class="dropdown-item" href="https://kodilla.com/en"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/en.svg">English</a>
+                    </div>
+    </div>
+</li>
+                                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+                </li>
+                <li class="nav-item hidden-sm-down">
+    <a href="https://kodilla.com/pl/account" class="nav-link">Konto</a>
+</li>
+        <li class="nav-item">
+    <a class="analytics-track nav-link nav-link-accent" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-main light navbar">
+    <div class="container clearfix">
+        <a class="navbar-brand" href="https://kodilla.com/pl">
+            <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168px" height="30px">
+                <defs>
+                    <style>
+                        .navbar-logo-fill {
+                            fill: #0dac4b;
+                        }
+                    </style>
+                </defs>
+                <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                    <path id="KODILLA_copy_5_1_" class="navbar-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                    <ellipse id="eye_copy_4_1_" class="navbar-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                </g>
+                <path id="Path_1" data-name="Path 1" class="navbar-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                <path id="Path_2" data-name="Path 2" class="navbar-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                <path id="Path_3" data-name="Path 3" class="navbar-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                <path id="Path_4" data-name="Path 4" class="navbar-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                <path id="Path_5" data-name="Path 5" class="navbar-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                <path id="Path_6" data-name="Path 6" class="navbar-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+            </svg>
+        </a>
+        <button class="navbar-toggler pull-right collapsed" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars navbar-ico-open"></i>
+            <i class="fa fa-times navbar-ico-close"></i>
+        </button>
+        <ul id="navbar-main" class="nav navbar-nav pull-right collapse">
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Szkolenia Bootcamp
+    </a>
+    <ul class="bootcamp-list">
+                    <li class="list-sub list-sub-fe">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32">
+                <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width=".75">
+                    <polyline stroke="#02AC46" points="3.382 24.574 3.382 30.736 33.743 30.736 33.743 .375 3.382 .375 3.382 18.562"></polyline>
+                    <path stroke="#02AC46" d="M25.611 15.95L24.921 15.655C23.688 15.113 23.098 14.817 23.098 13.88 23.098 13.191 23.639 12.648 24.527 12.648 25.365 12.648 25.858 12.993 26.399 13.88L28.668 12.401C27.73 10.726 26.399 10.085 24.576 10.085 21.964 10.085 20.288 11.76 20.288 13.879 20.288 16.245 21.718 17.379 23.788 18.315L24.477 18.611C25.759 19.153 26.597 19.548 26.597 20.583 26.597 21.421 25.858 22.062 24.625 22.062 23.146 22.062 22.357 21.322 21.767 20.238L19.4 21.569C20.238 23.244 22.012 24.526 24.723 24.526 27.483 24.526 29.552 23.047 29.552 20.484 29.504 18.119 28.124 17.034 25.611 15.95zM17.823 20.238L17.823 10.282 14.866 10.282 14.866 20.189C14.866 21.668 14.274 22.012 13.289 22.012 12.303 22.012 11.859 21.322 11.416 20.533L9.001 22.012C9.691 23.491 11.07 24.674 13.388 24.674 16 24.575 17.823 23.244 17.823 20.238z"></path>
+                    <circle cx="3.382" cy="21.568" r="3.006" stroke="#02AC46"></circle>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/front-end">
+                <h4 class="bootcamp-name">Front-end: React</h4>
+                <p>Naucz się tworzyć front-end aplikacji w 4 miesiące</p>
+                <span class="bootcamp-label">nowość</span>
+            </a>
+        </li>
+                <li class="list-sub">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.61 27.4"><defs><style>.stroke-grey,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75px;}.stroke-grey{stroke:#e0e0e0;}.cls-2{stroke:#02ac46;}</style></defs><title>Front i Web Developer</title><line class="stroke-grey" x1="22.2" y1="3.46" x2="24.01" y2="5.31"></line><line class="stroke-grey" x1="22.2" y1="5.31" x2="24.01" y2="3.46"></line><polyline class="stroke-grey" points="0.96 26.61 0.96 0.79 26.72 0.79 26.72 26.61 0.96 26.61"></polyline><line class="stroke-grey" x1="1.22" y1="7.98" x2="26.72" y2="7.98"></line><rect class="stroke-grey" x="17.72" y="3.49" width="1.8" height="1.8"></rect><line class="stroke-grey" x1="15.03" y1="5.28" x2="13.24" y2="5.28"></line><polyline class="cls-2" points="16.86 20.13 19.8 16.75 16.86 13.37"></polyline><polyline class="cls-2" points="10.51 20.13 7.57 16.75 10.51 13.37"></polyline><line class="cls-2" x1="15.78" y1="10.43" x2="11.67" y2="22.81"></line></svg>
+            <a href="https://kodilla.com/pl/bootcamp/webdeveloper?type=wdp">
+                <h4 class="bootcamp-name">Web Developer</h4>
+                <p>Naucz&nbsp;się tworzyć aplikacje internetowe od&nbsp;podstaw</p>
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="list-sub">
+            <svg class="menu-svg" width="32px" height="32px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>menu_java_logo</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu_java_logo">
+                        <g id="svg_1" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042" id="path156_2_" fill="#02AC46"></path>
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042 Z" id="path158_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004" id="path160_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004 Z" id="path162_2_" fill="#02AC46"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311" id="path164_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311 Z" id="path166_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757" id="path168_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757 Z" id="path170_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853" id="path172_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853 Z" id="path174_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992" id="path176_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992 Z" id="path178_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38" id="path180_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38 Z" id="path182_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058" id="path184_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058 Z" id="path186_2_" fill="#E0E0E0"></path>
+                        </g>
+                        <path class="stroke-grey" d="M25.725,21.8309333 L25.725,4.16906671 C25.725,2.01884874 23.9812191,0.275 21.8310955,0.275 L4.16890446,0.275 C2.01878088,0.275 0.275,2.01884874 0.275,4.16906671 L0.275,21.8309333 C0.275,23.9818034 2.01842105,25.725 4.16890446,25.725 L21.8310955,25.725 C23.9815789,25.725 25.725,23.9818034 25.725,21.8309333 Z" id="svg_2" stroke="#E0E0E0" stroke-width="0.55"></path>
+                    </g>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/java?type=jdp">
+                <h4 class="bootcamp-name">Java Developer</h4>
+                <p>Poznaj najpopularniejszy na&nbsp;świecie język programowania od&nbsp;zera</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+                        <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Strefa kursanta
+    </a>
+    <ul>
+                    <li><a href="https://kodilla.com/pl/bootcamp-dashboard/146" class="nav-link">Bootcamp Java Plus 2018-10</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a></li>
+                    <li><a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a></li>
+    </ul>
+</li>
+                            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        O nas
+    </a>
+    <ul class="about-us">
+        <li><a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a></li>
+        <li><a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a></li>
+        <li><a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a></li>
+    </ul>
+</li>
+                                        <li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Szkolenia Bootcamp</span>
+    <ul>
+                    <li class="nav-item list-sub-fe">
+                <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/front-end">Bootcamp Front-end: React
+                    <span class="bootcamp-label">nowość</span>
+                </a>
+            </li>
+                <li class="nav-item">
+            <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/webdeveloper">Bootcamp Web Developer
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://kodilla.com/pl/bootcamp/java">Bootcamp Java</a>
+        </li>
+    </ul>
+</li>
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">Strefa kursanta</span>
+            <ul>
+                <li class="nav-item ">
+                                            <a class="nav-link" href="https://kodilla.com/pl/bootcamp-dashboard/146">
+                            Bootcamp   Java Plus 2018-10
+                        </a>
+                                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a>
+                </li>
+                                    <li class="nav-item ">
+                        <a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a>
+                    </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a>
+                </li>
+            </ul>
+        </li>
+    
+        
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">O nas</span>
+            <ul>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a>
+                </li>
+            </ul>
+        </li>
+    
+<li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Pozostałe</span>
+    <ul>
+                                        
+        <li class="nav-item">
+            <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+        </li>
+    </ul>
+
+</li>
+
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl/account">Konto</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link analytics-track" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+    </li>
+
+        
+    <li class="nav-item hidden-md-up nav-group">
+        <span class="mobile-menu-separator">Skontaktuj się z nami</span>
+        <ul>
+            <li class="nav-item">
+                <a href="mailto:support@kodilla.com" class="nav-link">
+                    <i class="fa fa-envelope-o"></i>
+                    support@kodilla.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:fcWidget.open();" class="nav-link">
+                    <i class="fa fa-comments"></i>
+                    <span>Porozmawiaj na czacie</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+<li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/pl.svg">Polski</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/en"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/en.svg">English</a>
+    </li>
+
+        </ul>
+    </div>
+</nav>
+<main class="bootcamp module page-height-fix" id="bootcamp-module">
+    <div class="table-of-contents aside-sticky">
+        <section class="container">
+            <div class="row">
+                <aside class="module-nav col-md-4 col-md-offset-8">
+                    <section class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Spis treści modułu</h4>
+                        </div>
+                        <ul class="list-group list-group-flush ps-container ps-theme-default ps-active-y" data-ps-id="cf5cac5c-a5b0-5edb-4d37-7feaff61f602">
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#submodule-342" class="clearfix">
+                                    <p>8.1. Co to jest Exception - Checked i Unchecked</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#81-co-to-jest-exception-checked-i-unchecked-omowienie-podstawowej-struktury-bledow-oraz-wyjatkow" class="clearfix">Omówienie podstawowej struktury błędów oraz wyjątków</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#81-co-to-jest-exception-checked-i-unchecked-przygotowanie-srodowiska" class="clearfix">Przygotowanie środowiska</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#81-co-to-jest-exception-checked-i-unchecked-zapoznanie-z-checked-exception-ioexception" class="clearfix">Zapoznanie z checked Exception - IOException</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#81-co-to-jest-exception-checked-i-unchecked-czytanie-z-pliku-tekstowego-za-pomoca-javy" class="clearfix">Czytanie z pliku tekstowego za pomocą Javy</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#submodule-343" class="clearfix">
+                                    <p>8.2. try! catch! finally!</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#82-try-catch-finally-wprowadzenie-do-try-catch" class="clearfix">Wprowadzenie do try-catch</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#82-try-catch-finally-wyswietlanie-imion" class="clearfix">Wyświetlanie imion</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#82-try-catch-finally-obsluga-bledu-z-wyswietleniem-informacji-o-problemie" class="clearfix">Obsługa błędu z wyświetleniem informacji o problemie</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#82-try-catch-finally-jak-zrobic-to-ladniej" class="clearfix">Jak zrobić to ładniej?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#82-try-catch-finally-finally" class="clearfix">Finally!</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#82-try-catch-finally-zadanie-try-catch-finally" class="clearfix">Zadanie: try! catch! finally!</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#submodule-344" class="clearfix">
+                                    <p>8.3. Throw i Throws - są jakieś różnice?</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#83-throw-i-throws-sa-jakies-roznice-throws" class="clearfix">Throws</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#83-throw-i-throws-sa-jakies-roznice-throw" class="clearfix">Throw</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#83-throw-i-throws-sa-jakies-roznice-zadanie-obsluga-wyjatku" class="clearfix">Zadanie: Obsługa wyjątku</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#submodule-345" class="clearfix">
+                                    <p>8.4. Obsługiwanie błędów na różnych przypadkach</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#84-obslugiwanie-bledow-na-roznych-przypadkach-podsumowanie" class="clearfix">Podsumowanie</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/127/3774#84-obslugiwanie-bledow-na-roznych-przypadkach-zadanie-wiedza-o-wyjatkach" class="clearfix">Zadanie: Wiedza o wyjątkach</a></li>
+                                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 343px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 114px;"></div></div></ul>
+                        <div class="card-block text-center">
+                                                                                                <a href="https://kodilla.com/pl/bootcamp-dashboard/146">Powrót do dashboardu</a>
+                                                                                    </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </div>
+    <section class="container module-content">
+        <div class="row">
+            <main class="col-md-8">
+                <section class="card">
+                    <div class="card-block module-header clearfix  completed ">
+                        <h1 class="card-title">8. Obsługa błędów w Javie</h1>
+                                                <i class="fa fa-bookmark fa-3x" aria-hidden="true"></i>
+                    </div>
+                                        <div class="card-block challenge">
+                        <h3>Wyzwania:</h3>
+                        <ul>
+	<li>Poznanie różnych rodzajów błędów w Javie</li>
+	<li>Obsługiwanie różnego rodzaju błędów</li>
+	<li>Umiejętność tworzenia bezpiecznej aplikacji</li>
+</ul>
+
+<h3>Ocena kursu do 8. modułu</h3>
+
+<p>Masz już za sobą 7 modułów. Gratulacje!</p> 
+<p>Stale podnosimy jakość naszych szkoleń. W związku z tym bylibyśmy wdzięczni za wypełnienie <a href="https://goo.gl/forms/UJuDkAB2mIBuQGnH2" target="_blank">krótkiej ankiety</a>. Zajmie Ci ona dosłownie chwilę. Z góry dziękujemy!</p>
+
+<h3>Wprowadzenie</h3>
+
+<p>W życiu, na każdym kroku możemy napotkać się na różnego rodzaju błędy i problemy - są one wręcz nieuniknione. W takich sytuacjach zawsze mamy kilka wyjść / sposobów, na które możemy te problemy rozwiązać - pestka! Mimo wszystko, sztuką jest rozwiązywać problemy zanim one wystąpią, proaktywnie - w programowaniu wcale nie jest inaczej!</p>
+
+<p>Zastanów się - przecież nasze programy też są podatne na błędy. Pisząc kod, zawsze musimy zadać sobie pytanie… a co by się stało 'gdyby'? To dobre podejście, otwierające oczy na nowe ścieżki działania naszego programu. Kiedy pojawia się błąd, Java daje nam możliwość jego obsługi i wprowadzenia programu na dobre tory, nie pozostawiając żadnych szkód czy nawet całkowitego zatrzymania aplikacji.</p>
+<p>Nim przejdziemy do obsługi błędów, przedstawimy Ci różne ich rodzaje, żebyś miał pogląd na to, co będziemy 'zwalczać' :)</p>
+
+                    </div>
+                                    </section>
+                                    
+                <section id="submodule-342" class="card submodule completed" data-bootcamp-user-submodule-id="251983">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">8.1. <span>Co to jest Exception - Checked i Unchecked</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            
+<p><code class=" language-java">Exception</code> (<i>pol. wyjątek</i>) to zdarzenie, <i></i>na które może natknąć się nasz program. Co ważne - jako programista, Ty również możesz je tworzyć tak, aby ostrzegać samego siebie lub innych programistów o tym, co poszło nie tak w Twoim programie.</p>
+<p>Warto też wiedzieć, że każdy błąd ma swojego rodzica (tak, dziedziczenie wróciło :)).</p>
+<h3 id="81-co-to-jest-exception-checked-i-unchecked-omowienie-podstawowej-struktury-bledow-oraz-wyjatkow">Omówienie podstawowej struktury błędów oraz wyjątków</h3>
+<p>Aby dobrze ułożyć sobie to wszystko w głowie, rozpoczniemy naszą naukę od poznania następującej struktury:<a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_00.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_00.png" style="width: 100%"></a></p>
+<h4>Klasa Throwable</h4>
+<p>Jak wiesz, każdy obiekt w Javie dziedziczy po klasie <code class=" language-java">Object</code>, a wyjątek nie jest niczym innym niż obiektem - dlatego więc nie powinno Cię dziwić, że na samym szczycie naszej struktury znajduje się klasa <code class=" language-java">Object</code>. Nie zmienia to faktu, że najbardziej interesująca na ten moment jest klasa <code class=" language-java">Throwable</code>, która jest dla Ciebie nowością. Jest to klasa, po której dziedziczy każdy błąd w Javie - to bardzo istotne, bowiem tylko klasy dziedziczące po <code class=" language-java">Throwable</code> mogą być uważane za błędy w Javie.</p>
+<h4>Error</h4>
+<p>Jest to <u>najpoważniejszy</u> błąd w Javie, nie powinniśmy próbować go obsługiwać, ponieważ pojawia się on w krytycznych sytuacjach i wręcz zalecane jest aby aplikacja Javy zatrzymała się w takiej sytuacji. Przykładami tego typu błędów są:</p>
+<ul>
+	<li>Całkowite zapełnienie pamięci dostępnej dla programu,</li>
+	<li>Nadmiar wywołań rekurencyjnych</li>
+</ul>
+<p>Takich błędów jest oczywiście więcej - jeżeli chcesz przyjrzeć się im bliżej, zajrzyj tutaj: <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Error.html">https://docs.oracle.com/javase/8/docs/api/java/lang/Error.html</a></p>
+<h4>Exception - checked</h4>
+<p><i>Exception</i> jest wyjątkiem, który może pojawić się w trakcie działania programu, bądź wywołania metody i musi zostać obsłużony przez programistę, o czym powiemy sobie za chwilę. Wyjątki są często stosowane w momencie, kiedy istnieje wysokie prawdopodobieństwo powstania niepożądanej sytuacji w aplikacji - zamiast do niej dopuścić, pozostawiamy programowi alternatywny sposób działania, który ma on obrać w przypadku wystąpienia czegoś, czego byśmy nie chcieli.</p>
+<p>Przykładem wyjątku <i>Exception</i> może być <code class=" language-java">IOException</code>, który obsługuje wyjątki związane z zagadnieniami wyjścia i wejścia danych (czyli na przykład zapisu do i odczytu z pliku). Taki wyjątek musi zostać obsłużony przez programistę, ponieważ istnieje prawdopodobieństwo, że - przykładowo - plik z którego chcemy odczytać tekst może nie istnieć w obrębie naszej aplikacji - w takiej sytuacji możemy chcieć np. anulować odczyt z pliku oraz wyświetlić informację o problemie.</p>
+<h4>RuntimeException - unchecked</h4>
+<p>Jest to rodzaj wyjątku w Javie, który nie musi zostać obsłużony przez programistę. Może się on pojawić w trakcie działania programu. Przykładem takiego wyjątku jest - <code class=" language-java">IllegalArgumentException</code> - błąd pojawiający się np. wtedy gdy do metody oczekującej argumentu o typie <code class=" language-java"><span class="token keyword keyword-int">int</span></code>, przekażemy argument typu <code class=" language-java">String</code>.</p>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Wyjaśnienie</h4>
+    <p>Warto wspomnieć, że o ile błędy <code class=" language-java">Error</code> w Javie zazwyczaj wynikają z błędu programisty i są krytyczne dla działania aplikacji (program może nie działać po napotkaniu takiego błędu), wyjątki wcale nie są niczym złym - są naturalną częścią pracy z kodem.</p>
+    <p>Powód istnienia wyjątków wynika z tego, że jako programiści, nie zawsze mamy stuprocentowy wpływ na środowisko, w którym będzie działał nasz program - nie możemy mieć pewności, czy np. plik, który będziemy chcieli odczytać będzie istniał tam, gdzie nasz kod zostanie uruchomiony lub czy program będzie mógł uzyskać połączenie z Internetem.</p>
+    <p>Mimo to, zawsze warto próbować sprawić, aby nasz kod mógł nadal działać, nawet pomimo pewnych problemów - właśnie do tego przydadzą nam się wyjątki.</p>
+</div>
+
+
+<h4>Podsumowanie</h4>
+<p>Powtórzmy to jeszcze raz - istnieją dwa główne typy wyjątków w Javie - <code class=" language-java">checked</code> oraz <code class=" language-java">unchecked</code>.</p>
+<p>Wyjątki <code class=" language-java">checked</code> to takie, które dziedziczą po klasie <code class=" language-java">Exception</code> i wymagają obsłużenia przez programistę, o czym powiemy niebawem.</p>
+<p>Wyjątki <code class=" language-java">unchecked</code> to takie, które dziedziczą po klasie <code class=" language-java">RuntimeException</code> i nie wymagają obsłużenia, jednak może to zaowocować zatrzymaniem programu.</p>
+<p>Zdobyliśmy już ogólną wiedzę na temat błędów oraz wyjątków w Javie! Pora na stworzenie nowego modułu w naszym projekcie, w którym przećwiczymy nowo poznaną wiedzę.</p>
+<h3 id="81-co-to-jest-exception-checked-i-unchecked-przygotowanie-srodowiska">Przygotowanie środowiska</h3>
+<p>Przygotowanie środowiska: utwórz nowy moduł o nazwie <code class=" language-java">kodilla<span class="token operator">-</span>exception</code> wraz ze strukturą katalogów <i>src/main/java</i> oraz <i>src/test/java</i> oraz pierwszym pakietem <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception</code> w katalogu <i>src/main/java</i> (sposób tworzenia i konfigurowania modułu omówiliśmy w submodule 6.1 - w razie problemów przeczytaj ponownie ten submoduł).</p>
+<p>Następnie, utwórz dwa nowe pakiety wewnątrz katalogu <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception</code>:</p>
+<ul>
+	<li><code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>io</code> zawierający klasę o nazwie <code class=" language-java">FileReader</code>,</li>
+	<li><code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>main</code> zawierający klasę o nazwie <code class=" language-java">ExceptionModuleRunner</code></li>
+</ul>
+<p>Twoja struktura powinna wyglądać następująco:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_01.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_01.png" style="width: 100%"></a>
+<p></p>
+<p>Przygotuj szablon klasy <code class=" language-java">FileReader</code> według poniższego schematu:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_02.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_02.png" style="width: 100%"></a>
+<p>Natomiast klasę <code class=" language-java">ExceptionModuleRunner</code> wykorzystamy - jak sama nazwa wskazuje - do uruchamiania naszego programu. Pewnie już nasuwa Ci się ta myśl… tak, metoda <code class=" language-java">main</code>! :)</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_03.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_03.png" style="width: 100%"></a>
+<p>To będą nasze 2 klasy, na których będziemy pracować, aby zgłębić wiedzę o obsłudze wyjątków w Javie. No to 1, 2, 3… Start!</p>
+<h3 id="81-co-to-jest-exception-checked-i-unchecked-zapoznanie-z-checked-exception-ioexception">Zapoznanie z checked Exception - IOException</h3>
+<p>Wejdź do swojego <code class=" language-java">IntelliJ</code> i wciśnij 2 razy <code class=" language-java">Shift</code>, Twoim oczom powinno ukazać się okno wyszukiwania w projekcie:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_04.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_04.png" style="width: 100%"></a>
+<p>Wewnątrz wyszukiwarki wpisz nazwę szukanego wyjątku tj. <code class=" language-java">IOException</code>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_05.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_05.png" style="width: 100%"></a>
+<p>Przejdź do klasy tego wyjątku i obejrzyj go uważnie, wraz z przeczytaniem komentarzy opisujących całą klasę:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_06.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_06.png" style="width: 100%"></a>
+<p>Jest to wyjątek, z którym trochę się pobawimy, ale nim będziemy mogli rozpocząć działania na nim, musimy dowiedzieć się jak go wywołać - przecież sam do nas nie przyjdzie :)</p>
+<h3 id="81-co-to-jest-exception-checked-i-unchecked-czytanie-z-pliku-tekstowego-za-pomoca-javy">Czytanie z pliku tekstowego za pomocą Javy</h3>
+<p>Java potrafi wiele - potrafi nawet czytać z plików i to skutecznie!</p>
+<p>Już wewnątrz biblioteki Javy - <code class=" language-java">java<span class="token punctuation">.</span>io</code> - możemy znaleźć klasy, które pozwalają na takie operacje, abyśmy nie musieli się z tym zbytnio kłopotać.</p>
+<h4>Utworzenie pliku do odczytania</h4>
+<p>Rozpocznijmy jednak od stworzenia pliku tekstowego, z którego będziemy czytać. Wewnątrz katalogu <code class=" language-java">resources</code> (kodilla-exception/src/main/resources - jeżeli nie posiadasz takiego katalogu to musisz go najpierw utworzyć), <code class=" language-java"></code>utwórz katalog o nazwie <i>file</i>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_07.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_07.png"></a>
+<p>Następnie utwórz plik tekstowy o nazwie <i>names.txt</i>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_08.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_08.png" style="width: 100%"></a>
+<p>Wewnątrz pliku <i>names.txt</i> <code class=" language-java"></code>wypiszemy poszczególne imiona separując je “złamaniem” (enter):</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_09.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_09.png" style="width: 100%"></a>
+<p>Oczywiście w swoim pliku możesz zawrzeć zupełnie inne imiona - takie jakie lubisz :)</p>
+<h4>Znalezienie pliku za pomocą kodu</h4>
+<p>Wróćmy do klasy <code class=" language-java">FileReader</code>, w której musimy w jakiś sposób pobrać nowo utworzony plik. Jak to zrobić? Najpierw pokażemy jak to wygląda, a następnie omówimy to wszystko po kolei:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_10.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_10.png" style="width: 100%"></a>
+<p>Wewnątrz metody <code class=" language-java"><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> pojawiło się kilka do tej pory nieznanych Ci klas, dlatego zacznijmy od początku:</p>
+<ol>
+	<li><code class=" language-java">ClassLoader classLoader <span class="token operator">=</span> <span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code> Zapewne pamiętasz metodę <code class=" language-java"><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, z którą spotkaliśmy się już wcześniej - w tym przypadku zwraca ona klasę, w której jest wywołana (<code class=" language-java">FileReader</code>). Nowością jest natomiast ten tajemniczy obiekt typu <code class=" language-java">ClassLoader</code>, który tu pobieramy przy pomocy metody <code class=" language-java"><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>. Klasa <code class=" language-java">ClassLoader</code> jest to klasa odpowiedzialna za odnalezienie klas i plików wewnątrz naszej aplikacji - pozwoli nam to odwołać się do naszego pliku z imionami.</li>
+	<li><code class=" language-java">classLoader<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span>“<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>”<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> Jest to wywołanie metody, która wskazuje klasie <code class=" language-java">ClassLoader</code>, gdzie powinna szukać pliku, tu: w katalogu <code class=" language-java">file</code>, w którym umieściliśmy nasz plik <code class=" language-java">names<span class="token punctuation">.</span>txt</code> (metoda ta zawsze szuka zasobów wewnątrz katalogu <code class=" language-java">resources</code>). Następnie pobieramy tak zwany “uchwyt” do pliku za pomocą metody <code class=" language-java"><span class="token function">getFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, co pozwoli nam przekazać odwołanie do tego pliku w następnym kroku.</li>
+	<li><code class=" language-java"><span class="token keyword keyword-new">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> Dzięki wywołaniu metody <code class=" language-java"><span class="token function">getFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> w poprzednim kroku, mamy już dostęp do pliku z imionami z poziomu kodu <code class=" language-java"></code>- <code class=" language-java"></code>teraz jesteśmy w stanie stworzyć obiekt reprezentujący nasz plik tekstowy za pomocą klasy <code class=" language-java">File</code>, które również jest dostępna wewnątrz biblioteki Javy - <code class=" language-java">java<span class="token punctuation">.</span>io</code>.</li>
+</ol>
+<h4>Pobieranie ścieżki do pliku</h4>
+<p>Aby sprawdzić czy nasz plik tekstowy otworzył się odpowiednio, wywołajmy z obiektu <code class=" language-java">file</code> metodę <code class=" language-java"><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, która zwróci nam dokładną ścieżkę do naszego pliku <i>names.txt</i><code class=" language-java"><span class="token punctuation">,</span></code> a następnie wyświetlmy ją za pomocą <code class=" language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_11.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_11.png" style="width: 100%"></a>
+<p>Przejdź teraz do klasy <code class=" language-java">ExceptionModuleRunner</code> i uruchom naszą aplikację za pomocą zielonej strzałki:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_12.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_12.jpg" style="width: 100%"></a>
+<p>W konsoli powinna wyświetlić się ścieżka podobna do tej - jest to oczywiście zależne od tego, w jakim miejscu na Twoim dysku znajduje się ten projekt:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_13.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_13.jpg" style="width: 100%"></a>
+<p>Mamy plik! To naprawdę dużo, ale jednak nie koniec - pora odczytać jego zawartość!</p>
+<p>Jak do tego najlepiej podejść? Zacznijmy od przełożenia naszej ścieżki na obiekt za pomocą klasy <code class=" language-java">Paths<span class="token operator">:</span></code></p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_14.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_14.png" style="width: 100%"></a>
+<p>Klasa <code class=" language-java">Paths</code> pozwala nam na modyfikacje ścieżki o typie <code class=" language-java">String</code> na obiekt <code class=" language-java">Path</code>, który będzie niezbędny do dalszego działania z plikiem.</p>
+
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Porada</h4>
+    <p>W trakcie korzystania z nowych klas z bibliotek Javy, warto zaglądać do ich środka i czytać komentarze wewnątrz nich. Takie działanie pozwala nam na dogłębne zrozumienie działania klasy, bądź metody.</p>
+    <p>Jak już doskonale wiesz, kod jest najlepszą dokumentacją i opisem działania (no i oczywiście opis API Javy na stronach <i>Oracle’a :)</i> ) programu - kiedy chcemy dowiedzieć się jak coś działa, czasami najlepiej jest po prostu zajrzeć do źródła :)</p>
+    <p>Aby wejść do wnętrza innej klasy z poziomu edytora IntelliJ, przytrzymaj <code class=" language-java">Ctrl</code> (bądź <code class=" language-java">cmd</code>, jeśli korzystasz z macOS<code class=" language-java"><span class="token punctuation">)</span></code> i najedź myszką na klasę, którą chcesz wyświetlić, następnie kliknij na nią, a Twoim oczom ukaże się kod źródłowy.</p>
+</div>
+
+
+
+<h4>Odczyt danych z pliku</h4>
+<p>Kiedy posiadamy już obiekt klasy <code class=" language-java">Path</code>, czas napisać klasę która pozwoli nam przeczytać zawartość pliku - pomoże nam w tym klasa <code class=" language-java">Files</code>, która pozwala między innymi na czytanie z pliku tekstowego - dysponuje ona metodą <code class=" language-java"><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, która właśnie pozwala na tego typu operacje.</p>
+<p>Wynikiem wywołania metody <code class=" language-java"><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> jest <code class=" language-java">Stream</code> obiektów typu <code class=" language-java">String</code> - obiektów reprezentujących poszczególne linie w pliku tekstowym. W naszym przypadku będą to imiona, które zapisaliśmy w pliku tekstowym <code class=" language-java">names<span class="token punctuation">.</span>txt</code>. Metoda <code class=" language-java"><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> “wie” jak czytać plik linia po linii i od razu gwarantuje nam przełożenie linii pliku tekstowego na obiekty typu <code class=" language-java">String</code>.</p>
+<p>Spójrz jak wygląda to w kodzie:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_15.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_15.png" style="width: 100%"></a>
+<p>Ale moment! <code class=" language-java">Files<span class="token punctuation">.</span><span class="token function">lines</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span></code> jest podkreślone na czerwono - z czego to wynika? Najedź kursorem na ten fragment kodu, aby dowiedzieć się na czym polega problem:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_16.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_16.png" style="width: 100%"></a>
+<p>Jak widzisz, IntelliJ podpowiada nam, że nie obsłużyliśmy wyjątku - <code class=" language-java">IOException</code> - który może powstać na skutek problemu ze znalezieniem pliku <i>names.txt</i>! Co teraz? Zajrzyj do kolejnego submodułu :)</p>
+<h2></h2>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-343" class="card submodule completed" data-bootcamp-user-submodule-id="251984">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">8.2. <span>try! catch! finally!</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>W poprzednim submodule trafiliśmy na nasz pierwszy wyjątek <code class=" language-java">IOException</code> w 'naturalnym środowisku' - IntelliJ słusznie podpowiedział nam, że musimy go obsłużyć. Jak? Na ratunek przychodzą bloki <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span></code> oraz <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span><span class="token operator">-</span><span class="token keyword keyword-finally">finally</span></code>, które poznamy już za chwilę! :)</p>
+<p>Przypomnienie</p>
+<p>Blokiem kodu nazywamy linijki znajdujące się pomiędzy klamrami <code class=" language-java"><span class="token punctuation">{</span></code> oraz <code class=" language-java"><span class="token punctuation">}</span></code> - może to być kod zawarty np. w metodzie, instrukcji <code class=" language-java"><span class="token keyword keyword-if">if</span></code> czy właśnie <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span></code>.</p>
+<h3 id="82-try-catch-finally-wprowadzenie-do-try-catch">Wprowadzenie do try-catch</h3>
+<p>O co chodzi z tym całym blokiem? Po co on jest? Jak go użyć? Kiedy go użyć? To na pewno szereg pytań tworzący się w Twojej głowie, ale bez obaw - to naprawdę proste!</p>
+<p>Pamiętasz problem związany z wywołaniem metody <code class=" language-java"><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>? <code class=" language-java">IntelliJ</code> informował nas, że nie obsłużyliśmy wyjątku - <code class=" language-java">IOException</code>, co znaczy że po prostu nie przekazaliśmy programowi instrukcji jak ma się zachować, kiedy w tym miejscu wystąpi dany wyjątek. Jak przekazać programowi taką informację? Zerknij na kod poniżej:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_17.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_17.png" style="width: 100%"></a>
+<p>Możesz zauważyć, że podkreślenie zniknęło całkowicie - to już zdecydowanie coś, ale czy to wystarczy? Omówmy przede wszystkim co nowego pojawiło się w naszym kodzie:</p>
+<ul>
+	<li><code class=" language-java"><span class="token keyword keyword-try">try</span></code> - to nic innego jak powiedzenie wirtualnej maszynie Javy: “Java, spróbuj to zrobić”, Java wtedy spróbuje zrobić to co znajduje się wewnątrz wywołania <code class=" language-java"><span class="token keyword keyword-try">try</span></code> objętego klamrami. Tylko co, jeśli mimo próby Java nie da rady wykonać tego zadania? Wtedy będzie potrzebowała pomocy, a tą pomocą będzie <code class=" language-java"><span class="token keyword keyword-catch">catch</span><span class="token punctuation">.</span></code></li>
+	<li><code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> - blok kodu, który uruchomi się od razu kiedy Java napotka na jakiś wyjątek na przykład <code class=" language-java">IOException</code>. Wewnątrz okrągłych nawiasów wywołania <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> musimy zdefiniować jakiego wyjątku może spodziewać się Java i co ma zrobić, jeśli się na niego natknie.</li>
+</ul>
+<p>Warto wspomnieć, że kod z bloku <code class=" language-java"><span class="token keyword keyword-try">try</span></code> przestanie wykonywać się natychmiast, kiedy Java natknie się na wyjątek - kolejne linijki po tej, która spowodowała problem nie zostaną już wykonane, a program przejdzie do wykonywania instrukcji z bloku <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code>.</p>
+<p>Wracając do kodu, spróbujmy coś trochę popsuć :)</p>
+<p>Wewnątrz wywołania metody <code class=" language-java"><span class="token function">get</span><span class="token punctuation">(</span>String filename<span class="token punctuation">)</span></code> z klasy <code class=" language-java">Paths</code>, podaj błędną ścieżkę pliku, natomiast wewnątrz <code class=" language-java"><span class="token keyword keyword-catch">catch</span><span class="token punctuation">(</span>IOException e<span class="token punctuation">)</span></code> wykorzystaj polecenie <code class=" language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, które poinformuje o napotkanym błędzie:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_18.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_18.png" style="width: 100%"></a>
+<p>Po dokonanej zmianie, uruchom swój program - w konsoli pojawi się:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_19.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_19.jpg" style="width: 100%"></a>
+
+
+<p>Widzisz? Tak działa <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> - w razie wypadku nie wyrzuca błędu w konsoli i nie zatrzymuje działania programu, a pozwala na jego sprawną obsługę przez programistę w sekcji <code class=" language-java"><span class="token keyword keyword-catch">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span></code> - to tyle - na tym polega cała magia bloku <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span></code> :)</p>
+<h3 id="82-try-catch-finally-wyswietlanie-imion">Wyświetlanie imion</h3>
+<p>Jeżeli wstępnie już wiemy o co chodzi z <code class=" language-java"><span class="token keyword keyword-try">try</span></code> i <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code>, wróćmy do czytania naszego pliku z imionami, który czeka na nas niespokojnie.</p>
+<p>Przywróć proszę właściwą ścieżkę do metody <code class=" language-java"><span class="token function">get</span><span class="token punctuation">(</span>String filename<span class="token punctuation">)</span></code> klasy <code class=" language-java">Paths</code>, a następnie spróbuj wykonać operację na otrzymanym strumieniu <code class=" language-java">Stream</code> z metody <code class=" language-java"><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span></code> w poniższy sposób:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_20.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_20.png" style="width: 100%"></a>
+<p>Jak widzisz, wywołaliśmy metodę <code class=" language-java"><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> z interfejsu <code class=" language-java">Stream</code>, przekazując jej referencję do metody <code class=" language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span>println</code> - w efekcie program powinien wyświetlać w konsoli zawartość każdej linijki z naszego pliku. Sprawdźmy czy takie założenie działa poprawnie! Przejdź do metody <code class=" language-java">main</code> i uruchom swój program:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_21.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_21.jpg" style="width: 100%"></a>
+<p>Udało się? Brawo! Właśnie nauczyliśmy się czytać pliki za pomocą Javy i nasz program na całe szczęście działa tak jak należy. Niestety, nie zawsze jest tak kolorowo, dlatego musimy obsługiwać błędy :)</p>
+<h3 id="82-try-catch-finally-obsluga-bledu-z-wyswietleniem-informacji-o-problemie">Obsługa błędu z wyświetleniem informacji o problemie</h3>
+<p>Wiesz już jak skutecznie obronić się przed błędem i to już duży krok w Twoim doświadczeniu programistycznym. Jednak każdy programista - mimo że obsłuży błąd - chce wiedzieć, że ten błąd powstał i chce go jak najszybciej poprawić. Jak pogodzić te dwie rzeczy? W naprawdę bardzo prosty sposób!</p>
+<p>Przejdź z powrotem do naszej klasy <code class=" language-java">FileReader</code> i spójrz na wywołanie <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code>, a dokładnie na to, co znajduje się wewnątrz okrągłych nawiasów - <code class=" language-java"><span class="token punctuation">(</span>IOException e<span class="token punctuation">)</span></code> - czym jest to <code class=" language-java">e</code>? Otóż jest to nic innego jak referencja do obiektu wyjątku, który się pojawił w trakcie działania programu - podobnie jak w przypadku definicji argumentów metody, ustalamy tutaj jakiego typu będzie wyjątek i nadajemy mu nazwę, która pozwoli nam odwołać się do niego wewnątrz bloku <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> - dzięki temu możemy np. wyświetlić dokładne informacje o błędzie.</p>
+<p>Sprawdźmy to dodając tę referencję do naszej informacji o błędzie, stosując <code class=" language-java">konkatenację</code> wewnątrz wywołania <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_22.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_22.png" style="width: 100%"></a>
+<p>Następnie ponownie “zepsuj” swój program, podając błędną ścieżkę do pliku wewnątrz metody <code class=" language-java"><span class="token function">get</span><span class="token punctuation">(</span>String filename<span class="token punctuation">)</span></code> klasy <code class=" language-java">Paths</code> i uruchom go jeszcze raz:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_23.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_23.jpg" style="width: 100%"></a>
+<p>Uff! Nie pozwoliliśmy wyjątkowi zatrzymać naszego programu, ale uzyskaliśmy satysfakcjonującą nas informację o błędzie. Teraz jak na dłoni widać z którym plikiem jest problem :)</p>
+<h3 id="82-try-catch-finally-jak-zrobic-to-ladniej">Jak zrobić to ładniej?</h3>
+<p>Możemy zapisać naszego <code class=" language-java"><span class="token keyword keyword-try">try</span></code> i <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> w nieco krótszej formie - spójrz:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_24.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_24.png" style="width: 100%"></a>
+<p>Wewnątrz okrągłych nawiasów, w linii w której znajduje się polecenie <code class=" language-java"><span class="token keyword keyword-try">try</span></code>, wpisaliśmy część kodu powodującą wyjątek, dzięki czemu zaoszczędziliśmy jedną linijkę, ale czy to koniec? Pójdźmy nieco dalej:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_25.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_25.png" style="width: 100%"></a>
+<p>Teraz już całkowicie pozbyliśmy się zmiennej o typie <code class=" language-java">Path</code> i przekazaliśmy konwersję bezpośrednio do metody statycznej <code class=" language-java"><span class="token function">lines</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> klasy <code class=" language-java">Files</code>.</p>
+<p>Moglibyśmy tak wędrować dalej i dalej, wrzucając coraz więcej kodu do nawiasów po słowie kluczowym <code class=" language-java"><span class="token keyword keyword-try">try</span></code>, jednakże wszystko ma swoje granice - nie wolno przesadzać z długością linijki. Właśnie wykonałeś <code class=" language-java">refactoring</code>, czyli usprawnienie / poprawę już napisanego kodu.</p>
+<h3 id="82-try-catch-finally-finally">Finally!</h3>
+<p>Do naszej wiedzy o <code class=" language-java"><span class="token keyword keyword-try">try</span></code> i <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> dorzucimy jeszcze coś takiego jak <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code> - jest to ostatnia część bloku <code class=" language-java"><span class="token keyword keyword-try">try</span></code>-<code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> (czyli teraz możemy powiedzieć: bloku <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span><span class="token operator">-</span><span class="token keyword keyword-finally">finally</span></code>), która wykona się zawsze - niezależnie od sytuacji, która zostanie napotkana w trakcie działania programu.</p>
+<p>Do czego może to być przydatne? Przykładowo, wyobraź sobie, że tworzysz aplikację, która umożliwia logowanie się do banku - mogą wystąpić dwa scenariusze - użytkownik zaloguje się poprawnie, bądź nie, jednak niezależnie od tego, co się stanie, chcemy zapisać informację o dacie ostatniej próby logowania. Czy widzisz już powiązanie z <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code>? :) W takim przypadku, możemy wykonać próbę logowania w bloku <code class=" language-java"><span class="token keyword keyword-try">try</span></code>, obsłużyć wyświetlenie informacji o błędzie w bloku <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code>, natomiast w <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code> zapisać godzinę ostatniej próby.</p>
+<p>Oczywiście w przypadku tak poważnych aplikacji jak te bankowe programiści niekoniecznie rozwiązują to w ten sposób, ale na pewno pomoże Ci to przybliżyć sobie do czego może posłużyć blok <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code> w Twoim kodzie :)</p>
+<p>Pokażmy to na przykładzie, aby nie domyślać się o co chodzi:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_26.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_26.png" style="width: 100%"></a>
+<p>Jak widzisz, na samym końcu naszego “traj-kecza” pojawił się nowy blok - <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code>, który wyświetla tekst w konsoli naszej aplikacji. Sprawdźmy jak to działa:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_27.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_27.png" style="width: 100%"></a>
+<p>Jak już wspomnieliśmy, zawartość bloku <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code> wykona się zawsze - niezależnie od tego, czy program natknie się na wyjątek czy wszystko pójdzie sprawnie - w związku z tym, spróbujmy teraz popsuć nasz kod, dodając złą ścieżkę do pliku, aby sprawdzić czy kod z bloku <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code> faktycznie wykona się w przypadku błędu:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_28.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_28.jpg" style="width: 100%"></a>
+<p>A następnie uruchom swój program:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_29.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_29.png" style="width: 100%"></a>
+<p>Widzisz? Za każdym razem wywołuje się to, co stworzymy w bloku <code class=" language-java"><span class="token keyword keyword-finally">finally</span></code> - niezależnie od biegu zdarzeń! Warto o tym pamiętać, bo może nam się to przydać szybciej niż myślisz :)</p>
+<p></p>
+<blockquote>
+	Zanim przejdziesz dalej, pamiętaj, aby poprawić w swoim programie ścieżkę do pliku!
+</blockquote>
+<p></p>
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="82-try-catch-finally-zadanie-try-catch-finally">Zadanie: <span class="task-title">try! catch! finally!</span></h3>
+                        <div class="task-content">
+                            <p>Stwórz wewnątrz modułu <code class=" language-java">kodilla<span class="token operator">-</span>exception</code> pakiet <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>test</code>, a w nim klasę <code class=" language-java">FirstChallenge</code> zawierającą poniższy kod:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">FirstChallenge</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-double">double</span> <span class="token function">divide</span><span class="token punctuation">(</span><span class="token keyword keyword-double">double</span> a<span class="token punctuation">,</span> <span class="token keyword keyword-double">double</span> b<span class="token punctuation">)</span> <span class="token keyword keyword-throws">throws</span> ArithmeticException <span class="token punctuation">{</span>
+       <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword keyword-throw">throw</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArithmeticException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword keyword-return">return</span> a <span class="token operator">/</span> b<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token comment" spellcheck="true">/**
+    * This main can throw an ArithmeticException!!!
+    * @param args
+    */</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+       FirstChallenge firstChallenge <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">FirstChallenge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword keyword-double">double</span> result <span class="token operator">=</span> firstChallenge<span class="token punctuation">.</span><span class="token function">divide</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+<p>Zauważ, że metoda <code class=" language-java"><span class="token function">divide</span><span class="token punctuation">(</span><span class="token keyword keyword-double">double</span> a<span class="token punctuation">,</span> <span class="token keyword keyword-double">double</span> b<span class="token punctuation">)</span></code>, rzuci wyjątkiem jeżeli będziemy chcieli podzielić przez 0. Wykorzystując blok <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span><span class="token operator">-</span><span class="token keyword keyword-finally">finally</span></code> obsłuż rzucany wyjątek.</p>
+<p>Link do repozytorium wklej poniżej i wyślij do mentora. Powodzenia!</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/251984" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/testing_training/commits/master">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-344" class="card submodule completed" data-bootcamp-user-submodule-id="251985">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">8.3. <span>Throw i Throws - są jakieś różnice?</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Już wiesz jak obsłużyć jakiś wyjątek, ale co jeśli chciałbyś go 'rzucić', wywołać? Ty też tak możesz i już wkrótce przekonasz się jak to zrobić!</p>
+<p>Pytanie zawarte w temacie tego submodułu nie jest przypadkowe, ponieważ jest to pytanie, które często zadawane jest przez osoby sprawdzającą naszą wiedzę w zakresie Javy.</p>
+<p>Wracajmy do kodu, bo przecież samo się nie nakoduje :) Otóż okazuje się, że wcale nie musimy obsługiwać wyjątku, który jest wywołany w klasie <code class=" language-java">FileReader</code>, jesteś w szoku?</p>
+<h3 id="83-throw-i-throws-sa-jakies-roznice-throws">Throws</h3>
+<p>Java daje nam możliwość nieobsługiwania wyjątków - możemy je po prostu “rzucić” (<i>ang. throw</i>) wyżej, ale tu pojawia się pytanie - co to znaczy wyżej?</p>
+<p>Nim przejdziemy do tego tematu, stwórz wewnątrz katalogu <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>io</code> klasę o nazwie: <code class=" language-java">FileReaderWithoutHandling<span class="token punctuation">,</span></code> a następnie po prostu przekopiuj kod z klasy <code class=" language-java">FileReader<span class="token punctuation">.</span></code> Struktura powinna wyglądać następująco:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_30.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_30.png" style="width: 100%"></a>
+<p>Wewnątrz klasy <code class=" language-java">FileReaderWithoutHandling</code> mamy obecnie taki sam kod jak w <code class=" language-java">FileReader</code>. Teraz, usuń całą obsługę błędów z klasy <code class=" language-java">FileReaderWithoutHandling</code> i zostaw tylko kod odpowiadający za czytanie linii z pliku tekstowego:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_31.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_31.png" style="width: 100%"></a>
+<p>Wróciliśmy do momentu kiedy zaczęliśmy uczyć się obsługiwać wyjątki - IntelliJ znowu zgłasza problem z kodem, a my musimy coś z tym zrobić. Co teraz? Na pomoc przychodzi <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code>, które zapisuje się po prawej stronie od nazwy metody. Tuż za słowem <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code> podajemy typ wyjątku, który ma być przekazany dalej - tutaj <code class=" language-java">IOException</code>. Spójrzmy na przykład:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_32.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_32.png" style="width: 100%"></a>
+<p>Czy zauważyłeś, że w Twoim <code class=" language-java">IntelliJ</code> zniknęła informacja o braku obsługi rzucanego wyjątku? Jak się domyślasz, za pomocą <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code> przekazaliśmy go w ten sposób wyżej, czyli sprawiliśmy że nie musimy się już przejmować tym błędem w metodzie <code class=" language-java"><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, ale co to znaczy “wyżej”?</p>
+<p>Przejdźmy do klasy <code class=" language-java">ExceptionModuleRunner</code>. Usuń to, co znajduje się obecnie wewnątrz metody <code class=" language-java">main</code> i stwórz obiekt naszej nowej klasy <code class=" language-java">FileReaderWithoutHandling</code> wraz z wywołaniem metody <code class=" language-java"><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>.</p>
+<p>Efekt? Trochę nieciekawy - przecież już przez to przechodziliśmy!</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_33.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_33.png" style="width: 100%"></a>
+<p>Wróciliśmy do punktu wyjścia - tak czy siak musimy obsłużyć wyjątek za pomocą bloku <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span></code>, tylko po prostu w innym miejscu. Po co to wszystko? Już tłumaczę - zdarzają się sytuacje, w których lepiej jest pozostawić obsługę wyjątku w klasie “wyżej”, ponieważ może się zdarzyć, że posiada odpowiednie funkcjonalności do poradzenia sobie z danym wyjątkiem.</p>
+<h3 id="83-throw-i-throws-sa-jakies-roznice-throw">Throw</h3>
+<p>W trakcie tworzenia oprogramowania zdarza się również, że sami w pewnym momencie działania programu chcemy rzucić wyjątkiem, aby ktoś inny musiał go obsłużyć i nie zatrzymał działania programu - dokładnie w tym celu powstało <code class=" language-java"><span class="token keyword keyword-throw">throw</span><span class="token punctuation">.</span></code></p>
+<p>Stwórzmy w naszym pakiecie <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>io</code> klasę o nazwie <code class=" language-java">FileReaderException</code> i odziedziczmy po klasie <code class=" language-java">Exception</code>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_34.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_34.png" style="width: 100%"></a>
+<p>W ten sposób możemy stworzyć nasz własny typ błędu, który później możemy wykorzystać w naszym programie.</p>
+<p>Aby wyrzucić jakiś wyjątek, należy użyć <code class=" language-java"><span class="token keyword keyword-throw">throw</span></code> (pamiętaj, żeby nie mylić z wcześniej omawianym <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code>) - sprawdźmy to!</p>
+<p>Zmieńmy nieco nasz kod z klasy <code class=" language-java">FileReader</code>, zastępując wyjątek <code class=" language-java">IOException</code> na wyjątek <code class=" language-java">FileReaderException</code>, który przed chwilą utworzyliśmy:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_35.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_35.jpg" style="width: 100%"></a>
+<p>Jak widzisz, wewnątrz bloku <code class=" language-java"><span class="token keyword keyword-catch">catch</span></code> 'łapiemy' wyjątek <code class=" language-java">IOException</code> i kiedy wystąpi, rzucamy nasz wyjątek <code class=" language-java">FileReaderException</code> - zauważ, że kiedy rzucamy błąd za pomocą <code class=" language-java"><span class="token keyword keyword-throw">throw</span></code>, musimy najpierw stworzyć jego instancję za pomocą <code class=" language-java"><span class="token keyword keyword-new">new</span></code> - w końcu błędy i wyjątki też są zwykłymi klasami, tyle że dziedziczą po <code class=" language-java">Error</code> lub <code class=" language-java">Exception</code>.</p>
+<p>Kiedy rzucamy błąd, powinniśmy zasygnalizować to też słowem kluczowym <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code> przy nazwie metody - tuż po nim umieściliśmy typ naszego wyjątku - <code class=" language-java">FileReaderException</code> - zauważ, że w tym przypadku nie musieliśmy tworzyć instancji tej klasy, a daliśmy Javie znać, że rzucany błąd będzie tego typu.</p>
+<p>Następnie należy obsłużyć wyjątek w klasie, która wywołuje metodę <code class=" language-java"><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code>, czyli <code class=" language-java">ExceptionModuleRunner</code> w tym celu wykorzystamy blok <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span></code> i złapiemy nasz nowo powstały wyjątek <code class=" language-java">FileReaderException</code>:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_36.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_36.png" style="width: 100%"></a>
+<p>Dużo się działo, ale możesz się zastanawiać 'po co mi to wszystko?' - otóż taka obsługa błędów pozwala nam np. przekazać dalej dokładniejszą informację o błędzie czy też po prostu zdefiniować nowy wyjątek, który może mieć miejsce w przypadku błędnego wykorzystania jakiejś biblioteki, którą piszemy.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="83-throw-i-throws-sa-jakies-roznice-zadanie-obsluga-wyjatku">Zadanie: <span class="task-title">Obsługa wyjątku</span></h3>
+                        <div class="task-content">
+                            <p>Wewnątrz modułu <code class=" language-java">kodilla<span class="token operator">-</span>exception</code> w pakiecie <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>test</code> utwórz klasę <code class=" language-java">SecondChallenge<span class="token operator">:</span></code></p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>test<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">SecondChallenge</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> String <span class="token function">probablyIWillThrowException</span><span class="token punctuation">(</span><span class="token keyword keyword-double">double</span> x<span class="token punctuation">,</span> <span class="token keyword keyword-double">double</span> y<span class="token punctuation">)</span> <span class="token keyword keyword-throws">throws</span> Exception <span class="token punctuation">{</span>
+       <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>x <span class="token operator">&gt;=</span> <span class="token number">2</span> <span class="token operator">||</span> x <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token operator">||</span> y <span class="token operator">==</span> <span class="token number">1.5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword keyword-throw">throw</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword keyword-return">return</span> <span class="token string">"Done!"</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+<p>Następnie w tym samym pakiecie utwórz klasę <code class=" language-java">ExceptionHandling</code>, w której obsłużysz błąd zgodnie z dobrymi praktykami wykorzystując blok <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span><span class="token operator">-</span><span class="token keyword keyword-finally">finally</span></code>. Stworzony kod prześlij do repozytorium <code class=" language-java">Github<span class="token punctuation">.</span></code></p>
+<p>Link do repozytorium wklej poniżej i wyślij do mentora. Powodzenia!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/251985" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/testing_training/commits/master">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-345" class="card submodule completed" data-bootcamp-user-submodule-id="251986">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">8.4. <span>Obsługiwanie błędów na różnych przypadkach</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Obsłużyliśmy już przypadek związany z wyjątkiem rzucanym w trakcie odczytywania plików, jednakże wyjątki pojawiają się codziennie w bardzo różnych odsłonach. W tym submodule pokażemy dwa nowe przypadki wyjątków, które pojawiają się najczęściej: <code class=" language-java">NullPointerException</code> (bardzo możliwe, że natknąłeś się już na niego pisząc kod) i <code class=" language-java">IndexOutOfBoundsException</code> - oba te wyjątki dziedziczą po <code class=" language-java">RuntimeException</code>, czyli są wyjątkami, których nie trzeba obsługiwać, ponieważ są <code class=" language-java">unchecked</code>, jednakże zdarzają się sytuacje w których istnieje wysokie prawdopodobieństwo powstania takiego błędu - zaraz je omówimy!</p>
+<h4>NullPointerException</h4>
+<p>NullPointerException, jak sama nazwa wskazuje - pusty wskaźnik (referencja) - ten wyjątek pojawia się wtedy, gdy zamiast wykonywać jakąś operację na obiekcie, wykonujemy ją na “nullu”. Kiedy może się tak zdarzyć? Kiedy na przykład zapomnimy zainicjalizować obiektu za pomocą operatora <code class=" language-java"><span class="token keyword keyword-new">new</span></code> - oczywiście w dobie IntelliJ takie przypadki są wręcz bardzo trudne do zrealizowania, ale jednak się zdarzają i warto wiedzieć jak ich uniknąć.</p>
+<p>Zanim zademonstrujemy przykład wystąpienia <code class=" language-java">NullPointerException<span class="token punctuation">,</span></code> w swoim projekcie stwórz pakiet <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer</code>. Struktura modułu <code class=" language-java">kodilla<span class="token operator">-</span>exception</code> powinna prezentować się w następujący sposób:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_37.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_37.png" style="width: 100%"></a>
+<p>Stwórzmy teraz klasę, którą nazwiemy <code class=" language-java">User</code>. Jej zadaniem będzie przechowywanie imienia użytkownika. W klasie musimy zawrzeć również <code class=" language-java">konstruktor i getter</code>:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword keyword-private">private</span> String name<span class="token punctuation">;</span>
+
+   <span class="token keyword keyword-public">public</span> <span class="token function">User</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword keyword-this">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword keyword-public">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword keyword-return">return</span> name<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+<p>Następnie stwórzmy klasę o nazwie <code class=" language-java">MessageSender</code>, a w niej stwórzmy metodę <code class=" language-java">sendMessageTo</code>:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">MessageSender</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">sendMessageTo</span><span class="token punctuation">(</span>User user<span class="token punctuation">,</span> String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Sending message: "</span> <span class="token operator">+</span> message <span class="token operator">+</span> <span class="token string">" to: "</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+<p>Ostatnim krokiem będzie stworzenie klasy posiadającą metodę <code class=" language-java">main</code>, która pozwoli na uruchomienie naszego programu:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">NullPointerExceptionRunner</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       User user <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+       MessageSender messageSender <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MessageSender</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       messageSender<span class="token punctuation">.</span><span class="token function">sendMessageTo</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> <span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+<p>Należy zauważyć, że do zmiennej, która powinna przechowywać obiekt <code class=" language-java">User</code>, przypisaliśmy po prostu <code class=" language-java">null</code>. Oczywiście jest to <b>bardzo zła praktyka i nigdy nie powinniśmy tak robić</b>, jednak jest to idealny przykład przypadku, na który możesz natknąć się w czasie pracy z kodem.</p>
+<p>Zauważ również, że do metody <code class=" language-java">sendMessageTo</code> przekazujemy <code class=" language-java">null</code>, a wiemy z wcześniej napisanego kodu, że chcemy wewnątrz tej metody wywołać jakieś działanie na obiekcie <code class=" language-java">User</code> - co stanie się w takiej sytuacji?</p>
+<p>Uruchom swój program i bacznie obserwuj konsolę - wynik powinien być następujący:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_38.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_38.jpg" style="width: 100%"></a>
+<p>Naszym oczom ukazuje się <code class=" language-java">NullPointerException<span class="token operator">!</span></code> To naprawdę poważna sprawa, bo program w tym momencie zatrzyma swoje działanie, a to zdecydowanie nie jest nic dobrego.</p>
+<p>Bez obaw - są sposoby, żeby ustrzec się przed tego typu problemami. W przyszłości omówimy obiekt <code class=" language-java">Optional</code>, który pojawił się w Javie 8 i bardzo pomaga w rozwiązywaniu tego typu problemów, jednak na ten moment wykorzystamy starą praktykę zabezpieczenia przed takim wyjątkiem - aby ją zaimplementować, udajmy się do klasy <code class=" language-java">MessageSender</code>:</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">MessageSender</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">sendMessageTo</span><span class="token punctuation">(</span>User user<span class="token punctuation">,</span> String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>user <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Sending message: "</span> <span class="token operator">+</span> message <span class="token operator">+</span> <span class="token string">" to: "</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+
+<p>W momencie kiedy nie mamy pewności czy obiekt trafi do nas w jego pełnej okazałości, możemy zabezpieczyć się przed <code class=" language-java">NullPointerException</code> w powyższy sposób. Wystarczy jeden mały <code class=" language-java"><span class="token keyword keyword-if">if</span></code>, <code class=" language-java"></code>aby mieć 100% pewności, że obiekt który został do nas przekazany nie jest <code class=" language-java">null</code> - dzięki temu nasz program nie przestanie działać! Oczywiście powinniśmy pamiętać o tym, że jeśli zastosujemy takie rozwiązanie, nigdy nie dowiemy się, że obiekt był wartości <code class=" language-java">null</code>. Najlepszym wyjściem z tej sytuacji byłoby rzucenie wyjątku <code class=" language-java">checked</code>, który będzie musiał zostać obsłużony przez osobę korzystającą z tej metody. Aby to zrobić, wewnątrz naszego pakietu <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer</code> stwórz klasę <code class=" language-java">MessageNotSentException</code>:</p>
+
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">MessageNotSentException</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token function">MessageNotSentException</span><span class="token punctuation">(</span><span class="token keyword keyword-final">final</span> String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword keyword-super">super</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+<p>Zauważ, że klasę wyjątku <code class=" language-java">MessageNotSentException</code> odziedziczyliśmy po klasie <code class=" language-java">Exception</code> - dzięki temu, nasz wyjątek jest <code class=" language-java">checked</code> i jego obsłużenie jest wymagane. Następnie wewnątrz klasy stworzyliśmy konstruktor w którym możemy przekazać wiadomość jaką będzie przechowywać ten błąd dla innego programisty. Przypomina Ci się dziedziczenie? :)</p>
+<p>Po utworzonym wyjątku musimy rzucić go za pomocą <code class=" language-java"><span class="token keyword keyword-throw">throw</span></code> w klasie <code class=" language-java">MessageSender</code>, pamiętaj o deklaracji <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code> przy metodzie :)</p>
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">MessageSender</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-void">void</span> <span class="token function">sendMessageTo</span><span class="token punctuation">(</span>User user<span class="token punctuation">,</span> String message<span class="token punctuation">)</span> <span class="token keyword keyword-throws">throws</span> MessageNotSentException <span class="token punctuation">{</span>
+       <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>user <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Sending message: "</span> <span class="token operator">+</span> message <span class="token operator">+</span> <span class="token string">" to: "</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span> <span class="token keyword keyword-else">else</span> <span class="token punctuation">{</span>
+	       <span class="token keyword keyword-throw">throw</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MessageNotSentException</span><span class="token punctuation">(</span><span class="token string">"Object User was null"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	   <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+
+<p>Przejdźmy teraz do miejsca wywołania metody <code class=" language-java">sendMessageTo</code>, czyli do klasy <code class=" language-java">NullPointerExceptionRunner</code> i dodajmy w niej obsługę nowo rzucanego błędu:</p>
+
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>nullpointer<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">NullPointerExceptionRunner</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       User user <span class="token operator">=</span> null<span class="token punctuation">;</span>
+       MessageSender messageSender <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">MessageSender</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword keyword-try">try</span> <span class="token punctuation">{</span>
+           messageSender<span class="token punctuation">.</span><span class="token function">sendMessageTo</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span> <span class="token string">"Hello!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span> <span class="token keyword keyword-catch">catch</span> <span class="token punctuation">(</span><span class="token class-name">MessageNotSentException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Message is not send,"</span> <span class="token operator">+</span>
+           <span class="token string">"but my program still running very well!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Processing other logic!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+
+
+<p>Wynik w konsoli powinien być następujący:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_39.jpg"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_39.jpg" style="width: 100%"></a>
+<p><code class=" language-java">NullPointerException</code> już za nami. Teraz pora na poznanie równie popularnego błędu jak <code class=" language-java">IndexOutOfBoundsException</code> z którym mogłeś się również już wcześniej spotkać!</p>
+<h4>IndexOutOfBoundsException</h4>
+<p>Ten wyjątek powstaje w momencie, kiedy chcemy odwołać się do nieistniejącego indeksu w kolekcji - przykładowo, kiedy mamy dwuelementową kolekcję, a próbujemy wyciągnąć z niej trzeci element.</p>
+<p>Wiemy już kiedy powstaje ten wyjątek - jak go wywołać? W tym celu stwórzmy nowy pakiet w module <code class=" language-java">kodilla<span class="token operator">-</span>exception</code> o nazwie <code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>index</code>. Wewnątrz tego pakietu utworzymy klasę <code class=" language-java">VideoCollector<span class="token punctuation">,</span></code> która będzie zawierać metodę <code class=" language-java">getCollection</code> zwracającą listę filmów:</p>
+
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>index<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">VideoCollector</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> <span class="token function">getCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       ArrayList<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> videos <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       videos<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Extra Movie"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword keyword-return">return</span> videos<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+<p>W kolejnym kroku należy utworzyć klasę <code class=" language-java">IndexExceptionRunner</code>, który będzie uruchamiać nasz program:</p>
+
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>index<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">IndexExceptionRunner</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       VideoCollector videoCollector <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">VideoCollector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> collection <span class="token operator">=</span> videoCollector<span class="token punctuation">.</span><span class="token function">getCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       String movie <span class="token operator">=</span> collection<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+<p>Uruchom swój program. Czy wszystko odbyło się pomyślnie? W Twojej konsoli powinna pojawić się nazwa filmu:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_40.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_40.png" style="width: 100%"></a>
+<p>Wszystko działa jak najbardziej poprawnie - teraz wywołajmy wyjątek. Spróbuj teraz dodać nową linijkę w swoim kodzie i spróbuj wyciągnąć nazwę filmu o indeksie nr 1:</p>
+
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>index<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">IndexExceptionRunner</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       VideoCollector videoCollector <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">VideoCollector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> collection <span class="token operator">=</span> videoCollector<span class="token punctuation">.</span><span class="token function">getCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       String movie <span class="token operator">=</span> collection<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       String anotherMovie <span class="token operator">=</span> collection<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>anotherMovie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+
+<p>Co stanie się w tej sytuacji? Uruchom swój program, aby się przekonać:</p><a class="img-modal-group" href="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_41.png"><img src="./Moduł_ 8. Obsługa błędów w Javie_files/java-8_41.png" style="width: 100%"></a>
+<p>Kompilator zwrócił nam <code class=" language-java">IndexOutOfBoundsException</code>, który pojawił się dlatego, że odwołaliśmy się do nieistniejącego indeksu tablicy.</p>
+<p>Jak możemy się przed tym ustrzec? Przede wszystkim 99% przypadków po tablicy będziemy iterować przy użyciu pętli for-each, więc taki problem nie będzie nas dotyczyć. Jednak jeśli zdarzy się sytuacja, w której będziesz musiał wyciągnąć obiekt przy pomocy jego indeksu, warto wykorzystać wcześniej metodę <code class=" language-java"><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code> dostępną w kolekcji List:</p>
+
+
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java"><span class="token keyword keyword-package">package</span> com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>index<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword keyword-public">public</span> <span class="token keyword keyword-class">class</span> <span class="token class-name">IndexExceptionRunner</span> <span class="token punctuation">{</span>
+   <span class="token keyword keyword-public">public</span> <span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       VideoCollector videoCollector <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">VideoCollector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> collection <span class="token operator">=</span> videoCollector<span class="token punctuation">.</span><span class="token function">getCollection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>collection<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           String movie <span class="token operator">=</span> collection<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>movie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+           String anotherMovie <span class="token operator">=</span> collection<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>anotherMovie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+
+
+<p>Dzięki takiej operacji zawsze możesz być pewien, że wyciągane przez Ciebie obiekty przy pomocy indeksu, będą znajdować się wewnątrz tablicy.</p>
+<h3 id="84-obslugiwanie-bledow-na-roznych-przypadkach-podsumowanie">Podsumowanie</h3>
+<p>To tyle o wyjątkach! :) W tym module poznaliśmy mnóstwo rzeczy, które przybliżyły Cię do pisania kodu jak prawdziwy programista - wyjątki <code class=" language-java">checked</code>, <code class=" language-java">unchecked</code>, bloki <code class=" language-java"><span class="token keyword keyword-try">try</span><span class="token operator">-</span><span class="token keyword keyword-catch">catch</span><span class="token operator">-</span><span class="token keyword keyword-finally">finally</span></code> czy słowa kluczowe <code class=" language-java"><span class="token keyword keyword-throw">throw</span></code> oraz <code class=" language-java"><span class="token keyword keyword-throws">throws</span></code> - zostało Ci jeszcze tylko zadanie do wykonania i pora na zasłużony odpoczynek!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="84-obslugiwanie-bledow-na-roznych-przypadkach-zadanie-wiedza-o-wyjatkach">Zadanie: <span class="task-title">Wiedza o wyjątkach</span></h3>
+                        <div class="task-content">
+                            <p>Zdanie sprawdzi całą Twoją wiedzę o wyjątkach! Zaczynamy!</p>
+<p>Wszystkie klasy twórz wewnątrz pakietu<code class=" language-java">com<span class="token punctuation">.</span>kodilla<span class="token punctuation">.</span>exception<span class="token punctuation">.</span>test</code></p>
+<ol>
+	<li>Stwórz swój własny <code class=" language-java">Exception</code> o nazwie <code class=" language-java">RouteNotFoundException<span class="token punctuation">.</span></code></li>
+	<li>Stwórz klasę <code class=" language-java">Flight</code> zawierającą konstruktor, pole: <code class=" language-java">String departureAirport</code>, <code class=" language-java">String arrivalAirport</code> i getter’y.</li>
+	<li>Stwórz klasę zawierającą logikę imitującą wyszukiwanie lotów: a) metoda <code class=" language-java"><span class="token function">findFilght</span><span class="token punctuation">(</span>Flight flight<span class="token punctuation">)</span></code> b) wewnątrz metody zaimplementuj mapę typu <code class=" language-java">HashMap</code>, której kluczem będzie <code class=" language-java">String</code> przechowujący nazwę lotniska, a wartością <code class=" language-java">Boolean</code> informujący o tym czy można na dane lotnisko polecieć. Przykład: <code class=" language-java">Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Boolean<span class="token operator">&gt;</span></code>. c) logika powinna wyszukiwać loty w mapie. Jeżeli dane lotnisko nie będzie istnieć w mapie, należy rzucić wyjątkiem <code class=" language-java">RouteNotFoundException<span class="token punctuation">.</span></code></li>
+	<li>Program należy uruchomić wewnątrz metody <code class=" language-java">main</code>, a następnie obsłużyć możliwe pojawienie się wyjątku.</li>
+	<li>Kod programu prześlij do repozytorium <code class=" language-java">Github</code>.</li>
+</ol>
+<p>Link do repozytorium wklej poniżej i wyślij do mentora. Powodzenia!</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/251986" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/testing_training/commits/master">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                            </main>
+        </div>
+    </section>
+</main>
+
+<script type="text/x-translation" data-translation-name="SentBootcampLinkReviewFormMessage">Wysłano link do zatwierdzenia</script>
+    <div id="alerts">
+    <div class="alert alert-danger" role="alert" style="display: none;">
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-success" role="alert" style="display: none;">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-warning" role="alert" style="display: none;">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-info" role="alert" style="display: none;">
+        <i class="fa fa-info" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                        </ul>
+    </div>
+</div>    <div class="modal fade informator-modal" id="informator" tabindex="-1" role="dialog" aria-labelledby="informatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="./Moduł_ 8. Obsługa błędów w Javie_files/logo-menu.png" alt="Logo Kodilla" class="brand-logo">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body content-container">
+                <h3>Zamów szczegółowy informator</h3>
+                <h3 data-role="modal-informator-message" class="display-none">Informator został wysłany na podany adres email.</h3>
+                <h4>Zostaw email i wyślemy Ci go</h4>
+                <form class="row js-ajax-form" data-view-class="InformatorForm" action="https://kodilla.com/pl/download-guide" method="post">
+                    <input type="hidden" name="ga-pobieranie-informatora-z-modala" value="wypelnienie">
+                    <input type="hidden" name="tags[0]" value="informator">
+                                        <div class="user-data-container">
+                        <input type="text" class="form-control" name="firstname" placeholder="Imię">
+                        <input type="text" class="form-control" name="surname" placeholder="Nazwisko">
+                    </div>
+                    <div class="user-data-container">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                        <input type="text" class="form-control" name="phone" placeholder="Numer telefonu">
+                    </div>
+                    <div class="terms-box">
+                        <label>
+                            <input data-custom-message="Prosimy o zaakceptowanie regulaminu" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Akceptuję <a target="_blank" href="https://kodilla.com/pl/terms">regulamin</a>  i nie wnoszę zastrzeżeń</span>
+                        </label>
+                    </div>
+                    <div class="personal-terms-box">
+                        <label>
+                            <input data-custom-message="Jeśli chcesz otrzymać dostęp do materiałów, konieczna jest akceptacja obydwu zgód" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Chcę otrzymywać newsletter, informacje o promocjach i produktach dostępnych w Kodilla.
+                                <span class="details-button" data-action="show-details" data-identifier="personal-terms-details-informator">Czytaj więcej</span>
+                                <span class="display-none" data-identifier="personal-terms-details-informator">Wyrażam zgodę na otrzymywanie informacji handlowych od Kodilla na podany przeze mnie adres e-mail. Zgoda jest dobrowolna, jednakże niezbędna do otrzymywania informacji o produktach, promocjach i o tym, co u nas słychać. Administratorem danych jest Codemy S.A. z siedzibą we Wrocławiu, ul. Racławicka 13. Mam prawo cofnąć zgodę w każdym czasie, jednak wtedy nie będę otrzymywać informacji. Dane mogą być przetwarzane pomimo cofnięcia zgody wyłącznie w takim zakresie i celu, w jakim ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z udzieloną zgodą. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie kodilla.com, zakładka "Polityka Prywatności".</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="display-none">
+                        <input type="text" name="myName" value="">
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">
+                            Pobierz Informator
+                            <i data-role="loading-icon" class="fa fa-spinner fa-spin fa-1x fa-fw display-none"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Pobranie informatora do niczego nie zobowiązuje</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+                <section class="footer-lower">
+            <nav class="container">
+                <a class="navbar-img" href="https://kodilla.com/pl">
+                    <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168" height="30">
+                        <defs>
+                            <style>
+                                .footer-logo-fill {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                            <path id="KODILLA_copy_5_1_" class="footer-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                            <ellipse id="eye_copy_4_1_" class="footer-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" class="footer-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                        <path id="Path_2" data-name="Path 2" class="footer-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                        <path id="Path_3" data-name="Path 3" class="footer-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                        <path id="Path_4" data-name="Path 4" class="footer-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                        <path id="Path_5" data-name="Path 5" class="footer-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                        <path id="Path_6" data-name="Path 6" class="footer-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+                    </svg>
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="https://kodilla.com/pl/terms">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="https://kodilla.com/pl/privacy-policy">Polityka prywatności</a>
+                    </li>
+                    <li class="nav-item nav-item-last">© 2018 Kodilla</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2WWBH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/jquery-2-8d5dbd436e.1.4.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/js-e653e6aa59.cookie-2.1.0.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/jquery-dateFormat-c03d15d7fb.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/bootstrap-5b56605a6a.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/informator-modal-66dc1c2e7e.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/fb-4b5d8177d3.js.pobrane"></script>
+<script>
+    if (document.querySelector('main.editor')) {
+        document.querySelector('body').classList.add('editor');
+    }
+</script>
+
+<!-- ActiveCampaign -->
+<script type="text/javascript">
+    // Set to false if opt-in required
+    var trackByDefault = true;
+
+    function acEnableTracking() {
+        var expiration = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30);
+        document.cookie = "ac_enable_tracking=1; expires= " + expiration + "; path=/";
+        acTrackVisit();
+    }
+
+    function acTrackVisit() {
+        var trackcmp_email = 't_socha@wp.pl';
+        var trackcmp = document.createElement("script");
+        trackcmp.async = true;
+        trackcmp.type = 'text/javascript';
+        trackcmp.src = '//trackcmp.net/visit?actid=649095895&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+        var trackcmp_s = document.getElementsByTagName("script");
+        if (trackcmp_s.length) {
+            trackcmp_s[0].parentNode.appendChild(trackcmp);
+        } else {
+            var trackcmp_h = document.getElementsByTagName("head");
+            trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+        }
+    }
+
+    if (trackByDefault || /(^|; )ac_enable_tracking=([^;]+)/.test(document.cookie)) {
+        acEnableTracking();
+    }
+</script>
+
+        <script src="./Moduł_ 8. Obsługa błędów w Javie_files/underscore-min-2f43a3f5e1.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/backbone-min-c896af5171.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/backbone-relational-e201c53dfd.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/backbone-super-2df5edc1f1.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/handlebars-v4-a5bc49041d.0.5.min.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/handlebars-ifCond-4e97d51c76.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/application-b70821e685.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/main-2c312ef796.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/tracking-activities-101dff4c3c.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/notifications-e7d515165e.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/settings-2fedaf9385.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/delete-account-da2b3de486.js.pobrane"></script>
+<script type="text/x-translation" data-translation-name="checkAccountDeleteCalculationMessage">Wynik jest nieprawidłowy</script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/forms-0296e50370.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/alerts-cffa1c77fa.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/inpage-alerts-efb6525235.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/collections-1703f0dc2b.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/models-bc38b7a45b.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/knowledge-base-bf25c808b5.js.pobrane"></script>
+<script src="./Moduł_ 8. Obsługa błędów w Javie_files/learning-program-a2610fc10e.js.pobrane"></script>
+
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/tether-c2fa918d0f.min.js.pobrane"></script>
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/prism-9800db9c67.min.js.pobrane"></script>
+
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/bootcamp-0671f4eb7d.js.pobrane"></script>
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/jquery-549adb2ffc.seourl.min.js.pobrane"></script>
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/perfect-scrollbar-f5aa5af13f.jquery.min.js.pobrane"></script>
+    <script src="./Moduł_ 8. Obsługa błędów w Javie_files/jquery-9595c7d5ed.fancybox.min.js.pobrane"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.img-modal-group").fancybox();
+        });
+    </script>
+
+                    <div class="modal fade" tabindex="-1" role="dialog" id="call-us-modal">
+    <div class="modal-dialog modal-dialog-callus" role="document">
+        <div class="modal-content call-modal">
+            <div id="call-us-step1">
+                <h2>Umów się na rozmowę z doradcą Kodilli</h2>
+                <p>Krok <span>1/2:</span> Podaj numer telefonu</p>
+                <form action="https://kodilla.com/pl/call-us/step1" method="post" id="call-us-form1">
+                    <input type="tel" name="phone" id="call-us-input-phone" placeholder="737690577">
+                    <button class="btn btn-success" id="call-us-submit-phone">Zarezerwuj rozmowę</button>
+                </form>
+                <p id="call-us-counter-holder" style="display: none;">Dzisiaj już  <span id="call-counter" data-url="https://kodilla.com/pl/call-us/counter">-</span> <span id="call-us-counter-text" data-one=" osoba zamówiła rozmowę z nami." data-few=" osoby zamówiły rozmowę z nami." data-more=" osób zamówiło rozmowę z nami."></span></p>
+                <div class="data-protection">
+                    <p>Twój numer telefonu nie będzie wykorzystywany w celach marketingowych ani przekazany dalej. Tylko oddzwonimy. Dane są przetwarzane zgodnie z <a href="https://kodilla.com/pl/polityka-prywatnosci">Polityką Prywatności</a>.</p>
+                </div>
+            </div>
+
+            <div id="call-us-step2" style="display: none;">
+                <h2>Wybierz dogodny termin i godzinę na rozmowę z doradcą</h2>
+                <p>Krok <span>2/2:</span>
+                </p><form action="https://kodilla.com/pl/call-us/step2" method="post" id="call-us-form2">
+                    <div class="select-date">
+                        <select name="date" id="call-us-input-date">
+                        </select>
+                        <select name="time" id="call-us-input-time">
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="call-us-submit-call">Oddzwońcie do mnie!</button>
+                </form>
+            </div>
+
+            <div id="call-us-step3" style="display: none;">
+                <div class="thanks">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>Dziękujemy za zamowienie rozmowy! Do usłyszenia w wybranym terminie!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <script src="./Moduł_ 8. Obsługa błędów w Javie_files/widget.js.pobrane"></script>
+    <script type="text/javascript">
+        window.fcSettings = {
+            token: '99d7ec3c-0f50-4c9a-9f5e-b741bd6a1aa7',
+            host: 'https://wchat.freshchat.com',
+            locale: 'pl',
+            tags: ["logged_in","bc_user","status_aktywny","jdp","jdp_2018-10","ppp","jdp_2018-10_aktywny_ppp"],
+            faqTags: {
+                tags: ["support"],
+                filterType: 'category'
+            },
+            config: {
+                content: {"placeholders":{"search_field":"Przeszukaj FAQ","reply_field":"Odpowiedz","csat_reply":"Wpisz swoj\u0105 odpowied\u017a"},"actions":{"csat_yes":"Tak","csat_no":"Nie","push_notify_yes":"Tak","push_notify_no":"Nie","tab_faq":"FAQ","tab_chat":"CHAT","csat_submit":"Wy\u015blij"},"headers":{"chat":"Napisz do nas","chat_help":"Witaj! W czy mo\u017cemy Ci pom\u00f3c?!","faq":"Baza wiedzy","faq_help":"Przegl\u0105daj FAQ","faq_not_available":"Brak artyku\u0142\u00f3w","faq_search_not_available":"Brak artyku\u0142\u00f3w dla frazy {{query}}","faq_useful":"Jak oceniasz przydatno\u015b\u0107?","faq_thankyou":"Dzi\u0119kujemy za Twoj\u0105 opini\u0119!","faq_message_us":"Napisz do nas!","push_notification":"Nie przegap \u017cadnej odpowiedzi! Zezwalasz na powiadomienia?","csat_question":"Czy uzyska\u0142e\u015b potrzebn\u0105 pomoc?","csat_yes_question":"Jak oceniasz nasze wsparcie?","csat_no_question":"Co mogliby\u015bmy ulepszy\u0107?","csat_thankyou":"Dzi\u0119kujemy Ci za informacje!","csat_rate_here":"Oce\u0144","channel_response":{"offline":"Aktualnie jeste\u015bmy nieobecni","online":{"minutes":{"one":"Odpowiadamy w mniej ni\u017c minut\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} minut(y)"},"hours":{"one":"Odpowiadamy w mniej ni\u017c godzin\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} godzin(y)"}}}}}
+            }
+        };
+                    window.fcSettings.lastName = 'Socha';
+            window.fcSettings.firstName = 'Tymoteusz';
+            window.fcSettings.email = 't_socha@wp.pl';
+            window.fcSettings.externalId = 't_socha@wp.pl';
+                document.getElementsByTagName('body')[0].classList.add('freshchat-enabled');
+        window.fcWidget.init( window.fcSettings );
+        window.fcWidget.on('widget:closed', function (){
+            $('body').addClass('notification-content--visible');
+        });
+    </script><div id="fc_frame" class="fc-widget-normal"><iframe id="fc_widget" name="fc_widget" title="Chat" frameborder="0" src="./Moduł_ 8. Obsługa błędów w Javie_files/saved_resource.html"></iframe></div>
+    <div data-role="notifications-wrapper" class="notifications-wrapper"></div>
+
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","389137334769464");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Moduł_ 8. Obsługa błędów w Javie_files/j-GHT1gpo6-.html" style="border: none;"></iframe></div><div></div></div></div><div id="fc_push_frame"><iframe id="fc_push" src="./Moduł_ 8. Obsługa błędów w Javie_files/index.html" frameborder="0"></iframe></div></body></html>

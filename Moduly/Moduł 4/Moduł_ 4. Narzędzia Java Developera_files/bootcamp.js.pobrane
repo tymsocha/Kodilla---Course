@@ -1,0 +1,400 @@
+App.Views.BootcampStickyAside = Backbone.View.extend({
+    stickAside: function(scrollTop, elements) {
+        var ignoreHeight = elements.menuLight.outerHeight() + elements.menuDark.outerHeight() - scrollTop,
+            footerViewportOffset = elements.siteFooter.offset().top - scrollTop,
+            asideHeight = elements.aside.height(),
+            footerAsideOffset = footerViewportOffset - asideHeight,
+            bottomDistance = 32;
+        if ( ignoreHeight < 0 ) {
+            elements.aside.addClass('fixed');
+            if (footerAsideOffset < bottomDistance) {
+                var factor = footerAsideOffset - bottomDistance;
+                elements.aside.css({'transform': 'translateY(' + factor + 'px)'});
+            } else {
+                elements.aside.css({'transform': 'translateY(0)'});
+            }
+        } else {
+            elements.aside.removeClass('fixed');
+        }
+    },
+    manageWindowScroll: function() {
+        var self = this,
+            elements = {
+                menuDark:       $('nav.navbar-main.dark'),
+                menuLight:      $('nav.navbar-main.light'),
+                siteFooter:     $('.site-footer'),
+                aside:          $('.aside-sticky')
+            };
+        $(window).on('scroll', function(e) {
+            var scrollTop = $(this).scrollTop();
+            self.stickAside(scrollTop, elements);
+        });
+    },
+});
+
+App.Views.BootcampTaskCommunication = Backbone.View.extend({
+    events: {
+        'submit form.message': 'send'
+    },
+    initialize: function(options) {
+        $.extend(this, this.$el.data());
+        this.feed = new App.Views.BootcampTaskFeed({
+            el: this.$('.message-container'),
+            parent: this
+        });
+        this.$message = this.$('textarea[name="message"]');
+        App.Views.BootcampStickyAside.prototype.manageWindowScroll();
+        this.prepareLinkReviewForm();
+    },
+    prepareLinkReviewForm: function() {
+        var $form = $('form.project-link-form');
+        if($form.length) {
+            new App.Views.BootcampLinkReviewForm({
+                taskFeed: this.feed,
+                bootcampUserSubmoduleId: this.bootcampUserSubmoduleId,
+                el: $form
+            });
+        }
+    },
+    send: function(e) {
+        e.preventDefault();
+        var mode = parseInt($(e.currentTarget).find('select[name="mode"]').val() || '0', 10);
+        this[['sendMessage', 'unacceptLinkReview', 'acceptLinkReview'][mode]].call(this);
+    },
+    sendMessage: function() {
+        this.feed[this.bootcampUserId ? 'userMessage' : 'mentorMessage'].call(this.feed, this.$message.val());
+    },
+    acceptUnacceptLinkReview: function(status) {
+        var bootcampLinkReview = _.last(this.feed.activities.where({
+            activity_type: 'bootcamp_link_review_activities'
+        })).get('activity').get('bootcamp_link_review');
+        bootcampLinkReview.set({
+            status: status,
+            annotations: this.$message.val() || ''
+        });
+        this.feed.activities.addActivity(bootcampLinkReview);
+    },
+    unacceptLinkReview: function() {
+        this.acceptUnacceptLinkReview(1);
+    },
+    acceptLinkReview: function() {
+        this.acceptUnacceptLinkReview(2);
+    },
+});
+
+App.Views.BootcampUserSubmoduleMessage = Backbone.View.extend({
+    tagName: 'div',
+    className: 'message clearfix',
+    initialize: function(options) {
+        this.model = options.model;
+        if(this.model.isNew()) {
+            this.listenTo(this.model, 'sync', this.render);
+        }
+        this.render();
+    },
+    render: function() {
+        this.$el.html(this.template()($.extend({
+            created_at: moment().format('YYYY-MM-DD HH:mm:ss')
+        }, this.model.toJSON(), {
+            message: _.cescape(this.model.get('message')),
+            created_at: this.formatDate(this.model.get('created_at')) || this.formatDate( moment().format('YYYY-MM-DD HH:mm:ss'), false )
+        })));
+        this.$el.removeClass('sending');
+        if(this.model.isNew()) {
+            this.$el.addClass('sending');
+        }
+        $(this.$el).find('i.tooltip-date').tooltip();
+    },
+    template: function() {
+        return App.Templates('bootcampTaskFeed'+(this.model.get('bootcamp_user_id') ? 'User' : 'Mentor')+'Message');
+    },
+    formatDate: function(date, convert) {
+        var c = ( convert === undefined ) ? true : convert;
+        if ( date ) {
+            if ( window.isDifferentZone && moment ) {
+                var d = ( c ) ? App.Views.Dates.prototype.timeToLocal(date, 'L LTS') : date,
+                    m = ( c ) ? d.formatted : date,
+                    tooltip = App.Views.Dates.prototype.addTooltip( d, false );
+                return '<span class="time-wrapper">' + m + tooltip + '</span>';
+            } else {
+                return date;
+            }
+        } else {
+            return false;
+        }
+
+    }
+});
+
+App.Views.BootcampReviewActivity = Backbone.View.extend({
+    className: 'message notification',
+    initialize: function(options) {
+        this.model = options.model;
+        if(this.model.isNew()) {
+            this.listenTo(this.model.get('model'), 'sync', this.render);
+        }
+        this.statuses = [{
+            title: App.Translations('bootcamp'+this.type+'ReviewRequested'),
+            className: 'requested'
+        }, {
+            title: App.Translations('bootcamp'+this.type+'ReviewUnaccepted'),
+            className: 'unaccepted'
+        }, {
+            title: App.Translations('bootcamp'+this.type+'ReviewAccepted'),
+            className: 'accepted'
+        }];
+        this.render();
+    },
+    render: function() {
+        var self = this;
+        momentReady( function(){
+            var status = self.model.get('status');
+            var data = self.statuses[status];
+            var templateData = $.extend({
+                content: _.cescape(self.model.get(status < 1 ? 'comment' : 'annotations')),
+                created_at: self.formatDate(self.model.get('created_at')) || self.formatDate( moment().format('YYYY-MM-DD HH:mm:ss'), false)
+            }, self.data(), data);
+
+            view = 'bootcamp'+self.type+'Review'+(status < 1 ? 'User' : 'Mentor')+'Activity';
+            self.$el.addClass(data.className).html(App.Templates(view)(templateData));
+            self.$el.removeClass('sending');
+            if(self.model.isNew() && self.model.get('model').isNew()) {
+                self.$el.addClass('sending');
+            }
+            $(self.$el).find('i.tooltip-date').tooltip();
+        }, true );
+    },
+    formatDate: function(date, convert) {
+        var c = ( convert === undefined ) ? true : convert;
+        if ( date ) {
+            if ( window.isDifferentZone && moment ) {
+                var d = ( c ) ? App.Views.Dates.prototype.timeToLocal(date, 'L LTS') : date,
+                    m = ( c ) ? d.formatted : date,
+                    tooltip = App.Views.Dates.prototype.addTooltip( d, false );
+                return '<span class="time-wrapper">' + m + tooltip + '</span>';
+            } else {
+                return date;
+            }
+        } else {
+            return false;
+        }
+    }
+});
+
+App.Views.BootcampProjectReviewActivity = App.Views.BootcampReviewActivity.extend({
+    type: 'Project',
+    data: function() {
+        return {
+            project_id: this.model.get('bootcamp_project_review').get('project_id')
+        };
+    }
+});
+
+App.Views.BootcampLinkReviewActivity = App.Views.BootcampReviewActivity.extend({
+    type: 'Link',
+    data: function() {
+        return {
+            link: this.model.get('bootcamp_link_review').get('link')
+        };
+    }
+});
+
+App.Views.BootcampTaskFeed = Backbone.View.extend({
+    initialize: function(options) {
+        this.$el.perfectScrollbar();
+        App.BootcampProjectReviews = new App.Collections.BootcampProjectReviews();
+        App.BootcampLinkReviews = new App.Collections.BootcampLinkReviews();
+        this.parent = options.parent;
+        this.activities = new App.Collections.BootcampTaskFeed([], {
+            id: this.parent.bootcampUserSubmoduleId
+        });
+        this.$plug = this.$('.message.notification.plug');
+        this.listenTo(this.activities, 'add', this.appendActivity);
+        this.activities.fetch();
+    },
+    scrollToBottom: function(duration) {
+        this.$el.animate({
+            scrollTop: this.$el.prop("scrollHeight")
+        }, duration);
+    },
+    linkReviewRequest: function(link, comment) {
+        var model = new App.Models.BootcampLinkReview({
+            comment: comment || '',
+            bootcamp_user_submodule_id: this.activities.id,
+            link: link,
+            status: 0
+        });
+        this.activities.addActivity(model);
+    },
+    message: function(message, mentorMessage) {
+        var model = new App.Models.BootcampUserSubmoduleMessage({
+            message: message,
+            bootcamp_user_submodule_id: this.activities.id,
+            bootcamp_user_id: this.parent.bootcampUserId
+        });
+        this.activities.addActivity(model);
+    },
+    appendActivity: function(model) {
+        this.$plug.remove();
+        var viewClass = this.activityViews[model.get('activity_type')];
+        if(viewClass) {
+            var view = new (Function.prototype.bind.call(viewClass))({
+                model: model.get('activity')
+            });
+            this.$el.append(view.$el);
+            this.scrollToBottom(model.isNew() ? 1000 : 0);
+        }
+    },
+    activityViews: {
+        'bootcamp_user_submodule_messages': App.Views.BootcampUserSubmoduleMessage,
+        'bootcamp_project_review_activities': App.Views.BootcampProjectReviewActivity,
+        'bootcamp_link_review_activities': App.Views.BootcampLinkReviewActivity
+    },
+    userMessage: function(message) {
+        this.message(message);
+    },
+    mentorMessage: function(message) {
+        this.message(message, true);
+    }
+});
+
+App.Views.BootcampLinkReviewForm = Backbone.View.extend({
+    events: {
+        'submit': 'submit'
+    },
+    initialize: function(options) {
+        this.$link = this.$('[name="link"]');
+        this.$comment = this.$('[name="comment"]');
+        this.bootcampUserSubmoduleId = options.bootcampUserSubmoduleId;
+        this.taskFeed = options.taskFeed;
+    },
+    submit: function(e) {
+        e.preventDefault();
+        var link = this.$link.val();
+        var comment = this.$comment.val();
+        if(this.taskFeed) {
+            return this.taskFeed.linkReviewRequest(link, comment);
+        }
+        var model = new App.Models.BootcampLinkReview({
+            status: 0,
+            comment: comment,
+            link: link,
+            bootcamp_user_submodule_id: this.bootcampUserSubmoduleId
+        });
+        model.save().done($.proxy(this.sent, this));
+    },
+    sent: function() {
+        App.alertsView.showSuccess({
+            message: App.Translations('SentBootcampLinkReviewFormMessage')
+        });
+    }
+});
+
+App.Views.BootcampSubmodule = Backbone.View.extend({
+    initialize: function(options) {
+        this.module = options.module;
+        this.$readBtn = this.$('.btn-read');
+        this.$footer = this.$('.submodule-footer');
+        this.prepareLinkReviewForm();
+    },
+    prepareLinkReviewForm: function() {
+        var $form = this.$('form.project-link-form');
+        if($form.length) {
+            new App.Views.BootcampLinkReviewForm({
+                bootcampUserSubmoduleId: this.$el.data('bootcampUserSubmoduleId'),
+                el: $form
+            });
+        }
+    },
+    events: {
+        'click .btn-read': 'read'
+    },
+    read: function(e) {
+        $.ajax({
+            type: 'POST',
+            url: '/' + App.getLang() + '/bootcamp-user-submodule/'+this.$el.data('bootcampUserSubmoduleId')+'/completed'
+        }).done($.proxy(this.completed, this));
+    },
+    completed: function() {
+        this.$footer.addClass('completed');
+        this.$el.removeClass('current').addClass('completed');
+        this.$readBtn.removeClass('btn-primary-outline').addClass('btn-primary');
+        this.module.submoduleCompleted(this);
+    }
+});
+
+App.Views.BootcampModule = Backbone.View.extend({
+    initialize: function() {
+        this.$tableOfContents = this.$('.table-of-contents');
+        this.$elements = $([]);
+        var self = this;
+        $.each(this.$('section.submodule'), function(key, submodule) {
+            new App.Views.BootcampSubmodule({
+                el: $(submodule),
+                module: self
+            });
+        });
+        App.Views.BootcampStickyAside.prototype.manageWindowScroll();
+        this.manageWindowScroll();
+        this.parseTableOfContents();
+        $(window).scroll();
+    },
+    updateTableOfContents: function(scrollTop) {
+        var self = this;
+        this.$elements.each(function() {
+            $a = $(this);
+            var $el = $($a.attr('href'));
+            if($el.offset().top-50 < scrollTop) {
+                clearTimeout(self.tableOfContentsScrollTimeout);
+                self.tableOfContentsScrollTimeout = setTimeout(function() {
+                    var $li = $a.parent();
+                    var $ul = $li.parent();
+                    $ul.animate({
+                        scrollTop: Math.max(0, $li.position().top-$ul.outerHeight()+$li.outerHeight()+$ul.scrollTop())
+                    });
+                }, 100);
+                self.$elements.removeClass('active');
+                $a.addClass('active');
+                return false;
+            }
+        });
+    },
+    manageWindowScroll: function() {
+        var self = this;
+        $(window).on('scroll', function(e) {
+            var scrollTop = $(this).scrollTop();
+            self.updateTableOfContents(scrollTop);
+        });
+    },
+    parseTableOfContents: function() {
+        var seoURLOptions = {
+            transliterate: true,
+            lowercase: true
+        };
+        var $ul = this.$tableOfContents.find('ul');
+        $ul.children('li').each(function() {
+            var $li = $(this);
+            var submoduleName = $li.text();
+            var $a = $li.find('a');
+            var $submodule = $($a.attr('href'));
+            var submoduleId = submoduleName.seoURL(seoURLOptions);
+            [].reverse.call($submodule.find('h3:visible')).each(function() {
+                var task = !!$(this).closest('.task-card').length;
+                var text = $(this).text();
+                var id = submoduleId+'-'+text.seoURL(seoURLOptions);
+                $(this).attr('id', id);
+                $('<li class="list-group-item list-group-flush sub '+(task ? 'task' : '')+'"><a href="#'+id+'" class="clearfix">'+text+'</a></li>').insertAfter($li);
+            });
+        });
+        this.$elements = [].reverse.call($ul.find('li > a'));
+        $ul.perfectScrollbar();
+    },
+    submoduleCompleted: function(submodule) {
+        var $current = submodule.$el.siblings('.submodule:not(.completed, .in-review, .comments):first');
+        if($current.length) {
+            $current.addClass('current');
+            this.$tableOfContents.find('a[href="#'+$current.attr('id')+'"]').closest('li').addClass('current');
+        }
+        this.$tableOfContents.find('a[href="#'+submodule.$el.attr('id')+'"]').closest('li').removeClass('current').addClass('completed');
+    }
+});

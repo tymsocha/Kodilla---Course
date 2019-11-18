@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://kodilla.com/pl/bootcamp-module/146/208/3774 -->
+<html lang="pl" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="csrf-token" content="Uf0xeiwjsX7IfPpcyBTAF9iNNqDYxvUmLexyiOHL">
+
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="https://kodilla.com/static/img/icons/apple-touch-icon-60x60.png?00000">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://kodilla.com/static/img/icons/apple-touch-icon-76x76.png?00000">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://kodilla.com/static/img/icons/apple-touch-icon-120x120.png?00000">
+<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://kodilla.com/static/img/icons/apple-touch-icon-152x152.png?00000">
+<link rel="icon" type="image/png" sizes="32x32" href="https://kodilla.com/static/img/icons/favicon-32x32.png?00000">
+<link rel="icon" type="image/png" sizes="96x96" href="https://kodilla.com/static/img/icons/favicon-96x96.png?00000">
+<link rel="icon" type="image/png" sizes="16x16" href="https://kodilla.com/static/img/icons/favicon-16x16.png?00000">
+
+<link rel="canonical" href="https://kodilla.com/pl/bootcamp-module/146/208/3774">
+
+    <meta name="robots" content="noindex, follow">
+        <title>    Moduł: 27. Projekt zespołowy - tydzień 3 z 4
+</title>
+                <script type="text/javascript" async="" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/js"></script><script type="text/javascript" async="" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/analytics.js.pobrane"></script><script type="text/javascript" async="" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/analytics.js.pobrane"></script><script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/sdk.js.pobrane" async="" crossorigin="anonymous"></script><script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/prism.js.pobrane" async=""></script><script id="facebook-jssdk" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/sdk.js(1).pobrane"></script><script async="" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/gtm.js.pobrane"></script><script async="" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/fbevents.js.pobrane"></script><script>document.documentElement.classList.remove("no-js")</script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/yall.min.js.pobrane"></script>
+<link href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/font-awesome.min.css" rel="stylesheet">
+<link href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/main-dc3f1a8ace.css" rel="stylesheet" type="text/css">
+                
+    <link href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/prism.min.css" rel="stylesheet">
+
+    <link href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/bootcamp-da6dc13ed8.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/jquery.fancybox.min.css" type="text/css" media="screen">
+        <script>
+    document.addEventListener("DOMContentLoaded", yall);
+    window.environment = 'production';
+    window.loggedIn = true;
+    window.domain = 'https://kodilla.com';
+            window.fbAppId = 1449248938627896;
+    window.chatService = 'FreshChat';
+    window.useMessenger = window.chatService === 'Messenger';
+    window.locale = 'pl';
+    window.lang = 'pl';
+
+    window.serverUTC       = 1556039908000;
+    window.serverOffset    = 120;
+    window.userDate        = new Date();
+    window.userUTC         = userDate.getTime();
+    window.userOffset      = userDate.getTimezoneOffset() * (-1);
+    window.userClockDiff   = userUTC - serverUTC;
+    window.diffRounded     = Math.round( userClockDiff / ( 1000 * 60 * 15 ) );
+    window.isDifferentZone = ( userOffset - serverOffset !== 0 ) ? 1 : 0;
+    window.hasWrongTime    = ( diffRounded !== 0 ) ? 1 : 0;
+    window.dateTooltipText = 'Data i godzina są podane dla Twojej strefy czasowej GMT. <br>W razie wątpliwości napisz: <u>support@kodilla.com</u>.';
+    window.wrongHourNotice = 'Godzina na Twoim urządzeniu r&oacute;żni się od godziny obowiązującej w strefie czasowej wybranej w ustawieniach Twojego urządzenia.';
+
+    var moment = undefined,
+        momentReady = function( method, method2, count ){
+            var c = ( count ) ? count : 0;
+
+            if      ( isDifferentZone && moment !== undefined ){
+                if      ( method ) { method(); }
+                else    { return false; }
+            }
+            else if ( isDifferentZone && moment === undefined ) {
+                if ( c < 20 ) {
+                    c++;
+                    setTimeout( function() { momentReady( method, method2, c ); }
+                        , 300 );
+                } else {
+                    if      ( method2 === true && method )  { method(); }
+                    else if ( method2 !== true && method2 ) { method2(); }
+                }
+            }
+            else {
+                if      ( method2 === true && method )  { method(); }
+                else if ( method2 !== true && method2 ) { method2(); }
+                else    { return false; }
+            }
+        };
+
+    if ( window.isDifferentZone && moment === undefined ) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = '/static/js/libs/moment.timezone.locales.min.js?v=2.22.2';
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+</script>
+        <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 389137334769464 );
+        fbq('track', 'PageView');
+    </script>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KN2WWBH');</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript" charset="utf-8" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/saved_resource"></script><link href="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/widget.css" rel="stylesheet"><style type="text/css">.fancybox-margin{margin-right:16px;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><script type="text/javascript" charset="utf-8" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/embedded"></script><script type="text/javascript" charset="utf-8" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/t_prism_sitemessages.php"></script></head>
+<body class="chat-enabled chat-freshchat">
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>
+    document.getElementsByTagName('body')[0].classList.remove('no-js');
+    if ( window.isDifferentZone ) {
+        document.querySelector('body').classList.add('time-conversion-applied');
+    }
+    if ( window.hasWrongTime ) {
+        document.querySelector('body').classList.add('wrong-hour');
+    }
+</script>
+
+    <nav class="navbar-main hidden-sm-down dark navbar">
+    <div class="nav-container">
+        <div class="navbar-header clearfix">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbarUpper"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="collapse navbar-toggleable-sm container" id="collapsingNavbarUpper">
+            <ul class="nav navbar-nav navbar-nav-left">
+                                    <li class="nav-item nav-contact">
+    <span>Skontaktuj się z nami:</span>
+    <a href="mailto:support@kodilla.com">
+        <i class="fa fa-envelope-o"></i>
+        support@kodilla.com
+    </a>
+    <span>lub</span>
+    <a href="javascript:fcWidget.open();">
+        <i class="fa fa-comments"></i>
+        porozmawiaj na czacie
+    </a>
+</li>
+                                </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+    <a class="nav-link dropdown-toggle" href="https://kodilla.com/pl/bootcamp-module/146/208/3774#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+        <img class="img-no-border ico-current-lang" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/ico.globe.svg">Polski
+    </a>
+    <div class="dropdown-menu-css">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://kodilla.com/pl"><img src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/pl.svg">Polski</a>
+                            <a class="dropdown-item" href="https://kodilla.com/en"><img src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/en.svg">English</a>
+                    </div>
+    </div>
+</li>
+                                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+                </li>
+                <li class="nav-item hidden-sm-down">
+    <a href="https://kodilla.com/pl/account" class="nav-link">Konto</a>
+</li>
+        <li class="nav-item">
+    <a class="analytics-track nav-link nav-link-accent" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-main light navbar">
+    <div class="container clearfix">
+        <a class="navbar-brand" href="https://kodilla.com/pl">
+            <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168px" height="30px">
+                <defs>
+                    <style>
+                        .navbar-logo-fill {
+                            fill: #0dac4b;
+                        }
+                    </style>
+                </defs>
+                <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                    <path id="KODILLA_copy_5_1_" class="navbar-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                    <ellipse id="eye_copy_4_1_" class="navbar-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                </g>
+                <path id="Path_1" data-name="Path 1" class="navbar-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                <path id="Path_2" data-name="Path 2" class="navbar-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                <path id="Path_3" data-name="Path 3" class="navbar-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                <path id="Path_4" data-name="Path 4" class="navbar-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                <path id="Path_5" data-name="Path 5" class="navbar-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                <path id="Path_6" data-name="Path 6" class="navbar-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+            </svg>
+        </a>
+        <button class="navbar-toggler pull-right collapsed" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars navbar-ico-open"></i>
+            <i class="fa fa-times navbar-ico-close"></i>
+        </button>
+        <ul id="navbar-main" class="nav navbar-nav pull-right collapse">
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Szkolenia Bootcamp
+    </a>
+    <ul class="bootcamp-list">
+                    <li class="list-sub list-sub-fe">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32">
+                <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width=".75">
+                    <polyline stroke="#02AC46" points="3.382 24.574 3.382 30.736 33.743 30.736 33.743 .375 3.382 .375 3.382 18.562"></polyline>
+                    <path stroke="#02AC46" d="M25.611 15.95L24.921 15.655C23.688 15.113 23.098 14.817 23.098 13.88 23.098 13.191 23.639 12.648 24.527 12.648 25.365 12.648 25.858 12.993 26.399 13.88L28.668 12.401C27.73 10.726 26.399 10.085 24.576 10.085 21.964 10.085 20.288 11.76 20.288 13.879 20.288 16.245 21.718 17.379 23.788 18.315L24.477 18.611C25.759 19.153 26.597 19.548 26.597 20.583 26.597 21.421 25.858 22.062 24.625 22.062 23.146 22.062 22.357 21.322 21.767 20.238L19.4 21.569C20.238 23.244 22.012 24.526 24.723 24.526 27.483 24.526 29.552 23.047 29.552 20.484 29.504 18.119 28.124 17.034 25.611 15.95zM17.823 20.238L17.823 10.282 14.866 10.282 14.866 20.189C14.866 21.668 14.274 22.012 13.289 22.012 12.303 22.012 11.859 21.322 11.416 20.533L9.001 22.012C9.691 23.491 11.07 24.674 13.388 24.674 16 24.575 17.823 23.244 17.823 20.238z"></path>
+                    <circle cx="3.382" cy="21.568" r="3.006" stroke="#02AC46"></circle>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/front-end">
+                <h4 class="bootcamp-name">Front-end: React</h4>
+                <p>Naucz się tworzyć front-end aplikacji w 4 miesiące</p>
+                <span class="bootcamp-label">nowość</span>
+            </a>
+        </li>
+                <li class="list-sub">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.61 27.4"><defs><style>.stroke-grey,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75px;}.stroke-grey{stroke:#e0e0e0;}.cls-2{stroke:#02ac46;}</style></defs><title>Front i Web Developer</title><line class="stroke-grey" x1="22.2" y1="3.46" x2="24.01" y2="5.31"></line><line class="stroke-grey" x1="22.2" y1="5.31" x2="24.01" y2="3.46"></line><polyline class="stroke-grey" points="0.96 26.61 0.96 0.79 26.72 0.79 26.72 26.61 0.96 26.61"></polyline><line class="stroke-grey" x1="1.22" y1="7.98" x2="26.72" y2="7.98"></line><rect class="stroke-grey" x="17.72" y="3.49" width="1.8" height="1.8"></rect><line class="stroke-grey" x1="15.03" y1="5.28" x2="13.24" y2="5.28"></line><polyline class="cls-2" points="16.86 20.13 19.8 16.75 16.86 13.37"></polyline><polyline class="cls-2" points="10.51 20.13 7.57 16.75 10.51 13.37"></polyline><line class="cls-2" x1="15.78" y1="10.43" x2="11.67" y2="22.81"></line></svg>
+            <a href="https://kodilla.com/pl/bootcamp/webdeveloper?type=wdp">
+                <h4 class="bootcamp-name">Web Developer</h4>
+                <p>Naucz&nbsp;się tworzyć aplikacje internetowe od&nbsp;podstaw</p>
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="list-sub">
+            <svg class="menu-svg" width="32px" height="32px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>menu_java_logo</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu_java_logo">
+                        <g id="svg_1" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042" id="path156_2_" fill="#02AC46"></path>
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042 Z" id="path158_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004" id="path160_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004 Z" id="path162_2_" fill="#02AC46"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311" id="path164_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311 Z" id="path166_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757" id="path168_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757 Z" id="path170_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853" id="path172_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853 Z" id="path174_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992" id="path176_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992 Z" id="path178_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38" id="path180_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38 Z" id="path182_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058" id="path184_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058 Z" id="path186_2_" fill="#E0E0E0"></path>
+                        </g>
+                        <path class="stroke-grey" d="M25.725,21.8309333 L25.725,4.16906671 C25.725,2.01884874 23.9812191,0.275 21.8310955,0.275 L4.16890446,0.275 C2.01878088,0.275 0.275,2.01884874 0.275,4.16906671 L0.275,21.8309333 C0.275,23.9818034 2.01842105,25.725 4.16890446,25.725 L21.8310955,25.725 C23.9815789,25.725 25.725,23.9818034 25.725,21.8309333 Z" id="svg_2" stroke="#E0E0E0" stroke-width="0.55"></path>
+                    </g>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/java?type=jdp">
+                <h4 class="bootcamp-name">Java Developer</h4>
+                <p>Poznaj najpopularniejszy na&nbsp;świecie język programowania od&nbsp;zera</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+                        <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Strefa kursanta
+    </a>
+    <ul>
+                    <li><a href="https://kodilla.com/pl/bootcamp-dashboard/146" class="nav-link">Bootcamp Java Plus 2018-10</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a></li>
+                    <li><a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a></li>
+    </ul>
+</li>
+                            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        O nas
+    </a>
+    <ul class="about-us">
+        <li><a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a></li>
+        <li><a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a></li>
+        <li><a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a></li>
+    </ul>
+</li>
+                                        <li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Szkolenia Bootcamp</span>
+    <ul>
+                    <li class="nav-item list-sub-fe">
+                <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/front-end">Bootcamp Front-end: React
+                    <span class="bootcamp-label">nowość</span>
+                </a>
+            </li>
+                <li class="nav-item">
+            <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/webdeveloper">Bootcamp Web Developer
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://kodilla.com/pl/bootcamp/java">Bootcamp Java</a>
+        </li>
+    </ul>
+</li>
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">Strefa kursanta</span>
+            <ul>
+                <li class="nav-item ">
+                                            <a class="nav-link" href="https://kodilla.com/pl/bootcamp-dashboard/146">
+                            Bootcamp   Java Plus 2018-10
+                        </a>
+                                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a>
+                </li>
+                                    <li class="nav-item ">
+                        <a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a>
+                    </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a>
+                </li>
+            </ul>
+        </li>
+    
+        
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">O nas</span>
+            <ul>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a>
+                </li>
+            </ul>
+        </li>
+    
+<li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Pozostałe</span>
+    <ul>
+                                        
+        <li class="nav-item">
+            <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+        </li>
+    </ul>
+
+</li>
+
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl/account">Konto</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link analytics-track" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+    </li>
+
+        
+    <li class="nav-item hidden-md-up nav-group">
+        <span class="mobile-menu-separator">Skontaktuj się z nami</span>
+        <ul>
+            <li class="nav-item">
+                <a href="mailto:support@kodilla.com" class="nav-link">
+                    <i class="fa fa-envelope-o"></i>
+                    support@kodilla.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:fcWidget.open();" class="nav-link">
+                    <i class="fa fa-comments"></i>
+                    <span>Porozmawiaj na czacie</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+<li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl"><img src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/pl.svg">Polski</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/en"><img src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/en.svg">English</a>
+    </li>
+
+        </ul>
+    </div>
+</nav>
+<main class="bootcamp module page-height-fix" id="bootcamp-module">
+    <div class="table-of-contents aside-sticky">
+        <section class="container">
+            <div class="row">
+                <aside class="module-nav col-md-4 col-md-offset-8">
+                    <section class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Spis treści modułu</h4>
+                        </div>
+                        <ul class="list-group list-group-flush ps-container ps-theme-default ps-active-y" data-ps-id="f5195575-7a52-9e1c-7750-e714efa64d49">
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#submodule-742" class="clearfix">
+                                    <p>27.1. Tworzenie dokumentacji</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#271-tworzenie-dokumentacji-gdzie-umiescic-dokumentacje" class="clearfix">Gdzie umieścić dokumentację?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#271-tworzenie-dokumentacji-w-jakim-jezyku-pisac-dokumentacje" class="clearfix">W jakim języku pisać dokumentację?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#271-tworzenie-dokumentacji-z-czego-powinna-sie-skladac-kazda-dokumentacja-projektu" class="clearfix">Z czego powinna się składać każda dokumentacja projektu?</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#submodule-743" class="clearfix">
+                                    <p>27.2. Dlaczego Markdown?</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#submodule-744" class="clearfix">
+                                    <p>27.3. Podstawowe znaczniki Markdown</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-naglowki" class="clearfix">Nagłówki</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-stylowanie-tekstu" class="clearfix">Stylowanie tekstu</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-cytowanie-tekstu" class="clearfix">Cytowanie tekstu</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-linki" class="clearfix">Linki</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-obrazki" class="clearfix">Obrazki</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-listy" class="clearfix">Listy</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-tabele" class="clearfix">Tabele</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-bloki-kodu" class="clearfix">Bloki kodu</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-kod-w-linii" class="clearfix">Kod w linii</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/208/3774#273-podstawowe-znaczniki-markdown-ignorowanie-formatowania" class="clearfix">Ignorowanie formatowania</a></li>
+                                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 387px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 185px;"></div></div></ul>
+                        <div class="card-block text-center">
+                                                                                                <a href="https://kodilla.com/pl/bootcamp-dashboard/146">Powrót do dashboardu</a>
+                                                                                    </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </div>
+    <section class="container module-content">
+        <div class="row">
+            <main class="col-md-8">
+                <section class="card">
+                    <div class="card-block module-header clearfix  completed ">
+                        <h1 class="card-title">27. Projekt zespołowy - tydzień 3 z 4</h1>
+                                                <i class="fa fa-bookmark fa-3x" aria-hidden="true"></i>
+                    </div>
+                                        <div class="card-block challenge">
+                        <h3>Wyzwania:</h3>
+                        <ul>
+<li>dowiesz się, jak napisać dokumentację projektu,</li>
+<li>poznasz podstawy pisania w Markdownie.</li>
+</ul>
+<h3>Wstęp</h3>
+<p>Mamy nadzieję, że praca w zespole idzie Wam coraz lepiej. Obsługa repozytorium i codzienne daily pewnie powoli stają się odruchowe i większość uwagi poświęcacie na samą pracę nad projektem.</p>
+<p>W tym tygodniu poruszymy bardzo istotny temat: <strong>dokumentację projektu</strong>. Jako developer zapewne nie wyobrażasz sobie życia bez dobrych, wyczerpujących docsów!</p>
+<p>Z założenia, napisany kod powinien być samodokumentujący, co oznacza, że inny programista powinien go zrozumieć, kiedy będzie go czytać. W związku z tym przyjęte jest, że nie piszemy dodatkowego komentarza nad każdą metodą. Czasem to się co prawda zdarza: jeśli zajrzysz do kodu źródłowego którejś z klasy Javy, okaże się, że takich komentarzy (nazwanych <code>javadoc</code>) jest dość sporo. Sami natomiast powinniśmy tego unikać: odpowiednia nazwa metody i dość krótka implementacja powinny wystarczyć.</p>
+<p>Inaczej wygląda to w przypadku dokumentacji webserwisów - serwisów, których będą używać inni programiści, ale nie tylko oni. Tworząc wspomiany webserwis powinniśmy opisać, co należy przesłać i czego należy oczekiwać w odpowiedzi na dane żądanie.</p>
+
+                    </div>
+                                    </section>
+                                    
+                <section id="submodule-742" class="card submodule completed" data-bootcamp-user-submodule-id="301567">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">27.1. <span>Tworzenie dokumentacji</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Zakres dokumentacji webserwisu czy całego zbioru webserwisów zależy od ich stopnia skomplikowania. Zajrzyj na <a href="https://any-api.com/" target="_blank">AnyAPI</a> lub <a href="https://www.programmableweb.com/apis/directory" target="_blank">ProgrammableWeb</a> i zobacz, jak wiele różnych API jest dostępnych za darmo oraz jak są opisane. Możliwe, że znajdziesz coś inspirującego, co pozwoli Ci utworzyć ciekawy projekt.</p>
+<h3 id="271-tworzenie-dokumentacji-gdzie-umiescic-dokumentacje">Gdzie umieścić dokumentację?</h3>
+<p>Wszystko, co opisujemy w tym module, może być umieszczone w pliku <code>README.md</code> w głównym katalogu. Zawartość tego pliku jest automatycznie wyświetlana na stronie repozytorium w GitHubie, tuż pod listą plików. Dzięki temu nie trzeba szukać dokumentacji, a każde sklonowane repozytorium będzie zawierało plik z podstawowymi informacjami dotyczącymi projektu.</p>
+<p>Jeśli jednak z ustaleń zespołu wyniknie, że chcecie jakieś zagadnienie opisać dużo dokładniej, możecie do tego wykorzystać jedno z dwóch rozwiązań:</p>
+<ul>
+<li>dodatkowe pliki <code>.md</code> w repozytorium, lub</li>
+<li>Wiki, dostępne w repozytorium GitHuba.</li>
+</ul>
+<p>W obu podejściach można umieścić wiele artykułów, a linki do poszczególnych z nich mogą znajdować się w <code>README.md</code>, co usprawni poruszanie się po dokumentacji.</p>
+<p>Główną różnicą jest to, że pliki <code>.md</code> będą w repozytorium, a artykuły z Wiki będą dostępne tylko online.</p>
+<h3 id="271-tworzenie-dokumentacji-w-jakim-jezyku-pisac-dokumentacje">W jakim języku pisać dokumentację?</h3>
+<p>Standardem jest pisanie dokumentacji po angielsku, z wykorzystaniem formatu <em>Markdown</em>. Za chwilę wyjaśnimy, jak pisać w tym formacie, ale jeśli słyszysz o nim pierwszy raz, nie przejmuj się - pisanie w Markdownie jest bardzo proste!</p>
+<h3 id="271-tworzenie-dokumentacji-z-czego-powinna-sie-skladac-kazda-dokumentacja-projektu">Z czego powinna się składać każda dokumentacja projektu?</h3>
+<p><strong>1. Opis projektu</strong> - wystarczą 2 zdania, które opisują, co znajduje się w danym repozytorium. W naszym wypadku będzie to informacja, że ten projekt zawiera mechanikę backendową sklepu internetowego.</p>
+<p><strong>2. Demo</strong> - gdzie można sprawdzić, jak działa projekt? Jeśli nie jest on dostępny na publicznym serwerze w internecie, mogą to być linki do screenów czy video prezentujące działanie aplikacji.</p>
+<p><strong>3. Wymagania przed uruchomieniem</strong> - co (i w jakiej wersji) należy zainstalować, aby projekt działał poprawnie.</p>
+<p><strong>4. Uruchomienie projektu</strong> - lista poleceń, które należy wykonać, by zbudować i uruchomić projekt.</p>
+<p><strong>5. Opis endpointów</strong> - jakie dane należy przekazać do endpointu, które informacje są opcjonalne, jakie wartości są zwracane.</p>
+<p><strong>6. Wykorzystanie</strong> - co można zrobić z projektem, jak go rozwijać, jakie są dalsze plany.</p>
+<p><strong>7. Troubleshooting</strong> - znane problemy występujące w projekcie i sposoby ich rozwiązania.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-743" class="card submodule completed" data-bootcamp-user-submodule-id="301568">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">27.2. <span>Dlaczego Markdown?</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Jak widzisz, w naszej dokumentacji znajdzie się dość sporo informacji. Warto zadbać o to, aby te informacje były przedstawione w czytelny sposób. Osiągniemy to głównie za pomocą nagłówków oraz list wypunktowanych. Do tego idealnie nadaje się wykorzystywany przez GitHuba (i większość innych platform Gita) format <em>Markdown</em>.</p>
+<p>Oczywiście, to nie jest jedyny sposób - można by przecież pisać dokumentację np. w pliku <code>.txt</code> albo nawet w <code>.html</code>. Te sposoby mają jednak swoje problemy - pierwszy z nich będzie mało czytelny, a drugi wymagałby pisania sporej ilości kodu HTML. Dokumentację samych endpointów RESTowych można wygenerować za pomocą odpowiedniej biblioteki, którą poznasz w dalszej części kursu. Teraz nie będziemy jej używać, bo nasza dokumentacja nie będzie opisywać tylko endpointów.</p>
+<p>Markdown jest językiem znaczników, który umożliwi nam szybkie formatowanie tekstu bez potrzeby używania tagów HTML. Na stronie GitHuba wyświetli się kod HTML wygenerowany z naszego Markdowna, więc wszystko będzie czytelnie przedstawione, a dla nas pisanie w tym formacie nie będzie zbyt obciążające.</p>
+<p>Zacznijmy od podstawowych zasad:</p>
+<ul>
+<li>piszemy w pliku tekstowym z rozszerzeniem <code>.md</code>,</li>
+<li>pomiędzy nagłówkami, paragrafami, etc. wstawiamy pustą linię.</li>
+</ul>
+<p>Do tego mamy do dyspozycji szereg znaczników, które będą formatować naszą treść. Spójrz na poniższy przykład tekstu napisanego w języku Markdown:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup"># Some header 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum urna id ligula pharetra, vitae iaculis erat maximus.
+
+Praesent nec purus quis turpis facilisis iaculis vel sed dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+## Some header 2
+
+1. Morbi ex erat, iaculis eu felis quis, dapibus tempus enim.
+2. Ut convallis iaculis nisi, eget imperdiet urna luctus non.
+3. Ut ac viverra ex.
+
+### Some header 3
+
+- Donec nec lobortis odio.
+- In nec ipsum quis nulla commodo facilisis.
+
+#### Some header 4
+
+&gt; Aliquam auctor nulla eu felis congue, sit amet pulvinar lacus venenatis. Etiam elementum, odio sit amet elementum pellentesque, ex turpis accumsan neque, at egestas nulla tellus vitae mauris.</code><div class="toolbar"></div></pre>
+<p>Powyższy kod wystarczy zapisać w pliku <code>.md</code>, a GitHub wyświetlając ten plik skonwertuje go na kod HTML, który będzie wyglądał tak:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Some header 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum urna id ligula pharetra, vitae iaculis erat maximus.
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Praesent nec purus quis turpis facilisis iaculis vel sed dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Some header 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Morbi ex erat, iaculis eu felis quis, dapibus tempus enim.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Ut convallis iaculis nisi, eget imperdiet urna luctus non.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Ut ac viverra ex.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Some header 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>Donec nec lobortis odio.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>In nec ipsum quis nulla commodo facilisis.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">&gt;</span></span>Some header 4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Aliquam auctor nulla eu felis congue, sit amet pulvinar lacus venenatis. Etiam elementum, odio sit amet elementum pellentesque, ex turpis accumsan neque, at egestas nulla tellus vitae mauris.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span></code><div class="toolbar"></div></pre>
+<p>Dzięki Markdownowi możesz błyskawicznie pisać teksty, które będą odpowiednio sformatowane, bez potrzeby używania skomplikowanego kodu (np. HTML) czy klikania opcji (np. guzika ustawiającego nagłówek 3. stopnia). Co więcej, dokumentacja pisana przez różnych developerów będzie sformatowana dokładnie tak samo, co znacznie ułatwia jej czytanie.</p>
+<p>Z powyższego przykładu już zapewne domyślasz się, jak działają podstawowe znaczniki. W następnym rozdziale omówimy kilka najczęściej wykorzystywanych.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-744" class="card submodule completed" data-bootcamp-user-submodule-id="301569">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">27.3. <span>Podstawowe znaczniki Markdown</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Większość dokumentów będziemy przygotowywać pod GitHuba, więc pokażemy Ci znaczniki w nim obowiązujące. Warto jednak pamiętać, że większość interpreterów ma te same rodzaje oznaczeń.</p>
+<p>Pełną listę znaczników dla Markdowna w GitHubie znajdziesz <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/" target="_blank">tutaj</a>.</p>
+<h3 id="273-podstawowe-znaczniki-markdown-naglowki">Nagłówki</h3>
+<p>Do stworzenia nagłówka będziemy wykorzystywać znak <code>#</code> przed tekstem nagłówka. W zależności o tego, ile znaków <code>#</code> wpiszemy (od 1 do 6), takiego poziomu będzie nagłówek. Im niższa liczba, tym nagłówek większy.</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup"># Nagłówek H1
+### Nagłówek H3
+###### Nagłówek H6</code><div class="toolbar"></div></pre>
+<p>Ważne - dodaj spację po znakach <code>#</code>, inaczej ta linia nie zostanie zinterpretowana jako nagłówek.</p>
+<h3 id="273-podstawowe-znaczniki-markdown-stylowanie-tekstu">Stylowanie tekstu</h3>
+<ul>
+<li><strong>Pogrubienie</strong> - <code>**Pogrubiony tekst**</code> lub <code>__Pogrubiony tekst__</code></li>
+<li><em>Pochylenie</em> - <code>*Pochylony tekst*</code> lub <code>_Pochylony tekst_</code></li>
+<li><s>Przekreślenie</s> <code>~~Przekreślony tekst~~</code></li>
+<li><strong>Pogrubiony z <em>pochyleniem</em></strong> - <code>**Pogrubiony z _pochyleniem_**</code></li>
+</ul>
+<h3 id="273-podstawowe-znaczniki-markdown-cytowanie-tekstu">Cytowanie tekstu</h3>
+<p>Znak <code>&gt;</code> na początku linii oznacza cytat. Jeśli wiele linii ma należeć do tego samego cytatu, postaw <code>&gt;</code> na początku każdej z nich.</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">&gt; Every line starting with "&gt;" will be a quote.
+&gt; And you can make multi-line quotes by adding "&gt;" to every line,
+&gt; (without leaving empty lines between the quoted lines).</code><div class="toolbar"></div></pre>
+<p>Możesz też stosować zagnieżdżone komentarze w ten sposób:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">&gt;&gt; older quote
+&gt;
+&gt; newer quote</code><div class="toolbar"></div></pre>
+<h3 id="273-podstawowe-znaczniki-markdown-linki">Linki</h3>
+<p>Linki tworzymy poprzez umieszczenie tekstu pomiędzy nawiasami kwadratowymi <code>[ ]</code> oraz podanie linkowanego adresu (href) używając nawiasów okrągłych <code>( )</code>.</p>
+<p>Np. <code>[Link do kodilla](https://kodilla.com)</code></p>
+<p>W GitHubie możmy też tworzyć odwołania do innych plików <code>md</code>, podając relatywną ścieżkę do nich, np. <code>[How to use](docs/USAGE.md)</code>.</p>
+<h3 id="273-podstawowe-znaczniki-markdown-obrazki">Obrazki</h3>
+<p>Dodając obrazek, możemy użyć 3 właściwości - <code>adresu</code>, <code>alt</code> (tekstu alternatywnego) oraz <code>title</code>.</p>
+<p>Przykłady:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">![alt text](https://adres.pl/logo.png "Title Text")
+
+![alt text](https://adres.pl/logo.png)
+
+![](https://adres.pl/logo.png)</code><div class="toolbar"></div></pre>
+<h3 id="273-podstawowe-znaczniki-markdown-listy">Listy</h3>
+<p>W Markdownie możemy tworzyć listy numeryczne (<code>ol</code>) lub listy punktowe (<code>ul</code>). Chcąc tworzyć listy wielopoziomowe, musimy pamiętać o zachowaniu odpowiednich wcięć w tekście.</p>
+<p>Przykład:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">1. Lorem
+1. Lorem
+1. Lorem
+
+- Lorem
+- Lorem
+  - Lorem
+  - Lorem
+    - Lorem
+
+1. Lorem
+   - Lorem
+   - Lorem
+1. Lorem
+   - Lorem
+   - Lorem</code><div class="toolbar"></div></pre>
+<p>Zwróć uwagę, że tworząc listę wypunktowaną, możemy zawsze wpisać <code>1.</code> - oczywiście możesz numerować kolejno punkty, ale w wynikowym kodzie HTML to będzie lista numerowana <code>&lt;ol&gt;</code>, więc liczby będą i tak kolejne (1, 2, 3...).</p>
+<h3 id="273-podstawowe-znaczniki-markdown-tabele">Tabele</h3>
+<p>Jedną z trudniejszych rzeczy w języku Markdown jest tworzenie tabeli, ponieważ można je stworzyć w sposób estetyczny lub nieestetyczny. Różnica jest tylko w tym, jak tabela będzie wyglądała bezpośrednio w kodzie Markdown.</p>
+<p>Estetyczna tabela nawet w Markdownie wygląda jak tabela, tzn. linie podziału kolumn są proste:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">| Column heading    | Column heading    |
+| ----------------- | ----------------- |
+| Some content      | Another content   |
+| Different content | Last content      |</code><div class="toolbar"></div></pre>
+<p>Nieestetyczna tabela zadziała tak samo, ale przez brak dodatkowych odstępów będzie trudniejsza do odczytania w kodzie pliku <code>.md</code>:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">| Column heading | Column heading |
+| --- | --- |
+| Some content | Another content   |
+| Different content | Last content |</code><div class="toolbar"></div></pre>
+<p>Obie wersje wygenerują dokładnie ten sam kod HTML tabeli, np.:</p>
+<table>
+<thead>
+<tr>
+<th>Column heading</th>
+<th>Column heading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Some content</td>
+<td>Another content</td>
+</tr>
+<tr>
+<td>Different content</td>
+<td>Last content</td>
+</tr>
+</tbody>
+</table>
+<p>Decyzja należy do Ciebie - jeśli chcesz zadbać o czytelność tabeli w kodzie pliku <code>.md</code>, poświęć chwilę czasu na dodanie odpowiednich odstępów.</p>
+<h3 id="273-podstawowe-znaczniki-markdown-bloki-kodu">Bloki kodu</h3>
+<p>Dodatkowo mamy jeszcze oznaczenia kodu, czyli sposób, w jaki zaznaczamy, że coś jest fragmentem programistycznego kodu.</p>
+<p>Takie bloki możemy przedstawiać na dwa sposoby - liniowy i blokowy. W obu przypadkach będziemy używać znaku backtick, czyli <code>`</code>. Na większości klawiatur jest on na tym samym klawiszu co tylda (<code>~</code>), z tym, że tylda wymaga wciśnięcia shifta, a backtick nie.</p>
+<h3 id="273-podstawowe-znaczniki-markdown-kod-w-linii">Kod w linii</h3>
+<p><code>To jest przykład implementowania zmiennej `int a = 10`</code></p>
+<p>Rezultat: To jest przykład implementowania zmiennej <code>int a = 10</code>;</p>
+<h4>Blok kodu w kontenerze</h4>
+<p>Aby rozpocząć i zakończyć blok kodu, w osobnej linii wpisujemy trzy backticki:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">```
+int a = 10;
+String b = "test";
+```</code><div class="toolbar"></div></pre>
+<p>Rezultat:</p>
+<pre class="language-markup code-toolbar"><code class=" language-markup">int a = 10;
+String b = "test";</code><div class="toolbar"></div></pre>
+<h3 id="273-podstawowe-znaczniki-markdown-ignorowanie-formatowania">Ignorowanie formatowania</h3>
+<p>Jeśli chcesz, aby jakiś symbol był ignorowany, należy przed nim postawić backslash (<code>\ \</code>).</p>
+<p>Np. <code>To jest \*Test\*</code></p>
+<p>Rezultat: To jest *Test*</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                            </main>
+        </div>
+    </section>
+</main>
+
+<script type="text/x-translation" data-translation-name="SentBootcampLinkReviewFormMessage">Wysłano link do zatwierdzenia</script>
+    <div id="alerts">
+    <div class="alert alert-danger" role="alert" style="display: none;">
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                        </ul>
+    </div>
+    <div class="alert alert-success" role="alert" style="display: none;">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-warning" role="alert" style="display: none;">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-info" role="alert" style="display: none;">
+        <i class="fa fa-info" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                    </ul>
+    </div>
+    <div class="container">
+        <div class="alert alert-notify" role="alert" style="display: none;">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Zamknij</span>
+            </button>
+            <ul>
+                            </ul>
+        </div>
+    </div>
+</div>
+    <div class="modal fade informator-modal" id="informator" tabindex="-1" role="dialog" aria-labelledby="informatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/logo-menu.png" alt="Logo Kodilla" class="brand-logo">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body content-container">
+                <h3>Zamów szczegółowy informator</h3>
+                <form class="row js-ajax-form" data-view-class="InformatorForm" action="https://kodilla.com/pl/download-informator" method="post">
+                    <input type="hidden" name="ga-pobieranie-informatora-z-modala" value="wypelnienie">
+                    <input type="hidden" name="tags[0]" value="informator">
+                                        <div class="user-data-container">
+                        <input type="text" class="form-control" name="firstname" placeholder="Imię">
+                        <input type="text" class="form-control" name="surname" placeholder="Nazwisko">
+                    </div>
+                    <div class="user-data-container">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                        <input type="tel" class="form-control" name="phone" placeholder="Numer telefonu" pattern="^([\+][0-9]{1,3}([ \.\-])?)?([\(]{1}[0-9]{3}[\)])?([0-9 \.\-]{1,15})$" title="Wpisz poprawny numer telefonu, np. 453 674 897" minlength="9" maxlength="15" data-custom-message="Wpisz poprawny numer telefonu, np. 453 674 897">
+                    </div>
+                    <div class="terms-box">
+                        <label>
+                            <input name="accept_terms" value="true" data-custom-message="Prosimy o zaakceptowanie regulaminu" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Akceptuję <a target="_blank" href="https://kodilla.com/pl/terms">regulamin</a>  i nie wnoszę zastrzeżeń</span>
+                        </label>
+                    </div>
+                    <div class="personal-terms-box">
+                        <label>
+                            <input name="accept_marketing" value="true" data-custom-message="Jeśli chcesz otrzymać dostęp do materiałów, konieczna jest akceptacja obydwu zgód" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Chcę otrzymywać newsletter, informacje o promocjach i produktach dostępnych w Kodilla.
+                                <span class="details-button" data-action="show-details" data-identifier="personal-terms-details-informator">Czytaj więcej</span>
+                                <span class="display-none" data-identifier="personal-terms-details-informator">Wyrażam zgodę na otrzymywanie informacji handlowych od Kodilla na podany przeze mnie adres e-mail. Zgoda jest dobrowolna, jednakże niezbędna do otrzymywania informacji o produktach, promocjach i o tym, co u nas słychać. Administratorem danych jest Codemy S.A. z siedzibą we Wrocławiu, ul. Racławicka 13. Mam prawo cofnąć zgodę w każdym czasie, jednak wtedy nie będę otrzymywać informacji. Dane mogą być przetwarzane pomimo cofnięcia zgody wyłącznie w takim zakresie i celu, w jakim ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z udzieloną zgodą. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie kodilla.com, zakładka "Polityka Prywatności".</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="display-none">
+                        <input type="text" name="myName" value="">
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">
+                            Pobierz Informator
+                            <i data-role="loading-icon" class="fa fa-spinner fa-spin fa-1x fa-fw display-none"></i>
+                        </button>
+                    </div>
+                </form>
+                <a href="https://kodilla.com/pl/informator" id="informator-link" target="_blank" class="display-none"></a>
+            </div>
+            <div class="modal-footer">
+                <p>Pobranie informatora do niczego nie zobowiązuje</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+                <section class="footer-lower">
+            <nav class="container">
+                <a class="navbar-img" href="https://kodilla.com/pl">
+                    <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168" height="30">
+                        <defs>
+                            <style>
+                                .footer-logo-fill {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                            <path id="KODILLA_copy_5_1_" class="footer-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                            <ellipse id="eye_copy_4_1_" class="footer-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" class="footer-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                        <path id="Path_2" data-name="Path 2" class="footer-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                        <path id="Path_3" data-name="Path 3" class="footer-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                        <path id="Path_4" data-name="Path 4" class="footer-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                        <path id="Path_5" data-name="Path 5" class="footer-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                        <path id="Path_6" data-name="Path 6" class="footer-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+                    </svg>
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="https://kodilla.com/pl/terms">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="https://kodilla.com/pl/privacy-policy">Polityka prywatności</a>
+                    </li>
+                    <li class="nav-item nav-item-last">© 2019 Kodilla</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+
+<!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2WWBH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/jquery-2.1.4.min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/js.cookie-2.1.0.min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/jquery-dateFormat.min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/bootstrap.min.js.pobrane"></script>
+<script>
+    (function () {
+        $(document).ready(function () {
+            if (window.location.hash === '#informator-modal') {
+                showInformator();
+            }
+        });
+
+        $('[data-action="show-modal"]').click(function() {
+            showInformator();
+        });
+
+        function showInformator() {
+            $('#informator').modal('show');
+        }
+    })();
+</script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/fb-eb12e28653.js.pobrane"></script>
+<script>
+    if (document.querySelector('main.editor')) {
+        document.querySelector('body').classList.add('editor');
+    }
+</script>
+
+<script type="text/javascript">
+    (function(e,t,o,n,p,r,i){e.prismGlobalObjectAlias=n;e.pgo=e.pgo||function(){(e.pgo.q=e.pgo.q||[]).push(arguments)};e.pgo.l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://prism.app-us1.com/prism.js","pgo");
+
+    pgo('setAccount', '649095895');
+    pgo('setTrackByDefault', true);
+
+    pgo('process');
+</script>
+
+        <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/underscore-min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/backbone-min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/backbone-relational.min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/backbone-super.min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/handlebars-v4.0.5.min.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/handlebars-ifCond-4e97d51c76.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/application-18f10ee4af.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/main-24117cdc80.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/settings-2fedaf9385.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/delete-account-da2b3de486.js.pobrane"></script>
+<script type="text/x-translation" data-translation-name="checkAccountDeleteCalculationMessage">Wynik jest nieprawidłowy</script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/forms-ad3eb4ac0e.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/alerts-15632e9137.js.pobrane"></script>
+<script>
+    App.Views.InpageAlertManager = Backbone.View.extend({
+        events: {
+            'click [data-alert-type][data-alert-text]': 'showAlert'
+        },
+        showAlert: function(e) {
+            var $el = $(e.currentTarget);
+            App.alertsView['show'+$el.data('alertType')]([App.Translations($el.data('alertText'))]);
+        }
+    });
+</script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/collections-1703f0dc2b.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/models-bc38b7a45b.js.pobrane"></script>
+<script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/knowledge-base-bf25c808b5.js.pobrane"></script>
+<script>
+    App.Views.LearningProgram = Backbone.View.extend({
+        events: {
+            'click [data-technology-desc-expander]' : 'expandTechnologyDesc'
+        },
+
+        initialize: function() {
+            this.$allTechnologyDesc = this.$el.find('[data-technology-desc]');
+            this.$allTechnologyExpanderIcons = this.$el.find('[data-technology-expander-icon]');
+        },
+
+        expandTechnologyDesc: function() {
+            this.$allTechnologyDesc.each(function(){
+                var $desc = $(this);
+                $desc.slideToggle('fast');
+            });
+            this.$allTechnologyExpanderIcons.each(function(){
+                var $icon = $(this);
+                $icon.toggleClass("fa-minus");
+            });
+        },
+    });
+</script>
+
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/tether.min.js.pobrane"></script>
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/prism.min.js.pobrane"></script>
+
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/bootcamp-0671f4eb7d.js.pobrane"></script>
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/jquery.seourl.min.js.pobrane"></script>
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/perfect-scrollbar.jquery.min.js.pobrane"></script>
+    <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/jquery.fancybox.min.js.pobrane"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.img-modal-group").fancybox();
+        });
+    </script>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="call-us-modal">
+    <div class="modal-dialog modal-dialog-callus" role="document">
+        <div class="modal-content call-modal">
+            <div id="call-us-step1">
+                <h2>Umów się na rozmowę z doradcą Kodilli</h2>
+                <p>Krok <span>1/2:</span> Podaj numer telefonu</p>
+                <form action="https://kodilla.com/pl/call-us/step1" method="post" id="call-us-form1">
+                    <input type="tel" name="phone" id="call-us-input-phone" placeholder="737690577">
+                    <button class="btn btn-success" id="call-us-submit-phone">Zarezerwuj rozmowę</button>
+                </form>
+                <p id="call-us-counter-holder" style="display: none;">Dzisiaj już  <span id="call-counter" data-url="https://kodilla.com/pl/call-us/counter">-</span> <span id="call-us-counter-text" data-one=" osoba zamówiła rozmowę z nami." data-few=" osoby zamówiły rozmowę z nami." data-more=" osób zamówiło rozmowę z nami."></span></p>
+                <div class="data-protection">
+                    <p>Twój numer telefonu nie będzie wykorzystywany w celach marketingowych ani przekazany dalej. Tylko oddzwonimy. Dane są przetwarzane zgodnie z <a href="https://kodilla.com/pl/polityka-prywatnosci">Polityką Prywatności</a>.</p>
+                </div>
+            </div>
+
+            <div id="call-us-step2" style="display: none;">
+                <h2>Wybierz dogodny termin i godzinę na rozmowę z doradcą</h2>
+                <p>Krok <span>2/2:</span>
+                </p><form action="https://kodilla.com/pl/call-us/step2" method="post" id="call-us-form2">
+                    <div class="select-date">
+                        <select name="date" id="call-us-input-date">
+                        </select>
+                        <select name="time" id="call-us-input-time">
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="call-us-submit-call">Oddzwońcie do mnie!</button>
+                </form>
+            </div>
+
+            <div id="call-us-step3" style="display: none;">
+                <div class="thanks">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>Dziękujemy za zamowienie rozmowy! Do usłyszenia w wybranym terminie!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <script src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/widget.js.pobrane"></script>
+    <script type="text/javascript">
+        window.fcSettings = {
+            token: '99d7ec3c-0f50-4c9a-9f5e-b741bd6a1aa7',
+            host: 'https://wchat.freshchat.com',
+            locale: 'pl',
+            tags: ["logged_in","bc_user","status_aktywny","jdp","jdp_2018-10","ppp","jdp_2018-10_aktywny_ppp"],
+            faqTags: {
+                tags: ["support"],
+                filterType: 'category'
+            },
+            config: {
+                content: {"placeholders":{"search_field":"Przeszukaj FAQ","reply_field":"Odpowiedz","csat_reply":"Wpisz swoj\u0105 odpowied\u017a"},"actions":{"csat_yes":"Tak","csat_no":"Nie","push_notify_yes":"Tak","push_notify_no":"Nie","tab_faq":"FAQ","tab_chat":"CHAT","csat_submit":"Wy\u015blij"},"headers":{"chat":"Napisz do nas","chat_help":"Witaj! W czy mo\u017cemy Ci pom\u00f3c?!","faq":"Baza wiedzy","faq_help":"Przegl\u0105daj FAQ","faq_not_available":"Brak artyku\u0142\u00f3w","faq_search_not_available":"Brak artyku\u0142\u00f3w dla frazy {{query}}","faq_useful":"Jak oceniasz przydatno\u015b\u0107?","faq_thankyou":"Dzi\u0119kujemy za Twoj\u0105 opini\u0119!","faq_message_us":"Napisz do nas!","push_notification":"Nie przegap \u017cadnej odpowiedzi! Zezwalasz na powiadomienia?","csat_question":"Czy uzyska\u0142e\u015b potrzebn\u0105 pomoc?","csat_yes_question":"Jak oceniasz nasze wsparcie?","csat_no_question":"Co mogliby\u015bmy ulepszy\u0107?","csat_thankyou":"Dzi\u0119kujemy Ci za informacje!","csat_rate_here":"Oce\u0144","channel_response":{"offline":"Aktualnie jeste\u015bmy nieobecni","online":{"minutes":{"one":"Odpowiadamy w mniej ni\u017c minut\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} minut(y)"},"hours":{"one":"Odpowiadamy w mniej ni\u017c godzin\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} godzin(y)"}}}}}
+            }
+        };
+                    window.fcSettings.lastName = 'Socha';
+            window.fcSettings.firstName = 'Tymoteusz';
+            window.fcSettings.email = 't_socha@wp.pl';
+            window.fcSettings.externalId = 't_socha@wp.pl';
+                document.getElementsByTagName('body')[0].classList.add('chat-enabled');
+        document.getElementsByTagName('body')[0].classList.add('chat-freshchat');
+        window.fcWidget.init( window.fcSettings );
+        window.fcWidget.on('widget:closed', function (){
+            $('body').addClass('notification-content--visible');
+        });
+    </script><div id="fc_frame" class="fc-widget-normal"><iframe id="fc_widget" name="fc_widget" title="Chat" frameborder="0" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/saved_resource.html"></iframe></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/d_vbiawPdxB.html" style="border: none;"></iframe></div><div></div></div></div>
+        <div data-role="notifications-wrapper" class="notifications-wrapper"></div>
+
+
+<div id="fc_push_frame"><iframe id="fc_push" src="./Moduł_ 27. Projekt zespołowy - tydzień 3 z 4_files/index.html" frameborder="0"></iframe></div></body></html>

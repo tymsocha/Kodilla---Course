@@ -1,0 +1,108 @@
+App.Views.NotificationsView = Backbone.View.extend({
+    events: {
+        'click': 'notificationHasClicked',
+        'click [data-notification-close-button]': 'closeImmediately',
+        'click [data-notification-open]' : 'openImmediately'
+    },
+    initialize: function() {
+        this.getContactDetails();
+    },
+    closeImmediately: function(){
+        $('body').removeClass('notification-content--visible hide-callus-desc');
+    },
+    openImmediately: function(){
+        $('body').addClass('notification-content--visible');
+    },
+    getContactDetails: function() {
+        if(Cookies.get('activeCampaignContactId') && Cookies.get('activeCampaignContactEmail')) {
+            $.ajax({
+                url: '/' + App.getLang() + '/activeCampaign/contact',
+                method: 'GET',
+                data: {
+                    id: Cookies.get('activeCampaignContactId'),
+                    email: Cookies.get('activeCampaignContactEmail')
+                },
+                success: function(response) {
+                    var contactData = this.prepareContactData(response);
+                    this.getNotification(contactData);
+                }.bind(this)
+            });
+        } else {
+            this.getNotification({});
+        }
+    },
+    prepareContactData: function(contactDataFromAC) {
+        var contactData = {
+            visitedPages: this.getVisitedPages(contactDataFromAC.actions),
+            fields: this.getFields(contactDataFromAC),
+            tags: contactDataFromAC.tags
+        };
+
+        return contactData;
+    },
+    getFields: function(contactDataFromAC) {
+        var fields = {
+            EMAIL: contactDataFromAC.email,
+            NAME: contactDataFromAC.name,
+            PHONE: contactDataFromAC.phone
+        };
+
+        for(var i in contactDataFromAC.fields) {
+            var field = contactDataFromAC.fields[i];
+            fields[field.perstag] = field.val;
+        }
+
+        return fields;
+    },
+    getVisitedPages: function(actions) {
+        var visitedPages = [];
+        if(typeof actions !== 'undefined') {
+            for(var i = 0; i < actions.length; i++) {
+                var action = actions[i].text;
+                var visitedPage;
+
+                if(action.indexOf('Visited page') !== -1) {
+                    visitedPage = action.split('- ')[1];
+                    if(visitedPages.indexOf(visitedPage) === -1) {
+                        visitedPages.push(visitedPage);
+                    }
+                }
+            }
+        }
+        return visitedPages;
+    },
+    getNotification: function(contact) {
+        $.ajax({
+            url: '/' + App.getLang() + '/notification',
+            method: 'POST',
+            data: {
+                visitedPages: contact.visitedPages,
+                fields: contact.fields,
+                tags: contact.tags,
+                path: window.location.pathname.substr(1),
+                queryParams: App.GetQueryParams()
+            },
+            success: function(response) {
+                if(response.length === 0) {
+                    return false;
+                }
+
+                var self = $(this.el);
+                this.notificationId = response.id;
+
+                self.html( response.content );
+
+                setTimeout(function(){
+                    $('body').addClass('notification-visible notification-content--visible hide-callus-desc');
+                    if ( $(window).width() > 543 && window.fcWidget ) {
+                        window.fcWidget.close();
+                    }
+                }, 3000);
+
+            }.bind(this)
+        });
+    },
+    notificationHasClicked: function() {
+        Cookies.set('notificationHasClicked_' + this.notificationId, true, { expires: 730, path: '/' });
+    }
+});

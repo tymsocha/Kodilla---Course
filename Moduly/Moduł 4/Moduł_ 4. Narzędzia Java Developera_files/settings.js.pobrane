@@ -1,0 +1,28 @@
+App.Views.Settings = Backbone.View.extend({
+    events: {
+        'click .toggle-connect' : 'toggleConnect'
+    },
+    toggleConnect: function (e) {
+        var btn = $(e.currentTarget);
+        if (!btn.hasClass('main-account')) {
+            var url = btn.find('span:visible').data('url');
+            if (url) {
+                if (!btn.hasClass('connected')) {
+                    analytics.track('account_'+btn.find('span:visible').data('name')+'_linked');
+                    window.location.href = url;
+                } else {
+                    this.toggleConnectAjax(url).done(function() {
+                        analytics.track('account_'+btn.find('span:visible').data('name')+'_unlinked');
+                        btn.toggleClass('connected not-connected');
+                    });
+                }
+            }
+        }
+    },
+    toggleConnectAjax: function (url) {
+        return $.ajax({
+            type: 'POST',
+            url: url
+        });
+    }
+});

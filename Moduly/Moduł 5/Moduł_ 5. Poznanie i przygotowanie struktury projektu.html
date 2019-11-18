@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)https://kodilla.com/pl/bootcamp-module/146/80/3774 -->
+<html lang="pl" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="csrf-token" content="BrRKCYdhNsaFXDnyEPi2dCQevELCrN2yNb1Rprgo">
+
+        <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="https://kodilla.com/static/img/icons/apple-touch-icon-60x60.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://kodilla.com/static/img/icons/apple-touch-icon-76x76.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://kodilla.com/static/img/icons/apple-touch-icon-120x120.png?00000">
+        <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://kodilla.com/static/img/icons/apple-touch-icon-152x152.png?00000">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://kodilla.com/static/img/icons/favicon-32x32.png?92a76">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://kodilla.com/static/img/icons/favicon-96x96.png?49799">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://kodilla.com/static/img/icons/favicon-16x16.png?4d37e">
+
+        
+        <link rel="canonical" href="https://kodilla.com/pl/bootcamp-module/146/80/3774">
+        <title>    Moduł: 5. Poznanie i przygotowanie struktury projektu
+</title>
+                        <meta name="robots" content="noindex, follow">
+        
+        <link href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/bootstrap.min.css" rel="stylesheet">
+        <link href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/font-awesome.min.css" rel="stylesheet">
+        <link href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/main.css" rel="stylesheet" type="text/css">
+
+                
+    <link href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/prism.min.css" rel="stylesheet">
+
+    <link href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/bootcamp.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/jquery.fancybox.min.css" type="text/css" media="screen">
+        <script type="text/javascript" async="" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/js"></script><script type="text/javascript" async="" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/analytics.js.pobrane"></script><script type="text/javascript" async="" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/analytics.js.pobrane"></script><script id="facebook-jssdk" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/sdk.js.pobrane"></script><script async="" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/gtm.js.pobrane"></script><script async="" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/fbevents.js.pobrane"></script><script>
+            window.environment = 'production';
+            window.loggedIn = true;
+            window.domain = 'https://kodilla.com';
+                        window.fbAppId = 1449248938627896;
+            window.locale = 'pl';
+            window.lang = 'pl';
+
+            window.serverUTC       = 1542371608000;
+            window.serverOffset    = 60;
+            window.userDate        = new Date();
+            window.userUTC         = userDate.getTime();
+            window.userOffset      = userDate.getTimezoneOffset() * (-1);
+            window.userClockDiff   = userUTC - serverUTC;
+            window.diffRounded     = Math.round( userClockDiff / ( 1000 * 60 * 15 ) );
+            window.isDifferentZone = ( userOffset - serverOffset !== 0 ) ? 1 : 0;
+            window.hasWrongTime    = ( diffRounded !== 0 ) ? 1 : 0;
+            window.dateTooltipText = 'Data i godzina są podane dla Twojej strefy czasowej GMT. <br>W razie wątpliwości napisz: <u>support@kodilla.com</u>.';
+            window.wrongHourNotice = 'Godzina na Twoim urządzeniu r&oacute;żni się od godziny obowiązującej w strefie czasowej wybranej w ustawieniach Twojego urządzenia.';
+
+            var moment = undefined,
+            momentReady = function( method, method2, count ){
+                var c = ( count ) ? count : 0;
+
+                if      ( isDifferentZone && moment !== undefined ){
+                    if      ( method ) { method(); }
+                    else    { return false; }
+                }
+                else if ( isDifferentZone && moment === undefined ) {
+                    if ( c < 20 ) {
+                        c++;
+                        setTimeout( function() { momentReady( method, method2, c ); }
+                            , 300 );
+                    } else {
+                        if      ( method2 === true && method )  { method(); }
+                        else if ( method2 !== true && method2 ) { method2(); }
+                    }
+                }
+                else {
+                    if      ( method2 === true && method )  { method(); }
+                    else if ( method2 !== true && method2 ) { method2(); }
+                    else    { return false; }
+                }
+            };
+
+            if ( window.isDifferentZone && moment === undefined ) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = '/static/js/libs/moment.timezone.locales.min.js?v=2.22.2';
+                document.getElementsByTagName("head")[0].appendChild(script);
+            }
+        </script>
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '389137334769464');
+            fbq('track', 'PageView');
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KN2WWBH');</script>
+        <!-- End Google Tag Manager -->
+<script async="" type="text/javascript" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/visit"></script><link href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/widget.css" rel="stylesheet"><style type="text/css">.fancybox-margin{margin-right:15px;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head>
+<body class="wrong-hour freshchat-enabled">
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>
+    document.getElementsByTagName('body')[0].classList.remove('no-js');
+    if ( window.isDifferentZone ) {
+        document.querySelector('body').classList.add('time-conversion-applied');
+    }
+    if ( window.hasWrongTime ) {
+        document.querySelector('body').classList.add('wrong-hour');
+    }
+</script>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+        appId: window.fbAppId,
+        xfbml: true,
+        version: 'v2.10'
+    });
+};
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+    <nav class="navbar-main hidden-sm-down dark navbar">
+    <div class="nav-container">
+        <div class="navbar-header clearfix">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbarUpper"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="collapse navbar-toggleable-sm container" id="collapsingNavbarUpper">
+            <ul class="nav navbar-nav navbar-nav-left">
+                                    <li class="nav-item nav-contact">
+    <span>Skontaktuj się z nami:</span>
+    <a href="mailto:support@kodilla.com">
+        <i class="fa fa-envelope-o"></i>
+        support@kodilla.com
+    </a>
+    <span>lub</span>
+    <a href="javascript:fcWidget.open();">
+        <i class="fa fa-comments"></i>
+        porozmawiaj na czacie
+    </a>
+</li>
+                                </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+    <a class="nav-link dropdown-toggle" href="https://kodilla.com/pl/bootcamp-module/146/80/3774#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+        <img class="img-no-border ico-current-lang" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/ico.globe.svg">Polska (Polski)
+    </a>
+    <div class="dropdown-menu-css">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://kodilla.com/pl"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/125px-Flag_of_Poland.svg.png">Polska (Polski)</a>
+                            <a class="dropdown-item" href="https://kodilla.com/uk"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/125px-Flag_of_the_United_Kingdom.svg.png">United Kingdom (English)</a>
+                            <a class="dropdown-item" href="https://kodilla.com/no"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/125px-Flag_of_Norway.svg.png">Norge (English)</a>
+                            <a class="dropdown-item" href="https://kodilla.com/en"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/global.svg">Global (English)</a>
+                    </div>
+    </div>
+</li>
+                                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+                </li>
+                <li class="nav-item hidden-sm-down">
+    <a href="https://kodilla.com/pl/account" class="nav-link">Konto</a>
+</li>
+        <li class="nav-item">
+    <a class="analytics-track nav-link nav-link-accent" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-main light navbar">
+    <div class="container clearfix">
+        <a class="navbar-brand" href="https://kodilla.com/pl">
+            <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168px" height="30px">
+                <defs>
+                    <style>
+                        .navbar-logo-fill {
+                            fill: #0dac4b;
+                        }
+                    </style>
+                </defs>
+                <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                    <path id="KODILLA_copy_5_1_" class="navbar-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                    <ellipse id="eye_copy_4_1_" class="navbar-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                </g>
+                <path id="Path_1" data-name="Path 1" class="navbar-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                <path id="Path_2" data-name="Path 2" class="navbar-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                <path id="Path_3" data-name="Path 3" class="navbar-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                <path id="Path_4" data-name="Path 4" class="navbar-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                <path id="Path_5" data-name="Path 5" class="navbar-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                <path id="Path_6" data-name="Path 6" class="navbar-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+            </svg>
+        </a>
+        <button class="navbar-toggler pull-right collapsed" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars navbar-ico-open"></i>
+            <i class="fa fa-times navbar-ico-close"></i>
+        </button>
+        <ul id="navbar-main" class="nav navbar-nav pull-right collapse">
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Szkolenia Bootcamp
+    </a>
+    <ul class="bootcamp-list">
+        <li class="list-sub">
+            <svg class="menu-svg" width="32px" height="32px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>menu_java_logo</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu_java_logo">
+                        <g id="svg_1" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042" id="path156_2_" fill="#02AC46"></path>
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042 Z" id="path158_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004" id="path160_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004 Z" id="path162_2_" fill="#02AC46"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311" id="path164_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311 Z" id="path166_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757" id="path168_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757 Z" id="path170_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853" id="path172_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853 Z" id="path174_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992" id="path176_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992 Z" id="path178_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38" id="path180_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38 Z" id="path182_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058" id="path184_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058 Z" id="path186_2_" fill="#E0E0E0"></path>
+                        </g>
+                        <path class="stroke-grey" d="M25.725,21.8309333 L25.725,4.16906671 C25.725,2.01884874 23.9812191,0.275 21.8310955,0.275 L4.16890446,0.275 C2.01878088,0.275 0.275,2.01884874 0.275,4.16906671 L0.275,21.8309333 C0.275,23.9818034 2.01842105,25.725 4.16890446,25.725 L21.8310955,25.725 C23.9815789,25.725 25.725,23.9818034 25.725,21.8309333 Z" id="svg_2" stroke="#E0E0E0" stroke-width="0.55"></path>
+                    </g>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/java?type=jdp">
+                <h4 class="bootcamp-name">Java Developer</h4>
+                <p>Poznaj najpopularniejszy na&nbsp;świecie język programowania od&nbsp;zera</p>
+            </a>
+        </li>
+        <li class="list-sub">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.61 27.4"><defs><style>.stroke-grey,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75px;}.stroke-grey{stroke:#e0e0e0;}.cls-2{stroke:#02ac46;}</style></defs><title>Front i Web Developer</title><line class="stroke-grey" x1="22.2" y1="3.46" x2="24.01" y2="5.31"></line><line class="stroke-grey" x1="22.2" y1="5.31" x2="24.01" y2="3.46"></line><polyline class="stroke-grey" points="0.96 26.61 0.96 0.79 26.72 0.79 26.72 26.61 0.96 26.61"></polyline><line class="stroke-grey" x1="1.22" y1="7.98" x2="26.72" y2="7.98"></line><rect class="stroke-grey" x="17.72" y="3.49" width="1.8" height="1.8"></rect><line class="stroke-grey" x1="15.03" y1="5.28" x2="13.24" y2="5.28"></line><polyline class="cls-2" points="16.86 20.13 19.8 16.75 16.86 13.37"></polyline><polyline class="cls-2" points="10.51 20.13 7.57 16.75 10.51 13.37"></polyline><line class="cls-2" x1="15.78" y1="10.43" x2="11.67" y2="22.81"></line></svg>
+            <a href="https://kodilla.com/pl/bootcamp/webdeveloper?type=wdp">
+                <h4 class="bootcamp-name">Web Developer</h4>
+                <p>Naucz&nbsp;się tworzyć aplikacje internetowe od&nbsp;podstaw</p>
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Strefa kursanta
+    </a>
+    <ul>
+                    <li><a href="https://kodilla.com/pl/bootcamp-dashboard/146" class="nav-link">Bootcamp Java Plus 2018-10</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a></li>
+                    <li><a class="nav-link" href="https://chat.kodilla.com/home" target="_blank">Komunikator</a></li>
+            <li><a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a></li>
+            </ul>
+</li>
+                            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        O nas
+    </a>
+    <ul class="about-us">
+        <li><a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a></li>
+        <li><a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a></li>
+        <li><a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a></li>
+    </ul>
+</li>
+                                        <li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Szkolenia Bootcamp</span>
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/webdeveloper">Bootcamp Web Developer
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://kodilla.com/pl/bootcamp/java">Bootcamp Java</a>
+        </li>
+    </ul>
+</li>
+
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">Strefa kursanta</span>
+            <ul>
+                <li class="nav-item ">
+                                            <a class="nav-link" href="https://kodilla.com/pl/bootcamp-dashboard/146">
+                            Bootcamp   Java Plus 2018-10
+                        </a>
+                                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a>
+                </li>
+                                    <li class="nav-item ">
+                        <a class="nav-link" href="https://chat.kodilla.com/home" target="_blank">Komunikator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a>
+                    </li>
+                            </ul>
+        </li>
+    
+        
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">O nas</span>
+            <ul>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a>
+                </li>
+            </ul>
+        </li>
+    
+<li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Pozostałe</span>
+    <ul>
+                                        
+        <li class="nav-item">
+            <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+        </li>
+    </ul>
+
+</li>
+
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl/account">Konto</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link analytics-track" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+    </li>
+
+        
+    <li class="nav-item hidden-md-up nav-group">
+        <span class="mobile-menu-separator">Skontaktuj się z nami</span>
+        <ul>
+            <li class="nav-item">
+                <a href="mailto:support@kodilla.com" class="nav-link">
+                    <i class="fa fa-envelope-o"></i>
+                    support@kodilla.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:fcWidget.open();" class="nav-link">
+                    <i class="fa fa-comments"></i>
+                    <span>Porozmawiaj na czacie</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+<li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/125px-Flag_of_Poland.svg.png">Polska (Polski)</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/uk"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/125px-Flag_of_the_United_Kingdom.svg.png">United Kingdom (English)</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/no"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/125px-Flag_of_Norway.svg.png">Norge (English)</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/en"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/global.svg">Global (English)</a>
+    </li>
+
+        </ul>
+    </div>
+</nav>
+<main class="bootcamp module page-height-fix" id="bootcamp-module">
+    <div class="table-of-contents aside-sticky">
+        <section class="container">
+            <div class="row">
+                <aside class="module-nav col-md-4 col-md-offset-8">
+                    <section class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Spis treści modułu</h4>
+                        </div>
+                        <ul class="list-group list-group-flush ps-container ps-theme-default ps-active-y" data-ps-id="8ec0af20-6e1a-e85a-ac76-3e4c13f9a9d9">
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#submodule-325" class="clearfix">
+                                    <p>5.1. Struktura projektu Javowego</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#51-struktura-projektu-javowego-omowienie-wygenerowanego-katalogu" class="clearfix">Omówienie wygenerowanego katalogu</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#51-struktura-projektu-javowego-czym-jest-folder-main" class="clearfix">Czym jest folder main?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#51-struktura-projektu-javowego-czym-jest-katalog-test" class="clearfix">Czym jest katalog test?</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#51-struktura-projektu-javowego-external-libraries" class="clearfix">External Libraries</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#submodule-326" class="clearfix">
+                                    <p>5.2. Maven i Gradle co to jest ?</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#52-maven-i-gradle-co-to-jest-przedstawienie-problemu" class="clearfix">Przedstawienie problemu</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#52-maven-i-gradle-co-to-jest-maven" class="clearfix">Maven</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#52-maven-i-gradle-co-to-jest-gradle" class="clearfix">Gradle</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#submodule-327" class="clearfix">
+                                    <p>5.3. Instalacja</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#53-instalacja-proces-instalacji-dla-macos" class="clearfix">Proces instalacji dla macOS</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#53-instalacja-proces-instalacji-dla-systemow-windows" class="clearfix">Proces instalacji dla systemów Windows</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#submodule-328" class="clearfix">
+                                    <p>5.4. Dobre praktyki</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#54-dobre-praktyki-dobre-praktyki-maven" class="clearfix">Dobre praktyki - Maven</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#54-dobre-praktyki-dobre-praktyki-gradle" class="clearfix">Dobre praktyki - Gradle</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#54-dobre-praktyki-podsumowanie" class="clearfix">Podsumowanie</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#submodule-329" class="clearfix">
+                                    <p>5.5. Pobieranie zależności za pomocą Gradle</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#55-pobieranie-zaleznosci-za-pomoca-gradle-wybor-biblioteki" class="clearfix">Wybór biblioteki</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#55-pobieranie-zaleznosci-za-pomoca-gradle-znalezienie-biblioteki" class="clearfix">Znalezienie biblioteki</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#55-pobieranie-zaleznosci-za-pomoca-gradle-dodanie-zaleznosci-gradle" class="clearfix">Dodanie zależności Gradle</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#55-pobieranie-zaleznosci-za-pomoca-gradle-pobranie" class="clearfix">Pobranie</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#55-pobieranie-zaleznosci-za-pomoca-gradle-walidacja" class="clearfix">Walidacja</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/80/3774#55-pobieranie-zaleznosci-za-pomoca-gradle-podsumowanie" class="clearfix">Podsumowanie</a></li>
+                                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 327px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 94px;"></div></div></ul>
+                        <div class="card-block text-center">
+                                                                                                <a href="https://kodilla.com/pl/bootcamp-dashboard/146">Powrót do dashboardu</a>
+                                                                                    </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </div>
+    <section class="container module-content">
+        <div class="row">
+            <main class="col-md-8">
+                <section class="card">
+                    <div class="card-block module-header clearfix  completed ">
+                        <h1 class="card-title">5. Poznanie i przygotowanie struktury projektu</h1>
+                                                <i class="fa fa-bookmark fa-3x" aria-hidden="true"></i>
+                    </div>
+                                        <div class="card-block challenge">
+                        <h3>Wyzwania:</h3>
+                        <ul>
+    <li>Poznanie struktury utworzonego wcześniej projektu</li>
+    <li>Poznanie narzędzia Maven</li>
+    <li>Poznanie narzędzia Gradle</li>
+    <li>Pobieranie zależności za pomocą Gradle</li>
+</ul>
+                    </div>
+                                    </section>
+                                    
+                <section id="submodule-325" class="card submodule completed" data-bootcamp-user-submodule-id="245524">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">5.1. <span>Struktura projektu Javowego</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <h3 id="51-struktura-projektu-javowego-omowienie-wygenerowanego-katalogu">Omówienie wygenerowanego katalogu</h3>
+<p>W ostatnim module stworzyliśmy nasz pierwszy projekt Javowy, który rozpoczął naszą przygodę z programowaniem, bezpośrednio na naszym komputerze w profesjonalnym narzędziu do pisania kodu - <b>IntelliJ</b>. Projekt został stworzony w określonej strukturze, którą aktualnie omówimy oraz powiemy dokładnie który fragment za co odpowiada. Nasz aktualny projekt powinien wyglądać następująco:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_00.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_00.png" style="width: 100%"></a>
+<p>Zauważysz pewnie, że pominiemy omówienie kilku plików i katalogów - jest to spowodowane faktem, że dalsze części tego modułu będą dokładnie poruszały ich tematykę.</p>
+<h4>Katalog kodilla-course</h4>
+<p>Katalog <b>kodilla-course</b>, jest naszym projektem. W nim będziemy pisać kod, konfigurować środowisko czy uruchamiać testy (którym poświęcimy cały 6 moduł). W projekcie zawarte jest wszystko co niezbędne do uruchomienia aplikacji, bądź programu.</p>
+<h4>Katalog .idea</h4>
+<p>Znajdują się w nim pliki konfiguracyjne związane z projektem, nie będziemy z tym katalogiem pracować, ponieważ domyślnie jest on ukryty i korzysta z niego <b>IntelliJ </b>w trakcie naszej pracy.</p>
+<h4>Katalog src</h4>
+<p>Katalog ten jest sercem naszego projektu, to <u>wewnątrz niego będziemy rozwijać nasz program</u>, tworzyć logikę naszego programu, bądź programów. Zawiera on w sobie 2 podkatalogi: <i>main</i> i <i>test</i>, o których zaraz powiemy.</p>
+<h3 id="51-struktura-projektu-javowego-czym-jest-folder-main">Czym jest folder main?</h3>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_01.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_01.png" style="width: 100%"></a>
+<p>Katalog <i>main </i>zawiera w sobie katalog <i>java</i>, w którym znajduje się pakiet <b>com.kodilla</b>. Pakiety w Javie mają strukturę drzewiastą - poszczególne gałęzie oddzielamy od siebie znakiem kropki '.', na przykład <b>com.kodilla</b>. Pakiety mają odzwierciedlenie w strukturze katalogu w systemie plików Twojego komputera - każda gałąź wewnątrz pakietu to kolejny podkatalog. Przykładowo, pakietowi 'com.kodilla' odpowiada struktura katalogów 'com/kodilla' na dysku. Zwróć uwagę, że w systemie Windows katalogi oddzielamy od siebie znakiem <i>backslash</i> ('\'), natomiast w systemach Linux i MacOS znakiem <i>slash</i> ('/'). </p>
+<p>Wewnątrz pakietu <b>com.kodilla</b> piszemy kod, tworzymy nowe klasy, interfejsy, metody etc. Ścieżka <i>main/java/com/<nazwa_projektu></nazwa_projektu></i> jest powszechnie przyjętą konwencją tworzenia głównego katalogu projektu.</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_02.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_02.png" style="width: 100%"></a>
+<p>Wewnątrz katalogu <i>main</i> możemy znaleźć również podkatalog <i>resources</i>, który jest - jak sama nazwa wskazuje - zasobami dla naszego projektu. Mieszczą się tu elementy, które mogą być wykorzystywane na przestrzeni całego projektu:</p>
+<ul>
+    <li>adresy stron internetowych, z których nasz program korzysta</li>
+<li>hasła do logowania dla naszego programu</li>
+<li>widoki naszej aplikacji</li>
+<li>pliki z tekstami napisów dla różnych wersji językowych aplikacji</li>
+</ul>
+<p>Wewnątrz katalogu <i>resources</i> możemy znaleźć również plik <b>application.properties</b> - jest on idealnym miejscem, aby zapisać w nim właśnie hasła czy adresy stron internetowych do wykorzystania przez nasz program. Zaczniesz z niego korzystać szybciej niż myślisz! </p>
+<h3 id="51-struktura-projektu-javowego-czym-jest-katalog-test">Czym jest katalog test?</h3>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_03.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_03.png" style="width: 100%"></a>
+<p>Katalog <i>test</i>, to katalog bardzo podobny do wcześniej poznanego katalogu <i>main</i>. Jednakże katalog <i>test</i> ma swoje jedno określone zadanie. Odpowiada za testy naszego oprogramowania napisanego w <i>main</i>. O testach dowiesz się naprawdę dużo już w następnym module, który opowiada o pisaniu testów do programów, które będziemy tworzyć. </p>
+<p>Ach, ten powiew profesjonalizmu... :) </p>
+<h3 id="51-struktura-projektu-javowego-external-libraries">External Libraries</h3>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_04.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_04.png" style="width: 100%"></a>
+<p><i>External Libraries</i> jest katalogiem, który przechowuje zewnętrzne biblioteki naszego projektu, które możemy pobierać ze zdalnych repozytoriów. Już w tym module nauczymy się je pobierać i zrozumiemy jak to wszystko działa w praktyce. </p>
+<div class="bc-note alert-success">
+	<h4 class="alert-heading text-center">Warto wiedzieć</h4>
+	<p>Foldery i katalogi zawierające w sobie kod nazywamy <b><u>pakietami</u></b> w trakcie kursu nie raz spotkasz się z prośbą o utworzenie pakietu. Każdy taki krok wytłumaczyliśmy dokładnie, więc nie musisz się o to martwić!</p>
+	<p><b>Pakiety</b> - jeżeli dwie klasy zawierają wzajemne odwołania, standardowo używamy polecenia import dla uzyskania widoczności pomiędzy nimi. Zwróć jednak uwagę, że klasy znajdujące się w jednym pakiecie nie muszą się "importować" aby wzajemnie się widzieć.  Nawet gdy znajdują się w osobnych katalogach src/main/Java oraz src/main/test - ważne jest aby pakiet był ten sam, np. com.kodilla.testing</p>
+</div>
+
+<p>Na koniec tego submodułu, dokładnie przejdź po swoim projekcie. Obejrzyj katalog <i>External Libraries</i>, znajdziesz tam różne biblioteki i klasy z których możesz korzystać pisząc program. Przejrzyj kilka z takich klas i zastanów się czy potrafisz je przeczytać, a może nawet zastosować?</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-326" class="card submodule completed" data-bootcamp-user-submodule-id="245525">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">5.2. <span>Maven i Gradle co to jest ?</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <h3 id="52-maven-i-gradle-co-to-jest-przedstawienie-problemu">Przedstawienie problemu</h3>
+<p>Na przestrzeni czasu, kiedy programowanie stawało się coraz bardziej popularne, a społeczność programistów powiększała się, okazało się, że programiści często duplikują kod, który ktoś napisał już wcześniej. Dzięki znalezieniu tego problemu, kilka mądrych głów wpadło na pomysł, żeby dzielić się takimi programami, aby każdemu z programistów było łatwiej i lżej pisać oprogramowanie. Pozwoliło to programistom skupić się na specjalistycznej logice dla konkretnej firmy, bądź projektu, który aktualnie realizują.</p>
+<p>Kiedy zaczęto udostępniać różnego rodzaju biblioteki, programiści ruszyli z tworzeniem nowych systemów dużo szybciej, ponieważ pewna część kodu, którą musieli napisać w każdym tworzonym systemie była już gotowa i w ogóle nie trzeba było się tym przejmować.</p>
+<p>Społeczność programistów utworzyła też kilka rozwiązań, które pozwalają na szybkie i sprawne pobieranie zewnętrznych bibliotek, oraz konfigurację i zarządzanie projektami za pomocą jednego narzędzia. Wśród najbardziej popularnych narzędzi możemy wyróżnić <b>Maven</b> i <b>Gradle</b>.</p>
+<div class="bc-note alert-success">
+	<h4 class="alert-heading text-center">Ciekawostka</h4>
+	<p>Kiedyś programiści korzystali z takiego narzędzia jak <b>Ant</b>, ale jest to technologia wychodząca już z użycia. Pod poniższym linkiem możesz znaleźć kilka informacji o <b>Ant</b>: <a href="https://ant.apache.org/">https://ant.apache.org/</a> </p>
+</div>
+
+<p>W naszym kursie będziemy korzystać z narzędzia o nazwie <b>Gradle</b>, jednakże wspomnimy zarówno o <b>Maven </b>jak i o <b>Gradle</b>, ponieważ duża część firm dalej korzysta z <b>Mavena</b>. Warto od razu wspomnieć, że <b>Maven </b>jest świetnym narzędziem i często decyzja o korzystaniu z niego wynika z preferencji firmy, a nie przewagi jednego nad drugim.</p>
+<h3 id="52-maven-i-gradle-co-to-jest-maven">Maven</h3>
+<p>Jest to narzędzie, którego sterowanie oparte jest na języku <u>XML</u>, z którego będziemy korzystać do tworzenia konfiguracji przykładowego projektu. Warto zadać sobie następujące pytanie - co może zrobić ten cały <b>Maven</b>? Otóż całkiem sporo, oto kilka z możliwości:</p>
+<ul>
+    <li>Budowanie projektu</li>
+<li>Tworzenie dokumentacji</li>
+<li>Pobieranie zewnętrznych bibliotek</li>
+<li>Wersjonowanie</li>
+<li>Wykonywanie testów automatycznych</li>
+</ul>
+<p>To tylko część z możliwości <b>Mavena</b>, o których przekonasz się już wkrótce, bezpośrednio w praktyce. Przed rozpoczęciem jednak musimy poruszyć trochę teorii, a dokładnie cykl życia budowy projektu <b>Maven</b>'owego. </p>
+<p>Wyróżniamy kilka głównych etapów:</p>
+<ol>
+    <li><b><u>validate</u></b><b> </b>Etap ten odpowiada za sprawdzenie czy nasz kod nadaje się do zbudowania (kompilacji). W trakcie tego etapu <b>Maven</b> wyszukuje możliwe błędy związane np. ze składnią Javy.</li>
+    <li><b><u>compile</u></b> Etap, w którym <b>Maven</b> już wie, że podstawowe błędy zostały sprawdzone. Dokonuje kompilacji wszystkich klas, wykonuje testy automatyczne oraz może rozpocząć proces budowania aplikacji.</li>
+    <li><b><u>package</u></b><b> Maven </b>w tym momencie przygotowuje “paczkę" skompilowanego kodu do wysłania na serwer, który jest reprezentowany w postaci tzw. <u>Jar'a</u> (dla tradycyjnych aplikacji “desktopowych"), bądź War'a lub Ear'a (dla aplikacji internetowych). Tego rodzaju formaty pozwalają na scalenie programu wynikowego do jednego pliku, oraz są rozumiane przez serwery wspierające Javę, co pozwala im na uruchomienie programu, który napisaliśmy.</li>
+    <li><b><u>install</u></b><b> </b>W tym etapie Maven instaluje nasz napisany kod w jego własnym lokalnym repozytorium (taki <b>Github</b>, tylko że wewnątrz naszego komputera) - czyni to nasz kod dostępnym dla innych programów, które piszemy. Dzięki tej operacji, pisząc kolejny program możemy za pomocą <b>Mavena</b> załączyć wcześniej napisany program do naszego aktualnego. Zobaczysz jakie to pomocne!</li>
+    <li><b><u>deploy</u></b><b> </b>To moment finalny, w którym cała zbudowana “paczka" naszej aplikacji jest wysyłana do zdalnego repozytorium w celu podzielenia się nią z innymi programistami. Uwaga - nie należy tego “mylić" z instalacją oprogramowania na serwerze (np. www).</li>
+</ol>
+<h4>Główny plik Maven</h4>
+<p>Głównym plikiem dla <b>Mavena </b>jest <b>pom.xml</b>.<b> </b>Jest to plik, w którym deklarujemy zachowania <b>Mavena </b>dla określonych faz cyklu życia (validate, compile, …), czy też jakie biblioteki ma pobierać w trakcie budowy oprogramowania. <b>Maven</b> nie jest też głupi i wie jakie biblioteki już posiada, a jakich nie. Dodatkowo, sprawdza czy w zdalnym repozytorium <b>Mavena</b> nie pojawiła się nowa wersja bibliotek, i o ile pozwalamy, pobierze nowsze wersje. <b>Maven</b> sam zrobi to za nas!</p>
+<p>Oto przykładowy plik <b>pom.xml</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_05.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_05.jpg" style="width: 100%"></a>
+<p>Pewnie jesteś w szoku, jak dziwny i wielki jest ten plik <b>pom.xml</b>, ale bez obaw - już za chwile wszystko się wyjaśni. Zacznijmy po kolei - od nagłówka.</p>
+<h4>Maven - Nagłówek</h4>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_06.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_06.png" style="width: 100%"></a>
+<p>Pierwsze linie to standardowy nagłówek pliku XML - nie musisz go dokładnie rozumieć - mówi on o tym, że jest to plik napisany w XML, a kodowanie polskich znaków jest w formacie UTF-8. Sam plik ma być zgodny ze standardem (XSD - XML Schema Definition). Wiedzę na ten temat możesz zgłębić pod tym źródłem - <u>https://www.w3schools.com/xml/schema_intro.asp</u>. Nie bój się jednak - nie musisz tego zmieniać ani rozumieć w szczegółach! Ta część jest w większości przypadków generowana automatycznie, bądź po prostu kopiuje się ją do pliku :)</p>
+<h4>Maven - Deklaracja podstawowych informacji o projekcie</h4>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_07.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_07.png" style="width: 100%"></a>
+<p>Każdy projekt w <b>Maven </b>wymaga trzech tagów (tak nazywają się słowa znajdujące się pomiędzy ostrokątnymi nawiasami -
+    &lt; …&gt;) - są nimi <b>groupId</b>, <b>artifactId</b> oraz <b>version</b>. Omówmy je:</p>
+<ul>
+    <li><b>groupId</b> - jest to nasz główny pakiet projektu. Zgodnie z informacjami poznanymi dotychczas w trakcie kursu, wiesz jak wygląda struktura pakietów w projekcie. Tutaj wpisujemy najczęściej dokładnie ją, czyli com.<i>nazwa_projektu.</i> </li>
+    <li><b>artifactId</b> - jest to nazwa naszego projektu, np. kodilla-java-is-the-best.</li>
+    <li><b>version</b> - wersja naszego projektu - z racji że dopiero zaczynamy nad nim pracować, możemy spokojnie napisać 0.0.1 (możesz się spotkać z oznaczeniem wersji w postaci SNAPSHOT-0.0.1 - słowo SNAPSHOT oznacza wersję roboczą i jest dodawane automatycznie przez <b>Maven</b>)..</li>
+</ul>
+<p>W kolejnych tagach znajdują się informacje dodatkowe, takie jak rodzaj pakowania naszego kodu (jar, war, ear). Domyślnie i w trakcie całego kursu, będziemy budować “paczki" naszego kodu do pliku o rozszerzeniu .jar, o którym wspominaliśmy nieco wcześniej.</p>
+<p>Jeżeli zdecydujesz się opublikować swój projekt w centralnym repozytorium <b>Mavena</b>, wówczas inni programiści będą go wstawiali do swojego projektu jako zależność (o czym za chwilę niżej), używając właśnie wartości tych tagów.</p>
+<h4>Maven - rodzic projektu<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_08.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_08.png" style="width: 100%"></a></h4>
+<p>Rodzic projektu jest na ten moment dość zaawansowanym tematem, jednakże możesz sobie wyobrazić, że jest to pewnego rodzaju dziedziczenie po innym projekcie w celu pozyskanie jego właściwości i możliwości, właśnie w celu ułatwienia sobie życia.</p>
+<p>Pozwala to również na budowę “kaskadowych" plików <b>pom.xml</b>, w których główny projekt składa się z wielu mniejszych “podprojektów" (np. osobno pakowanych do plików jar). Na ten moment nie będziemy wnikać dokładnie w ten etap, ponieważ korzystanie ze spring-boot i jego wyjaśnienie zostawiliśmy na dalsze moduły.</p>
+<h4>Maven - właściwości</h4>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_09.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_09.png" style="width: 100%"></a>
+<p>Właściwości są niczym innym jak dodatkowymi informacjami dla <b>Mavena</b> o naszym projekcie, jak np. kodowanie znaków na etapie budowania projektu czy narzucenie konkretnej wersji Javy jako standard dla naszego projektu. Z racji tego, że nasz kurs korzysta z najnowszej na ten moment Javy 8, wewnątrz tagu <b><java.version></java.version></b> znajduje się o tym informacja.</p>
+<h4>Maven - zależności</h4>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_10.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_10.png" style="width: 100%"></a>
+<p>Zależności to nic innego jak definiowanie bibliotek, które można pobrać ze zdalnych repozytoriów od innych programistów. W zależnościach możesz zauważyć części wspólne z deklaracji podstawowych informacji o projekcie, o których mówiliśmy wcześniej - <b><groupid></groupid></b> i <b><artifactid></artifactid></b>, właśnie dzięki nim jesteśmy w stanie odnaleźć interesujący nas projekt w internecie :)</p>
+<p>Dodatkowo, możemy też zdefiniować <code class=" language-java"><span class="token operator">&lt;</span>scope<span class="token operator">&gt;</span></code>, czyli zakres dostępności naszej zależności w określonym miejscu (np. podczas testów automatycznych lub podczas budowy paczki). Co do <code class=" language-java"><span class="token operator">&lt;</span>scope<span class="token operator">&gt;</span></code>, będziemy do niego wracać już w następnym module i tam ta wiedza zostanie bardziej przekazana w praktyce. Na ten moment, ważne jest aby wiedzieć, że istnieje taka możliwość!</p>
+<h4>Maven - build</h4>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_11.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_11.png" style="width: 100%"></a>
+<p>Tag <b><build> </build></b>tłumaczy <b>Mavenowi </b>w jaki sposób ma budować projekt i co ma się wydarzyć w określonym cyklu życia projektu Mavenowego. Nie będziemy się znacznie zgłębiać w ten temat, ponieważ my korzystać będziemy z narzędzia o nazwie <b>Gradle</b>, o którym będzie mowa już za chwilę!</p>
+<h3 id="52-maven-i-gradle-co-to-jest-gradle">Gradle</h3>
+<p>Jest to kolejne i nasze główne narzędzie do budowania projektu w tym kursie. Po spotkaniu z Mavenem wiesz jak bardzo skomplikowany i trudny w czytaniu potrafi być plik <b>pom.xml</b>, Gradle postanowił wyjść temu naprzeciw i stworzyć narzędzie prostsze w obsłudze, które ułatwi deweloperom ich codzienną pracę nad projektem. Oficjalna strona Gradle znajduje się pod tym adresem: <a href="https://gradle.org/">https://gradle.org/</a> </p>
+<p>Odpowiednikiem dla <b>pom.xml</b> w Gradle jest plik <b>build.gradle</b>, którego struktura prezentuje się następująco:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_12.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_12.jpg" style="width: 100%"></a>
+<p>Plik ten możesz również otworzyć w swoim <b>IntelliJ</b>, w projekcie, który stworzyliśmy moduł wcześniej :) </p>
+<p>Nie sądzisz, że taki zapis w pliku jest dużo prostszy niż <b>pom.xml</b>? Omówmy teraz plik <b>build.gradle</b>, aby nabrać trochę więcej jasności co do niego.</p>
+<h4>Gradle - buildScript</h4>
+<p>Jest to blok wymagań dla pliku <b>build.gradle</b> - definiuje on z czego można skorzystać w obrębie naszego projektu. Jest tak zwanym buforem informacji między możliwościami <b>Gradle</b> a tym, co w projekcie może być wykorzystywane.</p>
+<h4>Gradle - plugins</h4>
+<p>Pluginy są niczym innym niż rozszerzeniami naszego projektu - pozwalają na przykład na dodanie do naszego projektu mechanizmów sprawdzających poprawność formatowania naszego kodu w trakcie jego budowania (tak zwana statyczna analiza kodu). Dzięki tej operacji możemy otrzymać zawsze dobrze sformatowany kod. </p>
+<h4>Gradle - właściwości</h4>
+<p>Podobnie jak w wypadku <b>Mavena</b>, właściwości pozwalają na definiowanie np. wersji Javy obowiązującej w projekcie, bądź nadania wersji naszemu projektowi.</p>
+<h4>Gradle - repozytoria</h4>
+<p><b>Gradle,</b> tak samo zresztą jak <b>Maven</b>,<b> </b>pozwala na deklarowanie repozytoriów, w których może wyszukiwać zależności - to tak jakbyśmy powiedzieli “<i>Gradle, słuchaj… jak poproszę Cię o jakąś bibliotekę, to możesz jej szukać w tych miejscach!</i>".</p>
+<p>Repozytorium <b><u>Maven Central</u></b> jest głównym miejscem składowania różnego rodzaju bibliotek i to właściwie tam będzie się znajdować większość potrzebnych Tobie bibliotek w trakcie pracy nad kursem czy nawet w pracy! Możesz odwiedzić stronę, która zawiera informacje o dostępnych bibliotekach w repozytorium <b>Maven Central</b>, który jest zbiorem ogromnej ilości bibliotek do Javy. <b>Nie należy kojarzyć Maven Central jedynie z Mavenem - nazwa ta wynika jedynie z tego, że pierwszym narzędziem do podłączania tych bibliotek był Maven, </b>natomiast obecnie bez problemu możemy robić to też za pomocą <b>Gradle</b>. Zapis <b>mavenCentral() </b>w pliku konfiguracyjnym w części <b>repositories</b> oznacza, że zależności do naszego projektu będziemy pobierać właśnie z <b>Maven Central</b>.</p>
+<p>Pod poniższym linkiem możesz przeszukiwać repozytorium <b>Maven Central</b>: <a href="https://mvnrepository.com/">https://mvnrepository.com/</a> </p>
+<h4>Gradle - zależności</h4>
+<p>Zależności, tak jak już wiesz, to zewnętrzne biblioteki, zazwyczaj pochodzące z <b>mavenCentral()</b>. W <b>Gradle </b>pobieramy je za pomocą takiego zapisu w pliku <b>build.gradle</b>:</p>
+<pre class="language-java code-toolbar"><code class=" language-java">dependecies <span class="token punctuation">{</span>
+   <span class="token function">compile</span><span class="token punctuation">(</span><span class="token string">'&lt;group_id&gt;:&lt;artifact_id&gt;:&lt;version&gt;'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code><div class="toolbar"></div></pre>
+<p>Wewnątrz słowa kluczowego <b>compile </b>możesz zauważyć znane Ci z <b>Mavena </b>tagi takie jak <b>groupId</b>, <b>artifactId</b> czy <b>version</b> - są to części składowe każdego projektu i służą nam do ich pobierania. Pobieraniem zajmiemy się już wkrótce, jednak przed tymi operacjami zainstalujemy <b>Gradle </b>na Twoim komputerze. Do dzieła!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-327" class="card submodule completed" data-bootcamp-user-submodule-id="245526">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">5.3. <span>Instalacja</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Poznaliśmy już podstawy Gradle'a - pora zainstalować go u siebie lokalnie tak, abyśmy mogli wykorzystywać go w swoich projektach :)</p>
+<h3 id="53-instalacja-proces-instalacji-dla-macos">Proces instalacji dla macOS</h3>
+<p>W poniższych krokach opiszemy jak zainstalować Gradle na macOS przy użyciu narzędzia Homebrew.</p>
+<h4>Instalacja Homebrew</h4>
+<p>Kiedy pojawia się problem związany ze stałą koniecznością instalowania nowych narzędzi deweloperskich, jak to zwykle jest, pomysłowi programiści wychodzą naprzeciw problemowi i tworzą rozwiązanie, które ułatwia nam proces instalacji i pobierania narzędzi deweloperskich. Przykładem rozwiązania tego problemu jest <b><u>Homebrew</u></b>. </p>
+<p>Jest on <b>package managerem </b>(zarządcą paczek :)), który pozwala nam na szybkie i sprawne pobieranie różnych programów przy użyciu terminala. Warto go zainstalować, bo przyda się szybciej niż można się spodziewać.</p>
+<p>Aby zainstalować <b>Homebrew</b> odwiedź ich stronę: <a href="https://brew.sh/">https://brew.sh/</a> i skopiuj komendę oznaczoną na poniższym zdjęciu:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_13.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_13.jpg" style="width: auto; max-width: 100%"></a>
+<p>Po skopiowaniu uruchom Terminal i wklej skopiowane polecenie:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_14.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_14.jpg" style="width: auto; max-width: 100%"></a>
+<p>Następnie na samym dole procesu instalacyjnego możemy szukać informacji o udanej instalacji- “Installation successful!":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_15.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_15.jpg" style="width: auto; max-width: 100%"></a>
+<p>Aby sprawdzić poprawność instalacji wewnątrz naszego Terminala, użyjmy komendy <i><b>brew --version</b></i>:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_16.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_16.png" style="width: auto; max-width: 100%"></a>
+<p>Jeżeli wszystko działa poprawnie, możemy zabrać się za instalację Gradle - zaraz przekonasz się jak niesamowicie szybko można pobrać potrzebne nam narzędzie za pomocą Homebrew!</p>
+<h4>Instalacja Gradle</h4>
+<p>Aby zainstalować Gradle na swoim komputerze, wystarczy, że użyjesz komendy <i><b>brew install gradle</b></i>
+</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_17.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_17.png" style="width: auto; max-width: 100%"></a>
+<p>Sprawdźmy teraz, czy Gradle na pewno jest na naszym komputerze! Wywołajmy komendę <i><b>gradle -v </b></i>wewnątrz Terminala:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_18.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_18.png" style="width: auto; max-width: 100%"></a>
+<p>I po krzyku! :) Dzięki Homebrew, możemy zainstalować różne narzędzia bardzo łatwo, nie martwiąc się o nic - Homebrew załatwi wszystkie 'formalności' za nas.</p>
+<h3 id="53-instalacja-proces-instalacji-dla-systemow-windows">Proces instalacji dla systemów Windows</h3>
+<p>Poniżej opiszemy proces instalacji Gradle dla systemu Windows. </p>
+<h4>Pobranie Gradle</h4>
+<p>Aby zacząć, przejdź na stronę internetową projektu <b>Gradle</b>: <a href="https://www.gradle.org/">www.gradle.org</a>: </p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_19.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_19.png" style="width: auto; max-width: 100%"></a>
+<p>Kliknij <i>“Install Gradle"</i>. Następnie odnajdź link do binariów (gotowych plików programu) <b>Gradle</b> i je pobierz (kliknij “<i>Otwórz</i>" po kliknięciu na link):</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_20.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_20.png" style="width: auto; max-width: 100%"></a>
+<p>Po zakończeniu pobierania otworzy się Eksplorator Plików Windows:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_21.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_21.png" style="width: auto; max-width: 100%"></a>
+<h4>Instalacja Gradle</h4>
+<p>Widoczny w pobranym archiwum katalog <b>gradle-4.0</b> skopiuj do katalogu głównego dysku <b>C:</b> (możesz go na przykład “przeciągnąć" do drugiego okna Eksploratora Plików Windows z otwartą zawartością głównego katalogu dysku <b>C:</b>).</p>
+<p>Po zakończeniu tej czynności, sprawdź czy posiadasz katalog <b>c:\gradle-4.0</b> z zawartością - jeżeli tak, możemy przystąpić do skonfigurowania zmiennej środowiskowej <b>PATH</b>. </p>
+<h4>Dodanie Gradle do PATH</h4>
+<p>W katalogu <b>gradle-4.0</b> znajduje się podkatalog <b>bin</b>, a w nim wszystkie programy wykonywalne wchodzące w skład <b>Gradle</b>. Musimy dodać ten podkatalog do zmiennej środowiskowej <b>PATH,</b> aby system Windows wiedział, gdzie ma szukać programów do wykonywania - to samo robiliśmy przy instalacji Javy.</p>
+<p>Wykonaj po kolei następujące czynności - po pierwsze otwórz Eksplorator Plików Windows:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_22.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_22.png" style="width: auto; max-width: 100%"></a>
+<p>Następnie, prawym przyciskiem myszy kliknij “<b>Ten komputer</b>" i wybierz polecenie “<b>Właściwości</b>":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_23.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_23.png" style="width: auto; max-width: 100%"></a>
+<p>Następnie wybierz polecenie “<b>Zmień ustawienia</b>":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_24.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_24.png" style="width: auto; max-width: 100%"></a>
+<p>W kolejnym kroku przejdź na zakładkę “<b>Zaawansowane</b>" i wybierz polecenie “<b>Zmienne środowiskowe</b>":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_25.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_25.png" style="width: auto; max-width: 100%"></a>
+<p>Odnajdź zmienną <b>PATH</b> i kliknij “<b>Edytuj</b>":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_26.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_26.png" style="width: auto; max-width: 100%"></a>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Informacja dot. starszych wersji Windowsa</h4>
+    <p>Ta instrukcja przedstawia zrzuty ekranu z Windowsa 10, ale w starszych wersjach procedura jest bardzo podobna.</p>
+    <p>Główną różnicą jest fakt, że zamiast zmiennej PATH nie edytuje się w poniższym oknie, tylko bezpośrednio na <em>powyższym</em> ekranie.</p>
+    <p>Zmienna jest edytowana w całości, tzn. wszystkie pozycje są w jednym polu tekstowym i są rozdzielone średnikami.</p>
+    <p>Nie usuwaj zawartości tego pola, tylko na końcu dodaj średnik i wpisz ścieżkę do podkatalogu <b>bin</b>, czyli <b>C:\gradle-4.0\bin</b>. Po wpisaniu ścieżki, zatwierdź wszystkie otwarte okna przy pomocy “<b>OK</b>"</p>
+</div>
+
+<p>Kliknij “<b>Nowy</b>", aby dodać nową ścieżkę do zmiennej <b>PATH</b>, a następnie wpisz ścieżkę do podkatalogu <b>bin</b>, czyli <b>C:\gradle-4.0\bin</b>. Po wpisaniu ścieżki, zatwierdź wszystkie otwarte okna przy pomocy “<b>OK</b>":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_27.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_27.png" style="width: auto; max-width: 100%"></a>
+<p>Teraz nadszedł czas, aby sprawdzić czy wszystko wykonałeś poprawnie. W tym celu uruchom wiersz poleceń <b>CMD</b> i wpisz <b>gradle -v</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_28.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_28.png" style="width: auto; max-width: 100%"></a>
+<p>Jeżeli wyświetli się wersja narzędzia <b>Gradle</b>, to instalacja jest zakończona i wszystko skonfigurowanie poprawnie - gratulacje!</p>
+<p>W przypadku Windowsa czasami trzeba zrestartować komputer żeby zaczęło działać :)</p>
+<p>Mamy już zainstalowanego <b>Gradle</b> na naszym komputerze, czas aby poznać kilka ważnych zasad związanych z korzystaniem z narzędzi takich jak <b>Maven</b>, czy <b>Gradle</b>. W następnym module poznasz dobre praktyki tworzenia - <b>pom.xml</b> i <b>build.gradle</b>.</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-328" class="card submodule completed" data-bootcamp-user-submodule-id="245527">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">5.4. <span>Dobre praktyki</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>W trakcie lat pracy z kodem, programiści nabierają doświadczenia (często na błędach!) i w przyszłości, mądrzejsi o poprzednie przygody, trzymają się wykształconych zasad tak, aby ich projekty były bardziej przejrzyste i łatwe w utrzymaniu - taki zbiór zasad nazywamy 'dobrymi praktykami' (<i>ang. best practices</i>).</p>
+<p>W tym submodule przedstawimy Ci dobre praktyki związane z używaniem Mavena i Gradle, aby Twoje projekty były pisane zgodnie z zasadami stosowanymi przez profesjonalistów.</p>
+<h3 id="54-dobre-praktyki-dobre-praktyki-maven">Dobre praktyki - Maven</h3>
+<p>W tej sekcji poznamy zbiór powszechnie stosowanych dobrych praktyk odnośnie używania <b>Mavena</b>.</p>
+<h4>Wrappery</h4>
+<p>Korzystając z <b>Mavena</b> i tworząc kilka różnych projektów, często możemy napotkać się na problem związany z różnymi wersjami <b>Mavena</b>, którego zadaniem jest zbudowanie naszego projektu. </p>
+<p>Na pomoc w takiej sytuacji przychodzą Wrappery (to nie te Wrappery z Javy!), których zadaniem jest uruchamianie zawsze wcześniej określonej wersji <b>Mavena</b>. Przyjrzyjmy się im z bliska:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_29.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_29.jpg" style="width: 100%"></a>
+<p>W projekcie wykorzystującym <b>Mavena</b>, który generujemy za pomocą <b>IntelliJ</b>, zostaną utworzone 2 pliki: <b>mvnw</b> i <b>mvnw.cmd</b> - są one przygotowane kolejno dla systemów Unixowych (czyli np. Linux czy macOS) i Windows. Pliki te zawierają specjalną logikę i wersję <b>Mavena</b>, jaka ma zostać pobrana wewnątrz projektu w celu jego zbudowania. Zobaczmy jak uruchomić je na poszczególnych systemach. Uruchamia się je w oknie wiersza poleceń. </p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_30.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_30.jpg" style="width: 100%"></a>
+<p>Po wywołaniu tej komendy, skrypt zawarty w pliku <b>mvnw</b>, pobierze wybraną przez nas w trakcie tworzenia projektu wersję <b>Maven'a </b>do projektu, a następnie przeprowadzi jego budowę:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_31.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_31.png" style="width: 100%"></a>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_32.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_32.jpg" style="width: 100%"></a>
+<h4>Tworzenie czytelnego pliku konfiguracyjnego</h4>
+<p>Tworząc dobry plik <b>pom.xml, </b>musimy pamiętać o mądrym ułożeniu wszystkich tagów, aby był on przejrzysty i czytelny dla każdego programisty, który może zmierzyć się kiedyś z tym plikiem. To bardzo ważne, aby pamiętać o innych w trakcie budowania jakiegoś programu.</p>
+<p>Dla porównania, popatrzymy na 2 różnie ułożone pliki <b>pom.xml</b> i poddamy je ocenie, aby zrozumieć co jest dobre, a co złe.</p>
+<p>Zacznijmy od źle przygotowanego pliku <b>pom.xml</b> - wygląda on następująco:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_33.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_33.jpg" style="width: 100%"></a>
+<p>Jako przykład złej praktyki w tym pliku wymieniliśmy komentarze - z zasady nie są one złe, o ile są niezastąpione dobrą praktyką, bądź służą celom dydaktycznym. Jednakże musimy pamiętać, że kod czy konfiguracja może być sama w sobie czytelna, jeżeli zostanie dobrze ułożona. Tag, jak sam widzisz, już dużo mówi - nie ma więc potrzeby informować innych, że tag <b><parent></parent></b> odpowiada za rodziców projektu.</p>
+<p>Przykład dobrego komentarza wygląda następująco:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_34.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_34.png" style="width: 100%"></a>
+<p>Spójrz na powyższy przykład - wiemy, że w tagu <b><dependecies></dependecies></b> znajdują się zależności i to nie wymaga tłumaczenia. Jednakże wewnątrz zależności możemy mieć różne rodzaje zależności do bibliotek. Biblioteki mogą być wewnętrzne (np. takie trzymane na firmowych serwerach) i zewnętrzne (np. <b>Maven Central</b>), dlatego też czasem, kiedy istnieje duża ilość zależności w projekcie, warto zaznaczyć, które biblioteki są wewnętrzne, a które zewnętrzne - ułatwi to znacznie szukanie zależności.</p>
+<p>Inną rzeczą, na którą zwróciliśmy uwagę są niepotrzebne załamania (puste linie). Załamania w pliku mogą być pożądane i niepożądane - wszystko zależy od przypadku. </p>
+<p>Kiedy posiadamy jedną, konkretną grupę tagów, jak np. <b><parent></parent></b>, a w nich informację o rodzicu naszego projektu, nie istnieje potrzeba oddzielania ich załamaniami. Z załamań warto skorzystać w przypadku, kiedy w tagu znajduje się duża ilość informacji, jak np. zależności o których wspominaliśmy wcześniej - ich oddzielenie jest jak najbardziej pożądane, ponieważ sprzyja czytelności.</p>
+<p>Czytelnie sformatowany tag może wyglądać tak:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_35.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_35.png" style="width: 100%"></a>
+<p>Jak widzisz, bez zbędnych załamań informacja jest w pełni czytelna i zrozumiała. Jest spójna i nie istnieje żadna potrzeba rozdzielania tych tagów od siebie.</p>
+<p>Jak ze wszystkim, trzeba znać umiar i wiedzieć kiedy powinniśmy stosować daną rzecz. Nadmierne wykorzystanie załamań może sprzyjać brakowi czytelności, jednakże brak załamań też może być zły, bowiem nie powinniśmy pisać wszystkiego w jednej linii - jest to bardzo zła praktyka, ponieważ jest to bardzo nieczytelne - każdy tag powinien znajdować się w oddzielnej linii.</p>
+<p> <a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_36.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_36.png" style="width: 100%"></a>
+</p><p>Inną 'zbrodnią' w trakcie tworzenia pliku <b>pom.xml</b> jest zwykły brak porządku. Pisząc taki plik, przede wszystkim warto zastanowić się nad jego kolejnością i sensem. Przyjmujemy zazwyczaj kolejność, która na samym początku definiuje nasz projekt, czyli zawiera informacje o jego nazwie, wersji:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_37.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_37.png" style="width: 100%"></a>
+<p>Jest to czynnik identyfikujący dany projekt, dlatego też powinien się on znajdować na samym szczycie naszego <b>pom.xml</b>. W dalszych częściach pliku konfiguracyjnego należy definiować takie informacje jak rodzic, właściwości, profile i zależności.</p>
+<h3 id="54-dobre-praktyki-dobre-praktyki-gradle">Dobre praktyki - Gradle</h3>
+<p>Podobnie jak w przypadku Mavena, tworzenie pliku konfiguracyjnego Gradle również sprzyja stosowaniu pewnych reguł opartych na zdrowym rozsądku - przejdźmy przez najważniejsze z nich.</p>
+<h4>Wrappery</h4>
+<p>W <b>Gradle</b>, tak samo jak i w <b>Mavenie</b>, istnieją wrappery, które ułatwiają życie programistom pracującym na różnych projektach. Możemy rozpoznać je po takich plikach:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_38.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_38.jpg" style="width: 100%"></a>
+<p>Możemy je uruchomić w ten sam sposób, który został przedstawiony w <b>Mavenie</b>.</p>
+<h4><a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_39.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_39.jpg" style="width: 100%"></a></h4>
+<p>Za pomocą tej komendy rozpoczniemy budowanie projektu za pomocą <b>Gradle</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_40.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_40.png" style="width: 100%"></a>
+<h4>Tworzenie czytelnego pliku konfiguracyjnego</h4>
+<p>Jako anty-przykład, spójrzmy na źle przygotowany plik <b>build.gradle:</b></p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_41.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_41.jpg" style="width: 100%"></a>
+<p>W przedstawionym przykładzie możemy zauważyć wiele niespójności takich jak <b><u>deorganizacja</u></b>, czyli rozrzucenie podobnych do siebie wywołań po całym pliku. Powinniśmy trzymać wszystkie podobne do siebie wywołania razem, ponieważ sprzyja to czytelności i ułatwia wyszukiwanie poszczególnych wywołań.</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_42.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_42.png" style="width: 100%"></a>
+<p>Załamania, tak jak w Mavenie, nie sprzyjają czytelności naszego kodu. Jest to coś, o co tak samo powinniśmy dbać tworząc plik <b>build.gradle</b>. </p>
+<p>Załamania są potrzebne tylko i wyłącznie wtedy, kiedy rozdzielamy duże ilości np. zależności, bądź chcemy wyszczególnić ich rodzaje:</p>
+<p> <a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_43.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_43.png" style="width: 100%"></a>
+</p><p>Kluczowym jest aby pamiętać, że to co tworzymy ma być proste i czytelne dla innych. Nie ma sensu utrudniać komuś innemu pracy, czy nawet samemu sobie. Jeżeli zaniedbamy raz jakąś klasę, program, bądź plik konfiguracyjny spowodujemy “wodospad problemów" - rzadko kiedy ktoś będzie chciał go poprawiać, a dodając nowe parametry, taki element projektu będzie robił się coraz bardziej skomplikowany i trudny do zmian. Aby tego uniknąć, należy stosować czyste i przejrzyste rozwiązania - pomocne komentarze, załamania sprzyjające czytelności i grupowanie podobnych wywołań:</p>
+<h2><a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_44.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_44.jpg" style="width: 100%"></a></h2>
+<h3 id="54-dobre-praktyki-podsumowanie">Podsumowanie</h3>
+<p>Nie mieliśmy za dużo pracy w tym submodule jednak ważne jest to żeby mieć świadomość jak ważne są dobre praktyki nawet w przypadku plików konfiguracyjnych. Z czasem, w ramach kursu, będziemy go rozbudowywać i warto przy tym wiedzieć co w którym miejscu powinno być żeby plik był czytelny i poukładany jak należy.</p>
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-329" class="card submodule completed" data-bootcamp-user-submodule-id="245528">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">5.5. <span>Pobieranie zależności za pomocą Gradle</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Okej, <b>Gradle </b>już zainstalowany, znamy też poszczególne elementy jego pliku konfiguracyjnego - pora zainstalować jakieś biblioteki! Od czego zacząć? Jak się za to zabrać? Za chwilę się dowiesz :)</p>
+<h3 id="55-pobieranie-zaleznosci-za-pomoca-gradle-wybor-biblioteki">Wybór biblioteki</h3>
+<p>Zaczynamy od wyboru potrzebnej nam biblioteki - najczęściej wiemy już wcześniej jakiej biblioteki potrzebujemy, jednakże na samym początku naszej przygody z programowaniem, musimy też umieć szukać potrzebnych nam rozwiązań i korzystać z Google :)</p>
+<p>Przygotowując się do następnego modułu, potrzebujemy biblioteki, która wspiera pisanie testów w Javie - na razie możemy nie wiedzieć czym są testy, jednakże nic nie stoi na przeszkodzie, by pobrać taką bibliotekę za pomocą <b>Gradle</b>.</p>
+<h3 id="55-pobieranie-zaleznosci-za-pomoca-gradle-znalezienie-biblioteki">Znalezienie biblioteki</h3>
+<p>Na samym początku musimy znaleźć potrzebną nam bibliotekę - są na to 2 sposoby:</p>
+<ul>
+    <li>odwiedzić główną stronę projektu (niestety nie każdy projekt ma swoją stronę)</li>
+	<li>przeszukać repozytorium <b>Maven Central</b>.</li>
+</ul>
+<p>Projekt, którego szukamy posiada swoją własną stronę internetową - <a href="http://junit.org/junit4/" rel="nofollow">http://junit.org/junit4/</a> - wejdź na nią i poszukaj sekcji “<i>Download and Install</i>":</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_45.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_45.jpg" style="width: 100%"></a>
+<p>W następnym kroku, znajdź sekcję poświęconą <b>Gradle</b> i wejdź w wyznaczony link:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_46.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_46.jpg" style="width: 100%"></a>
+<p>W sekcji <b>Gradle Dependency </b>powinien być widoczny kod, który powinniśmy dodać do naszego pliku <b>build.gradle</b> - skopiuj z niego zawartość taga <b>dependecies</b>:</p>
+<p> </p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_47.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_47.jpg" style="width: 100%"></a>
+<h3 id="55-pobieranie-zaleznosci-za-pomoca-gradle-dodanie-zaleznosci-gradle">Dodanie zależności Gradle</h3>
+<p>Po skopiowaniu tagu zależności, wklej go do swojego pliku <b>build.gradle</b>. </p>
+<p>Musimy go odrobinę przerobić tak, aby pasował do naszej koncepcji. Gradle pozwala na różne sposoby zapisu - my, jak już wiesz, preferujemy ten:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_48.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_48.png" style="width: 100%"></a>
+<p>W tym przypadku, jedyne co musimy dodać do naszej zależności to okrągłe nawiasy (pamiętaj aby nie usuwać istniejącej zależności do spring-boot-starter-test, po prostu dodaj kolejną):</p>
+<h4><a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_49.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_49.png" style="width: 100%"></a></h4>
+<p>Ważne</p>
+<p>Zależności oznaczone słowem <i>compile() </i>są zależnościami niezbędnymi do uruchomienia aplikacji, którą tworzymy. Natomiast <i>testCompile()</i> to grupa zależności niezbędnych do uruchomienia testów naszej aplikacji. Testom poświęciliśmy cały następny moduł - póki co zapamiętaj różnicę między tymi dwiema konstrukcjami - przyda się później!</p>
+<p>Po dodaniu zależności w pliku <b>build.gradle</b>, czas na pobieranie!</p>
+<h3 id="55-pobieranie-zaleznosci-za-pomoca-gradle-pobranie">Pobranie</h3>
+<p>Aby pobrać zależności ze zdalnego repozytorium, należy wywołać następującą komendę w wierszu poleceń IntelliJ - <b>gradle build</b></p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/kodilla-bootcamp-31-07-2018-1533038644-5350.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/kodilla-bootcamp-31-07-2018-1533038644-5350.png" style="width: 100%"></a>
+<p>Następnie, w trakcie budowy projektu, <b>Gradle</b> pobierze zależności wyznaczone przez nas w tagu <b>dependencies</b>:</p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_51.png"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_51.png" style="width: 100%"></a>
+<h3 id="55-pobieranie-zaleznosci-za-pomoca-gradle-walidacja">Walidacja</h3>
+<p>Aby sprawdzić czy nasza pobierana biblioteka faktycznie znalazła się w projekcie, należy odwiedzić katalog <b>External Libraries</b><i><b> </b></i>i odnaleźć katalog <b>junit:junit:4.12</b><i>:</i></p>
+<a class="img-modal-group" href="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_52.jpg"><img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/java-5_52.jpg" style="width: 100%"></a>
+<p>Jeśli widzisz powyższy wpis w katalogu <b>External Libraries</b>, możesz być pewien, że biblioteka znajduje się w Twoim projekcie i śmiało możesz z niej korzystać :) </p>
+<h3 id="55-pobieranie-zaleznosci-za-pomoca-gradle-podsumowanie">Podsumowanie</h3>
+<p>To tyle! W tym module zajmowaliśmy się głównie poznawaniem Gradle, który znacznie ułatwi nam tworzenie projektów w następnych modułach - będziemy wracać do niego wiele razy, więc z pewnością będziesz miał okazję, aby go przećwiczyć :)</p>
+
+<p>Masz teraz chwile oddechu, za chwilę zacznie się testowanie w którym konieczne jest rozumienie pisanego kodu. Wolny czas gorąco polecamy na odświeżenie sobie dotychczas zdobytych wiadomości oraz ponowne przeczytanie wcześniejszych modułów gdyż w kolejnych będziemy oczekiwali że doskonale rozumiesz to co przerabialiśmy do tej pory.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <small>Jeśli masz wątpliwości do powyższego materiału, to - zanim zatwierdzisz - zapytaj na czacie :)</small>
+                                                <div class="clearfix">
+                                                                                <button class="btn  btn-primary "><i class="fa fa-check"></i><span>Zapoznałe(a)m się!</span></button>
+                                                                                                    </div>
+                    </div>
+                </section>
+                            </main>
+        </div>
+    </section>
+</main>
+
+<script type="text/x-translation" data-translation-name="SentBootcampLinkReviewFormMessage">Wysłano link do zatwierdzenia</script>
+    <div id="alerts">
+    <div class="alert alert-danger" role="alert" style="display: none;">
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-success" role="alert" style="display: none;">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-warning" role="alert" style="display: none;">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-info" role="alert" style="display: none;">
+        <i class="fa fa-info" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                        </ul>
+    </div>
+</div>    <div class="modal fade informator-modal" id="informator" tabindex="-1" role="dialog" aria-labelledby="informatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/logo-menu.png" alt="Logo Kodilla" class="brand-logo">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body content-container">
+                <h3>Zamów szczegółowy informator</h3>
+                <h3 data-role="modal-informator-message" class="display-none">Informator został wysłany na podany adres email.</h3>
+                <h4>Zostaw email i wyślemy Ci go</h4>
+                <form class="row js-ajax-form" data-view-class="InformatorForm" action="https://kodilla.com/pl/download-guide" method="post">
+                    <input type="hidden" name="ga-pobieranie-informatora-z-modala" value="wypelnienie">
+                    <input type="hidden" name="tags[0]" value="informator">
+                                        <div class="user-data-container">
+                        <input type="text" class="form-control" name="firstname" placeholder="Imię">
+                        <input type="text" class="form-control" name="surname" placeholder="Nazwisko">
+                    </div>
+                    <div class="user-data-container">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                        <input type="text" class="form-control" name="phone" placeholder="Numer telefonu">
+                    </div>
+                    <div class="terms-box">
+                        <label>
+                            <input data-custom-message="Prosimy o zaakceptowanie regulaminu" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Akceptuję <a target="_blank" href="https://kodilla.com/pl/terms">regulamin</a>  i nie wnoszę zastrzeżeń</span>
+                        </label>
+                    </div>
+                    <div class="personal-terms-box">
+                        <label>
+                            <input data-custom-message="Jeśli chcesz otrzymać dostęp do materiałów, konieczna jest akceptacja obydwu zgód" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Chcę otrzymywać newsletter, informacje o promocjach i produktach dostępnych w Kodilla.
+                                <span class="details-button" data-action="show-details" data-identifier="personal-terms-details-informator">Czytaj więcej</span>
+                                <span class="display-none" data-identifier="personal-terms-details-informator">Wyrażam zgodę na otrzymywanie informacji handlowych od Kodilla na podany przeze mnie adres e-mail. Zgoda jest dobrowolna, jednakże niezbędna do otrzymywania informacji o produktach, promocjach i o tym, co u nas słychać. Administratorem danych jest Codemy S.A. z siedzibą we Wrocławiu, ul. Racławicka 13. Mam prawo cofnąć zgodę w każdym czasie, jednak wtedy nie będę otrzymywać informacji. Dane mogą być przetwarzane pomimo cofnięcia zgody wyłącznie w takim zakresie i celu, w jakim ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z udzieloną zgodą. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie kodilla.com, zakładka "Polityka Prywatności".</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">
+                            Pobierz Informator
+                            <i data-role="loading-icon" class="fa fa-spinner fa-spin fa-1x fa-fw display-none"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>Pobranie informatora do niczego nie zobowiązuje</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+                <section class="footer-lower">
+            <nav class="container">
+                <a class="navbar-img" href="https://kodilla.com/pl">
+                    <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168" height="30">
+                        <defs>
+                            <style>
+                                .footer-logo-fill {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                            <path id="KODILLA_copy_5_1_" class="footer-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                            <ellipse id="eye_copy_4_1_" class="footer-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" class="footer-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                        <path id="Path_2" data-name="Path 2" class="footer-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                        <path id="Path_3" data-name="Path 3" class="footer-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                        <path id="Path_4" data-name="Path 4" class="footer-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                        <path id="Path_5" data-name="Path 5" class="footer-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                        <path id="Path_6" data-name="Path 6" class="footer-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+                    </svg>
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="https://kodilla.com/pl/terms">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="https://kodilla.com/pl/privacy-policy">Polityka prywatności</a>
+                    </li>
+                    <li class="nav-item nav-item-last">© 2018 Kodilla</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2WWBH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/jquery-2.1.4.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/js.cookie-2.1.0.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/jquery-dateFormat.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/bootstrap.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/informator-modal.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/fb.js.pobrane"></script>
+<script>
+    if (document.querySelector('main.editor')) {
+        document.querySelector('body').classList.add('editor');
+    }
+</script>
+
+<!-- ActiveCampaign -->
+<script type="text/javascript">
+    // Set to false if opt-in required
+    var trackByDefault = true;
+
+    function acEnableTracking() {
+        var expiration = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 30);
+        document.cookie = "ac_enable_tracking=1; expires= " + expiration + "; path=/";
+        acTrackVisit();
+    }
+
+    function acTrackVisit() {
+        var trackcmp_email = 't_socha@wp.pl';
+        var trackcmp = document.createElement("script");
+        trackcmp.async = true;
+        trackcmp.type = 'text/javascript';
+        trackcmp.src = '//trackcmp.net/visit?actid=649095895&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+        var trackcmp_s = document.getElementsByTagName("script");
+        if (trackcmp_s.length) {
+            trackcmp_s[0].parentNode.appendChild(trackcmp);
+        } else {
+            var trackcmp_h = document.getElementsByTagName("head");
+            trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+        }
+    }
+
+    if (trackByDefault || /(^|; )ac_enable_tracking=([^;]+)/.test(document.cookie)) {
+        acEnableTracking();
+    }
+</script>
+
+        <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/underscore-min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/backbone-min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/backbone-relational.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/backbone-super.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/handlebars-v4.0.5.min.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/handlebars-ifCond.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/application.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/main.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/tracking-activities.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/notifications.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/settings.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/delete-account.js.pobrane"></script>
+<script type="text/x-translation" data-translation-name="checkAccountDeleteCalculationMessage">Wynik jest nieprawidłowy</script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/forms.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/alerts.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/inpage-alerts.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/collections.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/models.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/knowledge-base.js.pobrane"></script>
+<script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/learning-program.js.pobrane"></script>
+
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/tether.min.js.pobrane"></script>
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/prism.min.js.pobrane"></script>
+
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/bootcamp.js.pobrane"></script>
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/jquery.seourl.min.js.pobrane"></script>
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/perfect-scrollbar.jquery.min.js.pobrane"></script>
+    <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/jquery.fancybox.min.js.pobrane"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.img-modal-group").fancybox();
+        });
+    </script>
+
+                    <div class="modal fade" tabindex="-1" role="dialog" id="call-us-modal">
+    <div class="modal-dialog modal-dialog-callus" role="document">
+        <div class="modal-content call-modal">
+            <div id="call-us-step1">
+                <h2>Umów się na rozmowę z doradcą Kodilli</h2>
+                <p>Krok <span>1/2:</span> Podaj numer telefonu</p>
+                <form action="https://kodilla.com/pl/call-us/step1" method="post" id="call-us-form1">
+                    <input type="tel" name="phone" id="call-us-input-phone" placeholder="737690577">
+                    <button class="btn btn-success" id="call-us-submit-phone">Zarezerwuj rozmowę</button>
+                </form>
+                <p id="call-us-counter-holder" style="display: none;">Dzisiaj już  <span id="call-counter" data-url="https://kodilla.com/pl/call-us/counter">-</span> <span id="call-us-counter-text" data-one=" osoba zamówiła rozmowę z nami." data-few=" osoby zamówiły rozmowę z nami." data-more=" osób zamówiło rozmowę z nami."></span></p>
+                <div class="data-protection">
+                    <p>Twój numer telefonu nie będzie wykorzystywany w celach marketingowych ani przekazany dalej. Tylko oddzwonimy. Dane są przetwarzane zgodnie z <a href="https://kodilla.com/pl/polityka-prywatnosci">Polityką Prywatności</a>.</p>
+                </div>
+            </div>
+
+            <div id="call-us-step2" style="display: none;">
+                <h2>Wybierz dogodny termin i godzinę na rozmowę z doradcą</h2>
+                <p>Krok <span>2/2:</span>
+                </p><form action="https://kodilla.com/pl/call-us/step2" method="post" id="call-us-form2">
+                    <div class="select-date">
+                        <select name="date" id="call-us-input-date">
+                        </select>
+                        <select name="time" id="call-us-input-time">
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="call-us-submit-call">Oddzwońcie do mnie!</button>
+                </form>
+            </div>
+
+            <div id="call-us-step3" style="display: none;">
+                <div class="thanks">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>Dziękujemy za zamowienie rozmowy! Do usłyszenia w wybranym terminie!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <script src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/widget.js.pobrane"></script>
+    <script type="text/javascript">
+        window.fcSettings = {
+            token: '99d7ec3c-0f50-4c9a-9f5e-b741bd6a1aa7',
+            host: 'https://wchat.freshchat.com',
+            locale: 'pl',
+            tags: ["logged_in","bc_user","status_aktywny","jdp","jdp_2018-10","ppp","jdp_2018-10_aktywny_ppp"],
+            faqTags: {
+                tags: ["support"],
+                filterType: 'category'
+            },
+            config: {
+                content: {"placeholders":{"search_field":"Przeszukaj FAQ","reply_field":"Odpowiedz","csat_reply":"Wpisz swoj\u0105 odpowied\u017a"},"actions":{"csat_yes":"Tak","csat_no":"Nie","push_notify_yes":"Tak","push_notify_no":"Nie","tab_faq":"FAQ","tab_chat":"CHAT","csat_submit":"Wy\u015blij"},"headers":{"chat":"Napisz do nas","chat_help":"Witaj! W czy mo\u017cemy Ci pom\u00f3c?!","faq":"Baza wiedzy","faq_help":"Przegl\u0105daj FAQ","faq_not_available":"Brak artyku\u0142\u00f3w","faq_search_not_available":"Brak artyku\u0142\u00f3w dla frazy {{query}}","faq_useful":"Jak oceniasz przydatno\u015b\u0107?","faq_thankyou":"Dzi\u0119kujemy za Twoj\u0105 opini\u0119!","faq_message_us":"Napisz do nas!","push_notification":"Nie przegap \u017cadnej odpowiedzi! Zezwalasz na powiadomienia?","csat_question":"Czy uzyska\u0142e\u015b potrzebn\u0105 pomoc?","csat_yes_question":"Jak oceniasz nasze wsparcie?","csat_no_question":"Co mogliby\u015bmy ulepszy\u0107?","csat_thankyou":"Dzi\u0119kujemy Ci za informacje!","csat_rate_here":"Oce\u0144","channel_response":{"offline":"Aktualnie jeste\u015bmy nieobecni","online":{"minutes":{"one":"Odpowiadamy w mniej ni\u017c minut\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} minut(y)"},"hours":{"one":"Odpowiadamy w mniej ni\u017c godzin\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} godzin(y)"}}}}}
+            }
+        };
+                    window.fcSettings.lastName = 'Socha';
+            window.fcSettings.firstName = 'Tymoteusz';
+            window.fcSettings.email = 't_socha@wp.pl';
+            window.fcSettings.externalId = 't_socha@wp.pl';
+                document.getElementsByTagName('body')[0].classList.add('freshchat-enabled');
+        window.fcWidget.init( window.fcSettings );
+        window.fcWidget.on('widget:closed', function (){
+            $('body').addClass('notification-content--visible');
+        });
+    </script><div id="fc_frame" class="fc-widget-normal"><iframe id="fc_widget" name="fc_widget" title="Chat" frameborder="0" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/saved_resource.html"></iframe></div>
+    <div data-role="notifications-wrapper" class="notifications-wrapper"></div>
+
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","389137334769464");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&amp;ev=PageView&amp;noscript=1"></noscript>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/afATJJjxKE6.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><div id="fc_push_frame"><iframe id="fc_push" src="./Moduł_ 5. Poznanie i przygotowanie struktury projektu_files/index.html" frameborder="0"></iframe></div></body></html>

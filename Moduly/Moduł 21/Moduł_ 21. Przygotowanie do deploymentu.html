@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://kodilla.com/pl/bootcamp-module/146/118/3774 -->
+<html lang="pl" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="csrf-token" content="Uf0xeiwjsX7IfPpcyBTAF9iNNqDYxvUmLexyiOHL">
+
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="https://kodilla.com/static/img/icons/apple-touch-icon-60x60.png?00000">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://kodilla.com/static/img/icons/apple-touch-icon-76x76.png?00000">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://kodilla.com/static/img/icons/apple-touch-icon-120x120.png?00000">
+<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://kodilla.com/static/img/icons/apple-touch-icon-152x152.png?00000">
+<link rel="icon" type="image/png" sizes="32x32" href="https://kodilla.com/static/img/icons/favicon-32x32.png?00000">
+<link rel="icon" type="image/png" sizes="96x96" href="https://kodilla.com/static/img/icons/favicon-96x96.png?00000">
+<link rel="icon" type="image/png" sizes="16x16" href="https://kodilla.com/static/img/icons/favicon-16x16.png?00000">
+
+<link rel="canonical" href="https://kodilla.com/pl/bootcamp-module/146/118/3774">
+
+    <meta name="robots" content="noindex, follow">
+        <title>    Moduł: 21. Przygotowanie do deploymentu
+</title>
+                <script type="text/javascript" async="" src="./Moduł_ 21. Przygotowanie do deploymentu_files/js"></script><script type="text/javascript" async="" src="./Moduł_ 21. Przygotowanie do deploymentu_files/analytics.js.pobrane"></script><script type="text/javascript" async="" src="./Moduł_ 21. Przygotowanie do deploymentu_files/analytics.js.pobrane"></script><script src="./Moduł_ 21. Przygotowanie do deploymentu_files/sdk.js.pobrane" async="" crossorigin="anonymous"></script><script src="./Moduł_ 21. Przygotowanie do deploymentu_files/prism.js.pobrane" async=""></script><script id="facebook-jssdk" src="./Moduł_ 21. Przygotowanie do deploymentu_files/sdk.js(1).pobrane"></script><script async="" src="./Moduł_ 21. Przygotowanie do deploymentu_files/gtm.js.pobrane"></script><script async="" src="./Moduł_ 21. Przygotowanie do deploymentu_files/fbevents.js.pobrane"></script><script>document.documentElement.classList.remove("no-js")</script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/yall.min.js.pobrane"></script>
+<link href="./Moduł_ 21. Przygotowanie do deploymentu_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Moduł_ 21. Przygotowanie do deploymentu_files/font-awesome.min.css" rel="stylesheet">
+<link href="./Moduł_ 21. Przygotowanie do deploymentu_files/main-dc3f1a8ace.css" rel="stylesheet" type="text/css">
+                
+    <link href="./Moduł_ 21. Przygotowanie do deploymentu_files/prism.min.css" rel="stylesheet">
+
+    <link href="./Moduł_ 21. Przygotowanie do deploymentu_files/bootcamp-da6dc13ed8.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Moduł_ 21. Przygotowanie do deploymentu_files/perfect-scrollbar.css">
+    <link rel="stylesheet" href="./Moduł_ 21. Przygotowanie do deploymentu_files/jquery.fancybox.min.css" type="text/css" media="screen">
+        <script>
+    document.addEventListener("DOMContentLoaded", yall);
+    window.environment = 'production';
+    window.loggedIn = true;
+    window.domain = 'https://kodilla.com';
+            window.fbAppId = 1449248938627896;
+    window.chatService = 'FreshChat';
+    window.useMessenger = window.chatService === 'Messenger';
+    window.locale = 'pl';
+    window.lang = 'pl';
+
+    window.serverUTC       = 1556039891000;
+    window.serverOffset    = 120;
+    window.userDate        = new Date();
+    window.userUTC         = userDate.getTime();
+    window.userOffset      = userDate.getTimezoneOffset() * (-1);
+    window.userClockDiff   = userUTC - serverUTC;
+    window.diffRounded     = Math.round( userClockDiff / ( 1000 * 60 * 15 ) );
+    window.isDifferentZone = ( userOffset - serverOffset !== 0 ) ? 1 : 0;
+    window.hasWrongTime    = ( diffRounded !== 0 ) ? 1 : 0;
+    window.dateTooltipText = 'Data i godzina są podane dla Twojej strefy czasowej GMT. <br>W razie wątpliwości napisz: <u>support@kodilla.com</u>.';
+    window.wrongHourNotice = 'Godzina na Twoim urządzeniu r&oacute;żni się od godziny obowiązującej w strefie czasowej wybranej w ustawieniach Twojego urządzenia.';
+
+    var moment = undefined,
+        momentReady = function( method, method2, count ){
+            var c = ( count ) ? count : 0;
+
+            if      ( isDifferentZone && moment !== undefined ){
+                if      ( method ) { method(); }
+                else    { return false; }
+            }
+            else if ( isDifferentZone && moment === undefined ) {
+                if ( c < 20 ) {
+                    c++;
+                    setTimeout( function() { momentReady( method, method2, c ); }
+                        , 300 );
+                } else {
+                    if      ( method2 === true && method )  { method(); }
+                    else if ( method2 !== true && method2 ) { method2(); }
+                }
+            }
+            else {
+                if      ( method2 === true && method )  { method(); }
+                else if ( method2 !== true && method2 ) { method2(); }
+                else    { return false; }
+            }
+        };
+
+    if ( window.isDifferentZone && moment === undefined ) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = '/static/js/libs/moment.timezone.locales.min.js?v=2.22.2';
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+</script>
+        <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 389137334769464 );
+        fbq('track', 'PageView');
+    </script>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KN2WWBH');</script>
+    <!-- End Google Tag Manager -->
+    <link href="./Moduł_ 21. Przygotowanie do deploymentu_files/widget.css" rel="stylesheet"><style type="text/css">.fancybox-margin{margin-right:16px;}</style><script type="text/javascript" charset="utf-8" src="./Moduł_ 21. Przygotowanie do deploymentu_files/saved_resource"></script><script type="text/javascript" charset="utf-8" src="./Moduł_ 21. Przygotowanie do deploymentu_files/embedded"></script><script type="text/javascript" charset="utf-8" src="./Moduł_ 21. Przygotowanie do deploymentu_files/t_prism_sitemessages.php"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body class="chat-enabled chat-freshchat">
+<!-- Facebook Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389137334769464&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+<script>
+    document.getElementsByTagName('body')[0].classList.remove('no-js');
+    if ( window.isDifferentZone ) {
+        document.querySelector('body').classList.add('time-conversion-applied');
+    }
+    if ( window.hasWrongTime ) {
+        document.querySelector('body').classList.add('wrong-hour');
+    }
+</script>
+
+    <nav class="navbar-main hidden-sm-down dark navbar">
+    <div class="nav-container">
+        <div class="navbar-header clearfix">
+            <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbarUpper"><i class="fa fa-bars"></i></button>
+        </div>
+        <div class="collapse navbar-toggleable-sm container" id="collapsingNavbarUpper">
+            <ul class="nav navbar-nav navbar-nav-left">
+                                    <li class="nav-item nav-contact">
+    <span>Skontaktuj się z nami:</span>
+    <a href="mailto:support@kodilla.com">
+        <i class="fa fa-envelope-o"></i>
+        support@kodilla.com
+    </a>
+    <span>lub</span>
+    <a href="javascript:fcWidget.open();">
+        <i class="fa fa-comments"></i>
+        porozmawiaj na czacie
+    </a>
+</li>
+                                </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item">
+    <a class="nav-link dropdown-toggle" href="https://kodilla.com/pl/bootcamp-module/146/118/3774#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+        <img class="img-no-border ico-current-lang" src="./Moduł_ 21. Przygotowanie do deploymentu_files/ico.globe.svg">Polski
+    </a>
+    <div class="dropdown-menu-css">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="https://kodilla.com/pl"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/pl.svg">Polski</a>
+                            <a class="dropdown-item" href="https://kodilla.com/en"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/en.svg">English</a>
+                    </div>
+    </div>
+</li>
+                                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+                </li>
+                <li class="nav-item hidden-sm-down">
+    <a href="https://kodilla.com/pl/account" class="nav-link">Konto</a>
+</li>
+        <li class="nav-item">
+    <a class="analytics-track nav-link nav-link-accent" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+</li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-main light navbar">
+    <div class="container clearfix">
+        <a class="navbar-brand" href="https://kodilla.com/pl">
+            <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168px" height="30px">
+                <defs>
+                    <style>
+                        .navbar-logo-fill {
+                            fill: #0dac4b;
+                        }
+                    </style>
+                </defs>
+                <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                    <path id="KODILLA_copy_5_1_" class="navbar-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                    <ellipse id="eye_copy_4_1_" class="navbar-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                </g>
+                <path id="Path_1" data-name="Path 1" class="navbar-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                <path id="Path_2" data-name="Path 2" class="navbar-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                <path id="Path_3" data-name="Path 3" class="navbar-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                <path id="Path_4" data-name="Path 4" class="navbar-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                <path id="Path_5" data-name="Path 5" class="navbar-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                <path id="Path_6" data-name="Path 6" class="navbar-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+            </svg>
+        </a>
+        <button class="navbar-toggler pull-right collapsed" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <i class="fa fa-bars navbar-ico-open"></i>
+            <i class="fa fa-times navbar-ico-close"></i>
+        </button>
+        <ul id="navbar-main" class="nav navbar-nav pull-right collapse">
+            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Szkolenia Bootcamp
+    </a>
+    <ul class="bootcamp-list">
+                    <li class="list-sub list-sub-fe">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32">
+                <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width=".75">
+                    <polyline stroke="#02AC46" points="3.382 24.574 3.382 30.736 33.743 30.736 33.743 .375 3.382 .375 3.382 18.562"></polyline>
+                    <path stroke="#02AC46" d="M25.611 15.95L24.921 15.655C23.688 15.113 23.098 14.817 23.098 13.88 23.098 13.191 23.639 12.648 24.527 12.648 25.365 12.648 25.858 12.993 26.399 13.88L28.668 12.401C27.73 10.726 26.399 10.085 24.576 10.085 21.964 10.085 20.288 11.76 20.288 13.879 20.288 16.245 21.718 17.379 23.788 18.315L24.477 18.611C25.759 19.153 26.597 19.548 26.597 20.583 26.597 21.421 25.858 22.062 24.625 22.062 23.146 22.062 22.357 21.322 21.767 20.238L19.4 21.569C20.238 23.244 22.012 24.526 24.723 24.526 27.483 24.526 29.552 23.047 29.552 20.484 29.504 18.119 28.124 17.034 25.611 15.95zM17.823 20.238L17.823 10.282 14.866 10.282 14.866 20.189C14.866 21.668 14.274 22.012 13.289 22.012 12.303 22.012 11.859 21.322 11.416 20.533L9.001 22.012C9.691 23.491 11.07 24.674 13.388 24.674 16 24.575 17.823 23.244 17.823 20.238z"></path>
+                    <circle cx="3.382" cy="21.568" r="3.006" stroke="#02AC46"></circle>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/front-end">
+                <h4 class="bootcamp-name">Front-end: React</h4>
+                <p>Naucz się tworzyć front-end aplikacji w 4 miesiące</p>
+                <span class="bootcamp-label">nowość</span>
+            </a>
+        </li>
+                <li class="list-sub">
+            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.61 27.4"><defs><style>.stroke-grey,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75px;}.stroke-grey{stroke:#e0e0e0;}.cls-2{stroke:#02ac46;}</style></defs><title>Front i Web Developer</title><line class="stroke-grey" x1="22.2" y1="3.46" x2="24.01" y2="5.31"></line><line class="stroke-grey" x1="22.2" y1="5.31" x2="24.01" y2="3.46"></line><polyline class="stroke-grey" points="0.96 26.61 0.96 0.79 26.72 0.79 26.72 26.61 0.96 26.61"></polyline><line class="stroke-grey" x1="1.22" y1="7.98" x2="26.72" y2="7.98"></line><rect class="stroke-grey" x="17.72" y="3.49" width="1.8" height="1.8"></rect><line class="stroke-grey" x1="15.03" y1="5.28" x2="13.24" y2="5.28"></line><polyline class="cls-2" points="16.86 20.13 19.8 16.75 16.86 13.37"></polyline><polyline class="cls-2" points="10.51 20.13 7.57 16.75 10.51 13.37"></polyline><line class="cls-2" x1="15.78" y1="10.43" x2="11.67" y2="22.81"></line></svg>
+            <a href="https://kodilla.com/pl/bootcamp/webdeveloper?type=wdp">
+                <h4 class="bootcamp-name">Web Developer</h4>
+                <p>Naucz&nbsp;się tworzyć aplikacje internetowe od&nbsp;podstaw</p>
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="list-sub">
+            <svg class="menu-svg" width="32px" height="32px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>menu_java_logo</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="menu_java_logo">
+                        <g id="svg_1" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042" id="path156_2_" fill="#02AC46"></path>
+                            <path d="M10.1499999,0.051000042 C10.6109999,0.576000042 10.7619999,1.32700004 10.6309999,2.00400004 C10.4869999,2.76400004 10.0669999,3.43700004 9.56999987,4.01500004 C9.17299987,4.48200004 8.71599987,4.89400004 8.24099987,5.27700004 C7.68499987,5.72300004 7.14099987,6.20500004 6.79299987,6.83200004 C6.49799987,7.34200004 6.42999987,7.97100004 6.63099987,8.52500004 C6.95899987,9.47700004 7.72699987,10.184 8.14199987,11.082 C7.68099987,10.674 7.22999987,10.252 6.80899987,9.80600004 C6.36699987,9.33500004 5.94999987,8.83400004 5.67499987,8.24600004 C5.48699987,7.83400004 5.40399987,7.35200004 5.54699987,6.91700004 C5.68999987,6.47000004 6.00799987,6.11200004 6.32599987,5.77800004 C7.21499987,4.89000004 8.30899987,4.23700004 9.17699987,3.33400004 C9.65799987,2.83900004 10.0569999,2.24500004 10.1939999,1.56300004 C10.3059999,1.06200004 10.2529999,0.547000042 10.1499999,0.051000042 Z" id="path158_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004" id="path160_2_" fill="#02AC46"></path>
+                            <path d="M9.42299987,5.63900004 C10.3739999,4.93700004 11.4889999,4.49100004 12.6179999,4.16700004 C11.7239999,4.73600004 10.7929999,5.25600004 10.0209999,5.98800004 C9.74199987,6.25800004 9.47599987,6.56700004 9.35399987,6.94500004 C9.26099987,7.22400004 9.29899987,7.53400004 9.41299987,7.79900004 C9.61999987,8.27000004 9.96799987,8.65200004 10.2329999,9.08400004 C10.4589999,9.45200004 10.4979999,9.92300004 10.3249999,10.321 C10.0659999,10.904 9.55599987,11.331 9.02499987,11.67 C8.95699987,11.71 8.89799987,11.783 8.81499987,11.793 C9.16799987,11.473 9.44399987,11.022 9.43199987,10.537 C9.42199987,10.174 9.22099987,9.85500004 8.98699987,9.59500004 C8.50099987,9.01600004 8.09199987,8.28100004 8.17599987,7.50000004 C8.25999987,6.71800004 8.82099987,6.09000004 9.42299987,5.63900004 Z" id="path162_2_" fill="#02AC46"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311" id="path164_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M12.7999999,11.311 C13.0049999,11.061 13.3329999,10.997 13.6329999,10.957 C14.1539999,10.889 14.7069999,11.021 15.0999999,11.379 C15.4249999,11.669 15.6059999,12.12 15.5379999,12.557 C15.4639999,13.063 15.1249999,13.485 14.7429999,13.804 C14.0519999,14.358 13.1969999,14.682 12.3439999,14.898 C12.3939999,14.844 12.4469999,14.795 12.5109999,14.755 C13.1579999,14.406 13.8009999,13.999 14.2779999,13.43 C14.5669999,13.077 14.7939999,12.616 14.6979999,12.15 C14.6009999,11.61 14.0769999,11.217 13.5419999,11.188 C13.2849999,11.164 13.0449999,11.262 12.7999999,11.311 Z" id="path166_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757" id="path168_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M2.93699987,11.757 C3.83899987,11.37 4.82099987,11.119 5.80599987,11.134 C5.23299987,11.301 4.64399987,11.443 4.10399987,11.698 C3.97699987,11.766 3.82999987,11.83 3.75599987,11.963 C3.71599987,12.066 3.82499987,12.134 3.90299987,12.169 C4.23599987,12.307 4.60299987,12.326 4.96299987,12.36 C6.21899987,12.443 7.48099987,12.395 8.73199987,12.316 C9.96699987,12.237 11.1949999,12.07 12.4159999,11.874 C12.1459999,12.001 11.8719999,12.129 11.6209999,12.291 C11.4939999,12.379 11.3369999,12.404 11.1949999,12.438 C9.69299987,12.772 8.15199987,12.876 6.62299987,12.899 C6.02699987,12.904 5.43899987,12.894 4.84999987,12.855 C4.19399987,12.811 3.53099987,12.762 2.88899987,12.59 C2.70099987,12.536 2.50499987,12.477 2.35999987,12.344 C2.28499987,12.285 2.28499987,12.167 2.34899987,12.098 C2.50899987,11.934 2.73599987,11.856 2.93699987,11.757 Z" id="path170_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853" id="path172_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.09499987,13.853 C4.34999987,13.652 4.65499987,13.539 4.95699987,13.431 C4.85999987,13.549 4.72299987,13.662 4.71299987,13.824 C4.70799987,13.927 4.79099987,14.006 4.87499987,14.054 C5.03699987,14.138 5.21899987,14.167 5.39999987,14.191 C6.33999987,14.289 7.29399987,14.344 8.24499987,14.279 C9.11299987,14.235 9.97699987,14.092 10.8359999,13.941 C11.0709999,14.162 11.3509999,14.314 11.6459999,14.446 C10.6109999,14.75 9.54699987,14.927 8.47699987,15.01 C7.46599987,15.078 6.43999987,15.074 5.43499987,14.912 C5.03799987,14.838 4.62899987,14.754 4.26699987,14.568 C4.11999987,14.489 3.95299987,14.386 3.90899987,14.214 C3.87899987,14.069 3.98699987,13.936 4.09499987,13.853 Z" id="path174_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992" id="path176_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M4.66499987,15.992 C4.89199987,15.81 5.17099987,15.717 5.44499987,15.638 C5.35699987,15.722 5.19999987,15.825 5.26799987,15.967 C5.40199987,16.139 5.64599987,16.159 5.84199987,16.203 C6.67099987,16.307 7.50999987,16.375 8.33899987,16.311 C8.96699987,16.272 9.58499987,16.159 10.1979999,16.051 C10.5509999,16.258 10.9209999,16.434 11.2979999,16.59 C10.7189999,16.85 10.0949999,17.018 9.47199987,17.135 C8.42299987,17.322 7.33899987,17.346 6.28299987,17.179 C5.81699987,17.096 5.34299987,16.988 4.91999987,16.757 C4.75799987,16.664 4.58699987,16.556 4.51799987,16.374 C4.46299987,16.232 4.55199987,16.08 4.66499987,15.992 Z" id="path178_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38" id="path180_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M1.94099987,17.38 C2.39299987,17.228 2.85899987,17.105 3.33499987,17.09 C3.52599987,17.085 3.72299987,17.095 3.88899987,17.194 C3.32099987,17.228 2.75099987,17.37 2.24199987,17.631 C2.12899987,17.694 2.00199987,17.768 1.95699987,17.901 C1.95699987,18.053 2.12899987,18.103 2.24199987,18.151 C2.95399987,18.416 3.71299987,18.499 4.45999987,18.578 C6.68199987,18.764 8.91999987,18.716 11.1429999,18.514 C11.9819999,18.421 12.8259999,18.328 13.6409999,18.097 C13.8999999,18.009 14.1949999,17.921 14.3659999,17.69 C14.4699999,17.553 14.4009999,17.381 14.2989999,17.263 C14.4649999,17.357 14.6989999,17.474 14.6659999,17.7 C14.6029999,17.935 14.3609999,18.058 14.1659999,18.171 C13.5379999,18.49 12.8459999,18.652 12.1589999,18.795 C10.1619999,19.187 8.11599987,19.276 6.08499987,19.217 C4.55399987,19.162 3.02199987,19.016 1.51199987,18.755 C1.24299987,18.692 0.938999866,18.638 0.740999866,18.426 C0.613999866,18.279 0.725999866,18.073 0.848999866,17.965 C1.15699987,17.68 1.55299987,17.523 1.94099987,17.38 Z" id="path182_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058" id="path184_2_" fill="#E0E0E0"></path>
+                            <path class="fill-grey" d="M14.1699999,19.058 C14.6639999,18.886 15.1939999,18.704 15.5629999,18.312 C15.4999999,18.739 15.1309999,19.033 14.7689999,19.225 C14.0729999,19.588 13.2909999,19.755 12.5159999,19.892 C10.8779999,20.152 9.21399987,20.216 7.54999987,20.187 C6.41699987,20.152 5.27399987,20.108 4.16099987,19.873 C3.89399987,19.799 3.60999987,19.75 3.37999987,19.593 C4.37099987,19.76 5.37699987,19.829 6.38299987,19.868 C8.03599987,19.917 9.69499987,19.853 11.3379999,19.647 C12.2899999,19.514 13.2469999,19.353 14.1699999,19.058 Z" id="path186_2_" fill="#E0E0E0"></path>
+                        </g>
+                        <path class="stroke-grey" d="M25.725,21.8309333 L25.725,4.16906671 C25.725,2.01884874 23.9812191,0.275 21.8310955,0.275 L4.16890446,0.275 C2.01878088,0.275 0.275,2.01884874 0.275,4.16906671 L0.275,21.8309333 C0.275,23.9818034 2.01842105,25.725 4.16890446,25.725 L21.8310955,25.725 C23.9815789,25.725 25.725,23.9818034 25.725,21.8309333 Z" id="svg_2" stroke="#E0E0E0" stroke-width="0.55"></path>
+                    </g>
+                </g>
+            </svg>
+            <a href="https://kodilla.com/pl/bootcamp/java?type=jdp">
+                <h4 class="bootcamp-name">Java Developer</h4>
+                <p>Poznaj najpopularniejszy na&nbsp;świecie język programowania od&nbsp;zera</p>
+            </a>
+        </li>
+    </ul>
+</li>
+
+                        <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        Strefa kursanta
+    </a>
+    <ul>
+                    <li><a href="https://kodilla.com/pl/bootcamp-dashboard/146" class="nav-link">Bootcamp Java Plus 2018-10</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a></li>
+                    <li><a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a></li>
+                    <li><a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a></li>
+    </ul>
+</li>
+                            <li class="nav-item hidden-sm-down">
+    <a class="dropdown-toggle nav-link">
+        O nas
+    </a>
+    <ul class="about-us">
+        <li><a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a></li>
+        <li><a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a></li>
+        <li><a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a></li>
+    </ul>
+</li>
+                                        <li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Szkolenia Bootcamp</span>
+    <ul>
+                    <li class="nav-item list-sub-fe">
+                <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/front-end">Bootcamp Front-end: React
+                    <span class="bootcamp-label">nowość</span>
+                </a>
+            </li>
+                <li class="nav-item">
+            <a class="nav-link nav-link-with-label" href="https://kodilla.com/pl/bootcamp/webdeveloper">Bootcamp Web Developer
+                <span class="bootcamp-label">FRONT-END i BACK-END</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://kodilla.com/pl/bootcamp/java">Bootcamp Java</a>
+        </li>
+    </ul>
+</li>
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">Strefa kursanta</span>
+            <ul>
+                <li class="nav-item ">
+                                            <a class="nav-link" href="https://kodilla.com/pl/bootcamp-dashboard/146">
+                            Bootcamp   Java Plus 2018-10
+                        </a>
+                                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://kodilla.com/pl/kursy">Samodzielne kursy</a>
+                </li>
+                                    <li class="nav-item ">
+                        <a class="nav-link" href="https://chat.kodilla.com/" target="_blank">Komunikator</a>
+                    </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="https://kodilla.com/pl/projects">Moje projekty</a>
+                </li>
+            </ul>
+        </li>
+    
+        
+            <li class="nav-item hidden-md-up nav-group">
+            <span class="mobile-menu-separator">O nas</span>
+            <ul>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/mentors" class="nav-link">Mentorzy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/zespol" class="nav-link">Zespół Kodilli</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://kodilla.com/pl/about" class="nav-link">O firmie</a>
+                </li>
+            </ul>
+        </li>
+    
+<li class="nav-item hidden-md-up nav-group">
+    <span class="mobile-menu-separator">Pozostałe</span>
+    <ul>
+                                        
+        <li class="nav-item">
+            <a href="https://kodilla.com/pl/informator" class="nav-link" target="_blank">
+        Informator
+    </a>
+        </li>
+    </ul>
+
+</li>
+
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl/account">Konto</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link analytics-track" data-event="account_logout" href="https://kodilla.com/pl/sign-out">Wyloguj</a>
+    </li>
+
+        
+    <li class="nav-item hidden-md-up nav-group">
+        <span class="mobile-menu-separator">Skontaktuj się z nami</span>
+        <ul>
+            <li class="nav-item">
+                <a href="mailto:support@kodilla.com" class="nav-link">
+                    <i class="fa fa-envelope-o"></i>
+                    support@kodilla.com
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:fcWidget.open();" class="nav-link">
+                    <i class="fa fa-comments"></i>
+                    <span>Porozmawiaj na czacie</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+<li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/pl"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/pl.svg">Polski</a>
+    </li>
+    <li class="nav-item hidden-md-up">
+        <a class="nav-link" href="https://kodilla.com/en"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/en.svg">English</a>
+    </li>
+
+        </ul>
+    </div>
+</nav>
+<main class="bootcamp module page-height-fix" id="bootcamp-module">
+    <div class="table-of-contents aside-sticky">
+        <section class="container">
+            <div class="row">
+                <aside class="module-nav col-md-4 col-md-offset-8">
+                    <section class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Spis treści modułu</h4>
+                        </div>
+                        <ul class="list-group list-group-flush ps-container ps-theme-default ps-active-y" data-ps-id="d996cf6f-1028-6b5c-06df-c493985b4e6b">
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-414" class="clearfix">
+                                    <p>21.1. Tomcat</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#211-tomcat-instalacja-i-konfiguracja-tomcata" class="clearfix">Instalacja i konfiguracja Tomcata</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#211-tomcat-zadanie-wysylamy-screena" class="clearfix">Zadanie: Wysyłamy screena</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-415" class="clearfix">
+                                    <p>21.2. Uruchamianie JAR’a</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#212-uruchamianie-jara-zadanie-screen-z-postmana" class="clearfix">Zadanie: Screen z Postmana</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-416" class="clearfix">
+                                    <p>21.3. Zbudowanie WARa i wrzucenie aplikacji na Tomcat’a</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#213-zbudowanie-wara-i-wrzucenie-aplikacji-na-tomcata-pakietowanie-war" class="clearfix">Pakietowanie WAR</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#213-zbudowanie-wara-i-wrzucenie-aplikacji-na-tomcata-deploy-na-zewnetrznym-serwerze-tomcat" class="clearfix">Deploy na zewnętrznym serwerze Tomcat</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#213-zbudowanie-wara-i-wrzucenie-aplikacji-na-tomcata-zadanie-screen-ze-statusem-zdeployowanej-aplikacji" class="clearfix">Zadanie: Screen ze statusem zdeployowanej aplikacji</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-417" class="clearfix">
+                                    <p>21.4. Stworzenie skryptu shellowego</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#214-stworzenie-skryptu-shellowego-wersja-dla-windows" class="clearfix">Wersja dla Windows</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#214-stworzenie-skryptu-shellowego-wersja-dla-macos" class="clearfix">Wersja dla macOS</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#214-stworzenie-skryptu-shellowego-uruchomienie-skryptu" class="clearfix">Uruchomienie skryptu</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#214-stworzenie-skryptu-shellowego-zadanie-skrypt-do-uruchamiania-przegladarki" class="clearfix">Zadanie: Skrypt do uruchamiania przeglądarki</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-482" class="clearfix">
+                                    <p>21.5. Umieszczamy aplikację na Heroku</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#215-umieszczamy-aplikacje-na-heroku-zadanie-umieszczenie-aplikacji-back-endowej-w-chmurze-heroku" class="clearfix">Zadanie: Umieszczenie aplikacji back-endowej w chmurze Heroku</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#215-umieszczamy-aplikacje-na-heroku-zadanie-dodatkowe-przeslanie-aplikacji-na-heroku-i-polaczenie-postmanem" class="clearfix">Zadanie dodatkowe — przesłanie aplikacji na Heroku i połączenie Postmanem</a></li>
+                                                        <li class="list-group-item completed">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-483" class="clearfix">
+                                    <p>21.6. Stawiamy frontend na GitHub Pages</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#216-stawiamy-frontend-na-github-pages-wstep-do-github-pages" class="clearfix">Wstęp do GitHub Pages</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#216-stawiamy-frontend-na-github-pages-konfigurowanie-lokalnego-repozytorium-na-projekt" class="clearfix">Konfigurowanie lokalnego repozytorium na projekt</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#216-stawiamy-frontend-na-github-pages-wyslanie-zawartosci-na-serwer-github-pages" class="clearfix">Wysłanie zawartości na serwer GitHub Pages</a></li><li class="list-group-item list-group-flush sub "><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#216-stawiamy-frontend-na-github-pages-sprawdzenie-czy-strona-dziala-poprawnie" class="clearfix">Sprawdzenie, czy strona działa poprawnie</a></li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#216-stawiamy-frontend-na-github-pages-zadanie-opublikuj-strone-na-github-pages" class="clearfix">Zadanie: Opublikuj stronę na GitHub Pages</a></li>
+                                                        <li class="list-group-item current">
+                                <a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#submodule-489" class="clearfix">
+                                    <p>21.7. Dodatkowy projekt do portfolio</p>
+                                    <i class="fa fa-check-circle-o"></i>
+                                    <i class="fa fa-play-circle-o"></i>
+                                    <i class="fa fa-send-o"></i>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                </a>
+                            </li><li class="list-group-item list-group-flush sub task"><a href="https://kodilla.com/pl/bootcamp-module/146/118/3774#217-dodatkowy-projekt-do-portfolio-zadanie-rest-api-dla-biblioteki" class="clearfix">Zadanie: REST API dla biblioteki</a></li>
+                                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 387px; right: 3px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 102px;"></div></div></ul>
+                        <div class="card-block text-center">
+                                                                                                <a href="https://kodilla.com/pl/bootcamp-dashboard/146">Powrót do dashboardu</a>
+                                                                                    </div>
+                    </section>
+                </aside>
+            </div>
+        </section>
+    </div>
+    <section class="container module-content">
+        <div class="row">
+            <main class="col-md-8">
+                <section class="card">
+                    <div class="card-block module-header clearfix ">
+                        <h1 class="card-title">21. Przygotowanie do deploymentu</h1>
+                                                <i class="fa fa-bookmark fa-3x" aria-hidden="true"></i>
+                    </div>
+                                        <div class="card-block challenge">
+                        <h3>Wyzwania:</h3>
+                        <p>W rzeczywistych warunkach, jakie zastaniesz w pracy, oprogramowanie, które napiszesz, nie będzie uruchamiane produkcyjnie na Twoim komputerze. Trzeba je będzie umieścić na jakimś komputerze (serwerze), który będzie dostępny dla innych użytkowników poprzez internet. Przygotowanie odpowiedniej paczki z oprogramowaniem, jej instalację i udostępnienie na serwerze nazywamy <strong>deploymentem</strong> oprogramowania — to właśnie będzie przedmiotem tego modułu.</p>
+
+                    </div>
+                                    </section>
+                                    
+                <section id="submodule-414" class="card submodule completed" data-bootcamp-user-submodule-id="282627">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.1. <span>Tomcat</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Jak już wcześniej wspominaliśmy, aplikacje napisane w <strong>SpringBoot</strong> posiadają swój wbudowany (<i>ang. embedded</i>) serwer <strong>Tomcat</strong>. </p>
+
+<p>W rzeczywistych warunkach produkcyjnych serwery aplikacyjne, takie jak <strong>Tomcat</strong>, są jednak zainstalowane na komputerach gdzieś w serwerowni przedsiębiorstwa. Najczęściej firmy używające oprogramowania posiadają swój wyspecjalizowany dział IT, który zajmuje się nadzorowaniem i konfiguracją serwerów. Dzięki takiemu podejściu mają wszystkie maszyny w jednym miejscu i mogą łatwiej nimi zarządzać. </p>
+
+<p>Łatwiej również jest zadbać o aspekty bezpieczeństwa, choćby fizycznego dostępu do tych maszyn, ale również bezpieczeństwa na poziomie konfiguracji (np. umieszczenie wszystkich serwerów za odpowiednimi zaporami). </p>
+
+<p>Kolejną istotną rzeczą jest to, że aplikacje instaluje się najczęściej na wielu serwerach równocześnie, dzięki czemu można rozłożyć obciążenie (ruch generowany przez użytkowników) na kilka maszyn. W związku z tym, w rzeczywistym projekcie szanse na to, że ktoś pozwoli Ci zainstalować oprogramowanie wraz z własnym wbudowanym serwerem <strong>Tomcat</strong>, są raczej niewielkie. Takie podejście sprawdza się przy testowaniu oprogramowania podczas jego wytwarzania. Natomiast wdrożenie najczęściej odbywa się na zewnętrznych serwerach <strong>Tomcat</strong>.</p>
+
+<p>Musisz więc nauczyć się podstawowych rzeczy związanych z zarządzaniem zewnętrznym serwerem <strong>Tomcat</strong>, oraz nauczyć się, jak instalować na nim swoje oprogramowanie.</p>
+
+<p>Nim do tego przejdziemy, przypomnijmy sobie, czym jest serwer aplikacyjny. Serwery aplikacyjne udostępniają <strong>kontener IoC</strong>, w którym możemy umieszczać <strong>beany</strong>. <strong>Beany</strong> te mogą udostępniać usługi biznesowe — w szczególności mogą być na przykład kontrolerami RESTowymi (backend). Często również strony WWW widoczne dla użytkownika nie są statycznymi plikami HTML, lecz są "dynamicznie" generowane przez <strong>beany</strong> jako odpowiedź na napływające requesty z przeglądarek. Możemy więc powiedzieć, że <strong>beany</strong> mogą również odpowiadać za front-end.</p>
+
+<p>Na rynku istnieje dużo różnych serwerów aplikacyjnych — najpopularniejsze z nich to <strong>Tomcat</strong>, <strong>WildFly/jBoss</strong>, <strong>Websphere</strong> czy <strong>Weblogic</strong>. W ramach bootcampu będziemy używali serwera <strong>Tomcat</strong> — jest on stosunkowo prostym i "lekkim" serwerem aplikacyjnym, jednakże na nasze potrzeby w zupełności wystarczającym.</p>
+
+<h3 id="211-tomcat-instalacja-i-konfiguracja-tomcata">Instalacja i konfiguracja Tomcata</h3>
+
+<p>Przejdźmy do instalacji Tomcata.</p>
+
+<h4>Instalacja dla Windows</h4>
+
+<p>Aby zainstalować serwer <strong>Tomcat</strong> na swoim komputerze, wystarczy pobrać ze strony <a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a> z sekcji <i>Download</i> -&gt; <i>Tomcat 9</i> odpowiednią wersję (32- lub 64-bitową), a następnie pobrane archiwum zip rozpakować na dysku lokalnym komputera:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/kodilla-bootcamp-13-11-2017-1510569677-6947.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/kodilla-bootcamp-13-11-2017-1510569677-6947.png" style="width: 100%"></a>
+<p>Po kliknięciu w link z wybraną wersją, należy zapisać pobierany pakiet na dysku:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_01.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_01.png" style="width: 100%"></a>
+<p>Po zakończeniu pobierania należy otworzyć pobrany plik <strong>zip</strong>, a jego zawartość skopiować do, na przykład, głównego katalogu dysku <strong>C:</strong></p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_02.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_02.png" style="width: 100%"></a>
+
+<p>Po zakończeniu kopiowania należy ustawić zmienną środowiskową CATALINA_HOME tak, aby wskazywała na katalog, w którym zainstalowany jest serwer <strong>Tomcat</strong>. W tym celu, w eksploratorze plików kliknij prawym przyciskiem myszy w <i>Ten komputer</i>, a następnie <i>Właściwości</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_03.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_03.png" style="width: 100%"></a>
+<p>Następnie wybierz opcję <i>Zaawansowane ustawienia systemu</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_04.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_04.png" style="width: 100%"></a>
+<p>Następnie wybierz funkcję <i>Zmienne środowiskowe</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_05.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_05.png" style="width: 100%"></a>
+<p>W zmiennych użytkownika dodaj nową zmienną CATALINA_HOME i ustaw jej wartość na nazwę katalogu (z pełną ścieżką dostępu):</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_06.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_06.png" style="width: 100%"></a>
+<p>Po wykonaniu powyższych czynności, serwer <strong>Tomcat</strong> jest gotowy do uruchomienia. Wejdź do podkatalogu <i>/bin</i> i odszukaj dwa pliki: <i>startup.bat</i> oraz <i>shutdown.bat</i>. Pierwszy z nich uruchamia serwer <strong>Tomcat</strong>, a drugi zatrzymuje serwer:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_07.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_07.png" style="width: 100%"></a>
+<p>Uruchom serwer za pomocą skryptu <i>startup.bat</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_08.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_08.png" style="width: 100%"></a>
+<p>Komunikat zaznaczony czerwonym kolorem mówi o tym, że serwer aplikacyjny wystartował. </p>
+
+<div class="bc-note alert-danger">
+    <h4 class="alert-heading text-center">Ważne</h4>
+    <p>Po każdej zmianie zmiennych środowiskowych, niezbędne jest zamknięcie i ponowne otwarcie okien terminala (cmd). Dzieje się tak dlatego, że terminal odczytuje wartości zmiennych środowiskowych w chwili uruchamiania się. Dotyczy to również terminala zawartego wewnątrz IntelliJ.</p>
+    <p>Jeżeli więc w momencie zmiany zmiennych środowiskowych były otwarte okna terminala lub IntelliJ, musisz uruchomić je ponownie, aby zmiany w zmiennych środowiskowych były dla nich widoczne.</p>
+</div>
+
+
+<h4>Instalacja dla macOS</h4>
+
+<p>Po pobraniu pliku .zip i jego rozpakowaniu, udaj się do tej ścieżki przy pomocy Terminala, następnie przejdź do katalogu <strong>bin </strong>i uruchom serwer za pomocą komendy <strong>./catalina.sh start</strong></p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_09.jpg" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_09.jpg" style="width: 100%"></a>
+
+<p>Po udanym starcie Tomcata powinna zaprezentować się wiadomość <strong>Tomcat started</strong>.</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_10.jpg" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_10.jpg" style="width: 100%"></a>
+<h4>Pierwsza odsłona serwera Tomcat.</h4>
+<p>Aby przekonać się, jak wygląda "strona tytułowa" serwera <strong>Tomcat</strong>, uruchom przeglądarkę internetową, a następnie przejdź do strony o adresie: <a href="http://localhost:8080/" rel="nofollow">http://localhost:8080</a>. Powinno się ukazać okno startowe serwera:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_11.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_11.png" style="width: 100%"></a>
+<p>W kolejnym submodule dowiesz się, co należy zrobić, aby nasz program nadawał się do zainstalowania na zewnętrznym serwerze.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="211-tomcat-zadanie-wysylamy-screena">Zadanie: <span class="task-title">Wysyłamy screena</span></h3>
+                        <div class="task-content">
+                            <p>Przy okazji tego zadania będzie okazja, aby zapoznać się z wygodnym narzędziem do robienia screenów, jakim jest <strong>scr.hu</strong>. Wyszukaj w internecie, jak robi się zrzuty ekranu przy pomocy tego narzędzia, a następnie wykonaj zrzut ekranu z główną stroną serwera <strong>Tomcat</strong> (<a href="http://localhost:8080/" rel="nofollow">http://localhost:8080</a>) i prześlij go mentorowi.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282627" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/crud_tasks/blob/master/src/screenshots/Apache%20Tomcat_9.0.16-localhost8080.png">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-415" class="card submodule completed" data-bootcamp-user-submodule-id="282628">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.2. <span>Uruchamianie JAR’a</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Standardowo, nasz projekt (w tym przypadku to projekt <strong>tasks</strong>, który tworzyliśmy w ostatnich modułach) podczas procesu budowy aplikacji (<strong>gradlew build</strong>) tworzy wykonywalny (czyli taki, który możemy uruchomić) plik wynikowy z rozszerzeniem <strong>JAR</strong>. Można go znaleźć w drzewie projektu w katalogu <strong>build\libs</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_12.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_12.png" style="width: 100%"></a>
+<p>Spróbujmy odnaleźć go w systemie plików — w tym celu kliknij na nim prawym przyciskiem myszy i wybierz funkcję "<i>Show in explorer</i>":</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_13.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_13.png" style="width: 100%"></a>
+<p>Twoim oczom powinien ukazać się plik z rozszerzeniem <strong>JAR</strong>, otwarty w eksploratorze plików. Widoczna jest adnotacja dotycząca typu pliku: <i>Executable Jar File</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_14.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_14.png" style="width: 100%"></a>
+<p>Co właściwie oznacza skrót "JAR"? Jest to skrót od <i>Java Archive</i>. Dlaczego <i>archive</i>? Ponieważ plik JAR to po prostu... archiwum ZIP :) Nie wierzysz? Możesz to bardzo prosto sprawdzić! Zmień nazwę tego pliku — kliknij w niego prawym przyciskiem myszy, a następnie wybierz funkcję "<i>Zmień nazwę</i>":</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_15.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_15.png" style="width: 100%"></a>
+<p>I dokonaj zmiany nazwy tak, aby zmienić rozszerzenie z JAR na ZIP:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_16.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_16.png" style="width: 100%"></a>
+<p>Po zmianie nazwy okno eksploratora plików powinno wyglądać tak:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_17.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_17.png" style="width: 100%"></a>
+<p>Możesz teraz wejść "do wnętrza" tego archiwum (przy pomocy dwukliku):</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_18.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_18.png" style="width: 100%"></a>
+<p>Jak możesz zauważyć (pooglądaj zawartość) — w środku pliku JAR można znaleźć wszystkie klasy naszej aplikacji (w postaci skompilowanej, czyli plików z rozszerzeniem .<strong>class</strong>, zamiast <strong>.java</strong>). Możesz znaleźć również katalog <strong>META-INF</strong>, który zawiera plik o nazwie <strong>MANIFEST.MF</strong>, który jest tak zwanym deskryptorem deploymentu. Zawartość tego pliku przedstawia się następująco:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_19.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_19.png" style="width: 100%"></a>
+<p>Zawiera on informacje o klasie startowej naszej aplikacji oraz o klasie, która ma być użyta w charakterze klasy uruchomieniowej wbudowanego serwera <strong>Tomcat</strong>. Plik ten jest generowany automatycznie i nie musisz nic w nim zmieniać, warto jednak wiedzieć, że taki plik istnieje.</p>
+
+<p>Możliwe jest również samodzielne stworzenie takiego archiwum <strong>JAR</strong> — trzeba tylko przygotować plik MANIFEST.MF, stworzyć odpowiednią strukturę katalogów i wygenerować archiwum ZIP zawierające manifest, oraz skompilowane klasy Javy. Na końcu wystarczy zmienić nazwę archiwum, a konkretnie rozszerzenie na JAR i gotowe! Na szczęście ten proces jest zautomatyzowany i całą "brudną robotę" robi za nas <strong>Gradle </strong>:)</p>
+
+<p>Aby przekonać się, że nasz plik <strong>JAR</strong> rzeczywiście jest plikiem wykonywalnym, spróbujemy... uruchomić go spoza środowiska <strong>IntelliJ</strong> :)</p>
+
+<p>Po pierwsze, przywróć naszemu plikowi z powrotem rozszerzenie <strong>JAR</strong>. Następnie uruchom wiersz poleceń i przejdź do katalogu, w którym znajduje się <strong>JAR</strong>, który będziemy chcieli uruchomić. Obecność pliku w katalogu możesz sprawdzić poleceniem <strong>dir</strong> (dla <strong>macOS </strong>poleceniem <strong>ls</strong>):</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_20.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_20.png" style="width: 100%"></a>
+<p>Po upewnieniu się, że znajdujemy się we właściwym katalogu, możesz uruchomić aplikację przy pomocy polecenia <strong>java -jar</strong> <strong><nazwa-pliku></nazwa-pliku></strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_21.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_21.png" style="width: 100%"></a>
+<p>Po uruchomieniu powyższego polecenia będzie widoczny proces uruchamiania się wbudowanego serwera <strong>Tomcat</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_22.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_22.png" style="width: 100%"></a>
+<p>Po zakończeniu procesu uruchamiania, w logach pojawi się informacja o tym, że serwer <strong>Tomcat</strong> się uruchomił:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_23.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_23.png" style="width: 100%"></a>
+<p>Możesz teraz uruchomić <strong>Postmana</strong> i sprawdzić, czy działają usługi udostępniane przez naszą aplikację:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_24.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_24.png" style="width: 100%"></a>
+<p>Jak widzisz — wszystko działa! W ten sposób możesz przygotować swój program i np. wysłać komuś. Osoba, która będzie chciała uruchomić u siebie Twój program, musi mieć jedynie zainstalowaną wirtualną maszynę Javy (JVM).</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="212-uruchamianie-jara-zadanie-screen-z-postmana">Zadanie: <span class="task-title">Screen z Postmana</span></h3>
+                        <div class="task-content">
+                            <p>Przy pomocy narzędzia <strong>scr.hu</strong> wykonaj screen z programu <strong>Postman</strong> prezentujący response body dla requestu wysłanego na usługę getTask. Link do screena wklej poniżej i wyślij do mentora.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282628" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/crud_tasks/blob/master/src/screenshots/postman_get_task.png">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-416" class="card submodule completed" data-bootcamp-user-submodule-id="282629">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.3. <span>Zbudowanie WARa i wrzucenie aplikacji na Tomcat’a</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Aby przygotować naszą aplikację do <strong>deployu</strong> na zewnętrznym serwerze <strong>Tomcat</strong>, musimy nieco ją zmodyfikować. Po pierwsze, musimy spowodować, aby została przepakowana do pliku wynikowego z rozszerzeniem <strong>WAR</strong> (<i>ang. web archive</i>).</p>
+
+<p>Czym różni się pakiet <strong>JAR</strong> od pakietu <strong>WAR</strong>? Oba rodzaje pakietowania przeznaczone są do przygotowywania finalnych (i wykonywalnych) paczek ze skompilowanym oprogramowaniem.</p>
+<ul>
+    <li>Plik <strong>JAR</strong> zawiera: skompilowane klasy, potrzebne biblioteki oraz pliki <strong>.properties</strong> z właściwościami aplikacji — plik ten przeznaczony jest do aplikacji, które możemy określić jako "<i>desktopowe</i>", czyli takie, które nie wymagają serwera aplikacyjnego lub serwera WWW do swojego działania.</li>
+    <li>Plik <strong>WAR</strong> zawiera to samo co plik <strong>JAR</strong>, a ponadto pliki niezbędne do uruchomienia jako aplikacja WWW (pliki <strong>HTML</strong>, <strong>JS</strong> oraz inne). Pliki <strong>WAR</strong> przeznaczone są do uruchamiania na serwerach WWW lub serwerach aplikacyjnych (albo jednych i drugich zarazem).</li>
+</ul>
+
+<h3 id="213-zbudowanie-wara-i-wrzucenie-aplikacji-na-tomcata-pakietowanie-war">Pakietowanie WAR</h3>
+<p>Jak pamiętasz, aplikacje napisane z użyciem <strong>SpringBoot</strong> posiadają wbudowany (<i>embedded</i>) serwer <strong>Tomcat</strong>. Pierwszą czynnością, którą musimy wykonać, aby nasza aplikacja zaczęła być pakowana do <strong>WAR</strong>, jest modyfikacja pliku <strong>build.gradle</strong> w taki sposób, aby poinformować <strong>Gradle</strong>, że serwer <strong>Tomcat</strong> będzie dostarczony z zewnątrz podczas działania aplikacji. W tym celu w sekcji <strong>dependencies</strong> dodaj wpis:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_25.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_25.png" style="width: 100%"></a>
+
+<p>Oznaczenie zakresu jako <strong>providedRuntime</strong> oznacza, że ta biblioteka będzie dostarczana "z zewnątrz" podczas działania programu.</p>
+
+<p>Wart zaznaczenia jest fakt, że tak przygotowana aplikacja wciąż zachowa możliwość samodzielnego uruchamiania przy pomocy polecenia <strong>java -jar</strong>!</p>
+
+<p>Kolejną zmianą w pliku <strong>build.gradle</strong> jest dołączenie plugina <strong>war</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/kodilla-bootcamp-31-07-2018-1533038808-6726.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/kodilla-bootcamp-31-07-2018-1533038808-6726.png" style="width: 100%"></a>
+
+<p>Ostatnia już zmiana to dwie niewielkie modyfikacje głównej klasy programu — klasy <strong>TasksApplication</strong>:</p>
+<ul>
+    <li>Klasa <strong>TasksApplication</strong> musi rozszerzać klasę abstrakcyjną <strong>SpringBootServletInitializer</strong>.</li>
+    <li>W klasie <strong>TasksApplication</strong> musi znaleźć się nadpisana implementacja metody <strong>configure(SpringApplicationBuilder application)</strong>, pochodząca z klasy <strong>SpringBootServletInitializer</strong>.</li>
+</ul>
+
+<p>Spójrz na poniższy snippet:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_27.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_27.png" style="width: 100%"></a>
+
+<p>Po wykonaniu powyższych czynności i zbudowaniu aplikacji przy pomocy polecenia <strong>gradlew build,</strong> w katalogu <i>build/libs</i> pojawi się oczekiwany przez nas plik z rozszerzeniem <strong>WAR</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_28.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_28.png" style="width: 100%"></a>
+
+<p>Jeżeli ponownie zajrzysz do wnętrza utworzonego pliku <strong>WAR</strong> (tak, to znowu jest archiwum ZIP), to zauważysz, że w podkatalogu <i>WEB-INF\lib-provided</i> znajdują się biblioteki wbudowanego serwera <strong>Tomcat</strong>. To właśnie dlatego nasz plik <strong>WAR</strong> nadal zachowuje zdolność autonomicznego uruchamiania (bez zewnętrznego serwera <strong>Tomcat</strong>) — w sytuacji gdy uruchamiany jest poza zewnętrznym serwerem, skorzysta z nadal dołączonych bibliotek <i>embedded</i>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_29.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_29.png" style="width: 100%"></a>
+
+<p>Czyli — nadal możliwe jest uruchomienie naszej aplikacji przy pomocy polecenia <strong>java -jar</strong>, jako nazwę pliku należy jednak podać nazwę archiwum <strong>WAR</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_30.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_30.png" style="width: 100%"></a>
+
+<p>Spróbujemy teraz zdeployować nasz plik <strong>WAR</strong> na zewnętrznym serwerze.</p>
+
+<h3 id="213-zbudowanie-wara-i-wrzucenie-aplikacji-na-tomcata-deploy-na-zewnetrznym-serwerze-tomcat">Deploy na zewnętrznym serwerze Tomcat</h3>
+
+<p>Nim przejdziemy do deploymentu aplikacji, musimy nieco skonfigurować nasz serwer. Znajdź katalog, w którym masz zainstalowany serwer <strong>Tomcat</strong> na dysku, a w nim podkatalog o nazwie <strong>conf</strong>. Zlokalizuj wewnątrz plik o nazwie <i>tomcat-users.xml</i> i otwórz go przy pomocy dowolnego edytora plików tekstowych:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_31.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_31.png" style="width: 100%"></a>
+
+<p>W końcowej części pliku (przed znacznikiem zamykającym <strong></strong>) umieść następujące dwie linie i zapisz plik:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_32.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_32.png" style="width: 100%"></a>
+
+<p>Dodanie powyższych dwóch linijek spowoduje dodanie nowego użytkownika o nazwie <strong>kodilla</strong> (z takim samym hasłem) oraz nadanie mu roli <strong>manager-gui</strong>, która jest niezbędna do tego, aby użytkownik ten posiadał dostęp do konsoli administracyjnej serwera.</p>
+
+<p>Jeżeli masz uruchomiony serwer <strong>Tomcat</strong>, to go zatrzymaj przy pomocy polecenia <strong>shutdown.bat</strong> (<strong>./catalina.sh stop</strong> dla macOS).</p>
+<p>Następnie uruchom serwer <strong>Tomcat</strong> przy pomocy polecenia <strong>startup.bat</strong> (w podkatalogu <i>bin</i> serwera) lub polecenia <strong>./catalina.sh start</strong> dla <strong>macOS</strong>.</p>
+
+<p>Po uruchomieniu serwera otwórz w przeglądarce internetowej adres <u><a href="http://localhost:8080/" rel="nofollow">http://localhost:8080/</a></u>. Spowoduje to wyświetlenie okna startowego serwera <strong>Tomcat</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_33.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_33.png" style="width: 100%"></a>
+
+<p>Następnie uruchom (zaznaczoną na powyższym ekranie czerwoną strzałką) aplikację konsoli administracyjnej serwera. Po drodze należy podać login i hasło (<strong>kodilla </strong>/ <strong>kodilla</strong>). Po uruchomieniu konsoli, na ekranie pojawi się mniej więcej taki ekran:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_34.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_34.png" style="width: 100%"></a>
+
+<p>Po przescrollowaniu okna nieco niżej, Twoim oczom ukaże się sekcja pól związanych z deploymentem Twoich własnych aplikacji (plików <strong>WAR</strong>):</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_35.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_35.png" style="width: 100%"></a>
+
+<p>Spróbujemy teraz dokonać deployu naszej aplikacji. Wybierz przycisk "<i>Wybierz plik</i>", a następnie wskaż plik <strong>WAR</strong>, który przed chwilą został zbudowany w środowisku <strong>IntelliJ</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_36.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_36.png" style="width: 100%"></a>
+
+<p>Po wybraniu pliku jego nazwa pojawi się w panelu. Użyj przycisku "<i>Deploy</i>", aby zainstalować aplikację na serwerze:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_37.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_37.png" style="width: 100%"></a>
+
+<p>Po kilku(nastu) sekundach oczekiwania nasza aplikacja zostanie zainstalowana i pojawi się na liście aplikacji serwera <strong>Tomcat</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_38.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_38.png" style="width: 100%"></a>
+
+<p>Informacja <strong>true</strong> w kolumnie <i>Running</i> informuje nas o tym, że aplikacja pracuje. Po wskazaniu aplikacji kursorem myszy, na dole wyświetli się adres URL, pod jakim aplikacja jest dostępna. Zauważ, że bazowym adresem URL dla naszej aplikacji jest <u><a href="http://localhost:8080/tasks-0.0.1-SNAPSHOT" rel="nofollow">http://localhost:8080/tasks-0.0.1-SNAPSHOT</a></u> — od tego miejsca dopiero będziemy dopisywali adresy naszych usług RESTowych. Przykład wywołania poniżej:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_39.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_39.png" style="width: 100%"></a>
+
+<p>Jak widać na screenie powyżej, aplikacja działa! W oknie przeglądarki pojawiły się obiekty pobrane przez naszą usługę z bazy danych w formacie JSON :)</p>
+
+<p>Jednak jej adres URL jest... daleki od naszych oczekiwań, jeżeli tak łagodnie możemy to nazwać. Na szczęście istnieje sposób na rozwiązanie tego problemu.</p>
+
+<h4>Zmiana bazowego adresu URL aplikacji na serwerze Tomcat</h4>
+
+<p>W jaki sposób tworzony jest adres URL aplikacji zainstalowanej na serwerze <strong>Tomcat</strong>? To bardzo proste — do adresu <a href="http://localhost:8080/" rel="nofollow">http://localhost:8080/</a> "doklejana" jest nazwa aplikacji, a następnie w kontekście tak "sklejonego" URL można podawać dalsze ścieżki względne wynikające z aplikacji. Nazwa aplikacji (u nas tasks-0.0.1-SNAPSHOT) to po prostu nazwa pliku <strong>WAR</strong>. Spróbujemy teraz zmienić tę nazwę. Najpierw odinstaluj zainstalowaną przed chwilą aplikację tasks-0.0.1-SNAPSHOT:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_40.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_40.png" style="width: 100%"></a>
+
+<p>Następnie zmień nazwę wygenerowanego pliku <strong>WAR</strong> na <i>crud.war</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_41.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_41.png" style="width: 100%"></a>
+
+<p>Aby zdeployować tę aplikację, możesz skorzystać — tak jak w przypadku poprzedniej aplikacji — z konsoli administracyjnej, tym razem jednak pokażemy Ci inny sposób na to, jak można dokonać deployu aplikacji.</p>
+
+<p>Zatrzymaj serwer <strong>Tomcat</strong> przy pomocy polecenia <strong>shutdown.bat</strong> (dla <strong>macOS</strong> będzie to polecenie <strong>./catalina.sh stop</strong>). Następnie, skopiuj plik <i>crud.war</i> do podkatalogu <i>webapps</i> serwera <strong>Tomcat</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_42.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_42.png" style="width: 100%"></a>
+
+<p>Po umieszczeniu naszego pliku <strong>WAR</strong> w katalogu <i>webapps</i>, uruchom ponownie serwer <strong>Tomcat</strong> przy pomocy polecenia <strong>startup.bat</strong> (dla <strong>macOS</strong> przy pomocy polecenia <strong>./catalina.sh start</strong>). Gdy serwer się uruchomi przejdź do jego konsoli administracyjnej:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_43.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_43.png" style="width: 100%"></a>
+
+<p>Zauważysz w niej, że pojawiła się aplikacja o nazwie <strong>/crud</strong> — to właśnie nasza aplikacja. Sprawdźmy czy działa, uruchamiając jej usługę <strong>getTasks</strong> w przeglądarce. Po wpisaniu adresu <a href="http://localhost:8080/crud/v1/task/getTasks" rel="nofollow">http://localhost:8080/crud/v1/task/getTasks</a> Twoim oczom powinien się ukazać znajomy już widok:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_44.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_44.png" style="width: 100%"></a>
+
+<p>Nazwę naszego wynikowego pliku <strong>WAR</strong> możemy również ustawić w plliku <strong>build.gradle</strong>, poprzez umieszczenie w nim zapisu:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_45.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_45.png" style="width: 100%"></a>
+
+<p>Pozostawmy jednak nasz plik <strong>build.gradle</strong> bez zmian — spróbujemy napisać skrypt shellowy (skrypt wsadowy), który zautomatyzuje nieco naszą pracę.</p>
+
+<p>Warto wiedzieć również, że wiele serwerów aplikacyjnych (w tym <strong>Tomcat</strong>) oferuje usługę tzw. <strong>Hot Deploy</strong>, która pozwala na undeploy oraz deploy aplikacji poprzez usuwanie i wgrywanie plików do katalogu <i>webapps</i> w trakcie działania serwera — bez konieczności jego zatrzymywania. Często jednak prowadzi to do wycieku zasobów serwera (np. nie są zwalniane wszystkie zarezerwowane obszary pamięci serwera) i lepiej (bezpieczniej) jest po prostu serwer zatrzymać i uruchomić ponownie. W ten sposób można uniknąć trudnych do zdiagnozowania problemów.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="213-zbudowanie-wara-i-wrzucenie-aplikacji-na-tomcata-zadanie-screen-ze-statusem-zdeployowanej-aplikacji">Zadanie: <span class="task-title">Screen ze statusem zdeployowanej aplikacji</span></h3>
+                        <div class="task-content">
+                            <p>Twoim zadaniem jest zdeployowanie aplikacji (pod nazwą <i>crud.war</i>) na zewnętrznym serwerze <strong>Tomcat</strong>. Jako dowód wykonania powyższego ćwiczenia, zrób screen konsoli administracyjnej <strong>Tomcat</strong>, na którym widać, że aplikacja jest zainstalowana i posiada status <i>Running</i>=<i>true</i>. Link do screena wklej poniżej i prześlij do mentora.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282629" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/crud_tasks/blob/master/src/screenshots/tomcat_crud_true.png">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-417" class="card submodule completed" data-bootcamp-user-submodule-id="282630">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.4. <span>Stworzenie skryptu shellowego</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Przygotujemy teraz skrypt, który zautomatyzuje nasz proces deploymentu nowych aplikacji na serwerze <strong>Tomcat</strong>.</p>
+
+<p>Skrypty tego typu piszemy najczęściej przy pomocy poleceń wiersza poleceń (czyli komend DOSa — dla Windows) lub przy pomocy poleceń terminala <i>bash</i> (czyli po prostu poleceń linuksowych — dla macOS lub Linuksa). Skrypty takie zapisujemy w pliku tekstowym, wypisując w kolejnych liniach instrukcje do wykonania. Pliki te powinny mieć rozszerzenie:</p>
+
+<ul>
+    <li><strong>.bat</strong> — dla Windows (<i>ang. </i><i><strong>Bat</strong></i><i>ch File</i> — czyli "plik wsadowy")</li>
+    <li><strong>.sh</strong> — dla macOS oraz Linux (<i>ang. Shell script</i> — czyli "skrypt powłoki")</li>
+</ul>
+
+<p>Skrypty można pisać również w językach programowania, np. Python lub Groovy. My jednak pozostaniemy przy prostszej formie — formie instrukcji dla wiersza poleceń.</p>
+
+<p>W tym celu ustaw się w drzewie projektów na projekcie <strong>tasks</strong> i przy pomocy prawego przycisku myszy wybierz funkcję <i>New-&gt;File</i>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_46.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_46.png" style="width: 100%"></a>
+
+<p>Jako nazwę pliku podaj <i>runcrud.bat </i>(dla <strong>macOS</strong> będzie to <i>runcrud.sh</i>):</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_47.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_47.png" style="width: 100%"></a>
+
+<p>Co ma zrobić nasz skrypt? Kilka czynności:</p>
+
+<ol>
+    <li>Zbudować aplikację</li>
+    <li>Zmienić nazwę wygenerowanego pliku <strong>WAR</strong></li>
+    <li>Zatrzymać serwer <strong>Tomcat</strong></li>
+    <li>Skopiować nasz plik <strong>WAR</strong> do katalogu <i>webapps</i> serwera <strong>Tomcat</strong></li>
+    <li>Uruchomić serwer <strong>Tomcat</strong></li>
+</ol>
+
+<p>Do dzieła!</p>
+
+<h3 id="214-stworzenie-skryptu-shellowego-wersja-dla-windows">Wersja dla Windows</h3>
+
+<p>Nasz skrypt wykona po kolei wszystkie potrzebne czynności. Jako pierwszą — zbuduje aplikację.</p>
+
+<h4>Budowa aplikacji</h4>
+
+<p>Zbudowanie aplikacji możemy uzyskać bardzo prosto — wystarczy uruchomić polecenie <strong>gradlew build</strong>, zapiszmy je więc:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_48.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_48.png" style="width: 100%"></a>
+
+<p>Teraz trudniejsza część — musimy jakoś zareagować na błędy, które potencjalnie mogą się wydarzyć podczas budowania aplikacji. Nie chcemy zatrzymywać <strong>Tomcata</strong> i deployować popsutej aplikacji.</p>
+
+<p>Sukces wykonania poprzedniej operacji w skypcie możemy sprawdzić poprzez zbadanie zmiennej środowiskowej <strong>ERRORLEVEL</strong>. Jeżeli wszystko poszło OK, będzie ona miała wartość 0. Jeżeli wystąpiły błędy, będzie to wartość różna od zera.</p>
+
+<p>Do obsłużenia ewentualnego błędu skorzystamy następujących instrukcji:</p>
+
+<ul>
+    <li><strong>%ERRORLEVEL%</strong> — poprzez zapis z użyciem symbolu <strong>%..%</strong> uzyskujemy dostęp do zmiennej środowiskowej o podanej nazwie, tu: <strong>ERRORLEVEL</strong></li>
+    <li><strong>if</strong> — instrukcja warunkowa postaci <strong>if <warunek> <instrukcja></instrukcja></warunek></strong>, która działa w ten sposób, że gdy warunek <strong><warunek></warunek></strong> jest spełniony, to instrukcja <strong><instrukcja></instrukcja></strong> zostanie wykonana</li>
+    <li><strong>goto</strong> — instrukcja skoku do podanej etykiety w skrypcie</li>
+    <li><strong>:etykieta</strong> — w ten sposób oznaczamy dane miejsce w skrypcie etykietą o nazwie np. <strong>etykieta</strong>, do którego można skoczyć z innego miejsca skryptu przy pomocy instrukcji <strong>goto</strong>.</li>
+    <li><strong>rem</strong> — komentarz</li>
+    <li><strong>@rem</strong> — dodanie znaku <strong>@</strong> przed instrukcją powoduje, że nie będzie ona wyświetlana w oknie konsoli — tutaj nie będzie wyświetlana instrukcja <strong>rem</strong>. Domyślnie każda instrukcja skryptu jest wyświetlana na ekranie konsoli przed wykonaniem (również instrukcja <strong>rem</strong> czyli komentarz). Dzięki operatorowi <strong>@</strong> możemy wyłączyć wyświetlanie instrukcji na ekranie — ale będą one nadal wykonywane</li>
+    <li><strong>echo</strong> — wyświetla linijkę tekstu</li>
+    <li><strong>echo.</strong> — wyświetla pustą linię</li>
+    <li><strong>call</strong> — polecenie pozwalające na wywołanie innego pliku wsadowego (.bat) z drugiego pliku wsadowego</li>
+    <li><strong>del</strong> — polecenie usuwające plik z dysku</li>
+    <li><strong>ren</strong> — polecenie zmieniające nazwę pliku</li>
+</ul>
+
+<p>Uzbrojeni w "amunicję" w postaci zestawu instrukcji piszemy dalszy fragment naszego skryptu:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_49.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_49.png" style="width: 100%"></a>
+
+<p>Jak działa powyższy skrypt?</p>
+
+<ul>
+    <li>W linii nr 1 uruchamiany jest <strong>gradlew build </strong>przy pomocy polecenia <strong>call</strong>.</li>
+    <li>Linia nr 2 to sprawdzenie, czy podczas <strong>gradlew build</strong> nie pojawiły się błędy. Jeżeli nie było błędów, to następuje skok do etykiety <strong>rename</strong> (czyli do linii nr 7) — tam znajdzie się dalszy ciąg naszego skryptu.</li>
+    <li>Jeżeli w linii nr 2 stwierdzono wystąpienie błędu, to wykonywanie skyptu jest kontynuowane i przechodzi do linii nr 3.</li>
+    <li>Linie nr 3 i 4 to wyświetlenie komunikatu o błędzie.</li>
+    <li>W linii nr 5 następuje ominięcie dalszej części skryptu i przeskakujemy do etykiety <strong>fail</strong>, czyli do linii nr 12.</li>
+    <li>Od linii nr 12 skrypt wykonuje się już do końca linia po linii, wyświetlając informacje o tym, że wystąpiły błędy, oraz że wykonywanie skryptu się zakończyło.</li>
+    <li>Jeżeli wykonanie <strong>gradlew build</strong> zakończyło się bez błędów, to skrypt kontynuuje swoje działania od etykiety <strong>rename</strong>. Na końcu wywołując polecenie <strong>goto end</strong>, aby ominąć wyświetlenie informacji o błędzie.</li>
+</ul>
+
+<p>Przejdziemy teraz do zmiany nazwy pliku.</p>
+
+<h4>Zmiana nazwy pliku WAR</h4>
+
+<p>Dopisz kolejne linijki do skryptu rozpoczynając od etykiety <strong>rename</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_50.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_50.png" style="width: 100%"></a>
+
+<p>Przeanalizujmy, co tu się dzieje:</p>
+
+<ul>
+    <li>W linii nr 8 usuwamy poprzednią wersję pliku <i>crud.war</i> — gdybyśmy tego nie zrobili, wówczas polecenie <strong>ren</strong> zgłosiłoby błąd.</li>
+    <li>W linii nr 9 zmieniamy nazwę pliku <strong>WAR</strong>, tak aby odpowiadała naszym potrzebom.</li>
+    <li>W linii 10 sprawdzamy, czy poprzednie operacje wykonały się bez błędu. Jeżeli tak, to przechodzimy do etykiety <strong>stoptomcat</strong>.</li>
+    <li>Jeżeli były błędy, to w linii 11 wyświetlamy komunikat i przechodzimy do etykiety <strong>fail</strong>.</li>
+</ul>
+
+<p>Kolejnym krokiem jest zatrzymanie serwera <strong>Tomcat</strong>.</p>
+
+<h4>Zatrzymanie serwera Tomcat</h4>
+
+<p>Serwer <strong>Tomcat</strong> zatrzymamy przy pomocy polecenia <strong>shutdown.bat</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_51.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_51.png" style="width: 100%"></a>
+
+<p>W linii nr 15 wywołujemy skrypt zatrzymujący serwer <strong>Tomcat</strong>. Do jego odnalezienia wykorzystujemy zmienną środowiskową <strong>CATALINA_HOME</strong>, która wskazuje główny katalog <strong>Tomcata</strong>. Zwróć uwagę na to, że w tym przypadku nie obsługujemy ewentualnego błędu — może się przecież zdarzyć, że serwer <strong>Tomcat</strong> nie był uruchomiony. Taka sytuacja jednak nam tak naprawdę nie przeszkadza i wykonywanie skryptu może być kontynuowane.</p>
+
+<h4>Skopiowanie pliku WAR</h4>
+
+<p>Aby skopiować plik, dopisujemy kolejne linie do naszego skryptu, od etykiety <strong>copyfile</strong> począwszy:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_52.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_52.png" style="width: 100%"></a>
+
+<p>W linii nr 18 kopiujemy nasz plik <i>crud.war</i> do katalogu <i>webapps</i> serwera <strong>Tomcat</strong>. Następnie sprawdzamy, czy nie wystapiły błędy. Jeżeli nie, wówczas przechodzimy do miejsca oznaczonego etykietą <strong>runtomcat</strong>.</p>
+
+<h4>Uruchomienie serwera Tomcat</h4>
+
+<p>Aby uruchomić serwer <strong>Tomcat</strong>, wywołamy skrypt <strong>startup.bat</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_53.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_53.png" style="width: 100%"></a>
+
+<p>W linii 24 wywołujemy <strong>startup.bat</strong>, co kończy działanie skryptu.</p>
+
+<p>Pełny kod skryptu został umieszczony poniżej:</p>
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java">call gradlew build
+<span class="token keyword keyword-if">if</span> <span class="token string">"%ERRORLEVEL%"</span> <span class="token operator">==</span> <span class="token string">"0"</span> <span class="token keyword keyword-goto">goto</span> rename
+echo<span class="token punctuation">.</span>
+echo GRADLEW BUILD has errors <span class="token operator">-</span> breaking work
+<span class="token keyword keyword-goto">goto</span> fail
+
+<span class="token operator">:</span>rename
+del build\libs\crud<span class="token punctuation">.</span>war
+ren build\libs\tasks<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>war crud<span class="token punctuation">.</span>war
+<span class="token keyword keyword-if">if</span> <span class="token string">"%ERRORLEVEL%"</span> <span class="token operator">==</span> <span class="token string">"0"</span> <span class="token keyword keyword-goto">goto</span> stoptomcat
+echo Cannot rename file
+<span class="token keyword keyword-goto">goto</span> fail
+
+<span class="token operator">:</span>stoptomcat
+call <span class="token operator">%</span>CATALINA_HOME<span class="token operator">%</span>\bin\shutdown<span class="token punctuation">.</span>bat
+
+<span class="token operator">:</span>copyfile
+copy build\libs\crud<span class="token punctuation">.</span>war <span class="token operator">%</span>CATALINA_HOME<span class="token operator">%</span>\webapps
+<span class="token keyword keyword-if">if</span> <span class="token string">"%ERRORLEVEL%"</span> <span class="token operator">==</span> <span class="token string">"0"</span> <span class="token keyword keyword-goto">goto</span> runtomcat
+echo Cannot copy file
+<span class="token keyword keyword-goto">goto</span> fail
+
+<span class="token operator">:</span>runtomcat
+call <span class="token operator">%</span>CATALINA_HOME<span class="token operator">%</span>\bin\startup<span class="token punctuation">.</span>bat
+<span class="token keyword keyword-goto">goto</span> end
+
+<span class="token operator">:</span>fail
+echo<span class="token punctuation">.</span>
+echo There were errors
+
+<span class="token operator">:</span>end
+echo<span class="token punctuation">.</span>
+echo Work is finished<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+<h3 id="214-stworzenie-skryptu-shellowego-wersja-dla-macos">Wersja dla macOS</h3>
+
+<p>Kod skryptu dla wersji <strong>macOS </strong>został umieszczony poniżej. </p>
+
+<p>W trzeciej linii skryptu znajduje się polecenie ustawiające wartość zmiennej środowiskowej o nazwie <strong>CATALINA_HOME</strong>. Ustaw jej wartość na katalog, w którym znajduje się Twój serwer <strong>Tomcat</strong>. Innymi słowy, zastąp tekst <i>PATH_TO_YOUR_TOMCAT</i> ścieżką do katalogu, w którym znajduje się <strong>Tomcat</strong> na Twoim komputerze.</p>
+
+<p>Pod skryptem znajduje się opis jego działania.</p>
+<pre class="line-numbers language-java code-toolbar"><code class=" language-java">#<span class="token operator">!</span><span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>env bash
+
+export CATALINA_HOME<span class="token operator">=</span>PATH_TO_YOUR_TOMCAT
+
+<span class="token function">stop_tomcat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  $CATALINA_HOME<span class="token operator">/</span>bin<span class="token operator">/</span>catalina<span class="token punctuation">.</span>sh stop
+<span class="token punctuation">}</span>
+
+<span class="token function">start_tomcat</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+  $CATALINA_HOME<span class="token operator">/</span>bin<span class="token operator">/</span>catalina<span class="token punctuation">.</span>sh start
+  end
+<span class="token punctuation">}</span>
+
+<span class="token function">rename</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  rm build<span class="token operator">/</span>libs<span class="token operator">/</span>crud<span class="token punctuation">.</span>war
+  <span class="token keyword keyword-if">if</span> mv build<span class="token operator">/</span>libs<span class="token operator">/</span>kodilla<span class="token operator">-</span>tasks<span class="token operator">-</span><span class="token keyword keyword-new">new</span><span class="token operator">-</span>version<span class="token operator">-</span><span class="token number">0.0</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">-</span>SNAPSHOT<span class="token punctuation">.</span>war build<span class="token operator">/</span>libs<span class="token operator">/</span>crud<span class="token punctuation">.</span>war<span class="token punctuation">;</span> then
+     echo <span class="token string">"Successfully renamed file"</span>
+  <span class="token keyword keyword-else">else</span>
+     echo <span class="token string">"Cannot rename file"</span>
+     fail
+  fi
+<span class="token punctuation">}</span>
+
+<span class="token function">copy_file</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-if">if</span> cp build<span class="token operator">/</span>libs<span class="token operator">/</span>crud<span class="token punctuation">.</span>war $CATALINA_HOME<span class="token operator">/</span>webapps<span class="token punctuation">;</span> then
+     start_tomcat
+  <span class="token keyword keyword-else">else</span>
+     fail
+  fi
+<span class="token punctuation">}</span>
+
+<span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  echo <span class="token string">"There were errors"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  echo <span class="token string">"Work is finished"</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">.</span>/gradlew build<span class="token punctuation">;</span> then
+   rename
+   copy_file
+<span class="token keyword keyword-else">else</span>
+   stop_tomcat
+   fail
+fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code><div class="toolbar"></div></pre>
+
+
+<p>Oto co robi powyższy skrypt.</p>
+
+<p>W liniach 5-40 zdefiniowane są funkcje (możesz o nich myśleć jak o metodach klas), które są wywoływane przez główny program. Główny program skryptu znajduje się w liniach 42-48.</p>
+
+<ul>
+    <li>Główny program (linie 42-48) to instrukcja <strong>if</strong> .. <strong>else</strong>. W skryptach shellowych używamy składni <strong>if </strong><i><strong>warunek </strong></i><strong>then </strong><i><strong>blok kodu </strong></i><strong>else </strong><i><strong>blok kodu </strong></i><strong>fi</strong>. Kod pomiędzy <strong>then</strong> oraz <strong>else</strong> wykonywany jest wówczas, gdy polecenie umieszczone po <strong>if</strong> wykona się poprawnie. W przeciwnym wypadku wykonywany jest kod pomiędzy <strong>else</strong> oraz kończącym <strong>fi</strong>. Instrukcją warunkową naszego skryptu jest polecenie <strong>./gradlew build</strong> — jeżeli wykona się prawidłowo, wówczas wykonywane są funkcje <strong>rename()</strong> oraz <strong>copy_file()</strong> (w treści skryptu piszemy je bez nawiasów — używamy ich jedynie podczas definiowania funkcji).</li>
+    <li>Funkcja <strong>rename()</strong> (linie 16-24) ma za zadanie zmienić nazwę pliku wygenerowanego poleceniem <strong>./gradlew build</strong> (czyli naszego <strong>WAR</strong>a). W pierwszym kroku (linia 17) usuwana jest poprzednia wersja pliku <strong>crud.war</strong>. W wierszu 18 następuje skopiowanie pliku <strong>WAR</strong> do pliku o nazwie <strong>crud.war</strong>. Jeżeli operacja ta się powiedzie, wówczas wyświetlany jest stosowny komunikat. Jeżeli nie, to wyświetlany jest komunikat o błędzie, a następnie wywoływana jest funkcja <strong>fail()</strong>.</li>
+    <li>Funkcja <strong>copy_file()</strong> (linie 26-32) kopiuje plik <strong>crud.war</strong> do podkatalogu <i>webapps</i> serwera <strong>Tomcat</strong>, a następnie następuje restart serwera (wywołanie funkcji <strong>start_tomcat()</strong>. W przypadku niepowodzenia operacji kopiowania następuje wywołanie funkcji <strong>fail()</strong>.</li>
+    <li>Funkcja <strong>stop_tomcat()</strong> zatrzymuje serwer <strong>Tomcat</strong>.</li>
+    <li>Funkcja <strong>start_tomcat()</strong> uruchamia serwer <strong>Tomcat</strong> i wywołuje funkcję <strong>end()</strong></li>
+    <li>Funkcja <strong>end()</strong> wyświetla komunikat o tym, że działanie skryptu zostało zakończone. </li>
+</ul>
+
+<h3 id="214-stworzenie-skryptu-shellowego-uruchomienie-skryptu">Uruchomienie skryptu</h3>
+
+<p>Nasz skrypt jest gotowy — czas go uruchomić! :)</p>
+
+<p>W oknie terminala <strong>IntelliJ</strong> wpisz <strong>runcrud</strong> i nacisnij <strong>ENTER</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_54.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_54.png" style="width: 100%"></a>
+
+<p>Po jego uruchomieniu naszym oczom ukaże się ekran podobny do poniższego:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_55.png" style="width: 100%"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_55.png" style="width: 100%"></a>
+
+<p>Po kilku chwilach, serwer <strong>Tomcat</strong> się uruchomi z zainstalowaną najnowszą wersją naszej aplikacji.</p>
+
+<p>Dużo wygodniej niż z ręcznym wywoływaniem buildu, zmianą nazw, kopiowaniem plików i restartem serwera, prawda? :)</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="214-stworzenie-skryptu-shellowego-zadanie-skrypt-do-uruchamiania-przegladarki">Zadanie: <span class="task-title">Skrypt do uruchamiania przeglądarki</span></h3>
+                        <div class="task-content">
+                            <p>Twoim zadaniem jest napisanie skryptu o nazwie <i>showtasks.bat</i> (dla <strong>macOS</strong> będzie to <i>showtasks.sh</i>). Skrypt ten powinien:</p>
+<ol>
+    <li>Wywołać skrypt <i>runcrud.bat</i> (<i>runcrud.sh </i>dla macOS)</li>
+    <li>W przypadku błędów kompilacji zatrzymać się z odpowiednim komunikatem</li>
+    <li>Uruchomić Twoją ulubioną przeglądarkę internetową odpowiednim dla niej poleceniem — znajdź je samodzielnie w internecie</li>
+    <li>Przejść do strony <a href="http://localhost:8080/crud/v1/task/getTasks" rel="nofollow">http://localhost:8080/crud/v1/task/getTasks</a></li>
+</ol>
+
+<p>Skrypt powinien być utworzony wewnątrz projektu <strong>Tasks</strong>. Prześlij kod do repozytorium <strong>GitHub</strong>, a link do repozytorium wklej poniżej i prześlij do mentora.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282630" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://github.com/tymsocha/crud_tasks/blob/master/showtasks.bat">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-482" class="card submodule completed" data-bootcamp-user-submodule-id="282631">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.5. <span>Umieszczamy aplikację na Heroku</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <div class="bc-note alert-warning">
+    <h4 class="alert-heading text-center">Submoduł dodatkowy</h4>
+    <p>W poniższym submodule dowiesz się, jak wrzucić do internetu aplikacje stworzone w poprzednich modułach. Submoduł <b>17.5</b> i <b>17.6</b> jest dla chętnych. Oba zostały stworzone w celu uzupełnienia wiedzy.</p>
+</div>
+
+<p>W poprzednich modułach stworzyliśmy dwie aplikacje:</p>
+
+<ul>
+	<li>jedną w <strong>SpringBoot</strong>, udostępniającą usługi <strong>REST</strong>owe do odczytywania, modyfikacji, tworzenia i usuwania zadań (jest to nasz back-end). Aplikacja ta jest uruchamiana na serwerze aplikacyjnym <strong>Tomcat</strong>,</li>
+	<li>drugą stanowiącą statyczną stronę w <strong>HTML5</strong> wraz ze stylami <strong>CSS</strong> oraz fragmentami kodu w języku JavaScript (jest to nasz front-end dla poprzedniej aplikacji). Aplikacja ta jest uruchamiana na serwerze WWW o nazwie <strong>MAMP</strong>.</li>
+</ul>
+
+<p>Dotychczas obydwie te aplikacje uruchamialiśmy na naszym komputerze. Czas jednak wrzucić coś do internetu :) Zaczynajmy!</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="215-umieszczamy-aplikacje-na-heroku-zadanie-umieszczenie-aplikacji-back-endowej-w-chmurze-heroku">Zadanie: <span class="task-title">Umieszczenie aplikacji back-endowej w chmurze Heroku</span></h3>
+                        <div class="task-content">
+                            <p>Serwer <strong>Tomcat</strong> oraz baza danych MySQL dotychczas były zainstalowane na naszym komputerze. Naturalnym jednak dążeniem jest, aby udostępnić tworzone przez nas aplikacje w internecie. Jeżeli jesteś szczęśliwym posiadaczem własnego serwera internetowego, możesz swoją aplikację backendową (<i>crud.war</i>) zdeployować na tym właśnie serwerze według instrukcji przedstawionej w poprzednich submodułach. W zdecydowanej jednak większości przypadków nie będziesz dysponować swoim serwerem WWW widocznym w internecie. Co można zrobić w takiej sytuacji?</p>
+
+<p>Jednym z rozwiązań jest wykupienie tzw. hostingu w jednej z firm. W zamian za coroczną (lub comiesięczną) zapłatę, otrzymujesz swój własny, wirtualny serwer WWW, na którym możesz instalować aplikacje. Serwer ten jest widoczny w sieci internet. Jest to bardzo dobre rozwiązanie, ale jest ono nieco... kosztowne.</p>
+
+<p>Co zrobić w sytuacji, gdy póki co nie chcesz inwestować we własny serwer internetowy? Możesz skorzystać z jednego z darmowych hostingów lub z jednego z bezpłatnych kont w tak zwanych rozwiązaniach chmurowych (<i>ang. cloud computing solutions</i>). Ciekawym przykładem takiego właśnie rozwiązania jest <strong>Heroku</strong> (<a href="https://www.heroku.com/">https://www.heroku.com/</a>)</p>
+
+<h4>Zakładanie konta na Heroku</h4>
+
+<p>Aby wgrać swoją aplikację na serwery <strong>Heroku</strong>, musisz na stronie <a href="https://www.heroku.com/">https://www.heroku.com/</a> założyć konto przy pomocy przycisku <i>Sign up</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_56.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_56.png" style="width: 100%"></a>
+
+<p>W kolejnym kroku musisz wypełnić prosty formularz rejestracyjny — pamiętaj, aby podać w nim poprawny adres e-mail:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_57.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_57.png" style="width: 100%"></a>
+<p>Po wypełnieniu formularza rejestracyjnego przeniesiesz się do strony z informacją o konieczności sprawdzenia swojej skrzynki e-mail:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_58.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_58.png" style="width: 100%"></a>
+
+<p>Po odnalezieniu wiadomości e-mail oraz kliknięciu w link aktywacyjny, znajdziesz się na stronie, na której należy ustawić hasło do <strong>Heroku</strong> (i je sobie gdzieś zapisać!):</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_59.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_59.png" style="width: 100%"></a>
+<p>Po ustawieniu hasła i zalogowaniu się do <strong>Heroku</strong>, możesz przejść do konfigurowania swojego projektu:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_60.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_60.png" style="width: 100%"></a>
+
+<h4>Pobranie i instalacja <strong>Heroku</strong> CLI</h4>
+<p>Po przejściu do kolejnego widoku, masz możliwość utworzenia nowej aplikacji lub obejrzenia krótkiego tutoriala dotyczącego współpracy <strong>Heroku</strong> z wybranym językiem programowania. Wybierz język Java:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_61.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_61.png" style="width: 100%"></a>
+
+<p>Tutorial rozpoczyna się od przedstawienia wymagań, które należy spełnić, aby go rozpocząć. Jak można zauważyć, jednym z wymagań jest posiadanie zainstalowanego <strong>Mavena</strong>. My jednak korzystamy w bootcampie z Gradle, dlatego też kliknij pokazany poniżej link:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_62.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_62.png" style="width: 100%"></a>
+
+<p>Spowoduje to przełączenie tutoriala w tryb właściwy dla Gradle. Kliknij <i>I'm ready to start</i>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_63.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_63.png" style="width: 100%"></a>
+
+<p>Pierwszą rzeczą, z którą się zetkniesz w tutorialu, jest pobranie i instalacja <strong>Heroku</strong> CLI (<i>ang. <strong>Heroku</strong> Command Line Interface</i>). Wybierz wersję właściwą dla Twojego systemu operacyjnego:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_64.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_64.png" style="width: 100%"></a>
+
+<p>Następnie zainstaluj <strong>Heroku</strong> CLI za pomocą pobranego instalatora. Jeśli korzystasz Windowsa, pamiętaj aby zaznaczyć w Instalatorze opcję "Set PATH to <strong>Heroku</strong> CLI", aby dodać <strong>Heroku</strong> CLI do PATH oraz odznaczyć opcję proponującą instalację Gita — zainstalowaliśmy go już dawno temu :)</p>
+
+<p>Po zakończeniu instalacji <strong>Heroku</strong> CLI możesz wrócić do tutoriala. Proponujemy przeczytanie go do końca, a następnie powrót do tego miejsca bootcampu. Wykonamy krok po kroku wszystkie wymagane czynności, aby nasz projekt backendowy został umieszczony na serwerze <strong>Heroku</strong>.</p>
+<h4>Konfiguracja projektu backend</h4>
+<p>Uruchom IntelliJ i otwórz projekt backendowy (tasks), a następnie uruchom terminal wewnątrz IntelliJ. W terminalu wpisz polecenie <strong>heroku</strong> login:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_65.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_65.png" style="width: 100%"></a>
+<p>Podaj swój adres email oraz hasło ustawione podczas zakładania konta na <strong>Heroku</strong>. Następnie wywołaj polecenie <strong>heroku</strong> create:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_66.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_66.png" style="width: 100%"></a>
+<p>Polecenie to tworzy na serwerach <strong>Heroku</strong> nowy wirtualny serwer dla Ciebie oraz zdalne repozytorium git, również na serwerach <strong>Heroku</strong>. Dokonuje również powiązania Twojego lokalnego repozytorium git ze zdalnym repozytorium (wywołuje polecenie git remote add <strong>heroku</strong> …).</p>
+<p>Twoje lokalne repozytorium git może być połączone z wieloma repozytoriami zdalnymi w tym samym czasie. Dotychczas korzystaliśmy z repozytorium zdalnego, które było zapamiętane pod nazwą origin i używaliśmy go do przesyłania zadań pomiędzy Tobą a mentorem. Od tego momentu masz dowiązane również drugie repozytorium zdalne, pod nazwą <strong>heroku</strong> — będziemy wykorzystywać je do wysyłania aplikacji na <strong>Heroku</strong> tak, aby mogła zostać uruchomiona na serwerze.</p>
+
+<h4>Pierwsza próba wgrania aplikacji na serwery <strong>Heroku</strong></h4>
+
+<p>Aby zainstalować swoją aplikację na <strong>Heroku</strong>, wystarczy tak naprawdę przesłać kod do zdalnego repozytorium <strong>Heroku</strong>. Spróbujemy to teraz zrobić, jednak zanim zaczniemy, musimy zmienić kilka szczegółów:</p>
+
+<ul>
+	<li>przywrócić pakietowanie na <strong>JAR</strong>,</li>
+	<li>zmienić bazę danych <strong>MySQL</strong> na inną. <strong>MySQL</strong> co prawda jest dostępna na <strong>Heroku</strong>, ale jest to rozszerzenie płatne. Dla naszych potrzeb skorzystamy z bazy <strong>PostgreSQL</strong> — nie będziemy jej instalowali lokalnie, skonfigurujemy jedynie naszą aplikację tak, aby z niej korzystała.</li>
+</ul>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Rodzaje baz danych</h4>
+    <p>Dotychczas korzystaliśmy z bazy danych <strong>MySQL</strong>. Na rynku istnieje wiele różnych rodzajów baz danych (już o tym wspominaliśmy w module 12). Najpopularniejsze z nich to między innymi: <strong>ORACLE</strong>, <strong>Microsoft MS SQL Server</strong>, <strong>PostgreSQL</strong>, <strong>DB2</strong> i inne.</p>
+    <p>Dopóki nie korzystamy ze specyficznych właściwości danej bazy, a ograniczamy się jedynie do podstawowych komend <strong>SQL</strong>, to możemy naszą aplikację przełączać na tryby pracy z różnymi bazami danych, poprzez zmianę wpisów w pliku <strong>application.properties</strong>.</p>
+</div>
+
+<p>Musimy ponadto dokonać jednej zmiany w naszym środowisku <strong>Heroku</strong>. Należy "powiedzieć" <strong>Heroku</strong>, że ma dla nas zainstalować na swoim serwerze (tym dedykowanym dla nas wirtualnym egzemplarzu) silnik bazy <strong>PostgreSQL</strong>.</p>
+
+<p>Nim rozwiążemy powyższe problemy, spróbujemy wysłać do <strong>Heroku</strong> nasz kod w takiej postaci, w jakiej obecnie się znajduje, aby zobaczyć, jakie problemy wystąpią. W tym celu wykonaj polecenia:</p>
+
+<ul>
+	<li>git add . (dodaje wszystkie niedodane jeszcze pliki do lokalnego repozytorium git),</li>
+	<li>git commit -m "First attempt to Heroku" (zatwierdza zmiany w lokalnym repozytorium),</li>
+	<li>git push heroku master (wysyła do zdalnego repozytorium <strong>Heroku</strong> nasz kod).</li>
+</ul>
+
+<p>Po wykonaniu polecenia git push, na ekranie ukaże się informacja o tym, co robi <strong>Heroku</strong> (w postaci logu):</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_67.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_67.png" style="width: 100%"></a>
+
+<p>Po kilkudziesięciu sekundach <strong>Heroku</strong> zakończy pracę i wyświetli komunikat o tym, że zakończył budowę oraz deploy naszej aplikacji. Na ekranie znajdziesz również informację o tym, pod jakim adresem znajduje się nasza aplikacja:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_68.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_68.png" style="width: 100%"></a>
+
+<p>Skopiuj ten adres (u Ciebie będzie inny niż na powyższym zdjęciu — każda aplikacja wrzucona na <strong>Heroku</strong> dostaje swój własny, unikalny adres URL) do przeglądarki i spróbuj uruchomić naszą aplikację. Otrzymasz (zgodnie z tym, co wcześniej pisaliśmy) komunikat o błędzie:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_69.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_69.png" style="width: 100%"></a>
+
+<p>W jaki sposób można sprawdzić, co poszło nie tak, jak trzeba? Dostęp do logów <strong>Heroku</strong> uzyskujemy poprzez polecenie <strong>heroku logs</strong> udostępniane przez <strong>Heroku</strong> CLI, które uprzednio zainstalowaliśmy. Interesujący nas fragment zaznaczono czerwonym kolorem:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_70.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_70.png" style="width: 100%"></a>
+
+<p>Z logów wynika, że <strong>Heroku</strong> oczekuje, iż nasza aplikacja będzie spakietowana do pliku JAR. Musimy więc przywrócić takie pakietowanie w naszej aplikacji.</p>
+<h4>Poprawa aplikacji i ponowne wysłanie na serwer <strong>Heroku</strong></h4>
+<p>Po pierwsze, z pliku build.gradle usuń odwołanie do plugina war (możesz je zakomentować za pomocą //):</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/kodilla-bootcamp-31-07-2018-1533038877-6676.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/kodilla-bootcamp-31-07-2018-1533038877-6676.png" style="width: 100%"></a>
+
+<p>Następnie usuń (zakomentuj) zależność wyłączającą wbudowany serwer Tomcat, oraz zmień zależność do sterownika bazy danych z MySQL na PostgreSQL:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_71.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_71.png" style="width: 100%"></a>
+
+<p>W kolejnym kroku, usuń modyfikacje w naszej głównej klasie aplikacji, które wprowadzaliśmy wcześniej w celu wykorzystania zewnętrznego serwera Tomcat (czyli usuń lub zakomentuj dziedziczenie z klasy SpringBootServletInitializer oraz nadpisaną metodę configure):</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_72.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_72.png" style="width: 100%"></a>
+
+<p>Ostatnią zmianą, której musisz dokonać, jest zmiana ustawień w pliku application.properties tak, aby nasza aplikacja zaczęła korzystać z bazy PostgreSQL.</p>
+
+<div class="bc-note alert-info">
+    <h4 class="alert-heading text-center">Zmienne środowiskowe a plik application.properties</h4>
+    <p>Dotychczas kilkukrotnie modyfikowaliśmy zmienne środowiskowe — np. JAVA_HOME, CATALINA_HOME i inne. W pliku application.properties mamy możliwość odwoływania się do tych zmiennych: robimy to poprzez zapis ${<i>variable_name</i>}, w miejsce <i>variable_name</i> wstawiając interesującą nas nazwę zmiennej środowiskowej. Za chwilę skorzystamy z tego rozwiązania, aby odwołać się do wartości zmiennych środowiskowych ustawionych dla nas przez <strong>Heroku</strong>.</p>
+
+</div>
+
+<p>Ponadto, w miejscu gdzie podajemy tzw. <i>credentials</i> do naszej bazy danych (adres, login i hasło), użyjemy zmiennych środowiskowych ustawianych dla nas przez <strong>Heroku</strong> (JDBC_DATABASE_URL, JDBC_DATABASE_USERNAME oraz JDBC_DATABASE_PASSWORD). Poprzednie ustawienia zakomentuj (w plikach properties komentarz robimy przy pomocy kratki #, czyli tzw. znaku <i>hash</i>):</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_73.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_73.png" style="width: 100%"></a>
+
+<p>Przed przesłaniem aplikacji na serwer, musimy jeszcze poinstruować <strong>Heroku</strong>, aby utworzył dla nas bazę danych PostgreSQL na swoim serwerze. Robimy to przy pomocy polecenia<strong>heroku addons:create heroku-postgresql</strong></p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_74.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_74.png" style="width: 100%"></a>
+
+<p>Baza danych została utworzona. Jesteśmy więc gotowi na ponowne wysłanie kodu naszej aplikacji na serwer <strong>Heroku</strong>. W tym celu wykonaj polecenia:</p>
+
+<ul>
+	<li>git add .  (dodaje zmienione pliki do gita),</li>
+	<li>git commit -m "JAR and PostgreSQL fixed" (zatwierdza zmiany w lokalnym repozytorium git),</li>
+	<li>git push heroku master (wysyła kod do repozytorium <strong>Heroku</strong>).</li>
+</ul>
+
+<p>Po wykonaniu powyższych operacji, ekran powinien wyglądać podobnie jak przy poprzedniej próbie:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_75.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_75.png" style="width: 100%"></a>
+
+<p>Możesz teraz spróbować uruchomić aplikację. Otrzymasz znowu komunikat o błędzie, ale widzimy, że jest to komunikat wygenerowany przez nasz wbudowany serwer Tomcat:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_76.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_76.png" style="width: 100%"></a>
+
+<p>Jest to po prostu komunikat "404 nie znaleziono". Całkiem słusznie, ponieważ nasza aplikacja nie posiada żadnej strony startowej — zawiera jedynie API, które stworzyliśmy :)</p>
+
+<p>Aby przejść do naszej usługi RESTowej, doklej do adresu ciąg /v1/task/getTasks:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_77.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_77.png" style="width: 100%"></a>
+
+<p>Jak widzisz, zadziałało! Widać to po nawiasach [], które pojawiły się w treści strony. Nasza baza danych jest w tej chwili pusta, dlatego aplikacja zwróciła pustą listę zadań, ale aplikacja działa :)</p>
+
+<h3 id="215-umieszczamy-aplikacje-na-heroku-zadanie-dodatkowe-przeslanie-aplikacji-na-heroku-i-polaczenie-postmanem">Zadanie dodatkowe — przesłanie aplikacji na <strong>Heroku</strong> i połączenie Postmanem</h3>
+
+<p>Twoim zadaniem jest:</p>
+	<ol>
+		<li>Umieszczenie swojej aplikacji na serwerze <strong>Heroku</strong> zgodnie z przedstawioną powyżej instrukcją.</li>
+		<li>Podłączenie się do niej Postmanem i dodanie dwóch przykładowych zadań. Zapytania wykonuje się tak samo,jak na aplikację serwowaną lokalnie — różni się jedynie adres URL.</li>
+	</ol>
+
+<p>Link do swojej aplikacji na <strong>Heroku</strong> prześlij do mentora.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282631" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://whispering-plains-31624.herokuapp.com/v1/task/getTasks">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-483" class="card submodule completed" data-bootcamp-user-submodule-id="282632">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.6. <span>Stawiamy frontend na GitHub Pages</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Skoro nasze usługi <strong>REST</strong>owe są już dostępne w internecie, to został nam już tylko jeden krok — udostępnienie w internecie naszej aplikacji front-endowej.</p>
+
+<p>Niestety <strong>Heroku</strong> nie wspiera hostingu dla statycznych stron <strong>HTML</strong>. Istnieją co prawda sposoby, aby sobie z tym poradzić, lecz dla nas jest to bardzo dobra okazja, aby pokazać Ci kolejne ciekawe narzędzie — <strong>GitHub Pages</strong>.</p>
+
+<h3 id="216-stawiamy-frontend-na-github-pages-wstep-do-github-pages">Wstęp do GitHub Pages</h3>
+
+<p>Aby korzystać z GitHub Pages, wystarczy posiadać konto na GitHubie. Ty oczywiście masz takie konto, bo przecież używamy go do przesyłania zadań na <strong>GitHub</strong> :)</p>
+
+<p>Przejdź w takim razie od razu na stronę <a href="https://pages.github.com/">https://pages.github.com/</a> i przewiń ekran nieco niżej — do miejsca pokazanego na zdjęciu:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_78.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_78.png" style="width: 100%"></a>
+
+<p>W tym miejscu masz możliwość wyboru, czy chcesz założyć stronę "wizytówkę" użytkownika, czy też stronę dla projektu. Wybierz <i>User or organisation site</i>. Następnie stosuj się krok po kroku do instrukcji wyświetlonych w punktach poniżej:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_79.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_79.png" style="width: 100%"></a>
+
+<p>Najpierw musisz utworzyć w <strong>GitHub</strong>ie repozytorium o nazwie <i>username</i><strong>.github.io</strong>, gdzie za <i>username</i> musisz podstawić swoją własną nazwę użytkownika <strong>GitHub</strong>. To bardzo ważne, aby to repozytorium posiadało dokładnie taką nazwę. W razie problemów, po prawej stronie masz ekran z podpowiedzią, jak to zrobić (musisz się zalogować do interfejsu graficznego <strong>GitHub</strong> w drugim oknie przeglądarki, aby to zrobić).</p>
+
+<p>Gdy już założysz repozytorium, musisz — zgodnie z instrukcją wskazaną na poniższym ekranie — wybrać, z jakiego klienta <strong>git</strong> korzystasz. W naszym przypadku wybierz <i>A terminal</i>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_80.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_80.png" style="width: 100%"></a>
+
+<h3 id="216-stawiamy-frontend-na-github-pages-konfigurowanie-lokalnego-repozytorium-na-projekt">Konfigurowanie lokalnego repozytorium na projekt</h3>
+
+<p>Następnie utwórz sobie na dysku katalog, w którym będziesz przechowywać swój projekt front-endowy w postaci zsynchronizowanej z repozytorium <strong>GitHub</strong>. Uruchom terminal i przejdź do tego katalogu. W naszych materiałach jest to katalog <i>C:\projekty\frontend</i> — u Ciebie będzie inny, zgodny z Twoim wyborem.</p>
+
+<p>Uruchom wiersz poleceń (terminal) i przejdź do tego katalogu, a następnie użyj polecenia <strong>git clone https://github.com/username/username.github.io</strong> — za <i>username</i> podstaw swoją nazwę użytkownika <strong>GitHub</strong>:</p>
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_81.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_81.png" style="width: 100%"></a>
+
+<p>W Twoim katalogu powstał podkatalog o nazwie <i>username.github.io</i>. Przejdź do niego, a następnie skopiuj do niego cztery pliki utworzone podczas pracy z modułem 16, czyli Twoją aplikację front-endową:</p>
+
+<ul>
+	<li>index.html</li>
+	<li>style.css</li>
+	<li>script.js</li>
+	<li>jquery-3.2.1.min.js</li>
+</ul>
+
+<p>Już prawie gotowe — musisz jeszcze zmienić adres bazowy usług <strong>REST</strong>owych w pliku <strong>script.js</strong>. Odnajdź w tym celu linijkę, w której znajduje się fragment <strong>var apiRoot = ...</strong> i zamiast znajdującego się tam adresu <strong>localhost:8080/...</strong>, wstaw tam adres Twojego serwera Heroku z usługami <strong>REST</strong>owymi, z doklejoną "końcówką" w postaci <strong>/v1/task/</strong>:</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_82.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_82.png" style="width: 100%"></a>
+
+<h3 id="216-stawiamy-frontend-na-github-pages-wyslanie-zawartosci-na-serwer-github-pages">Wysłanie zawartości na serwer GitHub Pages</h3>
+
+<p>Tak przygotowaną zawartość repozytorium lokalnego musisz już jedynie wysłać do repozytorium <strong>GitHub</strong>. W tym celu wykonaj następujące polecenia:</p>
+
+<ul>
+	<li>git add . (aby dodać pliki do repozytorium lokalnego),</li>
+	<li>git commit -m "Initial commit" (aby zatwierdzić pliki w repozytorium),</li>
+	<li>git push -u origin master (aby wysłać pliki do repozytorium).</li>
+</ul>
+
+<h3 id="216-stawiamy-frontend-na-github-pages-sprawdzenie-czy-strona-dziala-poprawnie">Sprawdzenie, czy strona działa poprawnie</h3>
+
+<p>To już koniec pracy. Strona WWW jest gotowa. Aby się o tym przekonać, otwórz przeglądarkę i przejdź pod adres <a href="https://username.github.io/">https://username.github.io/</a>. Twoim oczom powinna się ukazać gotowa, udostępniona w internecie strona WWW, która łączy się z usługami <strong>REST</strong>owymi udostępnionymi przez serwer uruchomiony na <strong>Heroku</strong>! :)</p>
+
+<a class="img-modal-group" href="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_83.png"><img src="./Moduł_ 21. Przygotowanie do deploymentu_files/java-17_83.png" style="width: 100%"></a>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="216-stawiamy-frontend-na-github-pages-zadanie-opublikuj-strone-na-github-pages">Zadanie: <span class="task-title">Opublikuj stronę na GitHub Pages</span></h3>
+                        <div class="task-content">
+                            <p>Wykonaj wszystkie opisane w tym submodule czynności na swoim projekcie front-endowym (z modułu 16), a link do swojej strony <strong>GitHub Pages</strong> wyślij do mentora.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix  completed ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282632" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="https://tymsocha.github.io/">
+                                </div>
+                                <button type="submit" class="btn  btn-primary ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                                    
+                <section id="submodule-489" class="card submodule current" data-bootcamp-user-submodule-id="282633">
+                <!-- klasy dla section: completed current comments -->
+                    <div class="card-block submodule-header clearfix">
+                        <i class="fa fa-check-circle-o fa-2x"></i>
+                        <i class="fa fa-play-circle-o fa-2x"></i>
+                        <i class="fa fa-exclamation-circle fa-2x"></i>
+                        <i class="fa fa-send-o fa-2x"></i>
+                        <h2 class="bootcamp-submodule-name">21.7. <span>Dodatkowy projekt do portfolio</span></h2>
+                                            </div>
+                    <div class="card-block">
+                        <div class="submodule-content">
+                            <p>Poniżej znajdziesz ostatnie zadanie dodatkowe, w ramach którego wykonasz działającą aplikację od początku do końca. </p>
+
+<p>Jest to element zakresu rozszerzonego wsparcia HR. Dzięki niemu będziesz mieć dodatkowy projekt w swoim portfolio.</p>
+
+<p>To zadanie jest nieobowiązkowe. Jak zawsze jednak, bardzo zachęcamy do podjęcia próby jego wykonania. Samodzielne zmierzenie się z projektem to świetna metoda na powtórkę materiału i wychwycenie zgadnień, nad którymi jeszcze warto popracować.</p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block task-card">
+                        <h3 id="217-dodatkowy-projekt-do-portfolio-zadanie-rest-api-dla-biblioteki">Zadanie: <span class="task-title">REST API dla biblioteki</span></h3>
+                        <div class="task-content">
+                            <p>Twoim zadaniem będzie zbudowanie REST API dla systemu obsługującego wypożyczanie książek z biblioteki. </p>
+
+<h4>Założenia aplikacji</h4>
+
+<p>Aplikacja musi posiadać zamodelowane encje i związane z nimi tabele: </p>
+
+<ul>
+	<li>czytelników, która zawiera id czytelnika, imię, nazwisko i datę założenia konta,</li>
+	<li>tytułów, która zawiera id tytułu, tytuł, autora i rok wydania,</li>
+	<li>egzemplarzy książek, która zawiera id egzemplarza, id tytułu oraz status (np. w obiegu, zniszczona, zagubiona),</li>
+	<li>wypożyczeń, która zawiera id egzemplarza, id czytelnika, datę wypożyczenia i datę zwrotu. </li>
+</ul>
+
+<p>Jeśli w zasobach biblioteki jest 5 książek "Buszujący w zbożu", to w naszych tabelach znajdzie się jedna pozycja w tabeli tytułów oraz 5 pozycji w tabeli egzemplarzy. Dzięki temu każda sztuka jest identyfikowalna w bazie, ale nie powielamy informacji takich jak tytuł czy autor. </p>
+
+<p>Oprócz zamodelowania tabel będzie potrzebne również utworzenie usług REST. Podstawowe usługi to:</p>
+
+<ul>
+	<li>dodanie czytelnika, </li>
+	<li>dodanie tytułu, </li>
+	<li>dodanie egzemplarza, </li>
+	<li>zmiana statusu egzemplarza, </li>
+	<li>sprawdzenie ilości egzemplarzy danego tytułu dostępnych do wypożyczenia, </li>
+	<li>wypożyczenie książki, </li>
+	<li>zwrot książki. </li>
+</ul>
+
+<p>Dla uproszczenia możemy przyjąć, że jeśli czytelnik zgubi książkę, to w momencie zapłacenia kosztu książki następuje zwrot książki oraz zmiana statusu egzemplarza. </p>
+
+<h4>Jak się do tego zabrać?</h4>
+
+<p>Utwórz nowy projekt w <em>IntelliJ</em> o nazwie <strong>kodilla-library</strong>. Powinien to być projekt utworzony przy pomocy <strong>Spring Initializr</strong>. Moduły, które będą potrzebne, są takie same, jak moduły w projekcie <code class=" language-java">tasks</code>. Na potrzeby tego projektu załóż także nowe repozytorium na <em>GitHubie</em>.</p>
+
+<p>Stworzenie programu rozpocznij od napisania encji dla <code class=" language-java">Hibernate</code> oraz związanych z nimi repozytoriów typu <code class=" language-java">CRUD</code>. Całość wyposaż w testy jednostkowe. Na potrzeby aplikacji <strong>kodilla-library</strong> utwórz również nowego użytkownika w bazie danych (i nowy schemat).</p>
+
+<p>W kolejnym kroku dodaj klasy <code class=" language-java">DTO</code>, konwertery oraz kontroler usług <em>REST API</em>. Ustal ścieżki url do usług oraz ich nazwy i parametry.</p>
+
+<p>Przygotuj zestaw danych testowych (zbiór requestów) dla programu <code class=" language-java">Postman</code>, przy pomocy których można sprawdzić, że Twoja biblioteka działa.</p>
+
+<h4>Dla chętnych — testy jednostkowe</h4>
+
+<p>Napisz dla tej aplikacji testy jednostkowe wykorzystujące bazy pamięciowe H2. Jest to zagadnienie, którego nie omawiamy w ramach kursu, ale w internecie bez problemu znajdziesz informacje na ten temat. Potraktuj to jako przygotowanie do samodzielnego rozwoju wiedzy i stosowania narzędzi wykraczających poza zakres kursu. </p>
+
+                        </div>
+                    </div>
+                                        <div class="card-block submodule-footer clearfix ">
+                                                <div class="clearfix">
+                                                                                <a href="https://kodilla.com/pl/bootcamp-task/146/282633" target="_blank" class="btn btn-info-outline">Podgląd zadania</a>
+                            <form target="_blank" class="form-inline project-link-form">
+                                <div class="form-group">
+                                    <input type="text" name="link" class="form-control" value="">
+                                </div>
+                                <button type="submit" class="btn  btn-success-outline ">Wyślij link <i class="fa fa-check"></i></button>
+                            </form>
+                                                                                                    </div>
+                    </div>
+                </section>
+                            </main>
+        </div>
+    </section>
+</main>
+
+<script type="text/x-translation" data-translation-name="SentBootcampLinkReviewFormMessage">Wysłano link do zatwierdzenia</script>
+    <div id="alerts">
+    <div class="alert alert-danger" role="alert" style="display: none;">
+        <i class="fa fa-exclamation" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                        </ul>
+    </div>
+    <div class="alert alert-success" role="alert" style="display: none;">
+        <i class="fa fa-check" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-warning" role="alert" style="display: none;">
+        <i class="fa fa-warning" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                </ul>
+    </div>
+    <div class="alert alert-info" role="alert" style="display: none;">
+        <i class="fa fa-info" aria-hidden="true"></i>
+        <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Zamknij</span>
+        </button>
+        <ul>
+                    </ul>
+    </div>
+    <div class="container">
+        <div class="alert alert-notify" role="alert" style="display: none;">
+            <i class="fa fa-info" aria-hidden="true"></i>
+            <button type="button" class="close" data-hide="alert" aria-label="Zamknij">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Zamknij</span>
+            </button>
+            <ul>
+                            </ul>
+        </div>
+    </div>
+</div>
+    <div class="modal fade informator-modal" id="informator" tabindex="-1" role="dialog" aria-labelledby="informatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="./Moduł_ 21. Przygotowanie do deploymentu_files/logo-menu.png" alt="Logo Kodilla" class="brand-logo">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="modal-body content-container">
+                <h3>Zamów szczegółowy informator</h3>
+                <form class="row js-ajax-form" data-view-class="InformatorForm" action="https://kodilla.com/pl/download-informator" method="post">
+                    <input type="hidden" name="ga-pobieranie-informatora-z-modala" value="wypelnienie">
+                    <input type="hidden" name="tags[0]" value="informator">
+                                        <div class="user-data-container">
+                        <input type="text" class="form-control" name="firstname" placeholder="Imię">
+                        <input type="text" class="form-control" name="surname" placeholder="Nazwisko">
+                    </div>
+                    <div class="user-data-container">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                        <input type="tel" class="form-control" name="phone" placeholder="Numer telefonu" pattern="^([\+][0-9]{1,3}([ \.\-])?)?([\(]{1}[0-9]{3}[\)])?([0-9 \.\-]{1,15})$" title="Wpisz poprawny numer telefonu, np. 453 674 897" minlength="9" maxlength="15" data-custom-message="Wpisz poprawny numer telefonu, np. 453 674 897">
+                    </div>
+                    <div class="terms-box">
+                        <label>
+                            <input name="accept_terms" value="true" data-custom-message="Prosimy o zaakceptowanie regulaminu" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Akceptuję <a target="_blank" href="https://kodilla.com/pl/terms">regulamin</a>  i nie wnoszę zastrzeżeń</span>
+                        </label>
+                    </div>
+                    <div class="personal-terms-box">
+                        <label>
+                            <input name="accept_marketing" value="true" data-custom-message="Jeśli chcesz otrzymać dostęp do materiałów, konieczna jest akceptacja obydwu zgód" type="checkbox" class="form-control input-checkbox" required="">
+                            <span>Chcę otrzymywać newsletter, informacje o promocjach i produktach dostępnych w Kodilla.
+                                <span class="details-button" data-action="show-details" data-identifier="personal-terms-details-informator">Czytaj więcej</span>
+                                <span class="display-none" data-identifier="personal-terms-details-informator">Wyrażam zgodę na otrzymywanie informacji handlowych od Kodilla na podany przeze mnie adres e-mail. Zgoda jest dobrowolna, jednakże niezbędna do otrzymywania informacji o produktach, promocjach i o tym, co u nas słychać. Administratorem danych jest Codemy S.A. z siedzibą we Wrocławiu, ul. Racławicka 13. Mam prawo cofnąć zgodę w każdym czasie, jednak wtedy nie będę otrzymywać informacji. Dane mogą być przetwarzane pomimo cofnięcia zgody wyłącznie w takim zakresie i celu, w jakim ich przetwarzanie jest niezbędne do ustalenia, dochodzenia lub obrony roszczeń Administratora w związku z udzieloną zgodą. Mam prawo dostępu do danych, sprostowania, usunięcia, ograniczenia przetwarzania, prawo wniesienia sprzeciwu, skargi do organu nadzorczego i przeniesienia danych. Szczegółowe informacje znajdują się na stronie kodilla.com, zakładka "Polityka Prywatności".</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="display-none">
+                        <input type="text" name="myName" value="">
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary">
+                            Pobierz Informator
+                            <i data-role="loading-icon" class="fa fa-spinner fa-spin fa-1x fa-fw display-none"></i>
+                        </button>
+                    </div>
+                </form>
+                <a href="https://kodilla.com/pl/informator" id="informator-link" target="_blank" class="display-none"></a>
+            </div>
+            <div class="modal-footer">
+                <p>Pobranie informatora do niczego nie zobowiązuje</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="site-footer">
+                <section class="footer-lower">
+            <nav class="container">
+                <a class="navbar-img" href="https://kodilla.com/pl">
+                    <svg id="kodilla-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 29.553" width="168" height="30">
+                        <defs>
+                            <style>
+                                .footer-logo-fill {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <g id="Group_1" data-name="Group 1" transform="translate(23.59)">
+                            <path id="KODILLA_copy_5_1_" class="footer-logo-fill" d="M78.058,0a14.758,14.758,0,1,0,.075,0Zm0,23.739a8.939,8.939,0,0,1-8.944-8.907V14.8c0-4.957,4.584-.708,8.907-.708,4.919,0,9.019-4.211,9.019.708a8.978,8.978,0,0,1-8.981,8.944Z" transform="translate(-63.3)"></path>
+                            <ellipse id="eye_copy_4_1_" class="footer-logo-fill" cx="3.876" cy="3.876" rx="3.876" ry="3.876" transform="translate(9.462 13.2) rotate(-28.436)"></ellipse>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" class="footer-logo-fill" d="M0,29.819V.9H6.671V13.347L17.255.9h7.491L13.938,13.794,25.491,29.819h-7.6l-8.2-11.665-3.019,3.13v8.5H0Z" transform="translate(0 -0.565)"></path>
+                        <path id="Path_2" data-name="Path 2" class="footer-logo-fill" d="M151.4,29.819V.9h10.807a15.515,15.515,0,0,1,6.261,1.155,12.966,12.966,0,0,1,4.509,3.093A12.918,12.918,0,0,1,175.7,9.732a17.245,17.245,0,0,1,.932,5.59,16.821,16.821,0,0,1-1.006,5.963,12.227,12.227,0,0,1-2.907,4.547,13.484,13.484,0,0,1-4.547,2.944,15.964,15.964,0,0,1-5.925,1.043Zm18.41-14.5a11.274,11.274,0,0,0-.522-3.466,7.723,7.723,0,0,0-1.491-2.72,6.616,6.616,0,0,0-2.385-1.752,8.055,8.055,0,0,0-3.205-.6h-4.1v17.18h4.1a7.985,7.985,0,0,0,3.242-.634,6.8,6.8,0,0,0,2.385-1.826,8.286,8.286,0,0,0,1.453-2.72A11.634,11.634,0,0,0,169.81,15.322Z" transform="translate(-94.978 -0.565)"></path>
+                        <path id="Path_3" data-name="Path 3" class="footer-logo-fill" d="M228.3,29.819V.9h6.671V29.819Z" transform="translate(-143.219 -0.565)"></path>
+                        <path id="Path_4" data-name="Path 4" class="footer-logo-fill" d="M259.9,29.819V.9h6.671V23.968h14.012v5.851Z" transform="translate(-163.043 -0.565)"></path>
+                        <path id="Path_5" data-name="Path 5" class="footer-logo-fill" d="M327.371,23.931V.9H320.7V29.819h18.522l2.124-5.851H327.371Z" transform="translate(-201.185 -0.565)"></path>
+                        <path id="Path_6" data-name="Path 6" class="footer-logo-fill" d="M388.547.9h6.037L405.13,29.819h-6.857l-2.236-6.484h-9.019l-2.2,6.484H378Zm6.373,17.851L391.528,8.54l-3.466,10.211Z" transform="translate(-237.13 -0.565)"></path>
+                    </svg>
+                </a>
+                <ul class="nav">
+                    <li>
+                        <a href="https://kodilla.com/pl/terms">Regulamin</a>
+                    </li>
+                    <li>
+                        <a href="https://kodilla.com/pl/privacy-policy">Polityka prywatności</a>
+                    </li>
+                    <li class="nav-item nav-item-last">© 2019 Kodilla</li>
+                </ul>
+            </nav>
+        </section>
+    </footer>
+
+<!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN2WWBH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/jquery-2.1.4.min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/js.cookie-2.1.0.min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/jquery-dateFormat.min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/bootstrap.min.js.pobrane"></script>
+<script>
+    (function () {
+        $(document).ready(function () {
+            if (window.location.hash === '#informator-modal') {
+                showInformator();
+            }
+        });
+
+        $('[data-action="show-modal"]').click(function() {
+            showInformator();
+        });
+
+        function showInformator() {
+            $('#informator').modal('show');
+        }
+    })();
+</script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/fb-eb12e28653.js.pobrane"></script>
+<script>
+    if (document.querySelector('main.editor')) {
+        document.querySelector('body').classList.add('editor');
+    }
+</script>
+
+<script type="text/javascript">
+    (function(e,t,o,n,p,r,i){e.prismGlobalObjectAlias=n;e.pgo=e.pgo||function(){(e.pgo.q=e.pgo.q||[]).push(arguments)};e.pgo.l=(new Date).getTime();r=t.createElement("script");r.src=o;r.async=true;i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)})(window,document,"https://prism.app-us1.com/prism.js","pgo");
+
+    pgo('setAccount', '649095895');
+    pgo('setTrackByDefault', true);
+
+    pgo('process');
+</script>
+
+        <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/underscore-min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/backbone-min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/backbone-relational.min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/backbone-super.min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/handlebars-v4.0.5.min.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/handlebars-ifCond-4e97d51c76.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/application-18f10ee4af.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/main-24117cdc80.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/settings-2fedaf9385.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/delete-account-da2b3de486.js.pobrane"></script>
+<script type="text/x-translation" data-translation-name="checkAccountDeleteCalculationMessage">Wynik jest nieprawidłowy</script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/forms-ad3eb4ac0e.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/alerts-15632e9137.js.pobrane"></script>
+<script>
+    App.Views.InpageAlertManager = Backbone.View.extend({
+        events: {
+            'click [data-alert-type][data-alert-text]': 'showAlert'
+        },
+        showAlert: function(e) {
+            var $el = $(e.currentTarget);
+            App.alertsView['show'+$el.data('alertType')]([App.Translations($el.data('alertText'))]);
+        }
+    });
+</script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/collections-1703f0dc2b.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/models-bc38b7a45b.js.pobrane"></script>
+<script src="./Moduł_ 21. Przygotowanie do deploymentu_files/knowledge-base-bf25c808b5.js.pobrane"></script>
+<script>
+    App.Views.LearningProgram = Backbone.View.extend({
+        events: {
+            'click [data-technology-desc-expander]' : 'expandTechnologyDesc'
+        },
+
+        initialize: function() {
+            this.$allTechnologyDesc = this.$el.find('[data-technology-desc]');
+            this.$allTechnologyExpanderIcons = this.$el.find('[data-technology-expander-icon]');
+        },
+
+        expandTechnologyDesc: function() {
+            this.$allTechnologyDesc.each(function(){
+                var $desc = $(this);
+                $desc.slideToggle('fast');
+            });
+            this.$allTechnologyExpanderIcons.each(function(){
+                var $icon = $(this);
+                $icon.toggleClass("fa-minus");
+            });
+        },
+    });
+</script>
+
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/tether.min.js.pobrane"></script>
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/prism.min.js.pobrane"></script>
+
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/bootcamp-0671f4eb7d.js.pobrane"></script>
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/jquery.seourl.min.js.pobrane"></script>
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/perfect-scrollbar.jquery.min.js.pobrane"></script>
+    <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/jquery.fancybox.min.js.pobrane"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a.img-modal-group").fancybox();
+        });
+    </script>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="call-us-modal">
+    <div class="modal-dialog modal-dialog-callus" role="document">
+        <div class="modal-content call-modal">
+            <div id="call-us-step1">
+                <h2>Umów się na rozmowę z doradcą Kodilli</h2>
+                <p>Krok <span>1/2:</span> Podaj numer telefonu</p>
+                <form action="https://kodilla.com/pl/call-us/step1" method="post" id="call-us-form1">
+                    <input type="tel" name="phone" id="call-us-input-phone" placeholder="737690577">
+                    <button class="btn btn-success" id="call-us-submit-phone">Zarezerwuj rozmowę</button>
+                </form>
+                <p id="call-us-counter-holder" style="display: none;">Dzisiaj już  <span id="call-counter" data-url="https://kodilla.com/pl/call-us/counter">-</span> <span id="call-us-counter-text" data-one=" osoba zamówiła rozmowę z nami." data-few=" osoby zamówiły rozmowę z nami." data-more=" osób zamówiło rozmowę z nami."></span></p>
+                <div class="data-protection">
+                    <p>Twój numer telefonu nie będzie wykorzystywany w celach marketingowych ani przekazany dalej. Tylko oddzwonimy. Dane są przetwarzane zgodnie z <a href="https://kodilla.com/pl/polityka-prywatnosci">Polityką Prywatności</a>.</p>
+                </div>
+            </div>
+
+            <div id="call-us-step2" style="display: none;">
+                <h2>Wybierz dogodny termin i godzinę na rozmowę z doradcą</h2>
+                <p>Krok <span>2/2:</span>
+                </p><form action="https://kodilla.com/pl/call-us/step2" method="post" id="call-us-form2">
+                    <div class="select-date">
+                        <select name="date" id="call-us-input-date">
+                        </select>
+                        <select name="time" id="call-us-input-time">
+                        </select>
+                    </div>
+                    <button class="btn btn-success" id="call-us-submit-call">Oddzwońcie do mnie!</button>
+                </form>
+            </div>
+
+            <div id="call-us-step3" style="display: none;">
+                <div class="thanks">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>Dziękujemy za zamowienie rozmowy! Do usłyszenia w wybranym terminie!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                <script src="./Moduł_ 21. Przygotowanie do deploymentu_files/widget.js.pobrane"></script>
+    <script type="text/javascript">
+        window.fcSettings = {
+            token: '99d7ec3c-0f50-4c9a-9f5e-b741bd6a1aa7',
+            host: 'https://wchat.freshchat.com',
+            locale: 'pl',
+            tags: ["logged_in","bc_user","status_aktywny","jdp","jdp_2018-10","ppp","jdp_2018-10_aktywny_ppp"],
+            faqTags: {
+                tags: ["support"],
+                filterType: 'category'
+            },
+            config: {
+                content: {"placeholders":{"search_field":"Przeszukaj FAQ","reply_field":"Odpowiedz","csat_reply":"Wpisz swoj\u0105 odpowied\u017a"},"actions":{"csat_yes":"Tak","csat_no":"Nie","push_notify_yes":"Tak","push_notify_no":"Nie","tab_faq":"FAQ","tab_chat":"CHAT","csat_submit":"Wy\u015blij"},"headers":{"chat":"Napisz do nas","chat_help":"Witaj! W czy mo\u017cemy Ci pom\u00f3c?!","faq":"Baza wiedzy","faq_help":"Przegl\u0105daj FAQ","faq_not_available":"Brak artyku\u0142\u00f3w","faq_search_not_available":"Brak artyku\u0142\u00f3w dla frazy {{query}}","faq_useful":"Jak oceniasz przydatno\u015b\u0107?","faq_thankyou":"Dzi\u0119kujemy za Twoj\u0105 opini\u0119!","faq_message_us":"Napisz do nas!","push_notification":"Nie przegap \u017cadnej odpowiedzi! Zezwalasz na powiadomienia?","csat_question":"Czy uzyska\u0142e\u015b potrzebn\u0105 pomoc?","csat_yes_question":"Jak oceniasz nasze wsparcie?","csat_no_question":"Co mogliby\u015bmy ulepszy\u0107?","csat_thankyou":"Dzi\u0119kujemy Ci za informacje!","csat_rate_here":"Oce\u0144","channel_response":{"offline":"Aktualnie jeste\u015bmy nieobecni","online":{"minutes":{"one":"Odpowiadamy w mniej ni\u017c minut\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} minut(y)"},"hours":{"one":"Odpowiadamy w mniej ni\u017c godzin\u0119","more":"Odpowiadamy w mniej ni\u017c {{time}} godzin(y)"}}}}}
+            }
+        };
+                    window.fcSettings.lastName = 'Socha';
+            window.fcSettings.firstName = 'Tymoteusz';
+            window.fcSettings.email = 't_socha@wp.pl';
+            window.fcSettings.externalId = 't_socha@wp.pl';
+                document.getElementsByTagName('body')[0].classList.add('chat-enabled');
+        document.getElementsByTagName('body')[0].classList.add('chat-freshchat');
+        window.fcWidget.init( window.fcSettings );
+        window.fcWidget.on('widget:closed', function (){
+            $('body').addClass('notification-content--visible');
+        });
+    </script><div id="fc_frame" class="fc-widget-normal"><iframe id="fc_widget" name="fc_widget" title="Chat" frameborder="0" src="./Moduł_ 21. Przygotowanie do deploymentu_files/saved_resource.html"></iframe></div>
+        <div data-role="notifications-wrapper" class="notifications-wrapper"></div>
+
+
+<div id="fc_push_frame"><iframe id="fc_push" src="./Moduł_ 21. Przygotowanie do deploymentu_files/index.html" frameborder="0"></iframe></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Moduł_ 21. Przygotowanie do deploymentu_files/d_vbiawPdxB.html" style="border: none;"></iframe></div></div></div></body></html>
